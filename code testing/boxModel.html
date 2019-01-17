@@ -224,8 +224,13 @@
                         element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
                     });
                     //先把蓋子蓋起來
-                    cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
-                    cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
+                    {
+                        let arr= cover_out.style.transform.split(" ");
+                        console.log(`arr: ${arr}`);
+                        cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
+                        cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
+                    }
+                    
                     //延遲一段時間後...TADA~蓋子打開~
                     setTimeout(e => {
                         cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
@@ -277,6 +282,30 @@
         boxBases.forEach(el => {
             el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
         })
+
+       
+        //驗證回傳值確實是陣列
+        console.log(`cssTest: ${cssGet(".boxBase", "transform")}`);
+        console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);
+        console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);
+        // cssGet(".boxBase","transform");
+
+        //抓css檔內樣式
+        //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
+        //原句:window.getComputedStyle(element, null).getPropertyValue("float");
+        //不抓偽類 ex: var result = cssGet(".class","width");
+        //抓偽類 ex: var result = cssGet(".class","width",":after");
+        //回傳值是一個陣列!!!!
+        //transform會得到3維矩陣
+        function cssGet(element,property="width-height", pseudo=null){
+            let el=document.querySelectorAll(element);
+            var arrData=[];
+            el.forEach(item=>{
+                let data=window.getComputedStyle(item, pseudo).getPropertyValue(property);
+                arrData.push(data);
+            })
+            return arrData;
+        }
     </script>
 
     <script>
