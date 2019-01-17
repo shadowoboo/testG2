@@ -87,12 +87,62 @@
         </div>
     </section>
 
+
+
+    <section class="section section_12" id="section_12">
+        <div class="camera">
+            <div class="box boxBase" id="box_12">
+
+                <div class="surface surface_top" id="cover_out_12">上</div>
+                <div class="surface surface_top_inner" id="cover_in_12">
+                    <div class="way">
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                    </div>
+                    <div class="way">
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                    </div>
+                </div>
+                <div class="surface surface_down">下</div>
+                <div class="surface surface_down_left" id="cover_dl_12">下左</div>
+                <div class="surface surface_down_right" id="cover_dr_12">下右</div>
+                <div class="surface surface_back">後</div>
+                <div class="surface surface_font">前</div>
+                <div class="surface surface_left">左</div>
+                <div class="surface surface_right">右</div>
+            </div>
+        </div>
+    </section>
+
+
+
     <script>
         const boxBases = document.querySelectorAll(".boxBase");
         const btns = document.querySelectorAll(".btn");
+        //箱子上蓋測試
         const cover_out = document.querySelector("#cover_out");
         const cover_in = document.querySelector("#cover_in");
         const lights = document.querySelectorAll(".light");
+        //箱子上蓋+下蓋收納測試
+        const cover_in_12 = document.querySelector("#cover_in_12");
+        const cover_out_12 = document.querySelector("#cover_out_12");
+        const cover_dl_12 = document.querySelector("#cover_dl_12");
+        const cover_dr_12 = document.querySelector("#cover_dr_12");
+        const box_12 = document.querySelector("#box_12");
+
 
         for (var i = 0; i < btns.length; i++) {
             btns[i].addEventListener("click", boxRotate);
@@ -182,13 +232,41 @@
                         cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg) rotateY(180deg)";
                     }, 1000);
                     //再延遲一下...燈燈~電燈假發光~
-                    setTimeout(e=>{
+                    setTimeout(e => {
                         console.log(lights);
-                        
-                        lights.forEach(element=>{
+
+                        lights.forEach(element => {
                             element.classList.add("showLight");
                         })
-                    },1000)
+                    }, 1000)
+
+                    //上蓋收納下蓋打開測試
+                    //上蓋初始值要打開
+                    cover_out_12.style.transform = "translate3d(0, 50px, -100px) rotateX(200deg)";
+                    cover_in_12.style.transform = "translate3d(0, 50px, -100px) rotateX(200deg) rotateY(180deg)";
+                    //下蓋初始關起來
+                    cover_dl_12.style.transform = "translate3d(-200px, 150px, 0px) rotateY(-90deg) rotateX(-90deg) ";
+                    cover_dr_12.style.transform = "translate3d(200px, 150px, 0px)  rotateY(90deg) rotateX(-90deg)";
+                    //box_12姿態固定
+                    box_12.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+                    setTimeout(e => {
+                        box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
+                    }, 400)
+                    
+                    //延遲....上蓋關起來
+                    setTimeout(e => {
+                        cover_out_12.style.transform = "translate3d(0, 50px, -100px) rotateX(90deg)";
+                        cover_in_12.style.transform = "translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg)";
+                    }, 1000);
+                    //延遲...箱子抬起來
+                    setTimeout(e => {
+                        box_12.style.transform = "rotateX(20deg) rotateY(0deg) rotateZ(0deg)";
+                    }, 1500)
+                    //延遲...下蓋兩片打開
+                    setTimeout(e => {
+                        cover_dl_12.style.transform = "translate3d(-200px, 150px, 0px) rotateY(-90deg) rotateX(30deg) ";
+                        cover_dr_12.style.transform = "translate3d(200px, 150px, 0px)  rotateY(90deg) rotateX(30deg)";
+                    }, 1700);
 
                     break;
             }
@@ -199,6 +277,10 @@
         boxBases.forEach(el => {
             el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
         })
+    </script>
+
+    <script>
+
     </script>
 </body>
 
