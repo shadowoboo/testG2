@@ -116,7 +116,7 @@
                         <div class="light"></div>
                     </div>
                 </div>
-                <div class="surface surface_down">下</div>
+                <!-- <div class="surface surface_down">下</div> -->
                 <div class="surface surface_down_left" id="cover_dl_12">下左</div>
                 <div class="surface surface_down_right" id="cover_dr_12">下右</div>
                 <div class="surface surface_back">後</div>
@@ -285,9 +285,9 @@
 
        
         //驗證回傳值確實是陣列
-        console.log(`cssTest: ${cssGet(".boxBase", "transform")}`);
-        console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);
-        console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);
+        console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
+        console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
+        console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
         // cssGet(".boxBase","transform");
 
         //抓css檔內樣式
@@ -296,7 +296,7 @@
         //不抓偽類 ex: var result = cssGet(".class","width");
         //抓偽類 ex: var result = cssGet(".class","width",":after");
         //回傳值是一個陣列!!!!
-        //transform會得到3維矩陣
+        //transform會得到矩陣，不是 translate / rotate 之類的
         function cssGet(element,property="width-height", pseudo=null){
             let el=document.querySelectorAll(element);
             var arrData=[];
