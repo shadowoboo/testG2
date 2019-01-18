@@ -129,7 +129,55 @@
 
 
     <section class="section section_15" id="section_15">
-        
+        <div class="camera">
+            <div class="box boxBase" id="box_15">
+                <div class="surface surface_top" id="cover_out_15">上</div>
+                <div class="surface surface_top_inner" id="cover_in_15">
+                    <div class="way">
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                    </div>
+                    <div class="way">
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                        <div class="light"></div>
+                    </div>
+                </div>
+                <div class="surface surface_down">下</div>
+                <div class="surface surface_back">後</div>
+                <div class="surface surface_font">前</div>
+                <div class="surface surface_left">左</div>
+                <div class="surface surface_right">右</div>
+            </div>
+        </div>
+        <div class="pics">
+            <div class="pic">
+                <img src="ip1.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="ip2.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="ip3.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="ip4.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="ip5.png" alt="">
+            </div>
+        </div>
     </section>
 
 
@@ -230,12 +278,12 @@
                     });
                     //先把蓋子蓋起來
                     {
-                        let arr= cover_out.style.transform.split(" ");
+                        let arr = cover_out.style.transform.split(" ");
                         console.log(`arr: ${arr}`);
                         cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
                         cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
                     }
-                    
+
                     //延遲一段時間後...TADA~蓋子打開~
                     setTimeout(e => {
                         cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
@@ -262,7 +310,7 @@
                     setTimeout(e => {
                         box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
                     }, 400)
-                    
+
                     //延遲....上蓋關起來
                     setTimeout(e => {
                         cover_out_12.style.transform = "translate3d(0, 50px, -100px) rotateX(90deg)";
@@ -288,7 +336,7 @@
             el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
         })
 
-       
+
         //驗證回傳值確實是陣列
         console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
         console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
@@ -302,11 +350,11 @@
         //抓偽類 ex: var result = cssGet(".class","width",":after");
         //回傳值是一個陣列!!!!
         //transform會得到矩陣，不是 translate / rotate 之類的
-        function cssGet(element,property="width-height", pseudo=null){
-            let el=document.querySelectorAll(element);
-            var arrData=[];
-            el.forEach(item=>{
-                let data=window.getComputedStyle(item, pseudo).getPropertyValue(property);
+        function cssGet(element, property = "width-height", pseudo = null) {
+            let el = document.querySelectorAll(element);
+            var arrData = [];
+            el.forEach(item => {
+                let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
                 arrData.push(data);
             })
             return arrData;
