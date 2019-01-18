@@ -17,6 +17,7 @@
     - "gasp": "0.0.2",
     - "gsap": "^2.0.2",
     - "gulp": "^3.9.1",
+    - "gulp-jquery": "^1.1.2",
     - "gulp-sass": "^4.0.2",
     - "scrollmagic": "^2.0.6"
 

@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
-
+var jquery = require('gulp-jquery');
 
 // sass 編譯函式
 gulp.task('sass', function () {
@@ -11,6 +11,16 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css')); //目的地目錄
 });
 
+
+//jquery環境
+gulp.task('jquery', function () {
+    return gulp.src('./node_modules/jquery/src')
+        .pipe(jquery({
+            flags: ['-deprecated', '-event/alias', '-ajax/script', '-ajax/jsonp', '-exports/global']
+        }))
+        .pipe(gulp.dest('./public/vendor/'));
+    // creates ./public/vendor/jquery.custom.js
+});
 
 
 gulp.task('default', ['sass'], function () {
