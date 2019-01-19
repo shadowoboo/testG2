@@ -289,6 +289,42 @@
     @include box3D_cover_bot(400px, 200px, 100px);
 }
 
+.section_15{
+    @include box3D_cover(400px, 200px, 100px);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    .surface{
+            .droped_img{
+                cursor: move;
+            }
+            overflow: hidden;
+            #a1{
+                position: absolute;
+                top:50%;
+                left:50%;
+            }
+        }
+    // [draggable="true"]{
+    //     // user-select: none;
+    // }
+    .pics{
+        width: 30%;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .pic{
+            width: 100px;
+            height: 100px;
+            cursor: move;
+            // user-select: none;//讓使用者選div，不要選到圖片
+        }
+    }
+}
+
 
 //測試頁按鈕
 #ctrl_bar{

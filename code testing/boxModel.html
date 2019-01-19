@@ -131,9 +131,11 @@
     <section class="section section_15" id="section_15">
         <div class="camera">
             <div class="box boxBase" id="box_15">
-                <div class="surface surface_top" id="cover_out_15">上</div>
+                <div class="surface surface_top" id="cover_out_15">
+                    <img src="ip2.png" id="a1" alt="">
+                </div>
                 <div class="surface surface_top_inner" id="cover_in_15">
-                    <div class="way">
+                    <!-- <div class="way">
                         <div class="light"></div>
                         <div class="light"></div>
                         <div class="light"></div>
@@ -152,7 +154,7 @@
                         <div class="light"></div>
                         <div class="light"></div>
                         <div class="light"></div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="surface surface_down">下</div>
                 <div class="surface surface_back">後</div>
@@ -195,11 +197,197 @@
         const cover_dl_12 = document.querySelector("#cover_dl_12");
         const cover_dr_12 = document.querySelector("#cover_dr_12");
         const box_12 = document.querySelector("#box_12");
+        //拖曳測試
+        const pics = document.querySelectorAll("pics");
+        const pic_img = document.querySelectorAll(".pic img");
+        const surface = document.querySelectorAll(".surface");
+        const droped_img = document.querySelectorAll(".droped_img");
 
+        //給箱子姿態初始值
+        boxBases.forEach(el => {
+            el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+        })
 
+        //按鈕監聽事件
         for (var i = 0; i < btns.length; i++) {
             btns[i].addEventListener("click", boxRotate);
         }
+
+        //拖曳功能監聽事件
+        //可放置區(就是箱子表面)的監聽事件
+        surface.forEach(elem => {
+            //允許拖到表面(開放領空~)
+            elem.addEventListener("dragover", function drageOver(e) {
+                e.preventDefault();
+                //出現提示效果，透明度改變
+                e.target.style.opacity = "0.8";
+            });
+            //允許丟到表面上(允許降落~)
+            elem.addEventListener("drop", dropped);
+            //沒被觸發的drop區恢復正常透明度
+            elem.addEventListener("dragleave",function dragLeave(e){
+                e.target.style.opacity = "1";
+            })
+        })
+        //"箱子表面的圖片"的監聽事件
+        // droped_img.forEach(elem => {
+        //     elem.addEventListener("mousedown", drImg_oldLocation);
+        //     elem.addEventListener("mouseup", drImg_newLocation);
+        // })
+        droped_img.forEach(elem => {
+            elem.addEventListener("click", function(e){
+                console.log("click!!!!");
+            })
+        })
+
+        //給"遠方的客人"可拖曳物件初始狀態
+        pic_img.forEach(elem => {
+            // console.log(`pic darggable: ${elem.draggable}`);
+            // elem.setAttribute('draggable','true');
+            elem.addEventListener("dragstart", function dragStart(e) {
+                // e.preventDefault();
+                console.log(`e.target.src: ${e.target.src}`);
+                //拖曳開始時，滑鼠在圖片內的相對位置
+                // mouseOffset = { x: e.offsetX, y: e.offsetY };
+                //設定要傳送到drop方的訊息
+                e.dataTransfer.setData("image/jpeg", e.target.src);
+                e.dataTransfer.setData("offsetx",e.offsetX);
+                e.dataTransfer.setData("offsety",e.offsetY);
+            })
+            elem.addEventListener("dragend", function dragEnd(e){
+                surface.forEach(elem=>{
+                    elem.style.opacity="1";
+                })
+            })
+        })
+
+        //可能是3D導致無法正確確認選取狀態，但仍會選取
+        //(觀察到function log無回應)
+        //造成getData給的資料是空值
+        //故目前改用 getData 空值與否判斷拖曳物件的原生位置
+        //給 "在地人" 的拖曳物件初始狀態
+        var obj;
+        droped_img.forEach(elem => {
+            elem.addEventListener("dragstart", function dragStart_droped(e) {
+                // e.preventDefault();
+                console.log(`e.target.classList: ${e.target.classList}`);
+                //設定要傳送到drop方的訊息
+                // e.dataTransfer.setData("image/jpeg", e.target.src);
+                e.dataTransfer.setData("image/jpeg", "");
+                e.dataTransfer.setData("text", "onSurface");
+                // e.dataTransfer.setData("obj", e.target);
+                obj=e.target;
+                e.dataTransfer.setData("offsetx", e.offsetX);
+                e.dataTransfer.setData("offsety", e.offsetY);
+            })
+        })
+        // const a1=document.querySelector("#a1");
+        // console.log(a1);
+        
+        // a1.addEventListener("click",()=>{
+        //     alert("heyyyyyyy");
+        // })
+        // var obj;
+        // a1.addEventListener("dragstart", function dragStart_droped(e) {
+        //         // e.preventDefault();
+        //         console.log(`e.target.classList: ${e.target.id}`);
+        //         //設定要傳送到drop方的訊息
+        //         // e.dataTransfer.setData("image/jpeg", e.target.src);
+        //         e.dataTransfer.setData("image/jpeg", "");
+        //         e.dataTransfer.setData("text", "onSurface");
+        //         // e.dataTransfer.setData("obj", this);
+        //         obj=this;
+        //         e.dataTransfer.setData("offsetx", e.offsetX);
+        //         e.dataTransfer.setData("offsety", e.offsetY);
+        //     })
+
+
+        //從圖片區降落到箱子區的drop事件
+        //要分成 "遠方來的客人" 和 "在地旅行的人"
+        //"遠方的客人"只要新生成一個child在這片土地
+        //"在地旅行的人"只要移動它的位置
+        var drop_count=1;
+        console.log(`drop_count: ${drop_count}`);
+        
+        function dropped(e) {
+            e.preventDefault();
+            // console.log(`e.dataTransfer.getData('image/jpeg'): ${e.dataTransfer.getData('image/jpeg')}`);
+            console.log(`e.target: ${e.target.classList}`);
+            console.log(`drop_count: ${drop_count}`);
+            drop_count=drop_count+1;//每次觸發drop就增加一次，讓新觸發物件的z-index更高
+            console.log(`drop_count: ${drop_count}`);
+            //如果是有在地人的 class name 就會有 droped_img，那就給移動方法
+            if (e.dataTransfer.getData('text')=="onSurface") {
+                console.log(`droped_img`);
+                // let obj= e.dataTransfer.getData("obj");
+                console.log(`obj: ${obj}`);
+                
+                mouseNow = { x: 0, y: 0 };
+                mouseNow.x = e.offsetX;
+                mouseNow.y = e.offsetY;
+                let mouseOffset = { x: 0, y: 0 };
+                mouseOffset.x = e.dataTransfer.getData("offsetx");
+                mouseOffset.y = e.dataTransfer.getData("offsety");
+                obj.style.top = parseInt(mouseNow.y - mouseOffset.y) + "px";
+                obj.style.left = parseInt(mouseNow.x - mouseOffset.x) + "px";
+            } else {//如果是遠方的客人，就新生成一個子元素在目標區
+                // //所有drop區內圖片暫時變成可以穿透的目標
+                // droped_img.forEach(el => {
+                //     el.style.pointerEvents = "none";
+                // })
+                //drop觸發時，滑鼠相對於目標surface的位置
+                mouseNow = { x: 0, y: 0 };
+                mouseNow.x = e.offsetX;
+                mouseNow.y = e.offsetY;
+                //接收來自dragstart的座標訊息
+                let mouseOffset={x:0,y:0};
+                    mouseOffset.x=e.dataTransfer.getData("offsetx");
+                    mouseOffset.y=e.dataTransfer.getData("offsety");
+                //創造新元素
+                var img = document.createElement('img');
+                img.src = e.dataTransfer.getData('image/jpeg');
+                img.style.width = '50px';
+                img.style.position = "absolute";
+                img.style.top = parseInt(mouseNow.y - mouseOffset.y) + "px";
+                img.style.left = parseInt(mouseNow.x - mouseOffset.x) + "px";
+                // img.style.transform="translate("+ parseInt(mouseNow.y - mouseOffset.y) + "px,"+ parseInt(mouseNow.x - mouseOffset.x) + "px)";
+                img.classList.add("droped_img");
+                img.style.zIndex = 99+drop_count;
+                img.id="a"+ drop_count;
+                // img.style.pointerEvents= "none"; //可以被穿透，讓後面的圖可以順利覆蓋
+                img.style.transform = "translateX(0px) translateY(0px) rotate(0deg) scale(1)";
+                console.log(`e.target: ${e.target.classList}`);
+                this.appendChild(img);
+
+                //恢復透明度
+                e.target.style.opacity = "1";
+                // //所有drop區內圖片恢復不可以穿透的狀態
+                // droped_img.forEach(el => {
+                //     el.style.pointerEvents = "auto";
+                // })
+            }
+        }
+
+        // function drImg_oldLocation(e) {
+        //     alert("popopopo");
+        //     mouse = { x: 0, y: 0 };
+        //     mouse.x = e.clientX;
+        //     mouse.y = e.clientY;
+        //     pic_offset = { x: 0, y: 0 };
+        //     pic_offset.x = e.offsetX;
+        //     pic_offset.y = e.offsetY;
+
+        //     console.log(`mouse.x: ${mouse.x}`);
+        //     console.log(`mouse.y: ${mouse.y}`);
+        //     console.log(`pic_offset.x: ${pic_offset.x}`);
+        //     console.log(`pic_offset.y: ${pic_offset.y}`);
+
+        // }
+
+        // function drImg_newLocation(e) {
+
+        // }
+
 
         //轉轉箱子功能鈕
         //缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
@@ -331,11 +519,20 @@
         };
 
 
-        //給箱子姿態初始值
-        boxBases.forEach(el => {
-            el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
-        })
 
+
+
+
+
+
+
+
+
+
+
+
+
+        /////////////////////////// function 區 /////////////////////////////
 
         //驗證回傳值確實是陣列
         console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
