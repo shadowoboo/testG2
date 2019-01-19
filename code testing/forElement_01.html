@@ -93,15 +93,37 @@
             margin: auto;
             animation: rank_ip_float 10s infinite;
         }
-        @keyframes rank_ip_float{
-            0%{transform:translateY(0px);}
-            10%{transform:translateY(-20px);}
-            20%{transform:translateY(-5px);}
-            40%{transform:translateY(-22px);}
-            60%{transform:translateY(-10px);}
-            80%{transform:translateY(-18px);}
-            100%{transform:translateY(0px);}
+
+        @keyframes rank_ip_float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            10% {
+                transform: translateY(-20px);
+            }
+
+            20% {
+                transform: translateY(-5px);
+            }
+
+            40% {
+                transform: translateY(-22px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+
+            80% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
+
         .rank_cycle .switch {
             width: 40px;
             height: 40px;
@@ -129,32 +151,54 @@
 
         #sw_2 {
             top: 25%;
-            right: -4%;
-            transform: translate(-50%, -50%);
+            right: -0%;
+            transform: translate(-15%, -52%);
         }
 
         #sw_3 {
-            bottom: 25%;
-            right: -7%;
-            transform: translate(-50%, -50%);
+            bottom: 15%;
+            right: 0%;
+            transform: translate(-16%, -48%);
         }
 
         #sw_4 {
             bottom: 0;
             left: 50%;
-            transform: translate(-50%, 50%);
+            transform: translate(-50%, 52%);
         }
 
         #sw_5 {
-            bottom: 25%;
-            left: 3%;
-            transform: translate(-50%, -50%);
+            bottom: 15%;
+            left: 0%;
+            transform: translate(15%, -48%);
         }
 
         #sw_6 {
             top: 25%;
-            left: 7%;
-            transform: translate(-50%, -50%);
+            left: 0%;
+            transform: translate(15%, -52%);
+        }
+
+        .rank_ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* background-color: #ccc; */
+            width: 400px;
+            height: 400px;
+            transition: 0.6s;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .rank_ring .sw_ring {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 3px solid #000;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -44%);
         }
 
 
@@ -209,6 +253,9 @@
             </div>
         </aside>
         <div class="rank" id="rank">
+            <div class="rank_ring" id="rank_ring">
+                <div class="switch sw_ring" id="sw_ring"></div>
+            </div>
             <div class="rank_cycle">
                 <div class="ipIcon">
                     <img src="ip3.png" alt="" id="rankIpImg">
@@ -308,6 +355,8 @@
     </section>
 
     <script>
+        //sw_6移動到sw_1會走最長路徑之問題尚未解決
+        //css定位正六角形座標尚未解決，目前手動(絕對+translate)推到定位上
         //這次用增減class方式控制動畫
         //p.s.還沒研究大量宣告的方法
         const sw_class = document.querySelectorAll(".sw_class");
@@ -321,6 +370,10 @@
         const prod_6 = document.querySelector("#prod_6");
         const rank = document.querySelector("#rank");
         const rankIpImg = document.querySelector("#rankIpImg");
+        const rank_ring = document.querySelector("#rank_ring");
+
+        //旋轉裝飾環的初始位置為第一名
+        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
 
         //類別按鈕觸發
         // 0. 類別按鈕觸發
@@ -331,11 +384,12 @@
             element.addEventListener("click", el => {
                 switch (el.target.id) {
                     case "sw_all":
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         // 1. ip收縮 + 評論隱藏
                         rank.classList.add("hide");
                         setTimeout(() => {
                             // 2. ip換圖 + 評論換資料(預計給php 0.5秒)
-                            rankIpImg.src="ip3.png";
+                            rankIpImg.src = "ip3.png";
                         }, 500);
                         setTimeout(() => {
                             // 3. ip放大 + 第一名的評論出現
@@ -352,8 +406,7 @@
                         }, 600);
                         break;
                     case "sw_cookie":
-                        console.log("hahah");
-
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         rank.classList.add("hide");
                         setTimeout(() => {
                             rankIpImg.src = "ip2.png";
@@ -370,8 +423,7 @@
                         }, 600);
                         break;
                     case "sw_candy":
-                        console.log("hahah");
-
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         rank.classList.add("hide");
                         setTimeout(() => {
                             rankIpImg.src = "ip5.png";
@@ -388,8 +440,7 @@
                         }, 600);
                         break;
                     case "sw_choco":
-                        console.log("hahah");
-
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         rank.classList.add("hide");
                         setTimeout(() => {
                             rankIpImg.src = "ip4.png";
@@ -406,8 +457,7 @@
                         }, 600);
                         break;
                     case "sw_chip":
-                        console.log("hahah");
-
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         rank.classList.add("hide");
                         setTimeout(() => {
                             rankIpImg.src = "ip1.png";
@@ -437,6 +487,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
                         setTimeout(() => {
                             prod_1.classList.add("prod_show");
                         }, 600);
@@ -446,6 +497,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(60deg)";
                         setTimeout(() => {
                             prod_2.classList.add("prod_show");
                         }, 600);
@@ -455,6 +507,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(120deg)";
                         setTimeout(() => {
                             prod_3.classList.add("prod_show");
                         }, 600);
@@ -464,6 +517,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(180deg)";
                         setTimeout(() => {
                             prod_4.classList.add("prod_show");
                         }, 600);
@@ -473,6 +527,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(240deg)";
                         setTimeout(() => {
                             prod_5.classList.add("prod_show");
                         }, 600);
@@ -482,6 +537,7 @@
                         prod.forEach(elem => {
                             elem.classList.remove("prod_show");
                         })
+                        rank_ring.style.transform = "translate(-50%,-50%) rotate(300deg)";
                         setTimeout(() => {
                             prod_6.classList.add("prod_show");
                         }, 600);
@@ -493,6 +549,54 @@
             })
         })
 
+
+
+        //////////////////////////////////////暫時無用////////////////////////////////
+        //抓inline style 的 當前rotate值
+        //.style.transform 的專攻版本，只適合這個檔案使用
+        //輸入一個唯一的元素
+        //回傳一個數值
+        function getRotate(elem) {
+            var str = elem.style.transform;
+            // console.log(`str:　${str}`);
+            var arr = str.split(" ");
+            // console.log(`arr:　${arr}`);
+            let angle = parseInt(arr[2].replace("rotate(", "").replace("deg)", ""));
+            return angle;
+        }
+
+        //最短路徑問題
+            //針對sw_6解
+            //缺點: 換其他sw有問題
+            //放棄此方法
+            // if(getRotate(rank_ring)==300){
+            //     rank_ring.style.transform = "translate(-50%,-50%) rotate(360deg)";
+            //     // rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
+            // }else{
+            //     rank_ring.style.transform = "translate(-50%,-50%) rotate(0deg)";
+            // }
+
+            //計算最短路徑再旋轉
+            //一樣有360deg、0deg產生的問題，即sw_6走視覺上最長路徑回到sw_1
+            //其他方案:可能用累加法，維持順時針旋轉之類的
+            // var ori_angle = getRotate(rank_ring);
+            //     console.log(`ori_angle: ${ori_angle}`);
+
+            //     var tar_angle = 60;
+            //     var path_1 = tar_angle - ori_angle;
+            //     var path_2 = tar_angle - ori_angle - 360;
+            //     var path_1_abs = Math.abs(tar_angle - ori_angle);
+            //     console.log(`path_1: ${path_1}`);
+
+            //     var path_2_abs = Math.abs(tar_angle - ori_angle - 360);
+            //     console.log(`path_2: ${path_2}`);
+            //     if (path_1_abs > path_2_abs) {
+            //         rank_ring.style.transform = "translate(-50%,-50%) rotate(" + parseInt(ori_angle + path_2) + "deg)";
+            //         console.log(`rank_ring.style.transform: ${rank_ring.style.transform}`);
+            //     } else {
+            //         rank_ring.style.transform = "translate(-50%,-50%) rotate(" + parseInt(ori_angle + path_1) + "deg)";
+            //         console.log(`rank_ring.style.transform: ${rank_ring.style.transform}`);
+            //     }
     </script>
 </body>
 
