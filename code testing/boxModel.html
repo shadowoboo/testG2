@@ -294,6 +294,42 @@
         //     elem.addEventListener("mousedown", drImg_oldLocation);
         //     elem.addEventListener("mouseup", drImg_newLocation);
         // })
+        //"箱子表面的圖片"的監聽事件
+        arrDropedImg.forEach(elem => {
+            // elem.addEventListener("mousedown", moveStart);
+            // elem.addEventListener("mousemove",movingImg);
+            // elem.addEventListener("mouseup",moveEnd);
+            elem.addEventListener("dragstart", function dragStart(e) {
+                e.dataTransfer.setData("text", "onSurface");
+                e.dataTransfer.setData("offsetx", e.offsetX);
+                e.dataTransfer.setData("offsety", e.offsetY);
+                e.dataTransfer.setData("srcItem", e.target);
+            })
+            elem.addEventListener("dragend", function dragEnd(e) {
+                surface.forEach(elem => {
+                    elem.style.opacity = "1";
+                })
+                //操作預先存起來的新元素陣列
+                arrDropedImg.forEach(elem => {
+                    elem.style.pointerEvents = "auto";
+                })
+            }
+        })
+
+        function moveStart(e) {
+            surface.forEach(el => {
+                console.log(`el: ${el}`);
+                el.removeEventListener("drop", dropped);
+            })
+            start = { x: 0, y: 0 };
+            start.x = e.offsetX;
+            start.y = e.offsetY;
+        }
+        function moveEnd(e) {
+            let end = { x:}
+        }
+
+
         var igmmmm;
         var xx, yy, textX, textY, xxx, yyy;
         // textX = e.offsetLeft;
@@ -317,11 +353,11 @@
             // console.log(e.clientX, e.clientY, e.offsetX, e.offsetY);
 
         })
-        window.addEventListener("drop", (e) => {
-            console.log(e.target);
-            igmmmm.style.top = yyy - e.offsetY - textY + "px";
-            igmmmm.style.left = xxx - e.offsetX - textX + "px";
-        })
+        // window.addEventListener("drop", (e) => {
+        //     console.log(e.target);
+        //     igmmmm.style.top = yyy - e.offsetY - textY + "px";
+        //     igmmmm.style.left = xxx - e.offsetX - textX + "px";
+        // })
         // droped_img.forEach(elem => {
         //     elem.addEventListener("click", function (e) {
         //         console.log("click!!!!");
@@ -499,6 +535,17 @@
                 console.log(`droped_img`);
                 // let obj= e.dataTransfer.getData("obj");
                 console.log(`obj: ${obj}`);
+                //接收來自dragstart的座標訊息
+                let mouseOffset = { x: 0, y: 0 };
+                mouseOffset.x = e.dataTransfer.getData("offsetx");
+                mouseOffset.y = e.dataTransfer.getData("offsety");
+                //因為使用穿透屬性，所以座標定位不用迴避圖片了
+                mouseNow = { x: 0, y: 0 };
+                mouseNow.x = e.offsetX;
+                mouseNow.y = e.offsetY;
+                //接收來自setData的資料，設定新座標
+                e.dataTransfer.getData("srcItem").style.top = parseInt(mouseNow.y - mouseOffset.y) + "px";
+                e.dataTransfer.getData("srcItem").style.left = parseInt(mouseNow.x - mouseOffset.x) + "px";
             } else {//如果是遠方的客人，就新生成一個子元素在目標區
                 // //所有drop區內圖片暫時變成可以穿透的目標
                 // droped_img.forEach(el => {
