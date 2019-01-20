@@ -420,7 +420,12 @@
   .section_15 .surface {
     overflow: hidden; }
     .section_15 .surface .droped_img {
+      display: block;
+      transition: 0.1s;
       cursor: move; }
+      .section_15 .surface .droped_img.select {
+        outline: #000000 dashed 10px;
+        transition: 0.3s; }
     .section_15 .surface #a1 {
       position: absolute;
       top: 50%;
@@ -435,6 +440,19 @@
       width: 100px;
       height: 100px;
       cursor: move; }
+  .section_15 #btns15 {
+    width: 25%;
+    display: flex;
+    justify-content: space-around; }
+    .section_15 #btns15 .btn {
+      width: 100px;
+      height: 40px;
+      margin: 0px 10px;
+      padding: 10px;
+      background-color: #ffa;
+      text-align: center;
+      box-shadow: 2px 2px 5px #0000004b;
+      cursor: pointer; }
 
 #ctrl_bar {
   position: fixed;
