@@ -294,40 +294,74 @@
         //     elem.addEventListener("mousedown", drImg_oldLocation);
         //     elem.addEventListener("mouseup", drImg_newLocation);
         // })
-        //"箱子表面的圖片"的監聽事件
-        arrDropedImg.forEach(elem => {
-            // elem.addEventListener("mousedown", moveStart);
-            // elem.addEventListener("mousemove",movingImg);
-            // elem.addEventListener("mouseup",moveEnd);
-            elem.addEventListener("dragstart", function dragStart(e) {
-                e.dataTransfer.setData("text", "onSurface");
-                e.dataTransfer.setData("offsetx", e.offsetX);
-                e.dataTransfer.setData("offsety", e.offsetY);
-                e.dataTransfer.setData("srcItem", e.target);
-            })
-            elem.addEventListener("dragend", function dragEnd(e) {
-                surface.forEach(elem => {
-                    elem.style.opacity = "1";
-                })
-                //操作預先存起來的新元素陣列
+        //箱子表面監聽
+        //動態新增的東西需要先監聽父層，子層新增的元素開監聽才有效
+        surface.forEach(elem=>{
+            elem.addEventListener("mouseenter",function wakeup(){
+                console.log("mouseEnter");
+                
+                //"箱子表面的圖片"的監聽事件
                 arrDropedImg.forEach(elem => {
-                    elem.style.pointerEvents = "auto";
-                })
-            }
-        })
+                    // elem.addEventListener("mousedown", moveStart);
+                    // elem.addEventListener("mousemove",movingImg);
+                    // elem.addEventListener("mouseup",moveEnd);
+                    elem.addEventListener("dragstart", function dragStart_2(e) {
+                        console.log("這裡的圖片動起來!");
 
-        function moveStart(e) {
-            surface.forEach(el => {
-                console.log(`el: ${el}`);
-                el.removeEventListener("drop", dropped);
+                        e.dataTransfer.setData("text", "onSurface");
+                        e.dataTransfer.setData("offsetx", e.offsetX);
+                        e.dataTransfer.setData("offsety", e.offsetY);
+                        srcItem=this;
+                        // e.dataTransfer.setData("srcItem", this);
+                    })
+                    elem.addEventListener("dragend", function dragEnd_2(e) {
+                        surface.forEach(elem => {
+                            elem.style.opacity = "1";
+                        })
+                        //操作預先存起來的新元素陣列
+                        arrDropedImg.forEach(elem => {
+                            elem.style.pointerEvents = "auto";
+                        })
+                    })
+                })
             })
-            start = { x: 0, y: 0 };
-            start.x = e.offsetX;
-            start.y = e.offsetY;
-        }
-        function moveEnd(e) {
-            let end = { x:}
-        }
+        })
+        // //"箱子表面的圖片"的監聽事件//父層沒有被事件觸發就無法監聽動態新增的物件
+        // arrDropedImg.forEach(elem => {
+        //     // elem.addEventListener("mousedown", moveStart);
+        //     // elem.addEventListener("mousemove",movingImg);
+        //     // elem.addEventListener("mouseup",moveEnd);
+        //     elem.addEventListener("dragstart", function dragStart(e) {
+        //         console.log("這裡的圖片動起來!");
+                
+        //         e.dataTransfer.setData("text", "onSurface");
+        //         e.dataTransfer.setData("offsetx", e.offsetX);
+        //         e.dataTransfer.setData("offsety", e.offsetY);
+        //         e.dataTransfer.setData("srcItem", e.target);
+        //     })
+        //     elem.addEventListener("dragend", function dragEnd(e) {
+        //         surface.forEach(elem => {
+        //             elem.style.opacity = "1";
+        //         })
+        //         //操作預先存起來的新元素陣列
+        //         arrDropedImg.forEach(elem => {
+        //             elem.style.pointerEvents = "auto";
+        //         })
+        //     })
+        // })
+
+        // function moveStart(e) {
+        //     surface.forEach(el => {
+        //         console.log(`el: ${el}`);
+        //         el.removeEventListener("drop", dropped);
+        //     })
+        //     start = { x: 0, y: 0 };
+        //     start.x = e.offsetX;
+        //     start.y = e.offsetY;
+        // }
+        // function moveEnd(e) {
+        //     let end = { x:}
+        // }
 
 
         var igmmmm;
@@ -534,7 +568,7 @@
             if (e.dataTransfer.getData('text') == "onSurface") {
                 console.log(`droped_img`);
                 // let obj= e.dataTransfer.getData("obj");
-                console.log(`obj: ${obj}`);
+                // console.log(`obj: ${obj}`);
                 //接收來自dragstart的座標訊息
                 let mouseOffset = { x: 0, y: 0 };
                 mouseOffset.x = e.dataTransfer.getData("offsetx");
@@ -544,8 +578,10 @@
                 mouseNow.x = e.offsetX;
                 mouseNow.y = e.offsetY;
                 //接收來自setData的資料，設定新座標
-                e.dataTransfer.getData("srcItem").style.top = parseInt(mouseNow.y - mouseOffset.y) + "px";
-                e.dataTransfer.getData("srcItem").style.left = parseInt(mouseNow.x - mouseOffset.x) + "px";
+                // let srcItem= e.dataTransfer.getData("srcItem")
+                srcItem.style.zIndex=drop_count+1;
+                srcItem.style.top = parseInt(mouseNow.y - mouseOffset.y) + "px";
+                srcItem.style.left = parseInt(mouseNow.x - mouseOffset.x) + "px";
             } else {//如果是遠方的客人，就新生成一個子元素在目標區
                 // //所有drop區內圖片暫時變成可以穿透的目標
                 // droped_img.forEach(el => {
@@ -597,7 +633,7 @@
                 // }
                 // img.style.transform="translate("+ parseInt(mouseNow.y - mouseOffset.y) + "px,"+ parseInt(mouseNow.x - mouseOffset.x) + "px)";
                 img.classList.add("droped_img");
-                img.style.zIndex = 99 + drop_count;
+                img.style.zIndex = drop_count;
                 img.id = "a" + drop_count;
                 // img.style.pointerEvents = "none"; //可以被穿透，讓後面的圖可以順利覆蓋
                 img.style.transform = "translateX(0px) translateY(0px) rotate(0deg) scale(1)";
