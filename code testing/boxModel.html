@@ -189,6 +189,8 @@
         </div>
     </section>
 
+    <h1>12123123</h1>
+
 
 
     <script>
@@ -320,6 +322,8 @@
                         e.dataTransfer.setData("offsetx", e.offsetX);
                         e.dataTransfer.setData("offsety", e.offsetY);
                         srcItem = this;
+                        console.log(`THIS ${this.nodeName}`);
+                        
                         // e.dataTransfer.setData("srcItem", this);
                     })
                     elem.addEventListener("dragend", function dragEnd_2(e) {

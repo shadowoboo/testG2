@@ -299,7 +299,7 @@
     .surface{
             .droped_img{
                 display:block;
-                transition: 0.1s;
+                // transition: 0.1s;
                 cursor: move;
                 &.select{
                     //border會佔面積，不太方便

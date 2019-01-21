@@ -29,7 +29,7 @@ gulp.task('default', ['sass'], function () {
         server: {
             //根目錄
             baseDir: "./",
-            index: "index.html"
+            // index: "index.html"
         }
     });
 
@@ -37,6 +37,8 @@ gulp.task('default', ['sass'], function () {
     gulp.watch("*.html").on('change', reload);
     gulp.watch("js/*.js").on('change', reload);
     gulp.watch("images/*").on('change', reload);
+    gulp.watch("page/*.html").on('change', reload);
+    gulp.watch("code testing/*.html").on('change', reload);
     // gulp.watch("images/*").on('change', reload);
 });
 

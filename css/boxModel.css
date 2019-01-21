@@ -421,7 +421,6 @@
     overflow: hidden; }
     .section_15 .surface .droped_img {
       display: block;
-      transition: 0.1s;
       cursor: move; }
       .section_15 .surface .droped_img.select {
         outline: #000000 dashed 10px;
