@@ -8,10 +8,11 @@ $blue: #076baf;
 $deepblue: #00457b;
 $coral: #ea5a5a;
 $gray: #737374;
+$moblie: 768px;
 
 @font-face {
   font-family: g2Font;
-  src: url(../GenJyuuGothicX-Monospace-Normal.ttf);
+  src: url(../GenJyuuGothicX-Bold.ttf);
 }
 h1,h2,h3,h4,p,span{
     font-family: g2Font;
@@ -45,14 +46,18 @@ span{
         border: 2px solid $bordercolor;
         border-radius: $bordius;
         padding: $pad;
+        font-family: g2Font;
         text-align: center;
         text-decoration: none;
         font-size: $font;
         cursor: pointer;
-        &:hover {
-            color: $hovColor;
-            background-color: $hovBgc;
+        @media only screen and (min-width: $moblie) {
+           &:hover {
+                color: $hovColor;
+                background-color: $hovBgc;
+            }
         }
+        
     }
 }
 
@@ -92,9 +97,11 @@ span{
         text-align: center;
         font-size: 22px;
         cursor: pointer;
-        &:hover {
-            background-color: $blue;
-            color: #fff;
+        @media only screen and (min-width: $moblie) {
+           &:hover {
+                background-color: $blue;
+                color: #fff;
+            }
         }
 }
 .numInput{

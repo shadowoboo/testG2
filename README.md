@@ -33,18 +33,27 @@
     - "gulp-sass": "^4.0.2",
     - "scrollmagic": "^2.0.6"
 
-<!-- by Blair -->
-sass/_common.scss
+### by Blair
+### 1. sass/_common.scss
     包含了顏色變數、h1~h4/p/span字體字級設定，以及按鈕模組
     @import 'common';   <= 在自己的scss檔案裡打這行就可以使用common裡的所有東西
-   
-page/testBtn.html
+
+### 2. page/testBtn.html
     按鈕的結構示範，會影響到css的吃法跟程式運作，所以請不要變更
 
-js/common.js
+### 3. js/common.js
     有些按鈕的換色效果用css寫不出來，還有input number的加減按鈕要用程式
     所以記得也要在html裡面引用這個js
 
-sass/testBtn.scss, css/testBtn.css
+### 4. sass/testBtn.scss, css/testBtn.css
     這兩個檔案是我用來確認效果所以生成的，不用理他
-<!-- by Blair -->
+### 5. code testing
+    - confetti: 彩帶效果
+    - enteringAnimation: 漂浮動畫和一些淡入的動畫，可以加在裝飾性的東西上
+    - headerCloud: header雲朵浮動效果
+    - indexFirst: 首頁東西收入盒子裡的效果
+    - march: footer行軍效果
+    - parallax: 滑鼠移動時東西跟著動
+    - radar2.0: 拖拉雷達圖
+    - roulette: 客製化轉盤選顏色
+    - sparkle: 閃亮亮效果
