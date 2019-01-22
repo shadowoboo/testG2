@@ -71,14 +71,32 @@ a {
 * {
   outline: 1px solid #f00; }
 
+header {
+  width: 100%;
+  height: 15vh; }
+
 .customized {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 100vh;
   background-color: #fadfd4; }
+  .customized .step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    height: 100px; }
+    .customized .step .cloud {
+      width: 80px;
+      height: 80px; }
+    .customized .step p {
+      text-align: center;
+      color: #737374;
+      font-weight: 900; }
   .customized .snackHouse {
     width: 800px;
     background-color: #df9bac;
