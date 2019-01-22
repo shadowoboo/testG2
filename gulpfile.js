@@ -29,7 +29,7 @@ gulp.task('default', ['sass'], function () {
         server: {
             //根目錄
             baseDir: "./",
-            index: "index.html"
+            index: "nnnnn.html"
         }
     });
 
