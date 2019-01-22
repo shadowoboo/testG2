@@ -335,6 +335,26 @@ body {
       position: relative; }
       .index section .worldMap svg {
         margin: 150px; }
+      .index section .worldMap .countryMap .countryImg {
+        width: 50px;
+        position: absolute; }
+        .index section .worldMap .countryMap .countryImg img {
+          position: relative;
+          z-index: 1; }
+      .index section .worldMap .countryMap .countryImg:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 30px #fff;
+        opacity: .5;
+        z-index: 1;
+        animation: aaa 1.5s linear infinite alternate; }
       .index section .worldMap .countryMap > :nth-child(1) {
         top: 310px;
         left: 310px; }
@@ -359,28 +379,39 @@ body {
       .index section .worldMap .countryMap > :nth-child(8) {
         top: 540px;
         left: 910px; }
-      .index section .worldMap .countryImg {
-        width: 50px;
+      .index section .worldMap .snackMap .snackImg {
+        width: 100px;
         position: absolute; }
-      .index section .worldMap img {
-        position: relative;
-        z-index: 1; }
-      .index section .worldMap .countryImg:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        top: 10px;
-        left: 5px;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 10px 30px #fff;
-        opacity: .5;
-        z-index: 1;
-        animation: aaa 1.5s linear infinite alternate; }
-      .index section .worldMap .snackImg {
-        width: 100px; }
+      .index section .worldMap .snackMap > :nth-child(1) {
+        top: 140px;
+        width: 150px;
+        left: 160px; }
+      .index section .worldMap .snackMap > :nth-child(2) {
+        top: 170px;
+        left: 680px; }
+      .index section .worldMap .snackMap > :nth-child(3) {
+        top: 590px;
+        left: 220px;
+        width: 170px; }
+      .index section .worldMap .snackMap > :nth-child(4) {
+        top: 100px;
+        left: 500px;
+        width: 90px; }
+      .index section .worldMap .snackMap > :nth-child(5) {
+        top: 520px;
+        left: 560px;
+        width: 90px; }
+      .index section .worldMap .snackMap > :nth-child(6) {
+        top: 90px;
+        left: 910px;
+        width: 90px; }
+      .index section .worldMap .snackMap > :nth-child(7) {
+        top: 320px;
+        left: 1000px; }
+      .index section .worldMap .snackMap > :nth-child(8) {
+        top: 500px;
+        left: 960px;
+        width: 150px; }
 
 @keyframes aaa {
   0% {
