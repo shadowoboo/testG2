@@ -1,9 +1,95 @@
 @import "reset.scss";
 @import "common.scss";
+body {
+    background-color: #b8f1ed;
+    width: 100%;
+    height: 100%;
+}
 
-.index{
-
-
-
-    width: 100px;
+.index {
+    width: 100%;
+    height: 100%;
+    section {
+        width: 100%;
+        .worldMap {
+            overflow: hidden;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            svg {
+                margin: 150px;
+            }
+            .countryMap {
+                >:nth-child(1) {
+                    top: 310px;
+                    left: 310px;
+                }
+                >:nth-child(2) {
+                    top: 290px;
+                    left: 610px;
+                }
+                >:nth-child(3) {
+                    top: 510px;
+                    left: 380px;
+                }
+                >:nth-child(4) {
+                    top: 150px;
+                    left: 450px;
+                }
+                >:nth-child(5) {
+                    top: 420px;
+                    left: 560px;
+                }
+                >:nth-child(6) {
+                    top: 180px;
+                    left: 1000px;
+                }
+                >:nth-child(7) {
+                    top: 330px;
+                    left: 950px;
+                }
+                >:nth-child(8) {
+                    top: 540px;
+                    left: 910px;
+                }
+            }
+            .countryImg {
+                width: 50px;
+                position: absolute;
+            }
+            img{
+                position: relative;
+                z-index: 1;
+            }
+            .countryImg:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                top: 10px;
+                left: 5px;
+                background-color: #fff;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 30px #fff;
+                opacity: .5;
+                z-index: 1;
+                animation: aaa 1.5s linear infinite alternate;
+            }
+            .snackImg{
+                width: 100px;
+            }
+            
+            @keyframes aaa {
+                0%{transform: scale(0.6)}
+                100%{transform: scale(0.8)}
+            }
+        }
+        @media screen and (min-width:768px) {
+            section {
+                overflow: unset;
+            }
+        }
+    }
 }

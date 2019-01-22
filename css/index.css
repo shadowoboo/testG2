@@ -317,5 +317,76 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
+body {
+  background-color: #b8f1ed;
+  width: 100%;
+  height: 100%; }
+
 .index {
-  width: 100px; }
+  width: 100%;
+  height: 100%; }
+  .index section {
+    width: 100%; }
+    .index section .worldMap {
+      overflow: hidden;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      position: relative; }
+      .index section .worldMap svg {
+        margin: 150px; }
+      .index section .worldMap .countryMap > :nth-child(1) {
+        top: 310px;
+        left: 310px; }
+      .index section .worldMap .countryMap > :nth-child(2) {
+        top: 290px;
+        left: 610px; }
+      .index section .worldMap .countryMap > :nth-child(3) {
+        top: 510px;
+        left: 380px; }
+      .index section .worldMap .countryMap > :nth-child(4) {
+        top: 150px;
+        left: 450px; }
+      .index section .worldMap .countryMap > :nth-child(5) {
+        top: 420px;
+        left: 560px; }
+      .index section .worldMap .countryMap > :nth-child(6) {
+        top: 180px;
+        left: 1000px; }
+      .index section .worldMap .countryMap > :nth-child(7) {
+        top: 330px;
+        left: 950px; }
+      .index section .worldMap .countryMap > :nth-child(8) {
+        top: 540px;
+        left: 910px; }
+      .index section .worldMap .countryImg {
+        width: 50px;
+        position: absolute; }
+      .index section .worldMap img {
+        position: relative;
+        z-index: 1; }
+      .index section .worldMap .countryImg:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 30px #fff;
+        opacity: .5;
+        z-index: 1;
+        animation: aaa 1.5s linear infinite alternate; }
+      .index section .worldMap .snackImg {
+        width: 100px; }
+
+@keyframes aaa {
+  0% {
+    transform: scale(0.6); }
+  100% {
+    transform: scale(0.8); } }
+    @media screen and (min-width: 768px) {
+      .index section section {
+        overflow: unset; } }
