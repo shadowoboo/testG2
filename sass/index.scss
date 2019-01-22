@@ -11,13 +11,16 @@ body {
     height: 100%;
     section {
         width: 100%;
+        position: relative;
         .worldMap {
             overflow: hidden;
             max-width: 1200px;
             margin: auto;
             text-align: center;
             position: relative;
-            svg {
+            >img {
+                width: 900px;
+                min-width: 600px;
                 margin: 150px;
             }
             .countryMap {
@@ -120,16 +123,62 @@ body {
                     left: 960px;
                     width: 150px;
                 }
-
             }
-            
             @keyframes aaa {
                 0%{transform: scale(0.6)}
                 100%{transform: scale(0.8)}
             }
         }
+        .cloudMap{
+            .cloudImg{
+                width: 100px;
+                position: absolute;
+            }
+            >:nth-child(1) {
+                top: 50px;
+                left: 80px;
+                width: 50px;
+            }
+            >:nth-child(2) {
+                top: 170px;
+                left: 100px;
+            }
+            >:nth-child(3) {
+                top: 70px;
+                left: 250px;
+            }
+            >:nth-child(4) {
+                top: 50px;
+                right: 80px;
+            }
+            >:nth-child(5) {
+                top: 170px;
+                right: 100px;
+                width: 50px;
+            }
+            >:nth-child(6) {
+                top: 70px;
+                right: 250px;
+                width: 50px;
+            }
+
+        }
+        .balloonMap{
+            .ballImg{
+                width: 80px;
+                position: absolute;
+            }
+            >:nth-child(1) {
+                top: 430px;
+                left: 110px;
+            }
+            >:nth-child(2) {
+                top: 370px;
+                right: 30px;
+            }
+        }
         @media screen and (min-width:768px) {
-            section {
+            .worldMap {
                 overflow: unset;
             }
         }

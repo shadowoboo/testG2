@@ -326,14 +326,17 @@ body {
   width: 100%;
   height: 100%; }
   .index section {
-    width: 100%; }
+    width: 100%;
+    position: relative; }
     .index section .worldMap {
       overflow: hidden;
       max-width: 1200px;
       margin: auto;
       text-align: center;
       position: relative; }
-      .index section .worldMap svg {
+      .index section .worldMap > img {
+        width: 900px;
+        min-width: 600px;
         margin: 150px; }
       .index section .worldMap .countryMap .countryImg {
         width: 50px;
@@ -418,6 +421,39 @@ body {
     transform: scale(0.6); }
   100% {
     transform: scale(0.8); } }
+    .index section .cloudMap .cloudImg {
+      width: 100px;
+      position: absolute; }
+    .index section .cloudMap > :nth-child(1) {
+      top: 50px;
+      left: 80px;
+      width: 50px; }
+    .index section .cloudMap > :nth-child(2) {
+      top: 170px;
+      left: 100px; }
+    .index section .cloudMap > :nth-child(3) {
+      top: 70px;
+      left: 250px; }
+    .index section .cloudMap > :nth-child(4) {
+      top: 50px;
+      right: 80px; }
+    .index section .cloudMap > :nth-child(5) {
+      top: 170px;
+      right: 100px;
+      width: 50px; }
+    .index section .cloudMap > :nth-child(6) {
+      top: 70px;
+      right: 250px;
+      width: 50px; }
+    .index section .balloonMap .ballImg {
+      width: 80px;
+      position: absolute; }
+    .index section .balloonMap > :nth-child(1) {
+      top: 430px;
+      left: 110px; }
+    .index section .balloonMap > :nth-child(2) {
+      top: 370px;
+      right: 30px; }
     @media screen and (min-width: 768px) {
-      .index section section {
+      .index section .worldMap {
         overflow: unset; } }
