@@ -1,6 +1,9 @@
 .section {
-  width: 100%;
-  height: 100vh; }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: 1200px; }
 
 #section_3 .camera {
   width: 100%;
@@ -336,7 +339,7 @@
 .section_15 {
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center; }
   .section_15 .camera {
     width: 100%;
@@ -434,7 +437,8 @@
     height: 600px;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    background: #fff; }
     .section_15 .pics .pic {
       width: 100px;
       height: 100px;
@@ -453,21 +457,21 @@
       box-shadow: 2px 2px 5px #0000004b;
       cursor: pointer; }
 
-#ctrl_bar {
-  position: fixed;
-  z-index: 10;
-  width: 90%;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, 0%);
-  display: flex;
-  justify-content: space-around; }
-  #ctrl_bar .btn {
-    width: 100px;
-    height: 40px;
-    margin: 0px 10px;
-    padding: 10px;
-    background-color: #ffa;
-    text-align: center;
-    box-shadow: 2px 2px 5px #0000004b;
-    cursor: pointer; }
+.left {
+  width: 50%; }
+  .left #ctrl_bar {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 10; }
+    .left #ctrl_bar .btn {
+      width: 70px;
+      height: 20px;
+      padding: 10px;
+      background-color: #ffa;
+      text-align: center;
+      box-shadow: 2px 2px 5px #0000004b;
+      cursor: pointer; }
+    .left #ctrl_bar .showBox {
+      width: 100%;
+      height: 420px; }
