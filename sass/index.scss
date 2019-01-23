@@ -16,7 +16,7 @@ body {
             overflow: hidden;
             max-width: 1200px;
             margin: auto;
-            text-align: center;
+            // text-align: center;
             position: relative;
             >img {
                 width: 900px;
@@ -27,44 +27,66 @@ body {
                 .countryImg {
                     width: 50px;
                     position: absolute;
-                    animation: ccc 1s linear;
+                    // animation: ccc 1s linear;
                     img{
                         position: relative;
                         z-index: 1;
                     }
-                    @keyframes ccc {
-                        0%{transform: translateY(-900px)}
-                        100%{transform: translateY(0px)}
-                    }
+                    // @keyframes ccc {
+                    //     0%{transform: translateY(-900px)}
+                    //     100%{transform: translateY(0px)}
+                    // }
                     .countryInfo{
-                        width: 700px;
-                        background-color: rgba(255,255,255,0.8);
+                        transition: 1s;
+                        display: none;
+                        position: relative;
+                        z-index: 2;
+                        width: 500px;
+                        background-color: rgba(255,255,255,0.9);
                         border-radius: 10px;
                         .countryInfoHeader{
                             display: flex;
                             align-items: center;
                             justify-content: space-around;
-                            text-align: center;
                             .countryInfoRadar{
-                                height: 200px;
-                                width: 200px;
+                                height: 180px;
+                                width: 180px;
                             }
                             .countryInfoImg{
-                                width: 150px;
+                                width: 130px;
                             }
                             .countryInfoStar{
-                                width: 150px;
+                                width: 130px;
                                 li{
                                     font-size: 22px;
+                                    font-family: g2Font;
                                     color: #737374;
                                 }
                             }
                         }
+                        .countryInfosection{
+                            color: #737374;
+                            width: 400px;
+                            margin: auto;
+                            h2{
+                                text-align: center;
+                            }
+                        }
+                        .countryInfofooter{
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            padding: 20px 0;
+                            .countryInfoPrice{
+                                color: #737374;
+                                span{font-size: 28px;}
+                            }
+                        }
                     }
                 }
-                // .countryImg:hover {
-
-                // }
+                .countryImg:hover .countryInfo{
+                    display: block;
+                }
                 .countryImg:before {
                     content: '';
                     display: block;

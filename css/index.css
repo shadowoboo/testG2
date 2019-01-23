@@ -333,7 +333,6 @@ body {
       overflow: hidden;
       max-width: 1200px;
       margin: auto;
-      text-align: center;
       position: relative; }
       .index section .worldMap > img {
         width: 900px;
@@ -341,36 +340,50 @@ body {
         margin: 150px; }
       .index section .worldMap .countryMap .countryImg {
         width: 50px;
-        position: absolute;
-        animation: ccc 1s linear; }
+        position: absolute; }
         .index section .worldMap .countryMap .countryImg img {
           position: relative;
           z-index: 1; }
-
-@keyframes ccc {
-  0% {
-    transform: translateY(-900px); }
-  100% {
-    transform: translateY(0px); } }
         .index section .worldMap .countryMap .countryImg .countryInfo {
-          width: 700px;
-          background-color: rgba(255, 255, 255, 0.8);
+          transition: 1s;
+          display: none;
+          position: relative;
+          z-index: 2;
+          width: 500px;
+          background-color: rgba(255, 255, 255, 0.9);
           border-radius: 10px; }
           .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            text-align: center; }
+            justify-content: space-around; }
             .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
-              height: 200px;
-              width: 200px; }
+              height: 180px;
+              width: 180px; }
             .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
-              width: 150px; }
+              width: 130px; }
             .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
-              width: 150px; }
+              width: 130px; }
               .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
                 font-size: 22px;
+                font-family: g2Font;
                 color: #737374; }
+          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfosection {
+            color: #737374;
+            width: 400px;
+            margin: auto; }
+            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfosection h2 {
+              text-align: center; }
+          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0; }
+            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice {
+              color: #737374; }
+              .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice span {
+                font-size: 28px; }
+      .index section .worldMap .countryMap .countryImg:hover .countryInfo {
+        display: block; }
       .index section .worldMap .countryMap .countryImg:before {
         content: '';
         display: block;
