@@ -35,7 +35,7 @@ gulp.task('default', ['sass'], function () {
         },
 
         //php工作方式
-        //檔案放到server工作的目錄下
+        //整個專案放到server工作的目錄下
         //連接php server的 port
         //proxy指向php server下的工作資料夾
         //ex: proxy:"localhost:80/testG2",
