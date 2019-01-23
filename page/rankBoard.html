@@ -14,14 +14,17 @@
     <!-- header End -->
 
     <section>
+        <!-- 背後一直滾動的商品 請參考阿嬤的移動膠片 -->
         <div class="rollingItem mNone" id="roll_1"></div>
         <div class="rollingItem mNone" id="roll_2"></div> 
 
+        <!-- 阿就放標題的雲 -->
         <div class="title" id="titleAll">
             <h2>本月排行</h2>
             <img src="" alt="本月排行雲">
         </div>
 
+        <!-- 第一名的糖果 -->
         <div class="item" id="rank_1">
             <img class="itemCountry" src="" alt="國家">
             <img class="itemImg" src="" alt="產品圖">
@@ -30,6 +33,7 @@
             <div class="star"><img src="" alt="星等"></div>
         </div>
 
+        <!-- 第二名的糖果 -->
         <div class="item" id="rank_2">
             <img class="itemCountry" src="" alt="國家">
             <img class="itemImg" src="" alt="產品圖">
@@ -38,6 +42,7 @@
             <div class="star"><img src="" alt="星等"></div>
         </div>
 
+        <!-- 第三名的糖果 -->
         <div class="item" id="rank_3">
             <img class="itemCountry" src="" alt="國家">
             <img class="itemImg" src="" alt="產品圖">
@@ -51,12 +56,13 @@
 
 
     <section>
-
+        <!-- 阿就標題的雲  Cat=category-->
         <div class="title" id="titleCat">
             <h2>本月餅乾</h2>
             <img src="" alt="種類排行雲">
         </div>
 
+        <!-- 左側選種類的單 -->
         <aside>
             <div class="switch sw_class" id="sw_all">綜合排行</div>
             <div class="switch sw_class" id="sw_cookie">餅乾</div>
@@ -65,6 +71,7 @@
             <div class="switch sw_class" id="sw_chip">洋芋片</div>
         </aside>
 
+        <!-- 中間的轉盤 -->
         <div id="rankPanel">
             <img src="" alt="圓圈底圖">
 
@@ -86,7 +93,8 @@
             <div class="switch sw_rk" id="sw_6">6</div>
         </div>
 
-        <div class="detail">
+        <div class="itemDetail">
+
             <img src="" alt="商品圖">
             <h4>[日本]</h4>
             <h2>UHA味覺糖甘藷片</h2>
@@ -94,11 +102,12 @@
             <div id="catRank">2019年1月餅乾排行 第1名</div>
             <div id="flaRank">2019年1月甜食排行 第1名</div>
 
-            <div id="btns">
-                <a href=""><button class="detail">商品詳細</button></a>
-                <a href=""><button class="cart">加入購物車</button></a>
+            <div id="itemBtns">
+                <button class="detail">商品詳細</button>
+                <button class="cart">加入購物車</button>
                 <button class="heart"><i class="far fa-heart"></i></button>
             </div>
+
             <hr>
 
             <div id="eva">
@@ -107,10 +116,39 @@
                     <p class="scoreAvg">4.7<span class="total">/5</span></p>
                     <div class="starAvg"><img src="" alt="星等"></div>
                 </div>
-                <div class="rader">
+                <div id="rader">
                         <canvas id="radarCanvas"></canvas>
                 </div>
             </div>
+
+            <div id="comments">
+                <h3>商品評價</h3>
+
+                <div class="comment">
+
+                    <div class="mem">
+                        <div class="memCol">
+                            <img src="" alt="會員頭像" class="memImg">
+                        </div>
+                        <div class="memCol">
+                            <p class="memId">Apple12345678</p>
+                            <div class="starAvg"><img src="" alt="星等"></div>
+                        </div>
+                    </div>
+
+                    <p class="commentCtx">
+                        真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                    </p>
+
+                    <div class="commentBtns">
+                        <button class="like">說讚(0人)</button>
+                        <button class="share">分享</button>
+                        <button class="msg">隱藏留言</button>
+                    </div> 
+                </div>
+            </div>
+
+
         </div>
     </section>
     <!-- footer Start -->
