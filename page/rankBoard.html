@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大零食家 每月排行</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/rankBoard.css">
+</head>
+<body>
+    <!-- header Start -->
+    <!-- header End -->
+
+    <section>
+        <div class="rollingItem mNone" id="roll_1"></div>
+        <div class="rollingItem mNone" id="roll_2"></div> 
+
+        <div class="title" id="titleAll">
+            <h2>本月排行</h2>
+            <img src="" alt="本月排行雲">
+        </div>
+
+        <div class="item" id="rank_1">
+            <img class="itemCountry" src="" alt="國家">
+            <img class="itemImg" src="" alt="產品圖">
+            <p class="itemName">[美國]<br>湖！洋芋片</p>
+            <p class="score">4.9<span class="total">/5</span></p>
+            <div class="star"><img src="" alt="星等"></div>
+        </div>
+
+        <div class="item" id="rank_2">
+            <img class="itemCountry" src="" alt="國家">
+            <img class="itemImg" src="" alt="產品圖">
+            <p class="itemName">[美國]<br>湖！洋芋片</p>
+            <p class="score">4.8<span class="total">/5</span></p>
+            <div class="star"><img src="" alt="星等"></div>
+        </div>
+
+        <div class="item" id="rank_3">
+            <img class="itemCountry" src="" alt="國家">
+            <img class="itemImg" src="" alt="產品圖">
+            <p class="itemName">[美國]<br>湖！洋芋片</p>
+            <p class="score">4.7<span class="total">/5</span></p>
+            <div class="star"><img src="" alt="星等"></div>
+        </div>
+
+    </section>
+
+
+
+    <section>
+
+        <div class="title" id="titleCat">
+            <h2>本月餅乾</h2>
+            <img src="" alt="種類排行雲">
+        </div>
+
+        <aside>
+            <div class="switch sw_class" id="sw_all">綜合排行</div>
+            <div class="switch sw_class" id="sw_cookie">餅乾</div>
+            <div class="switch sw_class" id="sw_candy">糖果</div>
+            <div class="switch sw_class" id="sw_choco">巧克力</div>
+            <div class="switch sw_class" id="sw_chip">洋芋片</div>
+        </aside>
+
+        <div id="rankPanel">
+            <img src="" alt="圓圈底圖">
+
+            <div id="rank_ring">
+                <!-- 先把置中再去對位置 -->
+                <div class="switch sw_ring" id="sw_ring"></div>
+            </div>
+
+            <div id="ipIcon">
+                <img src="" alt="各類別圖片" id="ipImg">
+                <img src="" alt="背景光" id="glow">
+            </div>
+
+            <div class="switch sw_rk" id="sw_1">1</div>
+            <div class="switch sw_rk" id="sw_2">2</div>
+            <div class="switch sw_rk" id="sw_3">3</div>
+            <div class="switch sw_rk" id="sw_4">4</div>
+            <div class="switch sw_rk" id="sw_5">5</div>
+            <div class="switch sw_rk" id="sw_6">6</div>
+        </div>
+
+        <div class="detail">
+            <img src="" alt="商品圖">
+            <h4>[日本]</h4>
+            <h2>UHA味覺糖甘藷片</h2>
+            <div id="allRank">2019年1月綜合排行 第1名</div>
+            <div id="catRank">2019年1月餅乾排行 第1名</div>
+            <div id="flaRank">2019年1月甜食排行 第1名</div>
+
+            <div id="btns">
+                <a href=""><button class="detail">商品詳細</button></a>
+                <a href=""><button class="cart">加入購物車</button></a>
+                <button class="heart"><i class="far fa-heart"></i></button>
+            </div>
+            <hr>
+
+            <div id="eva">
+                <div class="score">
+                    <p id="evaTimes">共348次評價</p>
+                    <p class="scoreAvg">4.7<span class="total">/5</span></p>
+                    <div class="starAvg"><img src="" alt="星等"></div>
+                </div>
+                <div class="rader">
+                        <canvas id="radarCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer Start -->
+    <!-- footer End -->
+</body>
+</html>
