@@ -1,71 +1,15 @@
-
-//六面體，參數分別為x,y,z軸
-@mixin box3D( $boxI:100px,$boxJ:100px,$boxK:100px){
-    .camera{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        perspective:1000px;
-        // transform:perspective(500px);
-    }
-    .boxBase{
-        // margin: auto;
-        border: red 2px solid;
-        width: $boxI;
-        height: $boxK;
-        position: relative;
-        background-color: transparent;
-        transform-origin: center center;
-        transform: translateZ((-$boxJ/2)) rotateX(-30deg) rotateY(-30deg);
-        transform-style: preserve-3d;
-        transition: .3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .surface{
-        background-color: #aaf;
-        border: 1px dashed #0000004b;
-        position: absolute;
-        text-align: center;
-        font-size: 60px;
-        transform-origin: center center;
-    }
-    
-    
-    .surface_top{width: $boxI;height: $boxJ;transform:rotateX(90deg) translateZ(($boxK/2));line-height:  $boxJ;}
-    .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
-    
-    .surface_font{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
-    .surface_back{width: $boxI;height: $boxK;transform:rotateY(180deg) translateZ(($boxJ/2));line-height: $boxK;}
-    
-    .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
-    .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
-    
-    .surface_top{background-color: #fff;}
-    .surface_down{background-color: #fff;}
-    .surface_font{background-color: #faa;}
-    .surface_back{background-color: #aaf;}
-    .surface_left{background-color: #afa;}
-    .surface_right{background-color: #afa;}
-}
-
 //六面體，上蓋預留轉動空間，上蓋擁有內側div
 @mixin box3D_cover( $boxI:100px,$boxJ:100px,$boxK:100px){
     .camera{
         width: 100%;
-        height: 100%;
+        height:200px;
         display: flex;
         justify-content: center;
-        align-items: center;
         perspective:1000px;
         // transform:perspective(500px);
     }
     .boxBase{
         // margin: auto;
-        border: red 2px solid;
         width: $boxI;
         height: $boxK;
         position: relative;
@@ -109,196 +53,12 @@
 
 }
 
-//蓋子分內外側的話，要參考以前學過的翻牌來轉動+背面隱藏
-//配合box3D_cover打開箱蓋的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
-@mixin cover_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
-    $coverOffsetY:(($boxJ) - ($boxK))/2;
-    @keyframes cover_rotate{
-        100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg)};
-    }
-}
-//配合box3D_cover打開箱蓋內側的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
-@mixin cover_inner_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
-    $coverOffsetY:(($boxJ) - ($boxK))/2;
-    @keyframes cover_inner_rotate{
-        100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg) rotateY(180deg)};
-    }
-}
 
-
-
-
-
-//六面體，上蓋預留轉動空間，上蓋擁有內側div，下蓋也會打開
-@mixin box3D_cover_bot( $boxI:100px,$boxJ:100px,$boxK:100px){
-    .camera{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        perspective:1000px;
-        // transform:perspective(500px);
-    }
-    .boxBase{
-        // margin: auto;
-        border: red 2px solid;
-        width: $boxI;
-        height: $boxK;
-        position: relative;
-        background-color: transparent;
-        transform-origin: center center;
-        transform: translateZ((-$boxJ/2)) rotateX(-90deg) rotateY(-180deg);
-        transform-style: preserve-3d;
-        transition: .3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .surface{
-        background-color: #aaf;
-        border: 1px dashed #0000004b;
-        position: absolute;
-        text-align: center;
-        font-size: 60px;
-        transform-origin: center center;
-        transition: .5s;
-    }
-    
-    $coverOffsetY:(($boxJ) - ($boxK))/2;
-    .surface_top{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) ;line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
-    .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) rotateY(180deg);line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
-    // .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: center center;transform: translate3d(0,0,0)  rotateX(0deg) rotateY(180deg);line-height:  $boxJ; top:0; left:0; backface-visibility:hidden;}
-    .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
-    .surface_down_left{width: $boxJ;height: $boxI/2;transform-origin: top center;transform: translate3d(-$boxI/2,( $boxI/2/2+$boxK/2),0)  rotateY(-90deg) rotateX(-90deg) ;line-height:  $boxI/2;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
-    .surface_down_right{width: $boxJ;height: $boxI/2;transform-origin: top center;transform: translate3d($boxI/2,( $boxI/2/2+$boxK/2),0)  rotateY(90deg) rotateX(-90deg) ;line-height:  $boxI/2;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
-
-    
-    .surface_font{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
-    .surface_back{width: $boxI;height: $boxK;transform:rotateY(180deg) translateZ(($boxJ/2));line-height: $boxK;}
-    
-    .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
-    .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
-
-    .surface_top{background-color: #076baf;}
-    .surface_down{background-color: #076baf;}
-    .surface_font{background-color: #fbc84a;}
-    .surface_back{background-color: #fbc84a;}
-    .surface_left{background-color: #fbc84a;}
-    .surface_right{background-color: #fbc84a;}
-
-}
-
-//蓋子分內外側的話，要參考以前學過的翻牌來轉動+背面隱藏
-//配合box3D_cover打開箱蓋的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
-@mixin cover_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
-    $coverOffsetY:(($boxJ) - ($boxK))/2;
-    @keyframes cover_rotate{
-        100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg)};
-    }
-}
-//配合box3D_cover打開箱蓋內側的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
-@mixin cover_inner_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
-    $coverOffsetY:(($boxJ) - ($boxK))/2;
-    @keyframes cover_inner_rotate{
-        100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg) rotateY(180deg)};
-    }
-}
-
-//-----------------------以上公式區----------------------------------------
-
-
-
-
-
-
-
-//-------------------以下寫給實際使用區-----------------------------
-
-//讓箱子一屏幕一個，比較好觀看
-.section{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    width: 1200px;;
-}
-
-//建立六面體，只要長寬高
-#section_3{
-    @include box3D(300px,100px,400px);
-}
-
-
-//展示箱子打開效果
-//首頁用
-#section_9{
-    @include box3D_cover(500px, 300px,150px);
-    //藍：#076baf
-    //黃：#fbc84a
-
-    //正面蓋子打開
-    .surface_top{
-        animation: cover_rotate 3s ;
-        @include cover_rotate(210deg,500px,300px,150px);
-    }
-
-    //內側蓋子打開
-    .surface_top_inner{
-        animation: cover_inner_rotate 3s ;
-        @include cover_inner_rotate(210deg,500px,300px,150px);
-    }
-    
- 
-    .surface_top_inner{
-        background-color: #076baf;
-        display: flex;
-        //小圓點變色
-        .way{
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            &:last-child{
-                align-items: flex-end;
-            }
-            .light{
-                margin: 5px;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                // background-color: #fbc84a;
-                transition: .3s;
-                &:nth-child(2n).showLight{
-                    animation: light_show 0.5s 0.8s infinite reverse;
-                }
-                &:nth-child(2n-1).showLight{
-                    animation: light_show 0.5s infinite reverse;
-                }
-            }
-
-        }
-    }
-    @keyframes light_show{
-        0%{background-color: transparent; filter:blur(3px);}
-        100%{background-color: #fbc84a; filter:blur(5px);}
-    }
-
-}
-
-
-
-.section_12{
-    @include box3D_cover_bot(400px, 200px, 100px);
-}
 
 .section_15{
-    @include box3D_cover(400px, 200px, 100px);
+    @include box3D_cover(250px, 150px, 100px);
     display: flex;
-    // flex-wrap: wrap;
     position: relative;
-    justify-content:flex-end;
-    align-items: center;
     .surface{
             .droped_img{
                 display:block;
@@ -322,20 +82,18 @@
     // }
     .pics{
         width: 30%;
-        height: 600px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #fff;
         .pic{
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             cursor: move;
             // user-select: none;//讓使用者選div，不要選到圖片
         }
     }
         #btns15{
-        width: 25%;
+        // width: 25%;
         display: flex;
         justify-content: space-around;
             .btn{
@@ -353,17 +111,14 @@
 
 
 
-.left{
-    width:50%;
+.leftBox{
+    width: 500px;
+    // width:50%;
     //測試頁按鈕
     #ctrl_bar{
         position: absolute;
-        top: 20px;
-        left:40px;
         z-index: 10;
         .btn{
-            width: 70px;
-            height: 20px;
             padding: 10px;
             background-color: #ffa;
             text-align: center;
@@ -379,3 +134,235 @@
 
 
 }
+
+
+//六面體，參數分別為x,y,z軸
+// @mixin box3D( $boxI:100px,$boxJ:100px,$boxK:100px){
+//     .camera{
+//         width: 100%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         perspective:1000px;
+//     }
+//     .boxBase{
+     
+//         border: red 2px solid;
+//         width: $boxI;
+//         height: $boxK;
+//         position: relative;
+//         background-color: transparent;
+//         transform-origin: center center;
+//         transform: translateZ((-$boxJ/2)) rotateX(-30deg) rotateY(-30deg);
+//         transform-style: preserve-3d;
+//         transition: .3s;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+//     .surface{
+//         background-color: #aaf;
+//         border: 1px dashed #0000004b;
+//         position: absolute;
+//         text-align: center;
+//         font-size: 60px;
+//         transform-origin: center center;
+//     }
+    
+    
+//     .surface_top{width: $boxI;height: $boxJ;transform:rotateX(90deg) translateZ(($boxK/2));line-height:  $boxJ;}
+//     .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
+    
+//     .surface_font{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
+//     .surface_back{width: $boxI;height: $boxK;transform:rotateY(180deg) translateZ(($boxJ/2));line-height: $boxK;}
+    
+//     .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
+//     .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
+    
+//     .surface_top{background-color: #fff;}
+//     .surface_down{background-color: #fff;}
+//     .surface_font{background-color: #faa;}
+//     .surface_back{background-color: #aaf;}
+//     .surface_left{background-color: #afa;}
+//     .surface_right{background-color: #afa;}
+// }
+
+
+
+//蓋子分內外側的話，要參考以前學過的翻牌來轉動+背面隱藏
+//配合box3D_cover打開箱蓋的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
+// @mixin cover_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
+//     $coverOffsetY:(($boxJ) - ($boxK))/2;
+//     @keyframes cover_rotate{
+//         100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg)};
+//     }
+//}
+//配合box3D_cover打開箱蓋內側的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
+// @mixin cover_inner_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
+//     $coverOffsetY:(($boxJ) - ($boxK))/2;
+//     @keyframes cover_inner_rotate{
+//         100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg) rotateY(180deg)};
+//     }
+// }
+
+
+
+
+
+//六面體，上蓋預留轉動空間，上蓋擁有內側div，下蓋也會打開
+// @mixin box3D_cover_bot( $boxI:100px,$boxJ:100px,$boxK:100px){
+//     .camera{
+//         width: 100%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         perspective:1000px;
+//     }
+//     .boxBase{
+//         // margin: auto;
+//         border: red 2px solid;
+//         width: $boxI;
+//         height: $boxK;
+//         position: relative;
+//         background-color: transparent;
+//         transform-origin: center center;
+//         transform: translateZ((-$boxJ/2)) rotateX(-90deg) rotateY(-180deg);
+//         transform-style: preserve-3d;
+//         transition: .3s;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+//     .surface{
+//         background-color: #aaf;
+//         border: 1px dashed #0000004b;
+//         position: absolute;
+//         text-align: center;
+//         font-size: 60px;
+//         transform-origin: center center;
+//         transition: .5s;
+//     }
+    
+//     $coverOffsetY:(($boxJ) - ($boxK))/2;
+//     .surface_top{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) ;line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
+//     .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) rotateY(180deg);line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
+//     // .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: center center;transform: translate3d(0,0,0)  rotateX(0deg) rotateY(180deg);line-height:  $boxJ; top:0; left:0; backface-visibility:hidden;}
+//     .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
+//     .surface_down_left{width: $boxJ;height: $boxI/2;transform-origin: top center;transform: translate3d(-$boxI/2,( $boxI/2/2+$boxK/2),0)  rotateY(-90deg) rotateX(-90deg) ;line-height:  $boxI/2;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
+//     .surface_down_right{width: $boxJ;height: $boxI/2;transform-origin: top center;transform: translate3d($boxI/2,( $boxI/2/2+$boxK/2),0)  rotateY(90deg) rotateX(-90deg) ;line-height:  $boxI/2;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
+
+    
+//     .surface_font{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
+//     .surface_back{width: $boxI;height: $boxK;transform:rotateY(180deg) translateZ(($boxJ/2));line-height: $boxK;}
+    
+//     .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
+//     .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
+
+//     .surface_top{background-color: #076baf;}
+//     .surface_down{background-color: #076baf;}
+//     .surface_font{background-color: #fbc84a;}
+//     .surface_back{background-color: #fbc84a;}
+//     .surface_left{background-color: #fbc84a;}
+//     .surface_right{background-color: #fbc84a;}
+
+// }
+
+//蓋子分內外側的話，要參考以前學過的翻牌來轉動+背面隱藏
+//配合box3D_cover打開箱蓋的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
+// @mixin cover_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
+//     $coverOffsetY:(($boxJ) - ($boxK))/2;
+//     @keyframes cover_rotate{
+//         100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg)};
+//     }
+// }
+//配合box3D_cover打開箱蓋內側的動畫，輸入`打開角度` 和 `要打開箱子的長寬高`
+// @mixin cover_inner_rotate($openDeg:210deg,$boxI:100px,$boxJ:100px,$boxK:100px){
+//     $coverOffsetY:(($boxJ) - ($boxK))/2;
+//     @keyframes cover_inner_rotate{
+//         100%{transform:translate3d(0,$coverOffsetY,-($boxJ/2)) rotateX($openDeg) rotateY(180deg)};
+//     }
+// }
+
+//-----------------------以上公式區----------------------------------------
+
+
+
+
+
+
+
+//-------------------以下寫給實際使用區-----------------------------
+
+//讓箱子一屏幕一個，比較好觀看
+// .section{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     position: relative;
+// }
+
+//建立六面體，只要長寬高
+// #section_3{
+//     @include box3D(300px,100px,400px);
+// }
+
+
+//展示箱子打開效果
+//首頁用
+// #section_9{
+//     @include box3D_cover(500px, 300px,150px);
+    //藍：#076baf
+    //黃：#fbc84a
+
+    //正面蓋子打開
+    // .surface_top{
+    //     animation: cover_rotate 3s ;
+    //     @include cover_rotate(210deg,500px,300px,150px);
+    // }
+
+    //內側蓋子打開
+    // .surface_top_inner{
+    //     animation: cover_inner_rotate 3s ;
+    //     @include cover_inner_rotate(210deg,500px,300px,150px);
+    // }
+    
+ 
+//     .surface_top_inner{
+//         background-color: #076baf;
+//         display: flex;
+//         小圓點變色
+//         .way{
+//             width: 50%;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: space-between;
+//             &:last-child{
+//                 align-items: flex-end;
+//             }
+//             .light{
+//                 margin: 5px;
+//                 width: 30px;
+//                 height: 30px;
+//                 border-radius: 50%;
+//                 // background-color: #fbc84a;
+//                 transition: .3s;
+//                 &:nth-child(2n).showLight{
+//                     animation: light_show 0.5s 0.8s infinite reverse;
+//                 }
+//                 &:nth-child(2n-1).showLight{
+//                     animation: light_show 0.5s infinite reverse;
+//                 }
+//             }
+
+//         }
+//     }
+//     @keyframes light_show{
+//         0%{background-color: transparent; filter:blur(3px);}
+//         100%{background-color: #fbc84a; filter:blur(5px);}
+//     }
+
+// }
+
+
