@@ -1,103 +1,196 @@
 $cardX:800px;
 $cardY:600px;
+@mixin card3D($cardX:800px, $cardY:600px) {
+    .cardCamera {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+        .cardBase {
+            //整個卡片的動畫骨架
+            margin: auto;
+            outline: red dashed 5px;
+            position: relative;
+            background-color: transparent;
+            transform-origin: center center; //   transform: translateZ((-$boxJ/2)) rotateX(-90deg) rotateY(-180deg);
+            transform-style: preserve-3d;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } //預留樣式操作空間
+        .cardBaseCover {
+            //卡片上半部動畫骨架
+            // border: 1px dashed #0000004b;
+            transform-origin: center top;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .5s;
+            // backface-visibility: hidden;
+        }
+        .cardBaseContent {
+            //卡片下半部動畫骨架
+            // border: 1px dashed #0000004b;
+            transform-origin: center top;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .5s;
+            // backface-visibility: hidden;
+        }
+        .cardSurface,
+        .cardSurfaceInner {
+            //填充骨架的皮
+            width: 100%;
+            height: 100%;
+            background-color: #aaf;
+            text-align: center;
+            font-size: 60px;
+            transition: .5s; 
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+        // .cardSurface {
+        //     backface-visibility: hidden;
+        // }
+        // .cardSurfaceInner{
+        //     backface-visibility: hidden;
+        // } 
+        
+        .cardSurfaceInner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg); //內裡要反轉，且不可被drop
+        } 
+        //控制長寬
+        .cardBase {
+            width: $cardX;
+            height: $cardY;
+        }
+        .cardBaseCover {
+            width: $cardX;
+            height: $cardY;
+        }
+        .cardBaseContent {
+            width: $cardX;
+            height: $cardY;
+        } //控制背景色
+        .cardBaseCover {
+            .cardSurface {
+                background-color: #ffa;
+            } //封面
+            .cardSurfaceInner {
+                background-color: #aaf;
+            } //封面(裡)
+        }
+        .cardBaseContent {
+            .cardSurface {
+                background-color: #ffa;
+            } //內容
+            .cardSurfaceInner {
+                background-color: #afa;
+            } //封底
+        } //控制背景圖
+        .cardBaseCover {
+            .cardSurface {
+                background-image: url();
+            } //封面
+            .cardSurfaceInner {
+                background-image: url();
+            } //封面(裡)
+        }
+        .cardBaseContent {
+            .cardSurface {
+                background-image: url();
+            } //內容
+            .cardSurfaceInner {
+                background-image: url();
+            } //封底
+        }
+
+        //陰影測試
+        .cardBaseContent{
+            box-shadow: 10px 10px 30px #333;
+        }
+        .cardBaseCover{
+            box-shadow: 10px 10px 50px #333;
+        }
+    }
+}
+
+.textTeam{
+    width: 200px;
+    height: 100px;
+    // position: relative;
+    font-size: 20px;
+    overflow: auto;
+    resize: both;
+    // .ctrlPos{
+    //     // position: absolute;
+    //     // top:-20px;
+    //     // left: 0%;
+    //     width: 100%;
+    //     height: 20px;
+    //     background-color: #aaf;
+    // }
+    // .textarea {
+    //     // height: 100%;
+    //     width: 100%;
+    //     // padding: 0px;
+    //     font-size: 20px;
+    //     border: 1px solid #888;
+    // }
+    // .textarea:empty:before {
+    //     content: attr(placeholder);
+    //     color: #bbb;
+    // }
+}
+
 
 
 .section {
-  width: 100%;
-  height: 100vh;
-  background-color: #ccc;
-  .cardCamera {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    background-color: #ccc;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-    .cardBase { //整個卡片的動畫骨架
-      margin: auto;
-      outline: red dashed 5px;
-      position: relative;
-      background-color: transparent;
-      transform-origin: center center;
-      //   transform: translateZ((-$boxJ/2)) rotateX(-90deg) rotateY(-180deg);
-      transform-style: preserve-3d;
-      transition: 0.3s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    //卡片控制
+    @include card3D(400px,300px);
+    .cardBase {
+        transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+        animation: cardCome 1.5s reverse;
+    }
+    .cardBaseCover {
+        transform: rotateX(150deg);
+        animation: cardOpen 1.5s reverse;
     }
 
-    //預留樣式操作空間
-    .cardBaseCover{ //卡片上半部動畫骨架
-        border: 1px dashed #0000004b;
-        transform-origin: center top;
-        position: absolute;
-        top:0;
-        left:0;
-        transition: .5s;
+    @keyframes cardOpen {
+        0%{transform: rotateX(150deg);}
+        100%{transform: rotateX(0deg);}
     }
-    .cardBaseContent{ //卡片下半部動畫骨架
-        border: 1px dashed #0000004b;
-        transform-origin: center top;
-        position: absolute;
-        top:0;
-        left:0;
-        transition: .5s;
-    }
+    @keyframes cardCome{
+        0%{transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);}
+        100%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px);}
+    } 
+        
 
-    .cardSurface,
-    .cardSurfaceInner{ //填充骨架的皮
-        width: 100%;
-        height: 100%;
-        background-color: #aaf;
-        text-align: center;
-        font-size: 60px;
-        transition: .5s;
-        backface-visibility:hidden;
+    //按鈕控制
+    #btns7{
+        width: 25%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .btn7{
+            width: 40px;
+            height: 20px;
+            background-color: #ffa;
+            text-align: center;
+            cursor: pointer;
+        }
     }
-    .cardSurfaceInner{
-        position: absolute;
-        top:0;
-        left:0;
-        transform:rotateY(180deg); //內裡要反轉，且不可被drop
-    }
-
-    
-    //控制長寬
-    .cardBase{
-        width: $cardX;
-        height: $cardY;
-    }
-    .cardBaseCover{
-        width: $cardX;
-        height: $cardY;
-    }
-    .cardBaseContent{
-        width: $cardX;
-        height: $cardY;
-    }
-
-
-    //控制背景色
-    .cardBaseCover{
-        .cardSurface{background-color: #ffa;} //封面
-        .cardSurfaceInner{background-color: #aaf;} //封面(裡)
-    }
-    .cardBaseContent{
-        .cardSurface{background-color: #ffa;} //內容
-        .cardSurfaceInner{background-color: #afa;} //封底
-    }
-
-
-
-    //控制背景圖
-    .cardBaseCover{
-        .cardSurface{background-image: url();} //封面
-        .cardSurfaceInner{background-image: url();} //封面(裡)
-    }
-    .cardBaseContent{
-        .cardSurface{background-image: url();} //內容
-        .cardSurfaceInner{background-image: url();} //封底
-    }
-  }
 }
