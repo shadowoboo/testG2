@@ -8,6 +8,7 @@
     <!-- <link rel="stylesheet" href="../css/boxModel.css"> -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
 
 </head>
 <body>
@@ -83,7 +84,7 @@
     </div>
     <div class="snackHouse">
         <div class="roof">
-            <div class="pirce"></div>
+            <div class="priceSign">$150</div>
             <svg version="1.1" id="&#x5716;&#x5C64;_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 1164 201.655" style="enable-background:new 0 0 1164 201.655;" xml:space="preserve">
        <g>
@@ -174,27 +175,57 @@
                 </div>
             </div>
                 
-                
-                
-         
-                <div class="pics">
-                    <div class="pic">
-                        <img src="../images/customized/ip1.png" alt="">
-                    </div>
-                    <div class="pic">
-                        <img src="../images/customized/ip2.png" alt="">
-                    </div>
-                    <div class="pic">
-                        <img src="../images/customized/ip3.png" alt="">
-                    </div>
-                    <div class="pic">
-                        <img src="../images/customized/ip4.png" alt="">
-                    </div>
-                    <div class="pic">
-                        <img src="../images/customized/ip5.png" alt="">
-                    </div>
-                </div>
+            <div class="form">
+      
+                    <ul class="tab-group">
+                      <li class="tab active"><a href="#signup">顏色</a></li>
+                      <li class="tab"><a href="#login">圖片</a></li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                      <div id="signup">   
+                        
+                        
+                        <div class="top-row">
+                            <div class="pickColor">
+                                123
+                            </div>
+      
+   
+                        </div>
+
+                        
+                        </form>
+              
+                      </div>
+                      
+                      <div id="login">   
+                            <div class="pics">
+                                    <div class="pic">
+                                        <img src="../images/customized/ip1.png" alt="">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="../images/customized/ip2.png" alt="">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="../images/customized/ip3.png" alt="">
+                                    </div>
+                                    <div class="pic">
+                                        <img src="../images/customized/ip5.png" alt="">
+                                    </div>
+                                </div>
+                        <button class="button button-block"/>Up Load</button>
+                        
+                        </form>
+              
+                      </div>
+                      
+                    </div><!-- tab-content -->
+                    
+              </div> <!-- /form -->
+              
             </section>
+            
             <div class="stepRegion">
                 <button class="step mt">下一步</button> 
             </div>
@@ -583,5 +614,51 @@
     };
 
 </script>
+<script>
+
+        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+        
+        var $this = $(this),
+            label = $this.prev('label');
+      
+            if (e.type === 'keyup') {
+                  if ($this.val() === '') {
+                label.removeClass('active highlight');
+              } else {
+                label.addClass('active highlight');
+              }
+          } else if (e.type === 'blur') {
+              if( $this.val() === '' ) {
+                  label.removeClass('active highlight'); 
+                  } else {
+                  label.removeClass('highlight');   
+                  }   
+          } else if (e.type === 'focus') {
+            
+            if( $this.val() === '' ) {
+                  label.removeClass('highlight'); 
+                  } 
+            else if( $this.val() !== '' ) {
+                  label.addClass('highlight');
+                  }
+          }
+      
+      });
+      
+      $('.tab a').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+        
+        target = $(this).attr('href');
+      
+        $('.tab-content > div').not(target).hide();
+        
+        $(target).fadeIn(600);
+        
+      });
+      </script>
 </body>
 </html>

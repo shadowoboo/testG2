@@ -12,6 +12,7 @@ body{
     justify-content:space-around;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
     background-color: #fadfd4;
     .makingStep{
         display: flex;
@@ -20,7 +21,7 @@ body{
         align-items: center;
         width: 800px;
         height:100px;
-        margin-bottom: 60px;
+        margin-bottom:140px;
         .cloud{
             width:120px;
         }
@@ -97,7 +98,7 @@ body{
         }
     }
     .snackHouse{
-        height:400px;
+        height: 520px;
         background-color: #df9bac;
         border-radius:10px;
         border:19px solid #fca8b7;
@@ -105,6 +106,18 @@ body{
         .roof{
             position: relative;
             transform: scale(1.1) translateY(-62px);
+        }
+        .priceSign{
+            position: absolute;
+            top: -46px;
+            left:325px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 1;
+            color: #fff;
+            background-color: #fbc84a;
         }
         .container{
             display: flex;
@@ -131,7 +144,7 @@ body{
 //六面體，上蓋預留轉動空間，上蓋擁有內側div
 @mixin box3D_cover( $boxI:100px,$boxJ:100px,$boxK:100px){
     .camera{
-        width: 100%;
+        width:400px;
         height: 135px;
         display: flex;
         justify-content: center;
@@ -211,15 +224,14 @@ body{
     //     // user-select: none;
     // }
     .pics{
+        width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #fff;
-        border-radius: 5px;
-        border:10px solid #fbc849;
+   
         .pic{
-            width: 50px;
-            height: 50px;
+            flex:5;
             cursor: move;
             // user-select: none;//讓使用者選div，不要選到圖片
         }
@@ -248,12 +260,11 @@ body{
 
 
 .leftBox{
-    width: 500px;
+    // width: 500px;
     // width:50%;
     //測試頁按鈕
     #ctrl_bar{
         position: absolute;
-        top: -50px;
         z-index:20;
         .btn{
             width: 50px;
@@ -263,21 +274,198 @@ body{
             text-align: center;
             cursor: pointer;
         }
-    .showBox{
-        width: 100%;
-        height: 420px;
-    }    
 }
 
 }
+.showBox{
+    transform: translate(20px,61px);
+    width: 100%;
+    height: 420px;
+}    
 
 .stepRegion{
     width: 100%;
     height: 100px;
     text-align: center;
-    button{
-        margin-top: 50px;
-    }
+
 
 }
 
+$activeColor: #076baf;
+$form-bg: #fff;
+$main: #fbc84a;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: rgb(18, 17, 17);
+$gray: rgb(37, 33, 33);
+
+
+$bold: 600;
+
+
+
+
+
+a {
+  text-decoration:none;
+  color:$main;
+  transition:.5s ease;
+  &:hover {
+    color:$main-dark;
+  }
+}
+
+
+.tab-group {
+  list-style:none;
+  padding:0;
+  margin:0 0 40px 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba($gray-light,.25);
+    color:$gray-light;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    &:hover {
+      background:$main-dark;
+      color:$activeColor;
+    }
+  }
+  .active a {
+    background:$main;
+    color:$activeColor;
+  }
+}
+
+.tab-content > div:last-child {
+  display:none;
+}
+
+.form {
+    background:rgba($form-bg,.9);
+    padding: 40px;
+    max-width:600px;
+    margin:40px auto;
+    border-radius:10px;
+    box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+    border:10px solid #fbc849;
+    transform: translateY(-100px);
+  }
+
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($activeColor,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:22px;
+  .req {
+  	margin:2px;
+  	color:$main;
+  }
+}
+
+label.active {
+  transform:translateY(50px);
+  left:2px;
+  font-size:14px;
+  .req {
+    opacity:0;
+  }
+}
+
+label.highlight {
+	color:$activeColor;
+}
+
+input, textarea {
+  font-size:22px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  background-image:none;
+  border:1px solid $gray-light;
+  color:$activeColor;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.top-row {
+ .pickColor{
+     width: 300px;
+     height:178px;
+    border: 1px solid #faa;
+ }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child { 
+      margin:0;
+    }
+  }
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:$main;
+  color:$activeColor;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:100%;
+}
+
+.forgot {
+  margin-top:-20px;
+  text-align:right;
+}
