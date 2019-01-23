@@ -1,0 +1,103 @@
+$cardX:800px;
+$cardY:600px;
+
+
+.section {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  .cardCamera {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    .cardBase { //整個卡片的動畫骨架
+      margin: auto;
+      outline: red dashed 5px;
+      position: relative;
+      background-color: transparent;
+      transform-origin: center center;
+      //   transform: translateZ((-$boxJ/2)) rotateX(-90deg) rotateY(-180deg);
+      transform-style: preserve-3d;
+      transition: 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    //預留樣式操作空間
+    .cardBaseCover{ //卡片上半部動畫骨架
+        border: 1px dashed #0000004b;
+        transform-origin: center top;
+        position: absolute;
+        top:0;
+        left:0;
+        transition: .5s;
+    }
+    .cardBaseContent{ //卡片下半部動畫骨架
+        border: 1px dashed #0000004b;
+        transform-origin: center top;
+        position: absolute;
+        top:0;
+        left:0;
+        transition: .5s;
+    }
+
+    .cardSurface,
+    .cardSurfaceInner{ //填充骨架的皮
+        width: 100%;
+        height: 100%;
+        background-color: #aaf;
+        text-align: center;
+        font-size: 60px;
+        transition: .5s;
+        backface-visibility:hidden;
+    }
+    .cardSurfaceInner{
+        position: absolute;
+        top:0;
+        left:0;
+        transform:rotateY(180deg); //內裡要反轉，且不可被drop
+    }
+
+    
+    //控制長寬
+    .cardBase{
+        width: $cardX;
+        height: $cardY;
+    }
+    .cardBaseCover{
+        width: $cardX;
+        height: $cardY;
+    }
+    .cardBaseContent{
+        width: $cardX;
+        height: $cardY;
+    }
+
+
+    //控制背景色
+    .cardBaseCover{
+        .cardSurface{background-color: #ffa;} //封面
+        .cardSurfaceInner{background-color: #aaf;} //封面(裡)
+    }
+    .cardBaseContent{
+        .cardSurface{background-color: #ffa;} //內容
+        .cardSurfaceInner{background-color: #afa;} //封底
+    }
+
+
+
+    //控制背景圖
+    .cardBaseCover{
+        .cardSurface{background-image: url();} //封面
+        .cardSurfaceInner{background-image: url();} //封面(裡)
+    }
+    .cardBaseContent{
+        .cardSurface{background-image: url();} //內容
+        .cardSurfaceInner{background-image: url();} //封底
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.section {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc; }
+  .section .cardCamera {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; }
+    .section .cardCamera .cardBase {
+      margin: auto;
+      outline: red dashed 5px;
+      position: relative;
+      background-color: transparent;
+      transform-origin: center center;
+      transform-style: preserve-3d;
+      transition: 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .section .cardCamera .cardBaseCover {
+      border: 1px dashed #0000004b;
+      transform-origin: center top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .5s; }
+    .section .cardCamera .cardBaseContent {
+      border: 1px dashed #0000004b;
+      transform-origin: center top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .5s; }
+    .section .cardCamera .cardSurface,
+    .section .cardCamera .cardSurfaceInner {
+      width: 100%;
+      height: 100%;
+      background-color: #aaf;
+      text-align: center;
+      font-size: 60px;
+      transition: .5s;
+      backface-visibility: hidden; }
+    .section .cardCamera .cardSurfaceInner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg); }
+    .section .cardCamera .cardBase {
+      width: 800px;
+      height: 600px; }
+    .section .cardCamera .cardBaseCover {
+      width: 800px;
+      height: 600px; }
+    .section .cardCamera .cardBaseContent {
+      width: 800px;
+      height: 600px; }
+    .section .cardCamera .cardBaseCover .cardSurface {
+      background-color: #ffa; }
+    .section .cardCamera .cardBaseCover .cardSurfaceInner {
+      background-color: #aaf; }
+    .section .cardCamera .cardBaseContent .cardSurface {
+      background-color: #ffa; }
+    .section .cardCamera .cardBaseContent .cardSurfaceInner {
+      background-color: #afa; }
+    .section .cardCamera .cardBaseCover .cardSurface {
+      background-image: url(); }
+    .section .cardCamera .cardBaseCover .cardSurfaceInner {
+      background-image: url(); }
+    .section .cardCamera .cardBaseContent .cardSurface {
+      background-image: url(); }
+    .section .cardCamera .cardBaseContent .cardSurfaceInner {
+      background-image: url(); }
