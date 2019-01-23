@@ -29,8 +29,19 @@ gulp.task('default', ['sass'], function () {
         server: {
             //根目錄
             baseDir: "./",
-            // index: "index.html"
-        }
+            index: "index.html",
+            // baseDir:"./code testing",
+
+        },
+
+        //php工作方式
+        //檔案放到server工作的目錄下
+        //連接php server的 port
+        //proxy指向php server下的工作資料夾
+        //ex: proxy:"localhost:80/testG2",
+        //就會利用代理的方式連進server，吃到php的效果
+        //p.s. proxy 跟 server只能擇一
+        // proxy:"localhost:80/testG2", 
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['sass']).on('change', reload);
