@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-    <script src="node_modules\gsap\src\minified\TweenMax.min.js"></script>
-    <script src="node_modules\jquery-custom\jquery.1\dist\jquery.min.js"></script>
+    <script src="../js/TweenMax.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/Chart.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
     <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
 </head>
@@ -17,6 +20,28 @@
                 <div class="countryMap">
                     <div class="countryImg">
                         <img src="../images/index/US.png" alt="美國座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas id="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h3>[日本] UHA味覺糖甘藷片</h3>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter"></div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/DE.png" alt="德國座標">
@@ -41,49 +66,49 @@
                     </div>
                 </div>
                 <div class="snackMap" id="container">
-                    <div class="snackImg" class="slide1">
+                    <div class="snackImg slide1">
                         <img src="../images/index/snack-us.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide2">
+                    <div class="snackImg slide2">
                         <img src="../images/index/snack-de.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide3">
+                    <div class="snackImg slide3">
                         <img src="../images/index/snack-br.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide1">
+                    <div class="snackImg slide4">
                         <img src="../images/index/snack-uk.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide2">
+                    <div class="snackImg slide5">
                         <img src="../images/index/snack-eg.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide3">
+                    <div class="snackImg slide1">
                         <img src="../images/index/snack-kr.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide1">
+                    <div class="snackImg slide2">
                         <img src="../images/index/snack-jp.png" alt="零食icon">
                     </div>
-                    <div class="snackImg" class="slide2">
+                    <div class="snackImg slide3">
                         <img src="../images/index/snack-au.png" alt="零食icon">
                     </div>
                 </div>  
             </div>
-            <div class="cloudMap">
-                <div class="cloudImg">
+            <div class="cloudMap" id="container">
+                <div class="cloudImg slide1">
                     <img src="../images/index/cloud-5.png" alt="地圖雲">
                 </div>
-                <div class="cloudImg">
+                <div class="cloudImg slide2">
                     <img src="../images/index/cloud-6.png" alt="地圖雲">
                 </div>
-                <div class="cloudImg">
+                <div class="cloudImg slide3">
                     <img src="../images/index/cloud-7.png" alt="地圖雲">
                 </div>
-                <div class="cloudImg">
+                <div class="cloudImg slide4">
                     <img src="../images/index/cloud-1.png" alt="地圖雲">
                 </div>
-                <div class="cloudImg">
+                <div class="cloudImg slide5">
                     <img src="../images/index/cloud-2.png" alt="地圖雲">
                 </div>
-                <div class="cloudImg">
+                <div class="cloudImg slide1">
                     <img src="../images/index/cloud-3.png" alt="地圖雲">
                 </div>
             </div>
@@ -125,8 +150,83 @@
                 parallaxIt(e, ".slide1", -100);
                 parallaxIt(e, ".slide2", -50);
                 parallaxIt(e, ".slide3", -75);
+                parallaxIt(e, ".slide4", -25);
+                parallaxIt(e, ".slide5", -125);
+
             });
         }     
+        window.addEventListener('load', doFirst);
+    </script>
+
+<script>
+        //建立一個圖表，內容就是follow套件chart.js的規則
+        function createRadar(){
+            var ctx = document.getElementById("radarCanvas").getContext('2d');
+            Chart.defaults.global.legend.display = false;
+            Chart.defaults.global.tooltips = false;
+            //改字體大小
+            Chart.defaults.global.defaultFontSize = 20;
+            //因為畫完一次圖表之後希望可以再變動，所以用變數代表每個項目的值
+            good = 3;
+            sweet = 3;
+            sour = 3;
+            spicy = 3;
+            radarOptions =
+                {
+                    scale:
+                    {
+                        ticks:
+                        {
+                            fontSize: 10,
+                            beginAtZero: true,
+                            maxTicksLimit: 7,
+                            min: 0,
+                            max: 5
+                        },
+                        pointLabels:
+                        {
+                            fontSize: 18,
+                            color: '#0044BB'
+                        },
+                        gridLines:
+                        {
+                            // color: '#009FCC'
+                        }
+                    },
+                    maintainAspectRatio: false
+                };
+            radarCanvas = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    //項目標籤的文字
+                    labels: ["Good", "Sweet", "Sour", "Spicy"],
+                    datasets: [{
+                        // label: '# of Votes',
+                        data: [good, sweet, sour, spicy],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                        ],
+                        borderWidth: 1,
+                        //端點的大小
+                        pointRadius: 4,
+                    }]
+                },
+                options: radarOptions
+            });
+        }
+        function doFirst(){
+            //呼叫函式，透過chart.js套件建立雷達圖
+            createRadar();
+            //取得input range們的物件關聯，並建立input事件聆聽函式updateRadar
+            //(input類型的物件只要值有改變就是發生input事件)
+            ranges = document.getElementsByClassName('radarRange');
+            for(var i = 0; i < ranges.length; i++){
+                ranges[i].addEventListener('input', updateRadar);
+            }
+        }
         window.addEventListener('load', doFirst);
     </script>
 </body>

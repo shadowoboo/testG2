@@ -27,11 +27,44 @@ body {
                 .countryImg {
                     width: 50px;
                     position: absolute;
+                    animation: ccc 1s linear;
                     img{
                         position: relative;
                         z-index: 1;
                     }
+                    @keyframes ccc {
+                        0%{transform: translateY(-900px)}
+                        100%{transform: translateY(0px)}
+                    }
+                    .countryInfo{
+                        width: 700px;
+                        background-color: rgba(255,255,255,0.8);
+                        border-radius: 10px;
+                        .countryInfoHeader{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            text-align: center;
+                            .countryInfoRadar{
+                                height: 200px;
+                                width: 200px;
+                            }
+                            .countryInfoImg{
+                                width: 150px;
+                            }
+                            .countryInfoStar{
+                                width: 150px;
+                                li{
+                                    font-size: 22px;
+                                    color: #737374;
+                                }
+                            }
+                        }
+                    }
                 }
+                // .countryImg:hover {
+
+                // }
                 .countryImg:before {
                     content: '';
                     display: block;
@@ -79,6 +112,13 @@ body {
                     top: 540px;
                     left: 910px;
                 }
+            }
+            #container {
+                position: absolute;
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                left: 0;
             }
             .snackMap{
                 .snackImg{
@@ -171,10 +211,16 @@ body {
             >:nth-child(1) {
                 top: 430px;
                 left: 110px;
+                animation: bbb 3s linear infinite alternate;
             }
             >:nth-child(2) {
                 top: 370px;
                 right: 30px;
+                animation: bbb 2s infinite alternate-reverse;
+            }
+            @keyframes bbb {
+                0%{transform: translateY(0)}
+                100%{transform: translateY(-100px)}
             }
         }
         @media screen and (min-width:768px) {

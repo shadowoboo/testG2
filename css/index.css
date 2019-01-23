@@ -62,10 +62,11 @@ a {
 
 @font-face {
   font-family: g2Font;
-  src: url(../GenJyuuGothicX-Bold.ttf); }
+  src: url(../GenJyuuGothicX-Medium.ttf); }
 
 h1, h2, h3, h4, p, span {
-  font-family: g2Font; }
+  font-family: g2Font;
+  line-height: 1.6em; }
 
 h1 {
   font-size: 40px; }
@@ -340,10 +341,36 @@ body {
         margin: 150px; }
       .index section .worldMap .countryMap .countryImg {
         width: 50px;
-        position: absolute; }
+        position: absolute;
+        animation: ccc 1s linear; }
         .index section .worldMap .countryMap .countryImg img {
           position: relative;
           z-index: 1; }
+
+@keyframes ccc {
+  0% {
+    transform: translateY(-900px); }
+  100% {
+    transform: translateY(0px); } }
+        .index section .worldMap .countryMap .countryImg .countryInfo {
+          width: 700px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 10px; }
+          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center; }
+            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
+              height: 200px;
+              width: 200px; }
+            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
+              width: 150px; }
+            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
+              width: 150px; }
+              .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
+                font-size: 22px;
+                color: #737374; }
       .index section .worldMap .countryMap .countryImg:before {
         content: '';
         display: block;
@@ -382,6 +409,12 @@ body {
       .index section .worldMap .countryMap > :nth-child(8) {
         top: 540px;
         left: 910px; }
+      .index section .worldMap #container {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0; }
       .index section .worldMap .snackMap .snackImg {
         width: 100px;
         position: absolute; }
@@ -450,10 +483,18 @@ body {
       position: absolute; }
     .index section .balloonMap > :nth-child(1) {
       top: 430px;
-      left: 110px; }
+      left: 110px;
+      animation: bbb 3s linear infinite alternate; }
     .index section .balloonMap > :nth-child(2) {
       top: 370px;
-      right: 30px; }
+      right: 30px;
+      animation: bbb 2s infinite alternate-reverse; }
+
+@keyframes bbb {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-100px); } }
     @media screen and (min-width: 768px) {
       .index section .worldMap {
         overflow: unset; } }

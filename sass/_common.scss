@@ -12,10 +12,11 @@ $moblie: 768px;
 
 @font-face {
   font-family: g2Font;
-  src: url(../GenJyuuGothicX-Bold.ttf);
+  src: url(../GenJyuuGothicX-Medium.ttf);
 }
 h1,h2,h3,h4,p,span{
     font-family: g2Font;
+    line-height: 1.6em;
 }
 h1{
     font-size: 40px;
