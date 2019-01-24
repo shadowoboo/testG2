@@ -1,0 +1,121 @@
+@import 'common';
+
+// *{
+//     outline: red solid 1px;
+// }
+.rankBoard{
+    //body
+    background-color: #c1f3d2;
+
+
+    .mNone{//手機上不顯示的物件
+        display: none;
+    }
+    #part2{
+        display: none;
+    }
+    .title{//標題雲
+        width: 260px;//260
+        height: 163px;
+        position: relative;
+        margin: auto;
+        text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("/images/rankBoard/titleCloud.png");
+        h2{
+            width: 100%;
+            position: absolute;
+            top:43%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            color: #076baf;
+            line-height: 1.2;
+        }
+
+    }
+
+    .item{
+        width: 21%;//252
+        max-width: 252px;
+        margin: 5vh auto;
+        position: relative;
+        .itemCountry{
+            width: 9.9%;
+            position: absolute;
+            top: 20%;
+            right: 13%;
+            border-radius: 100px;
+            box-shadow :0px 0px 20px rgba($color: #fff, $alpha: .7);
+        }
+        .itemCtx{
+            width: 62.3%;
+            // height: 244px;
+            position: absolute;
+            top: 28%;
+            left: 18%;
+            text-align: center;
+            .itemImg{
+                height:100%;
+                width: auto;
+                max-width: 157px;
+                img{
+                    width: auto;
+                    height: 157px;
+                    // width: 80%;     
+                }
+            }
+            .score{
+                font-size: 38px;
+                line-height: .9em;
+                color: #e97d58;
+            }
+
+        }
+        .star{
+            width: 54%;
+            max-width: 163px;
+            position: absolute;
+            bottom: 9%;
+            left: 17%;
+            border-radius: 100px 0 0 100px;
+            background-color: #e97d58;
+
+            img{
+                width:163px;
+            }
+        }
+    }
+
+// screen start
+    @media screen and (min-width:768px){
+        section{
+            max-width: 1200px;
+            margin: auto;
+        }
+
+            #titleAll{
+                margin-right: 0;
+    
+            }
+            .item{
+                margin: 0;
+            }
+            #rank_1{
+                position: absolute;
+                top: 0;
+                left:52%;
+            }
+    
+            #rank_2{
+                margin-top: 10%;
+                left: 30%;
+            }
+
+
+
+    }
+
+
+}
+

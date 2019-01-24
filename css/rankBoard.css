@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: g2Font;
+  src: url(../GenJyuuGothicX-Bold.ttf); }
+
+h1, h2, h3, h4, p, span {
+  font-family: g2Font;
+  line-height: 1.6em; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 34px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 22px; }
+
+p {
+  font-size: 16px; }
+
+span {
+  font-size: 14px; }
+
+.cart {
+  width: 150px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .cart:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.detail {
+  width: 150px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .detail:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.step {
+  width: 130px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .step:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.dimension {
+  width: 50px;
+  height: 50px;
+  color: #fbc84a;
+  background-color: #fff;
+  border: 2px solid #fbc84a;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .dimension:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.action {
+  width: 120px;
+  height: 40px;
+  color: #737374;
+  background-color: #fbc84a;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .action:hover {
+      color: #fff;
+      background-color: #ffb600; } }
+
+.category {
+  width: 120px;
+  height: 50px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .category:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.goToCustom {
+  width: 160px;
+  height: 60px;
+  color: #737374;
+  background-color: #fbe5dd;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .goToCustom:hover {
+      color: #737374;
+      background-color: #fca8b7; } }
+
+.subscribe {
+  width: 210px;
+  height: 60px;
+  color: #737374;
+  background-color: #fcda85;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .subscribe:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .month:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  position: relative; }
+  .month::after {
+    content: '';
+    display: block;
+    background-color: #00457b;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1; }
+
+.heart, .trash {
+  width: 56px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .heart:hover, .trash:hover {
+      background-color: #076baf;
+      color: #fff; } }
+
+.numInput {
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  position: relative;
+  border-radius: 10px;
+  margin: 10px 0px;
+  font-family: g2Font;
+  text-align: center; }
+  .numInput span {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #076baf;
+    position: absolute;
+    top: -2px;
+    line-height: 40px;
+    font-size: 30px;
+    cursor: pointer; }
+  .numInput .numMinus {
+    left: 0px;
+    border-radius: 10px 0 0 10px; }
+  .numInput .numPlus {
+    right: 0px;
+    border-radius: 0 10px 10px 0; }
+
+input[type=number] {
+  border: 0px solid transparent;
+  background-color: transparent;
+  font-size: 22px;
+  font-family: g2Font;
+  text-align: center;
+  width: 100%; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.rankBoard {
+  background-color: #c1f3d2; }
+  .rankBoard .mNone {
+    display: none; }
+  .rankBoard #part2 {
+    display: none; }
+  .rankBoard .title {
+    width: 260px;
+    height: 163px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/images/rankBoard/titleCloud.png"); }
+    .rankBoard .title h2 {
+      width: 100%;
+      position: absolute;
+      top: 43%;
+      left: 47%;
+      transform: translate(-50%, -50%);
+      color: #076baf;
+      line-height: 1.2; }
+  .rankBoard .item {
+    width: 21%;
+    max-width: 252px;
+    margin: 5vh auto;
+    position: relative; }
+    .rankBoard .item .itemCountry {
+      width: 9.9%;
+      position: absolute;
+      top: 20%;
+      right: 13%;
+      border-radius: 100px;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); }
+    .rankBoard .item .itemCtx {
+      width: 62.3%;
+      position: absolute;
+      top: 28%;
+      left: 18%;
+      text-align: center; }
+      .rankBoard .item .itemCtx .itemImg {
+        height: 100%;
+        width: auto;
+        max-width: 157px; }
+        .rankBoard .item .itemCtx .itemImg img {
+          width: auto;
+          height: 157px; }
+      .rankBoard .item .itemCtx .score {
+        font-size: 38px;
+        line-height: .9em;
+        color: #e97d58; }
+    .rankBoard .item .star {
+      width: 54%;
+      max-width: 163px;
+      position: absolute;
+      bottom: 9%;
+      left: 17%;
+      border-radius: 100px 0 0 100px;
+      background-color: #e97d58; }
+      .rankBoard .item .star img {
+        width: 163px; }
+  @media screen and (min-width: 768px) {
+    .rankBoard section {
+      max-width: 1200px;
+      margin: auto; }
+    .rankBoard #titleAll {
+      margin-right: 0; }
+    .rankBoard .item {
+      margin: 0; }
+    .rankBoard #rank_1 {
+      position: absolute;
+      top: 0;
+      left: 52%; }
+    .rankBoard #rank_2 {
+      margin-top: 10%;
+      left: 30%; } }

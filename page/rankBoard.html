@@ -6,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>大零食家 每月排行</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/rankBoard.css">
+
+    <script src="/js/common.js"></script>
 </head>
-<body>
+<body class="rankBoard">
     <!-- header Start -->
     <!-- header End -->
 
@@ -20,46 +24,67 @@
 
         <!-- 阿就放標題的雲 -->
         <div class="title" id="titleAll">
-            <h2>本月排行</h2>
-            <img src="" alt="本月排行雲">
+            <h2>本月<br>綜合排行</h2>
         </div>
 
-        <!-- 第一名的糖果 -->
-        <div class="item" id="rank_1">
-            <img class="itemCountry" src="" alt="國家">
-            <img class="itemImg" src="" alt="產品圖">
-            <p class="itemName">[美國]<br>湖！洋芋片</p>
-            <p class="score">4.9<span class="total">/5</span></p>
-            <div class="star"><img src="" alt="星等"></div>
-        </div>
+    
+            <!-- 第一名的糖果這整個DIV一起漂浮 -->
+            <div class="item" id="rank_1">
+                <img src="/images/rankBoard/rank1.png" alt="排名底圖">
+                <img class="itemCountry" src="/images/rankBoard/germany.png" alt="國家">
 
-        <!-- 第二名的糖果 -->
-        <div class="item" id="rank_2">
-            <img class="itemCountry" src="" alt="國家">
-            <img class="itemImg" src="" alt="產品圖">
-            <p class="itemName">[美國]<br>湖！洋芋片</p>
-            <p class="score">4.8<span class="total">/5</span></p>
-            <div class="star"><img src="" alt="星等"></div>
-        </div>
+                <div class="itemCtx">
+                    <div class="itemImg">
+                        <img  src="/images//rankBoard/item1.png" alt="產品圖">
+                    </div>  
+                    <p class="itemName">[德國]<br>湖！洋芋片</p>
+                    <p class="score">4.9<span class="total">/5</span></p>
+                
+                </div>
+                <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                
+            </div>
 
-        <!-- 第三名的糖果 -->
-        <div class="item" id="rank_3">
-            <img class="itemCountry" src="" alt="國家">
-            <img class="itemImg" src="" alt="產品圖">
-            <p class="itemName">[美國]<br>湖！洋芋片</p>
-            <p class="score">4.7<span class="total">/5</span></p>
-            <div class="star"><img src="" alt="星等"></div>
-        </div>
+            <!-- 第二名的糖果
+            <div class="item" id="rank_2">
+                <img src="/images/rankBoard/rank2.png" alt="排名底圖">
+                <img class="itemCountry" src="/images/rankBoard/usa.png" alt="國家">
 
+                <div class="itemCtx">
+                        <div class="itemImg">
+                                <img c src="/images//rankBoard/item2.png" alt="產品圖">
+                            </div>  
+                    <p class="itemName">[美國]<br>超橘子軟糖</p>
+                    <p class="score">4.8<span class="total">/5</span></p>
+                    
+                </div>
+                <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+            </div> -->
+<!-- 
+            第三名的糖果
+            <div class="item" id="rank_3">
+                <img src="/images/rankBoard/rank3.png" alt="排名底圖">
+                <img class="itemCountry" src="/images/rankBoard/japan.png" alt="國家">
+
+                <div class="itemCtx">
+                        <div class="itemImg">
+                                <img c src="/images//rankBoard/item3.png" alt="產品圖">
+                            </div>  
+                    <p class="itemName">[日本]<br>冬天的大人Pocky棒</p>
+                    <p class="score">4.7<span class="total">/5</span></p>
+                </div>
+                
+                <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+            </div> -->
+     
     </section>
 
 
 
-    <section>
+    <section id="part2">
         <!-- 阿就標題的雲  Cat=category-->
         <div class="title" id="titleCat">
-            <h2>本月餅乾</h2>
-            <img src="" alt="種類排行雲">
+            <h2>本月<br>巧克力排行</h2>
         </div>
 
         <!-- 左側選種類的單 -->
