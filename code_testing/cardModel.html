@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cardModel</title>
     <link rel="stylesheet" href="../css/cardModel.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -51,36 +52,36 @@
             elem.addEventListener("click", textCtrl);
         })
 
-        //利用mouseenter對內容區做監聽
-        //順帶觸發文字框框監聽
-        cardContent_7.addEventListener("mouseenter", function checkTextArea() {
-            var textTeam = document.getElementsByClassName("textTeam");
-            var len = textTeam.length;
-            // console.log(`textTeam len: ${len}`);
-            for (let i = 0; i < len; i++) {
-                textTeam[i].addEventListener("mouseenter", textTeamShow, false);
-                textTeam[i].addEventListener("mouseleave", textTeamHide,false);
-                textTeam[i].addEventListener("click", textTeamSelect, false);
-                textTeam[i].addEventListener("dragstart", cardDragStart);
-            }
+        // //利用mouseenter對內容區做監聽
+        // //順帶觸發文字框框監聽
+        // cardContent_7.addEventListener("mouseenter", function checkTextArea() {
+        //     var textTeam = document.getElementsByClassName("textTeam");
+        //     var len = textTeam.length;
+        //     // console.log(`textTeam len: ${len}`);
+        //     for (let i = 0; i < len; i++) {
+        //         textTeam[i].addEventListener("mouseenter", textTeamShow, false);
+        //         textTeam[i].addEventListener("mouseleave", textTeamHide,false);
+        //         textTeam[i].addEventListener("click", textTeamSelect, false);
+        //         textTeam[i].addEventListener("dragstart", cardDragStart);
+        //     }
 
-            var textarea = document.getElementsByClassName("textarea");
-            var len = textarea.length;
-            for (let i = 0; i < len; i++) {
-                textarea[i].addEventListener("focus", textareaFocus,false);
-                textarea[i].addEventListener("biur", textareaBlur, false);
-                textarea[i].addEventListener("click", textareaFocus, false);
-            }
+        //     var textarea = document.getElementsByClassName("textarea");
+        //     var len = textarea.length;
+        //     for (let i = 0; i < len; i++) {
+        //         textarea[i].addEventListener("focus", textareaFocus,false);
+        //         textarea[i].addEventListener("biur", textareaBlur, false);
+        //         textarea[i].addEventListener("click", textareaFocus, false);
+        //     }
 
 
-            var ctrlPos = document.getElementsByClassName("ctrlPos");
-            var len = ctrlPos.length;
-            for (let i = 0; i < len; i++) {
-                ctrlPos[i].addEventListener("mouseover", addDrag);
-                ctrlPos[i].addEventListener("mouseleave", removeDrag);
-                // ctrlPos[i].addEventListener("mousedown", callDrag);
-            }
-        })
+        //     var ctrlPos = document.getElementsByClassName("ctrlPos");
+        //     var len = ctrlPos.length;
+        //     for (let i = 0; i < len; i++) {
+        //         ctrlPos[i].addEventListener("mouseover", addDrag);
+        //         ctrlPos[i].addEventListener("mouseleave", removeDrag);
+        //         // ctrlPos[i].addEventListener("mousedown", callDrag);
+        //     }
+        // })
         //
         //textTeam目前remove select會造成異常
         //先做拖曳功能
@@ -94,26 +95,73 @@
         // })
 
 
-            //dragover解除初始設定
-            cardContent_7.addEventListener("dragover", function cardDargOver(e) {
-                e.preventDefault();
+        //dragover解除初始設定
+        cardContent_7.addEventListener("dragover", function cardDargOver(e) {
+            e.preventDefault();
+            //允許穿透
+            $class("textTeam").forEach(el => {
+                el.style.pointerEvents = "none";
             })
+            $class("textResize").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+            $class("ctrlPos").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+            $class("textarea").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+        })
 
-            //監聽drop事件
-            cardContent_7.addEventListener("drop", cardDropped);
+        //監聽drop事件
+        cardContent_7.addEventListener("drop", cardDropped);
 
         //對textTeam的dragStart抓取起始滑鼠相對物件的偏移量
-        function cardDragStart(e){
+        function cardDragStart(e) {
             e.dataTransfer.setData("offsetx", e.offsetX);
             e.dataTransfer.setData("offsety", e.offsetY);
             srcCard = this;
+
+            console.log(`Drag Stat!!`);
+            $class(".textTeam");
+            console.log(`.textTeam.length: ${$class(".textTeam").length}`);
+            
+            //允許穿透
+            $class(".textTeam").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+            $class(".textResize").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+            $class(".ctrlPos").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+            $class(".textarea").forEach(el => {
+                el.style.pointerEvents = "none";
+            })
+        }
+        //對textTeam的dragend設定
+        function cardDragEnd(e){
+            //允許穿透
+            $class("textTeam").forEach(el => {
+                el.style.pointerEvents = "auto";
+            })
+            $class("textResize").forEach(el => {
+                el.style.pointerEvents = "auto";
+            })
+            $class("ctrlPos").forEach(el => {
+                el.style.pointerEvents = "auto";
+            })
+            $class("textarea").forEach(el => {
+                el.style.pointerEvents = "auto";
+            })
         }
 
 
 
         //drop設定
         var CardDrop_count = 1;
-        function cardDropped(e){
+        function cardDropped(e) {
             e.preventDefault();
             CardDrop_count += 1;
             //接收來自dragstart的座標訊息
@@ -140,47 +188,27 @@
 
         function textTeamShow(e) {
             e.target.classList.add("show");
-            e.cancelBubble = true;
-            e.stopPropagation();
         }
         function textTeamHide(e) {
             e.target.classList.remove("show");
-            e.cancelBubble = true;
-            e.stopPropagation();
         }
         function textTeamSelect(e) {
-            var textTeam = document.getElementsByClassName("textTeam");
-            var len = textTeam.length;
-            for (let i = 0; i < len; i++) {
-                // textTeam[i].classList.remove("select");
-            }
             e.target.classList.add("select");
-            // console.log(`e.target.children[1]: ${e.target.children[1].classList}`);
-
-            // e.target.children[1].focus();
-            e.cancelBubble = true;
-            e.stopPropagation();
         }
 
+        //textarea監聽事件區
         function textareaFocus(e) {
-            var textTeam = document.getElementsByClassName("textTeam");
-            var len = textTeam.length;
-            for (let i = 0; i < len; i++) {
-                // textTeam[i].classList.remove("select");
-            }
             e.target.parentNode.classList.add("select");
-            e.cancelBubble=true;
-            e.stopPropagation();
         }
-
         function textareaBlur(e) {
-            var textTeam = document.getElementsByClassName("textTeam");
-            var len = textTeam.length;
-            for (let i = 0; i < len; i++) {
-                // textTeam[i].classList.remove("select");
-            }
+            e.target.parentNode.classList.remove("select");
         }
-
+        function textareaEnter(e) {
+            e.target.parentNode.classList.add("show");
+        }
+        function textareaLeave(e) {
+            e.target.parentNode.classList.remove("show");
+        }
 
         function textCtrl(e) {
             switch (this.id) {
@@ -220,15 +248,28 @@
         function addTextTeam() {
             //建立可以輸入文字的框框
             var textarea = document.createElement('div');
+            // var textarea = document.createElement('textarea');
             textarea.classList.add("textarea");
             //設定這個div可以被輸入文字
             textarea.setAttribute("contenteditable", true);
             //設定placholder並利用css裡的偽元素brfore顯示內容
             textarea.setAttribute("placeholder", "點擊輸入文字");
+            //新增監聽事件
+            textarea.onclick = textareaFocus; //當textarea被點擊，textteam要被選擇
+            textarea.onmouseenter = textareaEnter;
+            textarea.onmouseleave = textareaLeave;
+            textarea.onblur = textareaBlur;
+
+
+
 
             //建立可以被拖曳的區域
             var ctrlPos = document.createElement("div");
             ctrlPos.classList.add("ctrlPos");
+            //新增監聽事件
+            ctrlPos.onmouseover = addDrag; //當滑鼠在ctrlPos區域時，整個textteam允許被拖曳
+            ctrlPos.onmouseleave = removeDrag; //當滑鼠離開ctrlPos區域時，整個textteam取消拖曳事件
+
 
             //建立用來遮醜的小標籤
             //不用偽元素是因為不知道怎麼動態生成偽元素
@@ -240,6 +281,11 @@
             //也負責被縮放，resize已經寫在css裡
             var textTeam = document.createElement("div");
             textTeam.classList.add("textTeam");
+            //新增監聽事件
+            textTeam.ondragstart = cardDragStart; //允許時，拖曳事件造成位移效果
+            textTeam.ondragend = cardDragEnd;
+            textTeam.onmouseover = textTeamShow;
+            textTeam.onmouseleave = textTeamHide;
             // textTeam.setAttribute("draggable", true);
 
             //塞小孩，依照結構塞好
@@ -258,25 +304,31 @@
         // console.log(`$qall(".btn7"): ${$qall(".btn7")}`);
         //終於有一天受不了了，學董董簡寫一些函式
         //順便把array-like轉成array型態，方便操作
-        function $id(id){//找id，動態
+        function $id(id) {//找id，動態
             return document.getElementById(id);
         }
-        function $class(className){//找className並轉成陣列，動態
+        function $class(className) {//找className並轉成陣列，動態
             let classNames = document.getElementsByClassName(className);
             return Array.from(classNames);
         }
-        function $qall(qall){//query all，靜態
-            let qalls=document.querySelectorAll(qall);
+        function $qall(qall) {//query all，靜態
+            let qalls = document.querySelectorAll(qall);
             return Array.from(qalls);
         }
-        function $q(q){//query，靜態
+        function $q(q) {//query，靜態
             return document.querySelector(q);
         }
 
 
-        
 
-        
+        window.addEventListener("click", function (e) {
+            console.log(e.target);
+            console.log(this);
+            console.log($(this));
+
+
+        })
+
 
 
     </script>

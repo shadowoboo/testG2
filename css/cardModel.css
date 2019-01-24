@@ -1,27 +1,25 @@
 .textTeam {
-  width: 200px;
+  width: 80%;
   height: 100px;
   max-width: 350px;
   min-width: 50px;
   max-height: 200px;
   min-height: 50px;
   position: absolute;
-  top: 100px;
-  left: 100px;
-  font-size: 20px;
+  top: 0%;
+  left: 0%;
   overflow: auto;
-  resize: both;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column; }
-  .textTeam.select {
+  resize: none;
+  font-size: 20px;
+  background-color: transparent; }
+  .textTeam.select textarea {
     outline: 5px dashed #333; }
-  .textTeam.show {
+  .textTeam:hover {
     outline: #3333334b solid 1px; }
-  .textTeam.show .ctrlPos {
+  .textTeam:hover .ctrlPos {
     background-color: #afa;
     color: #333; }
-  .textTeam.show .textResize {
+  .textTeam:hover .textResize {
     border-style: solid;
     border-width: 0 0 15px 15px;
     border-color: transparent transparent #007bff transparent;
@@ -34,6 +32,8 @@
     height: 20px;
     background-color: transparent;
     color: transparent; }
+    .textTeam .ctrlPos:hover {
+      cursor: move; }
   .textTeam .textarea {
     position: absolute;
     top: 20px;
@@ -44,16 +44,9 @@
     font-size: 20px; }
     .textTeam .textarea:focus {
       box-shadow: #007bff 0px 0px 0px 2px inset; }
-  .textTeam .textarea:empty:before {
-    content: attr(placeholder);
-    color: #ccc; }
-  .textTeam .textResize {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-style: solid;
-    border-width: 0 0 15px 15px;
-    border-color: transparent transparent #ffa transparent; }
+    .textTeam .textarea:empty:before {
+      content: attr(placeholder);
+      color: #aaa; }
 
 .section {
   width: 100%;
@@ -137,7 +130,7 @@
     .section .cardCamera .cardBaseCover {
       box-shadow: 10px 10px 50px #333; }
   .section .cardBase {
-    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
     animation: cardCome 1.5s reverse; }
   .section .cardBaseCover {
     transform: rotateX(150deg);
@@ -151,9 +144,9 @@
 
 @keyframes cardCome {
   0% {
-    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px); }
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px); }
   100% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
+    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
   .section #btns7 {
     width: 25%;
     display: flex;

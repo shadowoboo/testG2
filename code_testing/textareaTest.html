@@ -1,0 +1,61 @@
+<!-- Ref: http://demo.jb51.net/js/2015/js-input-textarea-hover-focus-style-codes/ -->
+<title>JavaScript為input/textarea自定義hover,focus效果</title>
+<script type="text/javascript">
+    function suckerfish(type, tag, parentId) {
+        if (window.attachEvent) {
+            window.attachEvent("onload", function () {
+                var sfEls = (parentId == null) ? document.getElementsByTagName(tag) : document.getElementById(parentId).getElementsByTagName(tag);
+                type(sfEls);
+            });
+        }
+    }
+    sfHover = function (sfEls) {
+        for (var i = 0; i < sfEls.length; i) {
+            sfEls[i].onmouseover = function () {
+                this.className = " iptHover";
+            }
+            sfEls[i].onmouseout = function () {
+                this.className = this.className.replace(new RegExp(" iptHover\\b"), "");
+            }
+        }
+    }
+    sfFocus = function (sfEls) {
+        for (var i = 0; i < sfEls.length; i) {
+            sfEls[i].onfocus = function () {
+                this.className = " iptFocus";
+            }
+            sfEls[i].onblur = function () {
+                this.className = this.className.replace(new RegExp(" iptFocus\\b"), "");
+            }
+        }
+    }
+</script>
+<style type="text/css">
+    textarea {
+        border: 1px solid #BBE1F1;
+        width: 250px;
+        height: 80px;
+    }
+
+    .iptHover,
+    input:hover,
+    textarea:hover {
+        border: 1px solid #77C2E3;
+    }
+
+    .iptFocus,
+    input:focus,
+    textarea:focus {
+        border: 1px solid #77C2E3;
+        background-color: #EFF7FF;
+    }
+</style>
+<input type="text" name="textfield" /><br />
+<textarea name="textarea"></textarea>
+<script type="text/javascript">
+    suckerfish(sfHover, "input");
+    suckerfish(sfFocus, "input");
+    suckerfish(sfHover, "textarea");
+    suckerfish(sfFocus, "textarea");
+</script>
+

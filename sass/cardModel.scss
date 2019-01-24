@@ -127,85 +127,102 @@ $cardY:600px;
 
 //文字框框模組
 .textTeam{
-    width: 200px;
+    //長，寬，最大最小長寬
+    width: 80%;
     height: 100px;
     max-width:350px;
     min-width:50px;
     max-height:200px;
     min-height:50px;
+    //新增時出現的位置
+    //想要直接釘在正中央的話要在算一下
+    //用transform:translate 會干擾 drag的座標
     position: absolute;
-    top: 100px;
-    left: 100px;
-    font-size: 20px;
-    overflow: auto; //配合resize讓div可以改變大小
-    resize: both; //需要有overflow才有作用
-    // cursor: se-resize;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
+    top: 0%;
+    left: 0%;
+    // transform: translate(-50%,-50%);
 
-    &.select{
+    //resize作用器
+    overflow: auto; //配合resize讓div可以改變大小
+    resize: none; //需要有overflow才有作用
+
+    //初始字體大小
+    font-size: 20px;
+    //背景顏色透明，預計讓背景圖片顯露
+    background-color: transparent;
+
+    //被選擇時效果，靠程式控制
+    //textTeam被選擇時，把文字區框起來
+    &.select textarea{
         outline:5px dashed #333;
     }
-
     //提示使用者文字模組範圍
-    &.show{
+    &:hover{
         outline: #3333334b solid 1px;
     }
     //提示文字框拖曳作用區
-    &.show .ctrlPos{
+    // &.show .ctrlPos{
+    &:hover .ctrlPos{
         background-color: #afa;
         color: #333;
     }
     //提示文字框可被改變大小
-    &.show .textResize{
+    &:hover .textResize{
         border-style: solid;
         border-width: 0 0 15px 15px;
         border-color: transparent transparent #007bff transparent;
         cursor: se-resize;
     }
+
     
     //文字框拖曳作用區的範圍與定位(在文字框頭上)
+    $areaHead:20px; //用來計算定位量　ctrlPos 的高就是 textarea要向下的高度
     .ctrlPos{
         position: absolute;
         top:0;
         left: 0%;
         width: 100%;
-        height: 20px;
+        height: $areaHead;
         background-color: transparent;
         color: transparent;
+        &:hover{
+            cursor: move;
+        }
     }
     //定義文字框
     //目前採用置中對齊
     .textarea {
         position: absolute;
-        top: 20px;
+        top: $areaHead;
         left: 0;
-        height: calc(100% - 20px);
+        height: calc(100% - #{$areaHead});
         width: 100%;
-        overflow: hidden;
+        overflow: hidden; //不要露出卷軸
         font-size: 20px;
+        // vertical-align: center;
         //文字框被使用中的時候，提示使用者還在輸入中
         &:focus{
             // outline:1px solid #007bff;
             box-shadow: #007bff 0px 0px 0px 2px inset ;
         }
-    }
-    //當文字框沒有內容時，顯示提示字串
-    .textarea:empty:before {
+        //當文字框沒有內容時，顯示提示字串
+        &:empty:before {
         content: attr(placeholder);
-        color: #ccc;
+        color: #aaa;
+        }
     }
+
     //遮住原生縮放提示的小物件
     //偽元素很難被操作，所以還是先用div遮住
-    .textResize{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-style: solid;
-        border-width: 0 0 15px 15px;
-        border-color: transparent transparent #ffa transparent;
-    }
+    // .textResize{
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     border-style: solid;
+    //     border-width: 0 0 15px 15px;
+    //     border-color: transparent transparent #ffa transparent;
+    //     z-index: 100;
+    // }
 }
 
 
@@ -220,7 +237,7 @@ $cardY:600px;
     //卡片控制
     @include card3D(400px,300px);
     .cardBase {
-        transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
         animation: cardCome 1.5s reverse;
     }
     .cardBaseCover {
@@ -233,8 +250,9 @@ $cardY:600px;
         100%{transform: rotateX(0deg);}
     }
     @keyframes cardCome{
-        0%{transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);}
-        100%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px);}
+        //卡片工作面不是 rotateX(0deg) 時，文字框hover會壞掉 
+        0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);}
+        100%{transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px);}
     } 
         
 
