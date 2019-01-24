@@ -1,10 +1,29 @@
-// *{
-//     outline: 1px solid #f00;
-// }
+*{
+    outline: 1px solid #f00;
+}
 
 body{
     background-color: #fadfd4;
+}
+section {
+    width: 100%;
+    height: 100vh;
+    transition: 0.5s;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    /* scroll-behavior: smooth; */
+    /* position: sticky; */
+    /* overflow: hidden; */
+}
 
+.cus{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* position: fixed; */
 }
 
 .customized{
@@ -117,7 +136,7 @@ body{
         background-color: #df9bac;
         border-radius:10px;
         border:19px solid #fca8b7;
-        height: 630px;
+        // height: 630px;
         .roof{
             position: relative;
             transform: scale(1.1) translateY(-62px);
@@ -231,7 +250,7 @@ body{
     // }
     .pics{
         width:300px;
-        height: 178px;
+        height:300px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -294,12 +313,14 @@ body{
 }    
 
 .stepRegion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
-    height: 100px;
-    line-height: 5;
     text-align: center;
-
-
+    .mt{
+        margin:15px 10px;
+    }
 }
 
 $activeColor: #076baf;
@@ -343,7 +364,7 @@ a {
     color:$gray-light;
     font-size:20px;
     float:left;
-    width:50%;
+    width:33.333%;
     text-align:center;
     cursor:pointer;
     transition:.5s ease;
@@ -437,7 +458,7 @@ textarea {
     justify-content: center;
     align-items: center;
     width:100%;
-    height:178px;
+    height:300px;
     .colorBtn{
         width: 50px;
         height: 50px;
