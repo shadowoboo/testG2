@@ -283,8 +283,7 @@ input[type=number]::-webkit-outer-spin-button {
       color: #076baf;
       line-height: 1.2; }
   .rankBoard .item {
-    width: 21%;
-    max-width: 252px;
+    width: 252px;
     margin: 5vh auto;
     position: relative; }
     .rankBoard .item .itemCountry {
@@ -318,7 +317,8 @@ input[type=number]::-webkit-outer-spin-button {
       bottom: 9%;
       left: 17%;
       border-radius: 100px 0 0 100px;
-      background-color: #e97d58; }
+      background-color: #e97d58;
+      display: none; }
       .rankBoard .item .star img {
         width: 163px; }
   @media screen and (min-width: 768px) {

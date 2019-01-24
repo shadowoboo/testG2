@@ -36,8 +36,7 @@
     }
 
     .item{
-        width: 21%;//252
-        max-width: 252px;
+        width:252px;
         margin: 5vh auto;
         position: relative;
         .itemCountry{
@@ -80,6 +79,7 @@
             left: 17%;
             border-radius: 100px 0 0 100px;
             background-color: #e97d58;
+            display: none;
 
             img{
                 width:163px;
