@@ -52,6 +52,7 @@ $cardY:600px;
             transition: .5s; 
             overflow: hidden;
             backface-visibility: hidden;
+            position: relative;
         }
         // .cardSurface {
         //     backface-visibility: hidden;
@@ -97,7 +98,8 @@ $cardY:600px;
         } //控制背景圖
         .cardBaseCover {
             .cardSurface {
-                background-image: url();
+                background-image: url("../code_testing/card_test_1.jpg");
+                background-size: contain;
             } //封面
             .cardSurfaceInner {
                 background-image: url();
@@ -122,33 +124,89 @@ $cardY:600px;
     }
 }
 
+//文字框框模組
 .textTeam{
     width: 200px;
     height: 100px;
-    // position: relative;
+    max-width:350px;
+    min-width:50px;
+    max-height:200px;
+    min-height:50px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
     font-size: 20px;
-    overflow: auto;
-    resize: both;
-    // .ctrlPos{
-    //     // position: absolute;
-    //     // top:-20px;
-    //     // left: 0%;
-    //     width: 100%;
-    //     height: 20px;
-    //     background-color: #aaf;
-    // }
-    // .textarea {
-    //     // height: 100%;
-    //     width: 100%;
-    //     // padding: 0px;
-    //     font-size: 20px;
-    //     border: 1px solid #888;
-    // }
-    // .textarea:empty:before {
-    //     content: attr(placeholder);
-    //     color: #bbb;
-    // }
+    overflow: auto; //配合resize讓div可以改變大小
+    resize: both; //需要有overflow才有作用
+    // cursor: se-resize;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+    &.select{
+        outline:5px dashed #333;
+    }
+
+    //提示使用者文字模組範圍
+    &.show{
+        outline: #3333334b solid 1px;
+    }
+    //提示文字框拖曳作用區
+    &.show .ctrlPos{
+        background-color: #afa;
+        color: #333;
+    }
+    //提示文字框可被改變大小
+    &.show .textResize{
+        border-style: solid;
+        border-width: 0 0 15px 15px;
+        border-color: transparent transparent #007bff transparent;
+        cursor: se-resize;
+    }
+    
+    //文字框拖曳作用區的範圍與定位(在文字框頭上)
+    .ctrlPos{
+        position: absolute;
+        top:0;
+        left: 0%;
+        width: 100%;
+        height: 20px;
+        background-color: transparent;
+        color: transparent;
+    }
+    //定義文字框
+    //目前採用置中對齊
+    .textarea {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        height: calc(100% - 20px);
+        width: 100%;
+        overflow: hidden;
+        font-size: 20px;
+        //文字框被使用中的時候，提示使用者還在輸入中
+        &:focus{
+            // outline:1px solid #007bff;
+            box-shadow: #007bff 0px 0px 0px 2px inset ;
+        }
+    }
+    //當文字框沒有內容時，顯示提示字串
+    .textarea:empty:before {
+        content: attr(placeholder);
+        color: #ccc;
+    }
+    //遮住原生縮放提示的小物件
+    //偽元素很難被操作，所以還是先用div遮住
+    .textResize{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-style: solid;
+        border-width: 0 0 15px 15px;
+        border-color: transparent transparent #ffa transparent;
+    }
 }
+
 
 
 
