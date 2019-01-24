@@ -269,6 +269,14 @@ input[type=number]::-webkit-outer-spin-button {
   height: 0;
   clear: both; }
 
+input, select {
+  color: #076baf;
+  font-family: g2Font;
+  src: url(../GenJyuuGothicX-Bold.ttf); }
+
+.serch serch_start {
+  color: #076baf; }
+
 #map img {
   width: 100%; }
 

@@ -12,6 +12,16 @@
     height: 0;
     clear: both; 
 }
+// form
+input,select {
+    color: #076baf;
+    font-family: g2Font;
+    src: url(../GenJyuuGothicX-Bold.ttf);
+}
+
+.serch serch_start{
+    color: #076baf;
+}
 
 #map img{
     width: 100%;

@@ -13,7 +13,10 @@
 <body>
     <!-- map serch -->
     <div id="google_serch">
-        <div id="serch_title"><p>定位搜尋</p></div>
+        <div id="serch_title">
+            <p>定位搜尋</p>
+        </div>
+
         <form action="" method="get" name="serch_list" id="serch_form">
 
             <div id="serch_bar">
@@ -21,18 +24,19 @@
                     <option value="111">中壢市</option>
                     <option value="222">桃園市</option>
                     <option value="333">新北市</option>
-                    <option value="444">台北市    </option>
+                    <option value="444">台北市 </option>
                 </select>
+            </div>
 
+            <div id="serch_input">
                 <input type="text" name="serch_start" placeholder="起點" class="serch serch_start">
-
-                <a href="#" class="serch serch_serch">
-                    <i class="fas fa-search"></i>
-                </a>
+                <input type="text" name="serch_end" placeholder="目的地" id="serch_end">
             </div>
 
             <div class="serch">
-                <input type="text" name="serch_end" placeholder="目的地" id="serch_end">
+                <a href="#" class="serch serch_serch">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
         </form>
     </div>
