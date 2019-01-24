@@ -4,6 +4,7 @@
 
 body{
     background-color: #fadfd4;
+
 }
 
 .customized{
@@ -14,6 +15,7 @@ body{
     width: 100%;
     margin-top: 50px;
     background-color: #fadfd4;
+    overflow: hidden;
     .makingStep{
         display: flex;
         flex-direction: row;
@@ -21,13 +23,14 @@ body{
         align-items: center;
         width: 800px;
         height:100px;
-        margin-bottom:140px;
+        margin-bottom:100px;
         .cloud{
             width:120px;
         }
         .step1{
             position: relative;
             &:before {
+                font-family: g2Font;
                 content: "1";
                 position: absolute;
                 top:30px;
@@ -46,6 +49,7 @@ body{
         .step2{
             position: relative;
             &:before {
+                font-family: g2Font;
                 content: "2";
                 position: absolute;
                 top:30px;
@@ -64,6 +68,7 @@ body{
         .step3{
             position: relative;
             &:before {
+                font-family: g2Font;
                 content: "3";
                 position: absolute;
                 top:30px;
@@ -82,6 +87,7 @@ body{
         .step4{
             position: relative;
             &:before {
+                font-family: g2Font;
                 content: "4";
                 position: absolute;
                 top:30px;
@@ -97,27 +103,24 @@ body{
             font-weight: 900;
         }
     }
+    .priceSign{
+        font-family: g2Font;
+        font-size:30px;
+        padding: 5px 10px;;
+        text-align: center;
+        line-height: 1;
+        color: #fff;
+        background-color: #fbc84a;
+        transform: translateY(-50px);
+    }
     .snackHouse{
-        height: 520px;
         background-color: #df9bac;
         border-radius:10px;
         border:19px solid #fca8b7;
-        // transform: translateY(25px);
+        height: 630px;
         .roof{
             position: relative;
             transform: scale(1.1) translateY(-62px);
-        }
-        .priceSign{
-            position: absolute;
-            top: -46px;
-            left:325px;
-            width: 150px;
-            height: 50px;
-            text-align: center;
-            font-size: 50px;
-            line-height: 1;
-            color: #fff;
-            background-color: #fbc84a;
         }
         .container{
             display: flex;
@@ -144,12 +147,11 @@ body{
 //六面體，上蓋預留轉動空間，上蓋擁有內側div
 @mixin box3D_cover( $boxI:100px,$boxJ:100px,$boxK:100px){
     .camera{
-        width:400px;
-        height: 135px;
+        height:245px;
         display: flex;
         justify-content: center;
         perspective:1000px;
-        transform: translateY(10px);
+        // transform: translateY(10px);
     }
     .boxBase{
         // margin: auto;
@@ -199,9 +201,13 @@ body{
 
 
 .section_15{
-    @include box3D_cover(220px, 120px,70px);
+    @include box3D_cover(350px,250px,150px);
+    width: 1000px;
     display: flex;
+    flex-direction: row;
+    align-items:center;
     position: relative;
+    top: -33px;
     .surface{
             .droped_img{
                 display:block;
@@ -224,7 +230,8 @@ body{
     //     // user-select: none;
     // }
     .pics{
-        width: 300px;
+        width:300px;
+        height: 178px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -241,6 +248,7 @@ body{
         z-index: 10;
         display: flex;
         justify-content:center;
+        margin: 12px auto;
             .btn{
                 font-size: 30px;
                 text-align: center;
@@ -260,12 +268,15 @@ body{
 
 
 .leftBox{
-    // width: 500px;
-    // width:50%;
+    display: flex;
+    flex:2;
+    height: 400px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
     //測試頁按鈕
     #ctrl_bar{
-        position: absolute;
-        z-index:20;
+        margin: 12px;
         .btn{
             width: 50px;
             height: 50px;
@@ -278,14 +289,14 @@ body{
 
 }
 .showBox{
-    transform: translate(20px,61px);
     width: 100%;
-    height: 420px;
+    height: 250px;
 }    
 
 .stepRegion{
     width: 100%;
     height: 100px;
+    line-height: 5;
     text-align: center;
 
 
@@ -320,7 +331,6 @@ a {
 .tab-group {
   list-style:none;
   padding:0;
-  margin:0 0 40px 0;
   &:after {
     content: "";
     display: table;
@@ -330,7 +340,6 @@ a {
     display:block;
     text-decoration:none;
     padding:15px;
-    background:rgba($gray-light,.25);
     color:$gray-light;
     font-size:20px;
     float:left;
@@ -339,7 +348,7 @@ a {
     cursor:pointer;
     transition:.5s ease;
     &:hover {
-      background:$main-dark;
+    //   background:$main-dark;
       color:$activeColor;
     }
   }
@@ -354,14 +363,15 @@ a {
 }
 
 .form {
+    flex:1;
     background:rgba($form-bg,.9);
-    padding: 40px;
     max-width:600px;
-    margin:40px auto;
     border-radius:10px;
-    box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+    margin:12px;
     border:10px solid #fbc849;
-    transform: translateY(-100px);
+    a{
+        font-family: g2Font;
+    }
   }
 
 label {
@@ -422,9 +432,36 @@ textarea {
 
 .top-row {
  .pickColor{
-     width: 300px;
-     height:178px;
-    border: 1px solid #faa;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:178px;
+    .colorBtn{
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+        border:2px solid rgb(155, 155, 155);
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+    }
+    .color1{
+        background-color: rgb(246, 132, 132);
+    }
+    .color2{
+        background-color: rgb(99, 151, 219);
+    }
+    .color3{
+        background-color: rgb(105, 255, 138);
+    }
+    .color4{
+        background-color: rgb(245, 132, 255);
+    }
+    .color5{
+        background-color: rgb(250, 230, 116);
+    }
  }
   &:after {
     content: "";
@@ -468,4 +505,87 @@ textarea {
 .forgot {
   margin-top:-20px;
   text-align:right;
+}
+
+@media screen and (max-width:768px){
+    .customized{
+        .makingStep{
+            justify-content:space-between;
+            align-items: center;
+            width:350px;
+            margin-bottom:30px;
+            .step1{
+                &:before{
+                    top:20px;
+                    left:40px;
+                }
+                &:after {
+                display: none;}
+            }
+            .step2{
+                &:before{
+                    top:20px;
+                    left:40px;
+                }
+                &:after {
+                display: none;}
+            }
+            .step3{
+                &:before{
+                    top:20px;
+                    left:40px;
+                }
+                &:after {
+                display: none;}
+            }
+            .step4{
+                &:before{
+                    top:20px;
+                    left:40px;
+                }
+                &:after {
+                display: none;}
+            }
+        }
+        .priceSign{
+            position: relative;
+            top: 58px;
+            z-index: 88;
+            right: -35%;
+            transform: inherit;
+        }
+        .snackHouse{
+            width: 100%;
+            height: 100%;
+        }
+        .section_15{
+            @include box3D_cover(250px,200px,100px);
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            .leftBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                height: 450px;
+                .camera{
+                    height: 250px;
+                    .boxBase{
+                        position: relative;
+                        top: 60px;
+                    }
+                }
+                #ctrl_bar{
+                    display: flex;
+                }
+            }
+            .pics{
+                width: 100%;
+            }
+        }
+    }
+    .form{
+        width: 90%;
+    }
 }

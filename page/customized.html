@@ -82,9 +82,9 @@
             <p>客製完成</p>   
         </div>
     </div>
+    <div class="priceSign">$150</div>
     <div class="snackHouse">
         <div class="roof">
-            <div class="priceSign">$150</div>
             <svg version="1.1" id="&#x5716;&#x5C64;_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 1164 201.655" style="enable-background:new 0 0 1164 201.655;" xml:space="preserve">
        <g>
@@ -136,7 +136,7 @@
        </svg>
         </div>
 
-        <section class="section section_15" id="section_15">
+        <div class="section section_15" id="section_15">
             <div class="leftBox">
                 <div id="ctrl_bar">
                     <div class="btn btn_front dimension" id="btn_front">前</div>
@@ -144,9 +144,9 @@
                     <div class="btn btn_top dimension" id="btn_top">上</div>
                     <div class="btn btn_left dimension" id="btn_left">左</div>
                     <div class="btn btn_right dimension" id="btn_right">右</div>
-                    <!-- <div class="btn rotateX" id="rotateX">X軸</div> -->
-                      <!-- <div class="btn rotateY" id="rotateY">Y軸轉轉</div>
-                    <div class="btn rotateZ" id="rotateZ">Z軸轉轉</div> -->
+                    <!-- <div class="btn rotateX" id="rotateX">轉</div> -->
+                      <!-- <div class="btn rotateY" id="rotateY">Y軸轉轉</div>-->
+                    <div class="btn rotateZ dimension" id="rotateZ">轉</div> 
                 </div>
                 <div class="showBox">
                         <div class="camera">
@@ -188,7 +188,11 @@
                         
                         <div class="top-row">
                             <div class="pickColor">
-                                123
+                                <div class="colorBtn color1"></div>
+                                <div class="colorBtn color2"></div>
+                                <div class="colorBtn color3"></div>
+                                <div class="colorBtn color4"></div>
+                                <div class="colorBtn color5"></div>
                             </div>
       
    
@@ -202,19 +206,26 @@
                       <div id="login">   
                             <div class="pics">
                                     <div class="pic">
-                                        <img src="../images/customized/ip1.png" alt="">
+                                        <img src="../images/customized/chips.svg" alt="">
                                     </div>
                                     <div class="pic">
-                                        <img src="../images/customized/ip2.png" alt="">
+                                        <img src="../images/customized/cookies.svg" alt="">
                                     </div>
                                     <div class="pic">
-                                        <img src="../images/customized/ip3.png" alt="">
+                                        <img src="../images/customized/chocolate.svg" alt="">
                                     </div>
                                     <div class="pic">
-                                        <img src="../images/customized/ip5.png" alt="">
+                                        <img src="../images/customized/lollip.svg" alt="">
+                                    </div>                                    
+                                    <div class="pic">
+                                        <img src="../images/customized/candy.svg" alt="">
+                                    </div>                                    
+                                    <div class="pic">
+                                        <img src="../images/customized/machi.svg" alt="">
                                     </div>
+
                                 </div>
-                        <button class="button button-block"/>Up Load</button>
+                     
                         
                         </form>
               
@@ -223,14 +234,12 @@
                     </div><!-- tab-content -->
                     
               </div> <!-- /form -->
-              
-            </section>
-            
-            <div class="stepRegion">
-                <button class="step mt">下一步</button> 
             </div>
     </div>    
 </section>
+<div class="stepRegion">
+    <button class="step">下一步</button> 
+</div>
 <script>
     const boxBases = document.querySelectorAll(".boxBase");
     const btns = document.querySelectorAll(".btn");
@@ -609,6 +618,7 @@
                 boxBases.forEach(element => {
                     element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
                 });
+                
                 break;
         }
     };
