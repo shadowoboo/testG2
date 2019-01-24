@@ -326,179 +326,188 @@ body {
 .index {
   width: 100%;
   height: 100%; }
-  .index section {
+  .index .section {
     width: 100%;
+    height: 670px;
     position: relative; }
-    .index section .worldMap {
-      overflow: hidden;
+    .index .section .worldMap {
       max-width: 1200px;
-      margin: auto;
-      position: relative; }
-      .index section .worldMap > img {
-        width: 900px;
-        min-width: 600px;
-        margin: 150px; }
-      .index section .worldMap .countryMap .countryImg {
-        width: 50px;
-        position: absolute; }
-        .index section .worldMap .countryMap .countryImg img {
-          position: relative;
-          z-index: 1; }
-        .index section .worldMap .countryMap .countryImg .countryInfo {
-          transition: 1s;
-          display: none;
-          position: relative;
-          z-index: 2;
-          width: 500px;
-          background-color: rgba(255, 255, 255, 0.9);
-          border-radius: 10px; }
-          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
-            display: flex;
-            align-items: center;
-            justify-content: space-around; }
-            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
-              height: 180px;
-              width: 180px; }
-            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
-              width: 130px; }
-            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
-              width: 130px; }
-              .index section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
-                font-size: 22px;
-                font-family: g2Font;
+      position: relative;
+      margin: auto; }
+      .index .section .worldMap .countryMap {
+        height: 600px;
+        width: 1200px;
+        margin: 150px auto;
+        position: absolute;
+        background-image: url(../images/index/map.svg);
+        background-size: 800px;
+        background-repeat: no-repeat;
+        background-position-x: center; }
+        .index .section .worldMap .countryMap .countryImg {
+          width: 50px;
+          position: absolute; }
+          .index .section .worldMap .countryMap .countryImg img {
+            position: relative;
+            z-index: 1; }
+          .index .section .worldMap .countryMap .countryImg .countryInfo {
+            transition: 1s;
+            display: none;
+            position: relative;
+            z-index: 2;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px; }
+            .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
+              display: flex;
+              align-items: center;
+              justify-content: space-around; }
+              .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
+                height: 180px;
+                width: 180px; }
+              .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
+                width: 130px; }
+              .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
+                width: 130px; }
+                .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
+                  font-size: 22px;
+                  font-family: g2Font;
+                  color: #737374; }
+            .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfosection {
+              color: #737374;
+              width: 400px;
+              margin: auto; }
+              .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfosection h2 {
+                text-align: center; }
+            .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              padding: 20px 0; }
+              .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice {
                 color: #737374; }
-          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfosection {
-            color: #737374;
-            width: 400px;
-            margin: auto; }
-            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfosection h2 {
-              text-align: center; }
-          .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px 0; }
-            .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice {
-              color: #737374; }
-              .index section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice span {
-                font-size: 28px; }
-      .index section .worldMap .countryMap .countryImg:hover .countryInfo {
-        display: block; }
-      .index section .worldMap .countryMap .countryImg:before {
-        content: '';
-        display: block;
+                .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice span {
+                  font-size: 28px; }
+        .index .section .worldMap .countryMap .countryImg:hover .countryInfo {
+          display: block; }
+        .index .section .worldMap .countryMap .countryImg:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          top: 10px;
+          left: 5px;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 0 0 10px 30px #fff;
+          opacity: .5;
+          z-index: 1;
+          animation: aaa 1.5s linear infinite alternate; }
+        .index .section .worldMap .countryMap > :nth-child(1) {
+          top: 140px;
+          left: 330px; }
+        .index .section .worldMap .countryMap > :nth-child(2) {
+          top: 110px;
+          left: 610px; }
+        .index .section .worldMap .countryMap > :nth-child(3) {
+          top: 300px;
+          left: 390px; }
+        .index .section .worldMap .countryMap > :nth-child(4) {
+          top: 0px;
+          left: 460px; }
+        .index .section .worldMap .countryMap > :nth-child(5) {
+          top: 240px;
+          left: 560px; }
+        .index .section .worldMap .countryMap > :nth-child(6) {
+          top: 20px;
+          left: 950px; }
+        .index .section .worldMap .countryMap > :nth-child(7) {
+          top: 160px;
+          left: 900px; }
+        .index .section .worldMap .countryMap > :nth-child(8) {
+          top: 350px;
+          left: 870px; }
+      .index .section .worldMap #container {
         position: absolute;
-        width: 40px;
-        height: 40px;
-        top: 10px;
-        left: 5px;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 10px 30px #fff;
-        opacity: .5;
-        z-index: 1;
-        animation: aaa 1.5s linear infinite alternate; }
-      .index section .worldMap .countryMap > :nth-child(1) {
-        top: 310px;
-        left: 310px; }
-      .index section .worldMap .countryMap > :nth-child(2) {
-        top: 290px;
-        left: 610px; }
-      .index section .worldMap .countryMap > :nth-child(3) {
-        top: 510px;
-        left: 380px; }
-      .index section .worldMap .countryMap > :nth-child(4) {
-        top: 150px;
-        left: 450px; }
-      .index section .worldMap .countryMap > :nth-child(5) {
-        top: 420px;
-        left: 560px; }
-      .index section .worldMap .countryMap > :nth-child(6) {
-        top: 180px;
-        left: 1000px; }
-      .index section .worldMap .countryMap > :nth-child(7) {
-        top: 330px;
-        left: 950px; }
-      .index section .worldMap .countryMap > :nth-child(8) {
-        top: 540px;
-        left: 910px; }
-      .index section .worldMap #container {
-        position: absolute;
-        height: 100vh;
+        height: 600px;
         width: 100%;
         top: 0;
         left: 0; }
-      .index section .worldMap .snackMap .snackImg {
-        width: 100px;
-        position: absolute; }
-      .index section .worldMap .snackMap > :nth-child(1) {
-        top: 140px;
-        width: 150px;
-        left: 160px; }
-      .index section .worldMap .snackMap > :nth-child(2) {
-        top: 170px;
-        left: 680px; }
-      .index section .worldMap .snackMap > :nth-child(3) {
-        top: 590px;
-        left: 220px;
-        width: 170px; }
-      .index section .worldMap .snackMap > :nth-child(4) {
-        top: 100px;
-        left: 500px;
-        width: 90px; }
-      .index section .worldMap .snackMap > :nth-child(5) {
-        top: 520px;
-        left: 560px;
-        width: 90px; }
-      .index section .worldMap .snackMap > :nth-child(6) {
-        top: 90px;
-        left: 910px;
-        width: 90px; }
-      .index section .worldMap .snackMap > :nth-child(7) {
-        top: 320px;
-        left: 1000px; }
-      .index section .worldMap .snackMap > :nth-child(8) {
-        top: 500px;
-        left: 960px;
-        width: 150px; }
+      .index .section .worldMap .snackMap {
+        margin: auto;
+        transition: 2s; }
+        .index .section .worldMap .snackMap .snackImg {
+          width: 100px;
+          position: absolute;
+          z-index: 666; }
+        .index .section .worldMap .snackMap > :nth-child(1) {
+          top: 200px;
+          width: 150px;
+          left: 150px; }
+        .index .section .worldMap .snackMap > :nth-child(2) {
+          top: 180px;
+          left: 690px; }
+        .index .section .worldMap .snackMap > :nth-child(3) {
+          top: 560px;
+          left: 260px;
+          width: 170px; }
+        .index .section .worldMap .snackMap > :nth-child(4) {
+          top: 100px;
+          left: 520px;
+          width: 90px; }
+        .index .section .worldMap .snackMap > :nth-child(5) {
+          top: 500px;
+          left: 580px;
+          width: 90px; }
+        .index .section .worldMap .snackMap > :nth-child(6) {
+          top: 100px;
+          left: 860px;
+          width: 90px; }
+        .index .section .worldMap .snackMap > :nth-child(7) {
+          top: 300px;
+          left: 960px; }
+        .index .section .worldMap .snackMap > :nth-child(8) {
+          top: 480px;
+          left: 920px;
+          width: 150px; }
 
 @keyframes aaa {
   0% {
     transform: scale(0.6); }
   100% {
     transform: scale(0.8); } }
-    .index section .cloudMap .cloudImg {
+    .index .section .cloudMap .cloudImg {
       width: 100px;
       position: absolute; }
-    .index section .cloudMap > :nth-child(1) {
+    .index .section .cloudMap > :nth-child(1) {
       top: 50px;
       left: 80px;
       width: 50px; }
-    .index section .cloudMap > :nth-child(2) {
+    .index .section .cloudMap > :nth-child(2) {
       top: 170px;
       left: 100px; }
-    .index section .cloudMap > :nth-child(3) {
+    .index .section .cloudMap > :nth-child(3) {
       top: 70px;
       left: 250px; }
-    .index section .cloudMap > :nth-child(4) {
+    .index .section .cloudMap > :nth-child(4) {
       top: 50px;
       right: 80px; }
-    .index section .cloudMap > :nth-child(5) {
+    .index .section .cloudMap > :nth-child(5) {
       top: 170px;
       right: 100px;
       width: 50px; }
-    .index section .cloudMap > :nth-child(6) {
+    .index .section .cloudMap > :nth-child(6) {
       top: 70px;
       right: 250px;
       width: 50px; }
-    .index section .balloonMap .ballImg {
+    .index .section .balloonMap .ballImg {
       width: 80px;
       position: absolute; }
-    .index section .balloonMap > :nth-child(1) {
+    .index .section .balloonMap > :nth-child(1) {
       top: 430px;
       left: 110px;
-      animation: bbb 3s linear infinite alternate; }
-    .index section .balloonMap > :nth-child(2) {
+      animation: bbb 3s infinite alternate; }
+    .index .section .balloonMap > :nth-child(2) {
       top: 370px;
       right: 30px;
       animation: bbb 2s infinite alternate-reverse; }
@@ -509,5 +518,52 @@ body {
   100% {
     transform: translateY(-100px); } }
     @media screen and (min-width: 768px) {
-      .index section .worldMap {
+      .index .section .worldMap {
         overflow: unset; } }
+  .index .section_12 {
+    background-image: url(../images/index/cheese.png);
+    background-repeat: no-repeat;
+    height: 1090px;
+    background-position-y: 60px;
+    margin: 20px auto;
+    position: relative; }
+    .index .section_12 .LeaderboardTitle {
+      background-image: url(../images/index/title-cloud.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      text-align: center;
+      height: 160px;
+      position: absolute;
+      top: 340px;
+      left: 0;
+      right: 0; }
+      .index .section_12 .LeaderboardTitle h2 {
+        line-height: 150px;
+        color: #076baf; }
+    .index .section_12 .LeaderboardCount {
+      width: 1200px;
+      margin: auto; }
+      .index .section_12 .LeaderboardCount .Crown {
+        width: 100px; }
+      .index .section_12 .LeaderboardCount .No2 {
+        background-image: url(../images/index/blue-pack.png);
+        background-repeat: no-repeat;
+        background-size: 280px; }
+        .index .section_12 .LeaderboardCount .No2 .commodityImg {
+          width: 45%; }
+      .index .section_12 .LeaderboardCount .No1 {
+        background-image: url(../images/index/red-pack.png);
+        background-repeat: no-repeat;
+        background-size: 280px; }
+        .index .section_12 .LeaderboardCount .No1 .commodityImg {
+          width: 50%; }
+      .index .section_12 .LeaderboardCount .No3 {
+        background-image: url(../images/index/green-pack.png);
+        background-repeat: no-repeat;
+        background-size: 280px; }
+        .index .section_12 .LeaderboardCount .No3 .commodityImg {
+          width: 50%; }
+      .index .section_12 .LeaderboardCount .Leaderboarditem {
+        width: 280px; }
+        .index .section_12 .LeaderboardCount .Leaderboarditem .LeaderboarCountry {
+          width: 30px; }

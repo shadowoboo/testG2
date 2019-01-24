@@ -12,21 +12,23 @@
     <script src="../js/Chart.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/boxModel.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
 </head>
 <body>
     <div class="index">
-        <section>
+        <section class="section">
             <div class="worldMap">
-                <img src="../images/index/map.svg">
+                <!-- <img src="../images/index/map.svg"> -->
                 <div class="countryMap">
                     <div class="countryImg">
                         <img src="../images/index/US.png" alt="美國座標">
                         <div class="countryInfo">
                             <div class="countryInfoHeader">
                                 <div class="countryInfoRadar">
-                                    <canvas id="radarCanvas"></canvas>
+                                    <canvas class="radarCanvas"></canvas>
                                 </div>
                                 <div class="countryInfoImg">
                                     <img src="../images/index/gold.png">
@@ -58,25 +60,250 @@
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/DE.png" alt="德國座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/BR.png" alt="巴西座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/UK.png" alt="英國座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/EG.png" alt="埃及座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/KR.png" alt="韓國座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/JP.png" alt="日本座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="countryImg">
                         <img src="../images/index/AU.png" alt="澳洲座標">
+                        <div class="countryInfo">
+                            <div class="countryInfoHeader">
+                                <div class="countryInfoRadar">
+                                    <canvas class="radarCanvas"></canvas>
+                                </div>
+                                <div class="countryInfoImg">
+                                    <img src="../images/index/gold.png">
+                                </div>
+                                <div class="countryInfoStar">
+                                    <ul>
+                                        <li>共348次評價</li>
+                                        <li>4.9/5</li>
+                                        <li><img src="../images/index/star.png" alt="評價星等"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="countryInfosection">
+                                <h2>[日本] UHA味覺糖甘藷片</h2>
+                                <p>UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。</p>
+                            </div>
+                            <div class="countryInfofooter">
+                                <div class="countryInfoPrice">
+                                    <h3>價格<span>$45</span></h3>
+                                </div>
+                                <div class="countryInfoAddCart">
+                                    <button class="cart">加入購物車</button>
+                                </div>
+                                <div class="countryInfoHeart">
+                                    <button class="heart"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                
                 </div>
                 <div class="snackMap" id="container">
                     <div class="snackImg slide1">
@@ -136,7 +363,132 @@
         </section>
 
 
-
+        <section class="section_12" id="section_12">
+            <div class="camera">
+                <div class="box boxBase" id="box_12">
+                    <div class="surface surface_top" id="cover_out_12">上</div>
+                    <div class="surface surface_top_inner" id="cover_in_12">
+                        <div class="way">
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="way">
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                            <div class="light"></div>
+                        </div>
+                    </div>
+                    <!-- <div class="surface surface_down">下</div> -->
+                    <div class="surface surface_down_left" id="cover_dl_12">下左</div>
+                    <div class="surface surface_down_right" id="cover_dr_12">下右</div>
+                    <div class="surface surface_back">後</div>
+                    <div class="surface surface_font">前</div>
+                    <div class="surface surface_left">左</div>
+                    <div class="surface surface_right">右</div>
+                </div>
+            </div>
+            <div class="LeaderboardTitle">
+                <h2>零食排行榜</h2>
+            </div>
+            <div class="LeaderboardCount">
+                <div class="LeaderboardNo2">
+                    <div class="Crown">
+                        <img src="../images/index/silver.png" alt="排行皇冠">
+                    </div>
+                    <div class="Leaderboarditem No2">
+                        <div class="LeaderboarCountry">
+                            <img src="../images/index/jp-no2.png" alt="排行國家">
+                        </div>
+                        <div class="commodity">
+                            <div class="commodityImg">
+                                <img src="../images/index/co2.png" alt="排行商品">
+                            </div>
+                            <div class="commodityTitle">
+                                <h3>［日本］POCKY巧克力棒</h3>
+                            </div>
+                            <div class="commodityStar">
+                                <img src="../images/index/star.png" alt="排行商品星等">
+                            </div>
+                            <div class="commodityPrice">
+                                <p>$45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="LeaderboardNo1">
+                    <div class="Crown">
+                        <img src="../images/index/gold.png" alt="排行皇冠">
+                    </div>
+                    <div class="Leaderboarditem No1">
+                        <div class="LeaderboarCountry">
+                            <img src="../images/index/us-no1.png" alt="排行國家">
+                        </div>
+                        <div class="commodity">
+                            <div class="commodityImg">
+                                <img src="../images/index/co1.png" alt="排行商品">
+                            </div>
+                            <div class="commodityTitle">
+                                <h3>［美國］湖！洋芋片</h3>
+                            </div>
+                            <div class="commodityStar">
+                                <img src="../images/index/star.png" alt="排行商品星等">
+                            </div>
+                            <div class="commodityPrice">
+                                <p>$45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="LeaderboardNo3">
+                    <div class="Crown">
+                        <img src="../images/index/copper.png" alt="排行皇冠">
+                    </div>
+                    <div class="Leaderboarditem No3">
+                        <div class="LeaderboarCountry">
+                            <img src="../images/index/de-no3.png" alt="排行國家">
+                        </div>
+                        <div class="commodity">
+                            <div class="commodityImg">
+                                <img src="../images/index/co3.png" alt="排行商品">
+                            </div>
+                            <div class="commodityTitle">
+                                <h3>［德國］Pure水果軟糖</h3>
+                            </div>
+                            <div class="commodityStar">
+                                <img src="../images/index/star.png" alt="排行商品星等">
+                            </div>
+                            <div class="commodityPrice">
+                                <p>$45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <div id="ctrl_bar">
+            <div class="btn btn_front" id="btn_front">前</div>
+            <div class="btn btn_back" id="btn_back">後</div>
+            <div class="btn btn_top" id="btn_top">上</div>
+            <div class="btn btn_bottom" id="btn_bottom">下</div>
+            <div class="btn btn_left" id="btn_left">左</div>
+            <div class="btn btn_right" id="btn_right">右</div>
+            <div class="btn rotateX" id="rotateX">X軸轉轉</div>
+            <div class="btn rotateY" id="rotateY">Y軸轉轉</div>
+            <div class="btn rotateZ" id="rotateZ">Z軸轉轉</div>
+            <div class="btn show" id="show">Show</div>
+        </div> -->
+        
 
     </div>
 
@@ -174,61 +526,63 @@
 <script>
         //建立一個圖表，內容就是follow套件chart.js的規則
         function createRadar(){
-            var ctx = document.getElementById("radarCanvas").getContext('2d');
-            Chart.defaults.global.legend.display = false;
-            Chart.defaults.global.tooltips = false;
-            //改字體大小
-            Chart.defaults.global.defaultFontSize = 20;
-            //因為畫完一次圖表之後希望可以再變動，所以用變數代表每個項目的值
-            good = 3;
-            sweet = 3;
-            sour = 3;
-            spicy = 3;
-            radarOptions =
-                {
-                    scale:
+            for(var i = 0 ; i<8 ; i++){
+                var ctx = document.getElementsByClassName("radarCanvas")[i].getContext('2d');
+                Chart.defaults.global.legend.display = false;
+                Chart.defaults.global.tooltips = false;
+                //改字體大小
+                Chart.defaults.global.defaultFontSize = 20;
+                //因為畫完一次圖表之後希望可以再變動，所以用變數代表每個項目的值
+                good = 3;
+                sweet = 3;
+                sour = 3;
+                spicy = 3;
+                radarOptions =
                     {
-                        ticks:
+                        scale:
                         {
-                            fontSize: 10,
-                            beginAtZero: true,
-                            maxTicksLimit: 7,
-                            min: 0,
-                            max: 5
+                            ticks:
+                            {
+                                fontSize: 10,
+                                beginAtZero: true,
+                                maxTicksLimit: 7,
+                                min: 0,
+                                max: 5
+                            },
+                            pointLabels:
+                            {
+                                fontSize: 16,
+                                color: '#0044BB'
+                            },
+                            gridLines:
+                            {
+                                // color: '#009FCC'
+                            }
                         },
-                        pointLabels:
-                        {
-                            fontSize: 16,
-                            color: '#0044BB'
-                        },
-                        gridLines:
-                        {
-                            // color: '#009FCC'
-                        }
+                        maintainAspectRatio: false
+                    };
+                radarCanvas = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        //項目標籤的文字
+                        labels: ["Good", "Sweet", "Sour", "Spicy"],
+                        datasets: [{
+                            // label: '# of Votes',
+                            data: [good, sweet, sour, spicy],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                            ],
+                            borderWidth: 1,
+                            //端點的大小
+                            pointRadius: 4,
+                        }]
                     },
-                    maintainAspectRatio: false
-                };
-            radarCanvas = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    //項目標籤的文字
-                    labels: ["Good", "Sweet", "Sour", "Spicy"],
-                    datasets: [{
-                        // label: '# of Votes',
-                        data: [good, sweet, sour, spicy],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                        ],
-                        borderWidth: 1,
-                        //端點的大小
-                        pointRadius: 4,
-                    }]
-                },
-                options: radarOptions
-            });
+                    options: radarOptions
+                });    
+            }     
         }
         function doFirst(){
             //呼叫函式，透過chart.js套件建立雷達圖
@@ -242,5 +596,193 @@
         }
         window.addEventListener('load', doFirst);
     </script>
+
+
+
+
+
+<!-- 箱子打開動畫 -->
+<script>
+    const boxBases = document.querySelectorAll(".boxBase");
+    const btns = document.querySelectorAll(".btn");
+    //箱子上蓋測試
+    const cover_out = document.querySelector("#cover_out");
+    const cover_in = document.querySelector("#cover_in");
+    const lights = document.querySelectorAll(".light");
+    //箱子上蓋+下蓋收納測試
+    const cover_in_12 = document.querySelector("#cover_in_12");
+    const cover_out_12 = document.querySelector("#cover_out_12");
+    const cover_dl_12 = document.querySelector("#cover_dl_12");
+    const cover_dr_12 = document.querySelector("#cover_dr_12");
+    const box_12 = document.querySelector("#box_12");
+
+
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i].addEventListener("click", boxRotate);
+    // }
+
+    //轉轉箱子功能鈕
+    //缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
+    // function boxRotate(e) {
+    //     console.log(`this.id: ${this.id}`);
+    //     switch (this.id) {
+    //         case "btn_front":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "btn_back":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "btn_top":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "btn_bottom":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "btn_left":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "btn_right":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+    //             });
+    //             break;
+    //         case "rotateX":
+    //             boxBases.forEach(element => {
+    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+    //                 console.log("element.style.transform:" + element.style.transform);
+    //                 let arr = element.style.transform.split(" ");
+    //                 console.log(`arr: ${arr}`);
+    //                 let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
+    //                 arr[0] = "rotateX(" + newAngelX + "deg)";
+    //                 console.log(arr[0]);
+    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+    //             });
+    //             break;
+    //         case "rotateY":
+    //             boxBases.forEach(element => {
+    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+    //                 console.log("element.style.transform:" + element.style.transform);
+    //                 let arr = element.style.transform.split(" ");
+    //                 console.log(`arr: ${arr}`);
+    //                 let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
+    //                 arr[1] = "rotateY(" + newAngelY + "deg)";
+    //                 console.log(arr[1]);
+    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+    //             });
+    //             break;
+    //         case "rotateZ":
+    //             boxBases.forEach(element => {
+    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+    //                 console.log("element.style.transform:" + element.style.transform);
+    //                 let arr = element.style.transform.split(" ");
+    //                 console.log(`arr: ${arr}`);
+    //                 let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
+    //                 arr[2] = "rotateZ(" + newAngelZ + "deg)";
+    //                 console.log(arr[2]);
+    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+    //             });
+    //             break;
+    //         case "show":
+    //             boxBases.forEach(element => {
+    //                 element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
+    //             });
+    //             //先把蓋子蓋起來
+    //             // {
+    //             //     let arr = cover_out.style.transform.split(" ");
+    //             //     console.log(`arr: ${arr}`);
+    //             //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
+    //             //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
+    //             // }
+
+    //             // //延遲一段時間後...TADA~蓋子打開~
+    //             // setTimeout(e => {
+    //             //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
+    //             //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg) rotateY(180deg)";
+    //             // }, 1000);
+    //             // //再延遲一下...燈燈~電燈假發光~
+    //             // setTimeout(e => {
+    //             //     console.log(lights);
+
+    //             //     lights.forEach(element => {
+    //             //         element.classList.add("showLight");
+    //             //     })
+    //             // }, 1000)
+
+    //             //上蓋收納下蓋打開測試
+    //             //上蓋初始值要打開
+    //             //上下蓋改Y軸
+    //             cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg)";
+    //             cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg) rotateY(180deg)";
+    //             //下蓋初始關起來
+    //             cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(-90deg) ";
+    //             cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(-90deg)";
+    //             //box_12姿態固定
+    //             box_12.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+    //             setTimeout(e => {
+    //                 box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
+    //             }, 400)
+
+    //             //延遲....上蓋關起來
+    //             setTimeout(e => {
+    //                 cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg)";
+    //                 cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg) rotateY(180deg)";
+    //             }, 1000);
+    //             //延遲...箱子抬起來
+    //             setTimeout(e => {
+    //                 box_12.style.transform = "rotateX(20deg) rotateY(0deg) rotateZ(0deg)";
+    //             }, 1500)
+    //             //延遲...下蓋兩片打開
+    //             setTimeout(e => {
+    //                 cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(30deg) ";
+    //                 cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(30deg)";
+    //             }, 1700);
+
+    //             break;
+    //     }
+    // };
+
+
+    //給箱子姿態初始值
+    // boxBases.forEach(el => {
+    //     el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+    // })
+
+
+    //驗證回傳值確實是陣列
+    // console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
+    // console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
+    // console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
+    // // cssGet(".boxBase","transform");
+
+    // //抓css檔內樣式
+    // //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
+    // //原句:window.getComputedStyle(element, null).getPropertyValue("float");
+    // //不抓偽類 ex: var result = cssGet(".class","width");
+    // //抓偽類 ex: var result = cssGet(".class","width",":after");
+    // //回傳值是一個陣列!!!!
+    // //transform會得到矩陣，不是 translate / rotate 之類的
+    // function cssGet(element, property = "width-height", pseudo = null) {
+    //     let el = document.querySelectorAll(element);
+    //     var arrData = [];
+    //     el.forEach(item => {
+    //         let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
+    //         arrData.push(data);
+    //     })
+    //     return arrData;
+    // }
+</script>
+
+
+
 </body>
 </html>

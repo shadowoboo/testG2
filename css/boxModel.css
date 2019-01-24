@@ -1,7 +1,3 @@
-.section {
-  width: 100%;
-  height: 100vh; }
-
 #section_3 .camera {
   width: 100%;
   height: 100%;
@@ -226,7 +222,7 @@
 
 .section_12 .camera {
   width: 100%;
-  height: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +231,7 @@
 .section_12 .boxBase {
   border: red 2px solid;
   width: 400px;
-  height: 100px;
+  height: 120px;
   position: relative;
   background-color: transparent;
   transform-origin: center center;
@@ -259,7 +255,7 @@
   width: 400px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 50px, -100px) rotateX(90deg);
+  transform: translate3d(0, 40px, -100px) rotateX(90deg);
   line-height: 200px;
   backface-visibility: hidden; }
 
@@ -267,53 +263,53 @@
   width: 400px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
+  transform: translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg);
   line-height: 200px;
   backface-visibility: hidden; }
 
 .section_12 .surface_down {
   width: 400px;
   height: 200px;
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(60px);
   line-height: 200px; }
 
 .section_12 .surface_down_left {
   width: 200px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(-200px, 150px, 0) rotateY(-90deg) rotateX(-90deg);
+  transform: translate3d(-200px, 160px, 0) rotateY(-90deg) rotateX(-90deg);
   line-height: 200px; }
 
 .section_12 .surface_down_right {
   width: 200px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(200px, 150px, 0) rotateY(90deg) rotateX(-90deg);
+  transform: translate3d(200px, 160px, 0) rotateY(90deg) rotateX(-90deg);
   line-height: 200px; }
 
 .section_12 .surface_font {
   width: 400px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(0deg) translateZ(100px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_back {
   width: 400px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(180deg) translateZ(100px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_left {
   width: 200px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(-90deg) translateZ(200px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_right {
   width: 200px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(90deg) translateZ(200px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_top {
   background-color: #076baf; }
@@ -334,12 +330,6 @@
   background-color: #fbc84a; }
 
 #ctrl_bar {
-  position: fixed;
-  z-index: 10;
-  width: 90%;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, 0%);
   display: flex;
   justify-content: space-around; }
   #ctrl_bar .btn {
