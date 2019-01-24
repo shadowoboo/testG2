@@ -42,6 +42,7 @@
 
     <script>
 
+        // window.event.cancelBubble=true;
         const btn7s = document.querySelectorAll(".btn7");
         const cardContent_7 = document.querySelector("#cardContent_7");
 
@@ -58,17 +59,17 @@
             // console.log(`textTeam len: ${len}`);
             for (let i = 0; i < len; i++) {
                 textTeam[i].addEventListener("mouseenter", textTeamShow, false);
-                textTeam[i].addEventListener("mouseleave", textTeamHide);
-                textTeam[i].addEventListener("click", textTeamSelect);
+                textTeam[i].addEventListener("mouseleave", textTeamHide,false);
+                textTeam[i].addEventListener("click", textTeamSelect, false);
                 textTeam[i].addEventListener("dragstart", cardDragStart);
             }
 
             var textarea = document.getElementsByClassName("textarea");
             var len = textarea.length;
             for (let i = 0; i < len; i++) {
-                textarea[i].addEventListener("focus", textareaFocus);
-                textarea[i].addEventListener("biur", textareaBlur);
-                textarea[i].addEventListener("click", textareaFocus);
+                textarea[i].addEventListener("focus", textareaFocus,false);
+                textarea[i].addEventListener("biur", textareaBlur, false);
+                textarea[i].addEventListener("click", textareaFocus, false);
             }
 
 
@@ -139,9 +140,13 @@
 
         function textTeamShow(e) {
             e.target.classList.add("show");
+            e.cancelBubble = true;
+            e.stopPropagation();
         }
         function textTeamHide(e) {
             e.target.classList.remove("show");
+            e.cancelBubble = true;
+            e.stopPropagation();
         }
         function textTeamSelect(e) {
             var textTeam = document.getElementsByClassName("textTeam");
@@ -153,6 +158,8 @@
             // console.log(`e.target.children[1]: ${e.target.children[1].classList}`);
 
             // e.target.children[1].focus();
+            e.cancelBubble = true;
+            e.stopPropagation();
         }
 
         function textareaFocus(e) {
@@ -162,6 +169,8 @@
                 // textTeam[i].classList.remove("select");
             }
             e.target.parentNode.classList.add("select");
+            e.cancelBubble=true;
+            e.stopPropagation();
         }
 
         function textareaBlur(e) {
@@ -241,6 +250,34 @@
             textTeam.appendChild(textResize);
             cardContent_7.appendChild(textTeam);
         }
+
+
+        // console.log(`$id("btns7"): ${$id("btns7")}`);
+        // console.log(`$class("btn7"):　${$class("btn7")}`);
+        // console.log(`$q(".btn7"): ${$q(".btn7")}`);
+        // console.log(`$qall(".btn7"): ${$qall(".btn7")}`);
+        //終於有一天受不了了，學董董簡寫一些函式
+        //順便把array-like轉成array型態，方便操作
+        function $id(id){//找id，動態
+            return document.getElementById(id);
+        }
+        function $class(className){//找className並轉成陣列，動態
+            let classNames = document.getElementsByClassName(className);
+            return Array.from(classNames);
+        }
+        function $qall(qall){//query all，靜態
+            let qalls=document.querySelectorAll(qall);
+            return Array.from(qalls);
+        }
+        function $q(q){//query，靜態
+            return document.querySelector(q);
+        }
+
+
+        
+
+        
+
 
     </script>
 </body>
