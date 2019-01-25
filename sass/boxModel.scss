@@ -133,7 +133,7 @@
 @mixin box3D_cover_bot( $boxI:100px,$boxJ:100px,$boxK:100px){
     .camera{
         width: 100%;
-        height: 60%;
+        height: 450px;
         display: flex;
         justify-content: center;
         align-items: center;

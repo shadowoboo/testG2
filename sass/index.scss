@@ -20,7 +20,7 @@ body {
             .countryMap {
                 height: 600px;
                 width: 1200px;
-                margin: 150px auto;
+                margin: 70px auto;
                 position: absolute;
                 background-image: url(../images/index/map.svg);
                 background-size: 800px;
@@ -150,43 +150,43 @@ body {
                 .snackImg{
                     width: 100px;
                     position: absolute;
-                    z-index: 666;
+                    // z-index: 666;
                 }
                 >:nth-child(1) {
-                    top: 200px;
+                    top: 120px;
                     width: 150px;
                     left: 150px;
                 }
                 >:nth-child(2) {
-                    top: 180px;
-                    left: 690px;
+                    top: 70px;
+                    left: 680px;
                 }
                 >:nth-child(3) {
-                    top: 560px;
-                    left: 260px;
+                    top: 460px;
+                    left: 250px;
                     width: 170px;
                 }
                 >:nth-child(4) {
-                    top: 100px;
-                    left: 520px;
+                    top: 30px;
+                    left: 510px;
                     width: 90px;
                 }
                 >:nth-child(5) {
-                    top: 500px;
+                    top: 400px;
                     left: 580px;
                     width: 90px;
                 }
                 >:nth-child(6) {
-                    top: 100px;
+                    top: 10px;
                     left: 860px;
                     width: 90px;
                 }
                 >:nth-child(7) {
-                    top: 300px;
+                    top: 210px;
                     left: 960px;
                 }
                 >:nth-child(8) {
-                    top: 480px;
+                    top: 380px;
                     left: 920px;
                     width: 150px;
                 }
@@ -261,7 +261,7 @@ body {
     .section_12{
         background-image: url(../images/index/cheese.png);
         background-repeat: no-repeat;
-        height: 1090px;
+        height: 1340px;
         background-position-y: 60px;
         margin: 20px auto;
         position: relative;
@@ -273,26 +273,55 @@ body {
             text-align: center;
             height: 160px;
             position: absolute;
-            top: 340px;
+            top: 240px;
             left: 0;
             right: 0;
+            // position: relative;
             h2{
-                line-height: 150px;
+                line-height: 160px;
                 color: $blue;
+            }
+            #celebration{
+                position: absolute;
+                margin: auto;
+                top: -140px;;
+                right: 0;
+                left: 0;
             }
         }
         .LeaderboardCount{
             width: 1200px;
+            height: 700px;
             margin: auto;
+            display: flex;
+            justify-content: space-around;
+            .LeaderboardNo2{
+                align-self: center;
+            }
+            .LeaderboardNo3{
+                align-self: flex-end;
+            }            
             .Crown{
                 width: 100px;
+                margin: auto;
+                position: relative;
+                h2{
+                    color: #fff;
+                    position: absolute;
+                    text-align: center;
+                    top: 20px;
+                    right: 0;
+                    left: 0;
+                }
             }
             .No2{
                 background-image: url(../images/index/blue-pack.png);
                 background-repeat: no-repeat;
                 background-size: 280px;
                 .commodityImg{
-                    width: 45%;
+                    img{
+                        width: 38%;
+                    }
                 }
             }
             .No1{
@@ -300,23 +329,155 @@ body {
                 background-repeat: no-repeat;
                 background-size: 280px;
                 .commodityImg{
-                    width: 50%;
+                    img{
+                        width: 40%;
+                    } 
                 }
             }
             .No3{
                 background-image: url(../images/index/green-pack.png);
                 background-repeat: no-repeat;
                 background-size: 280px;
+                align-self: end;
                 .commodityImg{
-                    width: 50%;
+                    img{
+                        width: 50%;
+                    }
                 }
             }
             .Leaderboarditem{
                 width: 280px;
+                height: 480px;
+                position: relative;
                 .LeaderboarCountry{
-                    width: 30px;
+                    width: 40px;
+                    padding-top: 30px;
+                    position: absolute;
+                    right: 15px;
+                }
+                .commodity{
+                    text-align: center;
+                    padding: 50px 0;
+                    .commodityImg{
+                        margin: auto;
+                        width: 280px;
+                        height: 220px;
+                    }
+                }
+                .commodityPrice{
+                    p{
+                        font-size: 28px;
+                    }
+                }
+                .commodityStar{
+                    width: 150px;
+                    margin: auto;
                 }
             }
+        }
+        .LeaderboardIcon{
+            .lbIconImg{
+                position: absolute;
+            }
+            >:nth-child(1){
+                bottom: 65%;
+                left: 22%;
+                animation: float 1.8s linear infinite alternate-reverse;
+            }
+            >:nth-child(2){
+                bottom: 51%;
+                left: 4%;
+                animation: float 2s linear infinite alternate;
+            }
+            >:nth-child(3){
+                bottom: 30%;
+                left: 8%;
+                animation: float 1.4s linear infinite alternate-reverse;
+            }
+            >:nth-child(4){
+                bottom: 56%;
+                left: 80%;
+                animation: float 1.2s linear infinite alternate;
+            }
+            >:nth-child(5){
+                bottom: 15%;
+                left: 40%;
+                animation: float 1.6s linear infinite alternate-reverse;
+            }
+            >:nth-child(6){
+                bottom: 13%;
+                left: 90%;
+                animation: float 1s linear infinite alternate;
+            }
+            >:nth-child(7){
+                bottom: 43%;
+                left: 95%;
+                animation: float 1.4s linear infinite alternate-reverse;            
+            }
+            >:nth-child(8){
+                bottom: 32%;
+                left: 83%;
+                animation: float 1.8s linear infinite alternate;
+            }
+            >:nth-child(9){
+                bottom: 40%;
+                left: 58%;
+                animation: float 1.6s linear infinite alternate-reverse;
+            }
+            @keyframes float {
+                0%{transform: translateY(-10px)}
+                100%{transform: translateY(10px)}
+            }
+        }
+        .LeaderboardSort{
+            margin: 80px;
+            text-align: center;
+            :nth-child(2),:nth-child(3),:nth-child(4){
+                border-radius: 0px;
+            }
+            :nth-child(1){
+                border-radius: 10px 0 0 10px;
+            }
+            :nth-child(5){
+                border-radius: 0 10px 10px 0;
+            }
+        }
+    }
+
+
+    .customized{
+        background-image: url(../images/index/background.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+        height: 1000px;
+        margin-bottom: 100px;
+        overflow: hidden;
+        position: relative;
+        .waveTop{
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 1920px;
+        }
+        .LeaderboardTitle{
+            background-image: url(../images/index/title-cloud.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            text-align: center;
+            height: 300px;
+            padding: 110px 0;
+            position: relative;
+            h2{
+                line-height: 70px;
+                color: $blue;
+            }
+        }
+        .customizedCount{
+            display: flex;
+            justify-content: space-around;
         }
     }
 }

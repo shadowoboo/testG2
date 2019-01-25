@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">  
+        crossorigin="anonymous">
     <script src="../js/TweenMax.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="index">
         <section class="section">
@@ -303,7 +305,7 @@
                             </div>
                         </div>
                     </div>
-                
+
                 </div>
                 <div class="snackMap" id="container">
                     <div class="snackImg slide1">
@@ -330,7 +332,7 @@
                     <div class="snackImg slide3">
                         <img src="../images/index/snack-au.png" alt="零食icon">
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="cloudMap" id="container">
                 <div class="cloudImg slide1">
@@ -400,11 +402,13 @@
             </div>
             <div class="LeaderboardTitle">
                 <h2>零食排行榜</h2>
+                <canvas id="celebration"></canvas>
             </div>
             <div class="LeaderboardCount">
                 <div class="LeaderboardNo2">
                     <div class="Crown">
                         <img src="../images/index/silver.png" alt="排行皇冠">
+                        <h2>2</h2>
                     </div>
                     <div class="Leaderboarditem No2">
                         <div class="LeaderboarCountry">
@@ -415,7 +419,7 @@
                                 <img src="../images/index/co2.png" alt="排行商品">
                             </div>
                             <div class="commodityTitle">
-                                <h3>［日本］POCKY巧克力棒</h3>
+                                <h4>［日本］<br>POCKY巧克力棒</h4>
                             </div>
                             <div class="commodityStar">
                                 <img src="../images/index/star.png" alt="排行商品星等">
@@ -423,12 +427,14 @@
                             <div class="commodityPrice">
                                 <p>$45</p>
                             </div>
+                            <button class="cart">加入購物車</button>
                         </div>
                     </div>
                 </div>
                 <div class="LeaderboardNo1">
                     <div class="Crown">
                         <img src="../images/index/gold.png" alt="排行皇冠">
+                        <h2>1</h2>
                     </div>
                     <div class="Leaderboarditem No1">
                         <div class="LeaderboarCountry">
@@ -439,7 +445,7 @@
                                 <img src="../images/index/co1.png" alt="排行商品">
                             </div>
                             <div class="commodityTitle">
-                                <h3>［美國］湖！洋芋片</h3>
+                                <h4>［美國］<br>湖！洋芋片</h4>
                             </div>
                             <div class="commodityStar">
                                 <img src="../images/index/star.png" alt="排行商品星等">
@@ -447,12 +453,14 @@
                             <div class="commodityPrice">
                                 <p>$45</p>
                             </div>
+                            <button class="cart">加入購物車</button>
                         </div>
                     </div>
                 </div>
                 <div class="LeaderboardNo3">
                     <div class="Crown">
                         <img src="../images/index/copper.png" alt="排行皇冠">
+                        <h2>3</h2>
                     </div>
                     <div class="Leaderboarditem No3">
                         <div class="LeaderboarCountry">
@@ -463,7 +471,7 @@
                                 <img src="../images/index/co3.png" alt="排行商品">
                             </div>
                             <div class="commodityTitle">
-                                <h3>［德國］Pure水果軟糖</h3>
+                                <h4>［德國］<br>Pure水果軟糖</h4>
                             </div>
                             <div class="commodityStar">
                                 <img src="../images/index/star.png" alt="排行商品星等">
@@ -471,9 +479,46 @@
                             <div class="commodityPrice">
                                 <p>$45</p>
                             </div>
+                            <button class="cart">加入購物車</button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="LeaderboardIcon">
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-1.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-2.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-3.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-4.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-5.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-6.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-7.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-8.png" alt="糖果背景圖">
+                </div>
+                <div class="lbIconImg">
+                    <img src="../images/index/candy-9.png" alt="糖果背景圖">
+                </div>
+            </div>
+            <div class="LeaderboardSort">
+                <button class="category">綜合</button>
+                <button class="category">餅乾</button>
+                <button class="category">糖果</button>
+                <button class="category">洋芋片</button>
+                <button class="category">巧克力</button>
             </div>
         </section>
         <!-- <div id="ctrl_bar">
@@ -488,7 +533,47 @@
             <div class="btn rotateZ" id="rotateZ">Z軸轉轉</div>
             <div class="btn show" id="show">Show</div>
         </div> -->
-        
+
+
+        <section class="customized">
+            <div class="waveTop">
+                <img src="../images/index/waveTop_5.svg" alt="波浪圖">
+            </div>
+            <div class="LeaderboardTitle">
+                <h2>零食排行榜</h2>
+            </div>
+            <div class="customizedCount">
+                <div class="ctRoulette"></div>
+                <section class="section section_3" id="section_3">
+                    <div class="camera">
+                        <div class="box boxBase" id="box_3">
+                            <div class="surface surface_top">上</div>
+                            <div class="surface surface_down">下</div>
+                            <div class="surface surface_back">後</div>
+                            <div class="surface surface_font">前</div>
+                            <div class="surface surface_left">左</div>
+                            <div class="surface surface_right">右</div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ctCard">
+                    <div class="ctIntroduce">
+                        <h3>簡單4步驟</h3>
+                        <p>設計箱子 → 選卡片 → 選零食 → 結帳</p>
+                    </div>
+                    <div class="ctBtns">
+                        <h2>step 1 設計箱子</h2>
+                        <div class="ctBtn" id="ctrl_bar">
+                            <button class="dimension btn_front" id="btn_front">前</button>
+                            <button class="dimension btn btn_back" id="btn_back">後</button>
+                            <button class="dimension btn btn_left" id="btn_left">左</button>
+                            <button class="dimension btn_right" id="btn_right">右</button>
+                            <button class="dimension btn_top" id="btn_top">上</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
 
@@ -508,10 +593,10 @@
                 y: (relY - $this.height() / 2) / $this.height() * movement
             });
         }
-        function doFirst(){
+        function doFirst() {
             container = document.getElementById('container');
             //滑鼠每次移動的時候會呼叫函式parallaxIt，針對不同的class(.slide1~3)，給予不同的移動距離
-                container.addEventListener('mousemove', function (e){
+            container.addEventListener('mousemove', function (e) {
                 parallaxIt(e, ".slide1", -100);
                 parallaxIt(e, ".slide2", -50);
                 parallaxIt(e, ".slide3", -75);
@@ -519,14 +604,14 @@
                 parallaxIt(e, ".slide5", -125);
 
             });
-        }     
+        }
         window.addEventListener('load', doFirst);
     </script>
 
-<script>
+    <script>
         //建立一個圖表，內容就是follow套件chart.js的規則
-        function createRadar(){
-            for(var i = 0 ; i<8 ; i++){
+        function createRadar() {
+            for (var i = 0; i < 8; i++) {
                 var ctx = document.getElementsByClassName("radarCanvas")[i].getContext('2d');
                 Chart.defaults.global.legend.display = false;
                 Chart.defaults.global.tooltips = false;
@@ -581,16 +666,16 @@
                         }]
                     },
                     options: radarOptions
-                });    
-            }     
+                });
+            }
         }
-        function doFirst(){
+        function doFirst() {
             //呼叫函式，透過chart.js套件建立雷達圖
             createRadar();
             //取得input range們的物件關聯，並建立input事件聆聽函式updateRadar
             //(input類型的物件只要值有改變就是發生input事件)
             ranges = document.getElementsByClassName('radarRange');
-            for(var i = 0; i < ranges.length; i++){
+            for (var i = 0; i < ranges.length; i++) {
                 ranges[i].addEventListener('input', updateRadar);
             }
         }
@@ -601,28 +686,28 @@
 
 
 
-<!-- 箱子打開動畫 -->
-<script>
-    const boxBases = document.querySelectorAll(".boxBase");
-    const btns = document.querySelectorAll(".btn");
-    //箱子上蓋測試
-    const cover_out = document.querySelector("#cover_out");
-    const cover_in = document.querySelector("#cover_in");
-    const lights = document.querySelectorAll(".light");
-    //箱子上蓋+下蓋收納測試
-    const cover_in_12 = document.querySelector("#cover_in_12");
-    const cover_out_12 = document.querySelector("#cover_out_12");
-    const cover_dl_12 = document.querySelector("#cover_dl_12");
-    const cover_dr_12 = document.querySelector("#cover_dr_12");
-    const box_12 = document.querySelector("#box_12");
+    <!-- 箱子打開動畫 -->
+    <script>
+        const boxBases = document.querySelectorAll(".boxBase");
+        const btns = document.querySelectorAll(".btn");
+        //箱子上蓋測試
+        const cover_out = document.querySelector("#cover_out");
+        const cover_in = document.querySelector("#cover_in");
+        const lights = document.querySelectorAll(".light");
+        //箱子上蓋+下蓋收納測試
+        const cover_in_12 = document.querySelector("#cover_in_12");
+        const cover_out_12 = document.querySelector("#cover_out_12");
+        const cover_dl_12 = document.querySelector("#cover_dl_12");
+        const cover_dr_12 = document.querySelector("#cover_dr_12");
+        const box_12 = document.querySelector("#box_12");
 
 
     // for (var i = 0; i < btns.length; i++) {
     //     btns[i].addEventListener("click", boxRotate);
     // }
 
-    //轉轉箱子功能鈕
-    //缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
+    // 轉轉箱子功能鈕
+    // 缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
     // function boxRotate(e) {
     //     console.log(`this.id: ${this.id}`);
     //     switch (this.id) {
@@ -752,13 +837,13 @@
     // };
 
 
-    //給箱子姿態初始值
+    // 給箱子姿態初始值
     // boxBases.forEach(el => {
     //     el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
     // })
 
 
-    //驗證回傳值確實是陣列
+    // 驗證回傳值確實是陣列
     // console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
     // console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
     // console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
@@ -780,9 +865,10 @@
     //     })
     //     return arrData;
     // }
-</script>
+    </script>
 
 
 
 </body>
+
 </html>
