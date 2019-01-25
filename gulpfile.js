@@ -49,7 +49,7 @@ gulp.task('default', ['sass'], function () {
     gulp.watch("js/*.js").on('change', reload);
     gulp.watch("images/*").on('change', reload);
     gulp.watch("page/*.html").on('change', reload);
-    gulp.watch("code testing/*.html").on('change', reload);
+    gulp.watch("code_testing/*.html").on('change', reload);
     // gulp.watch("images/*").on('change', reload);
 });
 

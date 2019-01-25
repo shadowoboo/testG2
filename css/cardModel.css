@@ -12,8 +12,6 @@
   resize: none;
   font-size: 20px;
   background-color: transparent; }
-  .textTeam.select textarea {
-    outline: 5px dashed #333; }
   .textTeam:hover {
     outline: #3333334b solid 1px; }
   .textTeam:hover .ctrlPos {
@@ -40,8 +38,7 @@
     left: 0;
     height: calc(100% - 20px);
     width: 100%;
-    overflow: hidden;
-    font-size: 20px; }
+    overflow: hidden; }
     .textTeam .textarea:focus {
       box-shadow: #007bff 0px 0px 0px 2px inset; }
     .textTeam .textarea:empty:before {

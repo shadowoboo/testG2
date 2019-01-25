@@ -44,3 +44,17 @@ function $qall(qall) {//query all，靜態
 function $q(q) {//query，靜態
     return document.querySelector(q);
 }
+
+
+
+//測試用，確認點擊到的東西是誰
+//windowClick();
+//回傳log第一個是e.target訊息
+//回傳log第二個是this訊息
+function windowClick(e) {
+    window.addEventListener("click", function (e) {
+        console.log(e.target);
+        console.log(this);
+        //console.log(`$(this): ${$(this)}`); //jq
+    })
+}

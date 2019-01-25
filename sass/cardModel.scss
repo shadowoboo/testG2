@@ -153,8 +153,9 @@ $cardY:600px;
 
     //被選擇時效果，靠程式控制
     //textTeam被選擇時，把文字區框起來
-    &.select textarea{
-        outline:5px dashed #333;
+    &.select .textarea{
+        // box-shadow:inset #3333334b 0px 0px 0px 5px;
+        // outline: #3333334b inset 5px;
     }
     //提示使用者文字模組範圍
     &:hover{
@@ -198,7 +199,7 @@ $cardY:600px;
         height: calc(100% - #{$areaHead});
         width: 100%;
         overflow: hidden; //不要露出卷軸
-        font-size: 20px;
+        // font-size: 20px;
         // vertical-align: center;
         //文字框被使用中的時候，提示使用者還在輸入中
         &:focus{

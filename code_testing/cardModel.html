@@ -52,6 +52,13 @@
             elem.addEventListener("click", textCtrl);
         })
 
+        // //對卡片內容區監聽
+        // cardContent_7.addEventListener("click",function cardClick(e){
+        //     $class("textTeam").forEach(el=>{
+        //         el.classList.remove("select");
+        //     })
+        // })
+
         // //利用mouseenter對內容區做監聽
         // //順帶觸發文字框框監聽
         // cardContent_7.addEventListener("mouseenter", function checkTextArea() {
@@ -125,7 +132,7 @@
             console.log(`Drag Stat!!`);
             $class(".textTeam");
             console.log(`.textTeam.length: ${$class(".textTeam").length}`);
-            
+
             //允許穿透
             $class(".textTeam").forEach(el => {
                 el.style.pointerEvents = "none";
@@ -141,7 +148,7 @@
             })
         }
         //對textTeam的dragend設定
-        function cardDragEnd(e){
+        function cardDragEnd(e) {
             //允許穿透
             $class("textTeam").forEach(el => {
                 el.style.pointerEvents = "auto";
@@ -185,7 +192,7 @@
             e.target.parentNode.setAttribute("draggable", false);
         }
 
-
+        //textTeam監聽事件區
         function textTeamShow(e) {
             e.target.classList.add("show");
         }
@@ -197,18 +204,33 @@
         }
 
         //textarea監聽事件區
-        function textareaFocus(e) {
-            e.target.parentNode.classList.add("select");
-        }
         function textareaBlur(e) {
-            e.target.parentNode.classList.remove("select");
+            // $class("cardSurface").forEach(el => {
+            //     var clickCount = 0;
+            //     el.addEventListener("click", (e) => {
+            //         clickCount++;
+            //         if (clickCount == 2) {
+            //             $class("textTeam").forEach(el => {
+            //                 el.classList.remove("select");
+            //             })
+            //             clickCount=0;
+            //         }
+            //     })
+            // })
+            // e.target.parentNode.classList.remove("select");
         }
-        function textareaEnter(e) {
-            e.target.parentNode.classList.add("show");
+        function textareaSelect(e) {
+            $class("textTeam").forEach(el => {
+                el.classList.remove("select");
+            })
+            $class("textarea").forEach(el => {
+                el.classList.remove("select");
+            })
+            console.log(e.target.parentNode);
+            e.target.parentNode.classList.add("select");
+            e.target.classList.add("select");
         }
-        function textareaLeave(e) {
-            e.target.parentNode.classList.remove("show");
-        }
+
 
         function textCtrl(e) {
             switch (this.id) {
@@ -216,16 +238,51 @@
                     addTextTeam();
                     break;
                 case "btn7_big":
-
+                    // fontSizeBig();
+                    $class("textarea").forEach(el=>{
+                        if(el.classList.contains("select")){
+                            console.log(el.style.fontSize);
+                            let value= el.style.fontSize.replace("px","");
+                            value= parseInt(value)+3;
+                            if(value>60){value=60;}
+                            console.log(value);
+                            el.style.fontSize = value + "px";
+                        }
+                    })
                     break;
                 case "btn7_small":
-
+                    $class("textarea").forEach(el => {
+                        if (el.classList.contains("select")) {
+                            console.log(el.style.fontSize);
+                            let value = el.style.fontSize.replace("px", "");
+                            value = parseInt(value) - 3;
+                            if(value<12){value=12;}
+                            console.log(value);
+                            el.style.fontSize = value + "px";
+                        }
+                    })
                     break;
                 case "btn7_clk":
-
+                    $class("textTeam").forEach(el => {
+                        if (el.classList.contains("select")) {
+                            console.log(el.style.transform);
+                            let value = el.style.transform.replace("rotate(", "").replace("deg)","");
+                            value = parseInt(value) + 10;
+                            console.log(value);
+                            el.style.transform = "rotate("+ value + "deg)";
+                        }
+                    })
                     break;
                 case "btn7_unclk":
-
+                    $class("textTeam").forEach(el => {
+                        if (el.classList.contains("select")) {
+                            console.log(el.style.transform);
+                            let value = el.style.transform.replace("rotate(", "").replace("deg)", "");
+                            value = parseInt(value) - 10;
+                            console.log(value);
+                            el.style.transform = "rotate(" + value + "deg)";
+                        }
+                    })
                     break;
                 case "btn7_del":
                     console.log(`Del start`);
@@ -254,13 +311,16 @@
             textarea.setAttribute("contenteditable", true);
             //設定placholder並利用css裡的偽元素brfore顯示內容
             textarea.setAttribute("placeholder", "點擊輸入文字");
+            //關閉拼字檢查，避免瀏覽器一直檢查提醒錯誤，破壞卡片版面
+            textarea.setAttribute("spellcheck", false);
             //新增監聽事件
-            textarea.onclick = textareaFocus; //當textarea被點擊，textteam要被選擇
-            textarea.onmouseenter = textareaEnter;
-            textarea.onmouseleave = textareaLeave;
-            textarea.onblur = textareaBlur;
-
-
+            textarea.onblur = textareaBlur;//功能待確認
+            textarea.onclick = textareaSelect;//當textarea被點擊，textTeam要被選擇。textarea也要被選擇，方便後續字體相關操作。
+            ////當點擊area時textTeam要被選取
+            ////當 "area不是focus" 且 "卡片或section被點擊時" 解除 textTeam.select
+            //設定初始樣式
+            textarea.style.fontSize = "20px";
+            
 
 
             //建立可以被拖曳的區域
@@ -270,7 +330,6 @@
             ctrlPos.onmouseover = addDrag; //當滑鼠在ctrlPos區域時，整個textteam允許被拖曳
             ctrlPos.onmouseleave = removeDrag; //當滑鼠離開ctrlPos區域時，整個textteam取消拖曳事件
 
-
             //建立用來遮醜的小標籤
             //不用偽元素是因為不知道怎麼動態生成偽元素
             //(也很難控制吧!!!)
@@ -278,15 +337,17 @@
             textResize.classList.add("textResize");
 
             //建立一個打包的父層
-            //也負責被縮放，resize已經寫在css裡
+            //也負責被縮放，resize已經寫在css裡-----resize先關閉功能
             var textTeam = document.createElement("div");
             textTeam.classList.add("textTeam");
             //新增監聽事件
             textTeam.ondragstart = cardDragStart; //允許時，拖曳事件造成位移效果
             textTeam.ondragend = cardDragEnd;
-            textTeam.onmouseover = textTeamShow;
-            textTeam.onmouseleave = textTeamHide;
+            // textTeam.onmouseover = textTeamShow;
+            // textTeam.onmouseleave = textTeamHide;
             // textTeam.setAttribute("draggable", true);
+            //設定初始樣式
+            textTeam.style.transform="rotate(0deg)"; //只先給旋轉....如果有樣式相關的功能新增，記得重寫 rotate 按鈕事件
 
             //塞小孩，依照結構塞好
             //不過ctrlPos 和 textResize 都有絕對定位一頭一尾
@@ -297,6 +358,12 @@
             cardContent_7.appendChild(textTeam);
         }
 
+
+
+
+
+
+        ///////////////////懶惰通用function簡寫區
 
         // console.log(`$id("btns7"): ${$id("btns7")}`);
         // console.log(`$class("btn7"):　${$class("btn7")}`);
@@ -320,14 +387,18 @@
         }
 
 
+        //測試用，確認點擊到的東西是誰
+        //windowClick();
+        //回傳log第一個是e.target訊息
+        //回傳log第二個是this訊息
+        function windowClick(e) {
+            window.addEventListener("click", function (e) {
+                console.log(e.target);
+                console.log(this);
+                //console.log(`$(this): ${$(this)}`); //jq
+            })
+        }
 
-        window.addEventListener("click", function (e) {
-            console.log(e.target);
-            console.log(this);
-            console.log($(this));
-
-
-        })
 
 
 
