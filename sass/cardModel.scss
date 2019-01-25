@@ -153,10 +153,10 @@ $cardY:600px;
 
     //被選擇時效果，靠程式控制
     //textTeam被選擇時，把文字區框起來
-    &.select .textarea{
-        // box-shadow:inset #3333334b 0px 0px 0px 5px;
-        // outline: #3333334b inset 5px;
-    }
+    // &.select .textarea{
+    //     // box-shadow:inset #3333334b 0px 0px 0px 5px;
+    //     // outline: #3333334b inset 5px;
+    // }
     //提示使用者文字模組範圍
     &:hover{
         outline: #3333334b solid 1px;
