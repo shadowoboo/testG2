@@ -261,6 +261,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .rankBoard {
   background-color: #c1f3d2; }
+  .rankBoard section {
+    position: relative; }
   .rankBoard .mNone {
     display: none; }
   .rankBoard #part2 {
@@ -282,10 +284,31 @@ input[type=number]::-webkit-outer-spin-button {
       transform: translate(-50%, -50%);
       color: #076baf;
       line-height: 1.2; }
+
+@keyframes rollGlow {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
   .rankBoard .item {
-    width: 252px;
+    min-width: 200px;
+    width: 21%;
     margin: 5vh auto;
     position: relative; }
+    .rankBoard .item::before {
+      content: '';
+      display: block;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      z-index: -1;
+      top: -47px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-size: cover;
+      background-image: url(/images/rankBoard/glow.png);
+      animation: rollGlow 5s  infinite linear; }
     .rankBoard .item .itemCountry {
       width: 9.9%;
       position: absolute;
@@ -300,31 +323,43 @@ input[type=number]::-webkit-outer-spin-button {
       left: 18%;
       text-align: center; }
       .rankBoard .item .itemCtx .itemImg {
-        height: 100%;
-        width: auto;
-        max-width: 157px; }
+        width: 76%;
+        margin: auto; }
         .rankBoard .item .itemCtx .itemImg img {
-          width: auto;
-          height: 157px; }
+          width: 100%; }
       .rankBoard .item .itemCtx .score {
         font-size: 38px;
         line-height: .9em;
         color: #e97d58; }
     .rankBoard .item .star {
-      width: 54%;
+      width: 64%;
       max-width: 163px;
       position: absolute;
       bottom: 9%;
       left: 17%;
-      border-radius: 100px 0 0 100px;
-      background-color: #e97d58;
-      display: none; }
+      border-radius: 100px;
+      background: linear-gradient(to right, #e97d58 85%, white 10%); }
       .rankBoard .item .star img {
-        width: 163px; }
+        vertical-align: middle;
+        width: 100%; }
   @media screen and (min-width: 768px) {
     .rankBoard section {
       max-width: 1200px;
       margin: auto; }
+    .rankBoard .rollingItem {
+      display: flex;
+      flex-flow: row wrap;
+      width: 14%;
+      transform: rotate(30deg);
+      position: absolute; }
+      .rankBoard .rollingItem img {
+        width: 100%; }
+      .rankBoard .rollingItem #roll_1 {
+        top: 0;
+        right: 8%; }
+      .rankBoard .rollingItem #roll_2 {
+        top: 0;
+        right: 15%; }
     .rankBoard #titleAll {
       margin-right: 0; }
     .rankBoard .item {
@@ -335,4 +370,8 @@ input[type=number]::-webkit-outer-spin-button {
       left: 52%; }
     .rankBoard #rank_2 {
       margin-top: 10%;
-      left: 30%; } }
+      left: 26%; }
+    .rankBoard #rank_3 {
+      position: absolute;
+      bottom: 0;
+      right: 0; } }

@@ -6,7 +6,9 @@
 .rankBoard{
     //body
     background-color: #c1f3d2;
-
+    section{
+        position: relative;
+    }
 
     .mNone{//手機上不顯示的物件
         display: none;
@@ -35,10 +37,40 @@
 
     }
 
+    @keyframes rollGlow {
+        0%{
+            transform: rotate(0deg);
+            // opacity: 0;
+        }
+        100%{
+            transform: rotate(360deg);
+            // opacity: .7;
+        }
+    }
     .item{
-        width:252px;
+        &::before{
+            content:'';
+            display: block;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            z-index: -1;
+            top: -47px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-size: cover;
+            background-image: url(/images/rankBoard/glow.png);
+            // background: radial-gradient(ellipse at center, rgb(255,255,255) 0%,rgba(255,255,255,.8) 100%);
+            // border-radius: 50%;
+            animation: rollGlow 5s  infinite linear;
+        }
+        min-width: 200px;
+        width:21%;//252px
         margin: 5vh auto;
         position: relative;
+    
+
         .itemCountry{
             width: 9.9%;
             position: absolute;
@@ -55,13 +87,10 @@
             left: 18%;
             text-align: center;
             .itemImg{
-                height:100%;
-                width: auto;
-                max-width: 157px;
+               width: 76%;
+               margin: auto;
                 img{
-                    width: auto;
-                    height: 157px;
-                    // width: 80%;     
+                    width: 100%;
                 }
             }
             .score{
@@ -72,17 +101,17 @@
 
         }
         .star{
-            width: 54%;
+            width: 64%;
             max-width: 163px;
             position: absolute;
             bottom: 9%;
             left: 17%;
-            border-radius: 100px 0 0 100px;
-            background-color: #e97d58;
-            display: none;
-
+            border-radius: 100px;
+            background: linear-gradient(to right, rgb(233,125,88) 85%,rgb(255,255,255)10%);
             img{
-                width:163px;
+                vertical-align: middle;
+                width:100%;
+
             }
         }
     }
@@ -93,7 +122,24 @@
             max-width: 1200px;
             margin: auto;
         }
-
+            .rollingItem{
+                display: flex;
+                flex-flow: row wrap;
+                width: 14%;
+                transform: rotate(30deg);
+                position: absolute;
+                img{
+                    width: 100%;
+                }
+                #roll_1{
+                    top: 0;
+                    right: 8%;
+                }
+                #roll_2{
+                    top: 0;
+                    right: 15%;
+                }
+            }
             #titleAll{
                 margin-right: 0;
     
@@ -109,9 +155,13 @@
     
             #rank_2{
                 margin-top: 10%;
-                left: 30%;
+                left: 26%;
             }
-
+            #rank_3{
+                position: absolute;
+                bottom: 0;;
+               right: 0;;
+            }
 
 
     }
