@@ -315,6 +315,48 @@ section {
       height: 40px; }
     .section_15 #btns15 i {
       font-size: 40px; }
+  .section_15 .purchaseDetail {
+    width: 45%;
+    height: 300px;
+    margin: 16px;
+    background-color: #ffffff;
+    border: 10px solid #fbc84a;
+    border-radius: 10px;
+    overflow-y: scroll; }
+    .section_15 .purchaseDetail .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+      border: 3px solid #fbc84a; }
+      .section_15 .purchaseDetail .item .pic {
+        width: 100px;
+        height: 50px;
+        background-size: 100%; }
+      .section_15 .purchaseDetail .item .pic01 {
+        background: url(../images/customized/shopping/chocolate/choco-4.png) center no-repeat;
+        background-size: 100%; }
+      .section_15 .purchaseDetail .item .pic02 {
+        background: url(../images/customized/shopping/chocolate/58671.png) center no-repeat;
+        background-size: 100%; }
+      .section_15 .purchaseDetail .item .pic03 {
+        background: url(../images/customized/shopping/chocolate/58665.png) center no-repeat;
+        background-size: 100%; }
+      .section_15 .purchaseDetail .item .pic04 {
+        background: url(../images/customized/shopping/chocolate/milk_405x400_100g_new_swissclassic_milk.png) center no-repeat;
+        background-size: 100%; }
+      .section_15 .purchaseDetail .item p {
+        font-size: 15px; }
+      .section_15 .purchaseDetail .item span {
+        font-size: 15px; }
+    .section_15 .purchaseDetail .title {
+      height: 60px;
+      background-color: #ffff; }
+      .section_15 .purchaseDetail .title p {
+        font-size: 20px;
+        font-weight: 900; }
 
 .cardBox {
   width: 500px;
@@ -352,7 +394,6 @@ section {
 
 a {
   text-decoration: none;
-  color: #fbc84a;
   transition: .5s ease; }
   a:hover {
     color: #fac031; }
@@ -707,6 +748,8 @@ a {
       background-color: #fbc84a; }
     .customized .section_15 .surface_right {
       background-color: #fbc84a; }
+    .customized .section_15 .purchaseDetail {
+      width: 100%; }
     .customized .section_15 .leftBox {
       display: flex;
       flex-direction: column;
@@ -733,7 +776,23 @@ a {
     .customized .section_15 .pics {
       width: 100%; }
   .form {
-    width: 90%; } }
+    width: 90%; }
+  .shopping {
+    height: auto; }
+    .shopping .goodBox ul {
+      display: block; }
+    .shopping .goodBox .good-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: auto; }
+      .shopping .goodBox .good-content .item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 5px solid #fbc84a; } }
 
 * {
   box-sizing: border-box; }
