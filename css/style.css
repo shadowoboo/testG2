@@ -68,9 +68,6 @@ a {
   border-radius: 5px;
   padding: 10px; }
 
-* {
-  outline: 1px solid #f00; }
-
 body {
   background-color: #fadfd4; }
 
@@ -78,20 +75,13 @@ section {
   width: 100%;
   height: 100vh;
   transition: 0.5s;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  /* scroll-behavior: smooth; */
-  /* position: sticky; */
-  /* overflow: hidden; */ }
+  -webkit-overflow-scrolling: touch; }
 
 .cus {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  /* position: fixed; */ }
+  overflow: hidden; }
 
 .customized {
   display: flex;
@@ -109,7 +99,7 @@ section {
     align-items: center;
     width: 800px;
     height: 100px;
-    margin-bottom: 100px; }
+    margin-bottom: 65px; }
     .customized .makingStep .cloud {
       width: 120px; }
     .customized .makingStep .step1 {
@@ -124,10 +114,10 @@ section {
         content: "";
         position: absolute;
         top: 38px;
-        left: 100px;
-        width: 150px;
+        left: 121px;
+        width: 108px;
         height: 4px;
-        background-color: #aedcd3; }
+        background-color: #fff; }
     .customized .makingStep .step2 {
       position: relative; }
       .customized .makingStep .step2:before {
@@ -140,8 +130,8 @@ section {
         content: "";
         position: absolute;
         top: 38px;
-        left: 100px;
-        width: 150px;
+        left: 121px;
+        width: 108px;
         height: 4px;
         background-color: #fff; }
     .customized .makingStep .step3 {
@@ -156,8 +146,8 @@ section {
         content: "";
         position: absolute;
         top: 38px;
-        left: 100px;
-        width: 150px;
+        left: 121px;
+        width: 108px;
         height: 4px;
         background-color: #fff; }
     .customized .makingStep .step4 {
@@ -293,7 +283,7 @@ section {
       display: block;
       cursor: move; }
       .section_15 .surface .droped_img.select {
-        outline: #000000 dashed 10px;
+        outline: #e26565 dashed 10px;
         transition: 0.3s; }
     .section_15 .surface #a1 {
       position: absolute;
@@ -325,6 +315,10 @@ section {
       height: 40px; }
     .section_15 #btns15 i {
       font-size: 40px; }
+
+.cardBox {
+  width: 500px;
+  margin: auto; }
 
 .leftBox {
   display: flex;
@@ -363,14 +357,14 @@ a {
   a:hover {
     color: #fac031; }
 
-.tab-group {
+.tab-group-1 {
   list-style: none;
   padding: 0; }
-  .tab-group:after {
+  .tab-group-1:after {
     content: "";
     display: table;
     clear: both; }
-  .tab-group li a {
+  .tab-group-1 li a {
     display: block;
     text-decoration: none;
     padding: 15px;
@@ -381,13 +375,13 @@ a {
     text-align: center;
     cursor: pointer;
     transition: .5s ease; }
-    .tab-group li a:hover {
+    .tab-group-1 li a:hover {
       color: #076baf; }
-  .tab-group .active a {
+  .tab-group-1 .active a {
     background: #fbc84a;
     color: #076baf; }
 
-.tab-content > div:last-child {
+.tab-content-1 > div:last-child {
   display: none; }
 
 .form {
@@ -399,53 +393,6 @@ a {
   border: 10px solid #fbc849; }
   .form a {
     font-family: g2Font; }
-
-label {
-  position: absolute;
-  transform: translateY(6px);
-  left: 13px;
-  color: rgba(7, 107, 175, 0.5);
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px; }
-  label .req {
-    margin: 2px;
-    color: #fbc84a; }
-
-label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px; }
-  label.active .req {
-    opacity: 0; }
-
-label.highlight {
-  color: #076baf; }
-
-input, textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #121111;
-  color: #076baf;
-  border-radius: 0;
-  transition: border-color .25s ease, box-shadow .25s ease; }
-  input:focus, textarea:focus {
-    outline: 0;
-    border-color: #fbc84a; }
-
-textarea {
-  border: 2px solid #121111;
-  resize: vertical; }
-
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px; }
 
 .top-row .pickColor {
   display: flex;
@@ -508,6 +455,142 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right; }
+
+.pickCard {
+  flex: 1;
+  color: dimgray;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 12px;
+  border: 10px solid #fbc849; }
+  .pickCard ul {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center; }
+    .pickCard ul .tab {
+      font-family: g2Font;
+      text-decoration: none;
+      padding: 15px;
+      color: #121111;
+      font-size: 20px;
+      float: left;
+      width: 33.333%;
+      text-align: center;
+      cursor: pointer;
+      transition: .5s ease; }
+    .pickCard ul .yellow {
+      background-color: #fbc84a;
+      color: #076baf; }
+  .pickCard .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 300px; }
+    .pickCard .content .cardStyle {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
+      .pickCard .content .cardStyle .small {
+        flex-grow: 1;
+        width: 40%;
+        height: 100px;
+        margin: 4px;
+        background-size: 100%;
+        cursor: pointer; }
+    .pickCard .content .cardText {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: auto; }
+      .pickCard .content .cardText #text {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 15px;
+        border-radius: 10px; }
+      .pickCard .content .cardText textarea {
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 10px; }
+    .pickCard .content .cardRecord {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      margin: auto; }
+
+.shopping {
+  width: 100%;
+  height: 396px; }
+  .shopping .goodBox {
+    flex: 1;
+    color: dimgray;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 12px;
+    border: 10px solid #fbc849; }
+    .shopping .goodBox ul {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: center; }
+      .shopping .goodBox ul .good {
+        font-family: g2Font;
+        text-decoration: none;
+        padding: 15px;
+        color: #121111;
+        font-size: 20px;
+        float: left;
+        width: 33.333%;
+        text-align: center;
+        cursor: pointer;
+        transition: .5s ease; }
+      .shopping .goodBox ul .yellow {
+        background-color: #fbc84a;
+        color: #076baf; }
+    .shopping .goodBox .good-content {
+      display: flex;
+      flex-flow: wrap row;
+      align-items: center;
+      width: 100%;
+      height: 300px; }
+      .shopping .goodBox .good-content .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 150px;
+        border: 5px solid #fbc84a; }
+        .shopping .goodBox .good-content .item .name {
+          display: flex;
+          flex: 1;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 100%; }
+          .shopping .goodBox .good-content .item .name img {
+            width: 80px; }
+          .shopping .goodBox .good-content .item .name .price {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; }
+            .shopping .goodBox .good-content .item .name .price p {
+              font-size: 20px;
+              margin: 10px; }
+            .shopping .goodBox .good-content .item .name .price span {
+              font-size: 25px;
+              color: #076baf; }
+        .shopping .goodBox .good-content .item .addCart {
+          width: 130px;
+          height: 30px;
+          font-size: 18px;
+          margin: 12px; }
 
 @media screen and (max-width: 768px) {
   .customized .makingStep {
@@ -637,6 +720,16 @@ textarea {
           top: 60px; }
       .customized .section_15 .leftBox #ctrl_bar {
         display: flex; }
+    .customized .section_15 .cardBox {
+      width: 100%; }
+    .customized .section_15 .pickCard {
+      width: 100%; }
+      .customized .section_15 .pickCard .cardText {
+        width: 100%;
+        margin: auto; }
+      .customized .section_15 .pickCard .cardRecord {
+        width: 100%;
+        margin: auto; }
     .customized .section_15 .pics {
       width: 100%; }
   .form {

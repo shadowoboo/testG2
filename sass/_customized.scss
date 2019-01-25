@@ -1,29 +1,24 @@
-*{
-    outline: 1px solid #f00;
-}
+// *{
+//     outline: 1px solid #f00;
+// }
 
 body{
     background-color: #fadfd4;
 }
+
 section {
     width: 100%;
     height: 100vh;
     transition: 0.5s;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    /* scroll-behavior: smooth; */
-    /* position: sticky; */
-    /* overflow: hidden; */
 }
+
 
 .cus{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    /* position: fixed; */
 }
 
 .customized{
@@ -42,7 +37,7 @@ section {
         align-items: center;
         width: 800px;
         height:100px;
-        margin-bottom:100px;
+        margin-bottom:65px;
         .cloud{
             width:120px;
         }
@@ -59,10 +54,10 @@ section {
                 content: "";
                 position: absolute;
                 top:38px;
-                left:100px;
-                width: 150px;
+                left: 121px;
+                width: 108px;
                 height:4px;
-                background-color: #aedcd3;
+                background-color: #fff;
             }
         }
         .step2{
@@ -78,8 +73,8 @@ section {
                 content: "";
                 position: absolute;
                 top:38px;
-                left:100px;
-                width: 150px;
+                left: 121px;
+                width: 108px;
                 height:4px;
                 background-color: #fff;
             }
@@ -97,8 +92,8 @@ section {
                 content: "";
                 position: absolute;
                 top:38px;
-                left:100px;
-                width: 150px;
+                left: 121px;
+                width: 108px;
                 height:4px;
                 background-color: #fff;
             }
@@ -234,7 +229,7 @@ section {
                 cursor: move;
                 &.select{
                     //border會佔面積，不太方便
-                    outline:#000000 dashed 10px;
+                    outline:#e26565 dashed 10px;
                     transition: 0.3s;
                 }
             }
@@ -284,7 +279,10 @@ section {
     }
 }
 
-
+.cardBox{
+    width:500px;
+    margin:auto;
+}
 
 .leftBox{
     display: flex;
@@ -305,6 +303,8 @@ section {
             cursor: pointer;
         }
 }
+
+
 
 }
 .showBox{
@@ -349,7 +349,7 @@ a {
 }
 
 
-.tab-group {
+.tab-group-1{
   list-style:none;
   padding:0;
   &:after {
@@ -379,7 +379,7 @@ a {
   }
 }
 
-.tab-content > div:last-child {
+.tab-content-1 > div:last-child {
   display:none;
 }
 
@@ -394,62 +394,6 @@ a {
         font-family: g2Font;
     }
   }
-
-label {
-  position:absolute;
-  transform:translateY(6px);
-  left:13px;
-  color:rgba($activeColor,.5);
-  transition:all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size:22px;
-  .req {
-  	margin:2px;
-  	color:$main;
-  }
-}
-
-label.active {
-  transform:translateY(50px);
-  left:2px;
-  font-size:14px;
-  .req {
-    opacity:0;
-  }
-}
-
-label.highlight {
-	color:$activeColor;
-}
-
-input, textarea {
-  font-size:22px;
-  display:block;
-  width:100%;
-  height:100%;
-  padding:5px 10px;
-  background:none;
-  background-image:none;
-  border:1px solid $gray-light;
-  color:$activeColor;
-  border-radius:0;
-  transition:border-color .25s ease, box-shadow .25s ease;
-  &:focus {
-		outline:0;
-		border-color:$main;
-  }
-}
-
-textarea {
-  border:2px solid $gray-light;
-  resize: vertical;
-}
-
-.field-wrap {
-  position:relative;
-  margin-bottom:40px;
-}
 
 .top-row {
  .pickColor{
@@ -528,6 +472,169 @@ textarea {
   text-align:right;
 }
 
+
+.pickCard{
+    flex: 1;
+    color: rgba(105,105,105,1);
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 12px;
+    border: 10px solid #fbc849;
+    ul{
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+        .tab{
+            font-family: g2Font;
+            text-decoration: none;
+            padding: 15px;
+            color: #121111;
+            font-size: 20px;
+            float: left;
+            width: 33.333%;
+            text-align: center;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+        .yellow{
+            background-color: #fbc84a;
+            color: #076baf;
+        }
+    }
+    .content{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        width: 100%;
+        height: 300px;
+        .cardStyle{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            .small{
+                flex-grow:1;
+                width:40%;
+                height:100px;
+                margin: 4px;
+                background-size: 100%;
+                cursor: pointer;
+            }
+        }
+        .cardText{
+            display: flex;
+            flex-direction:column;
+            width: 80%;
+            margin: auto;
+            #text{
+                width: 100%;
+                height: 30px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+            }
+            textarea{
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+              }
+        }
+        .cardRecord{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin: auto;
+        }
+    }
+}
+
+.shopping{
+    width: 100%;
+    height:396px;   
+    .goodBox{
+        flex: 1;
+        color: rgba(105,105,105,1);
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        margin: 12px;
+        border: 10px solid #fbc849;
+        ul{
+            width: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: center;
+            .good{
+                font-family: g2Font;
+                text-decoration: none;
+                padding: 15px;
+                color: #121111;
+                font-size: 20px;
+                float: left;
+                width: 33.333%;
+                text-align: center;
+                cursor: pointer;
+                transition: .5s ease;
+            }
+            .yellow{
+                background-color: #fbc84a;
+                color: #076baf;
+            }
+        }
+        .good-content{
+            display: flex;
+            flex-flow:wrap row;
+            align-items:center;
+            width: 100%;
+            height: 300px;
+            .item{
+                display: flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                width: 25%;
+                height: 150px;
+                border:5px solid #fbc84a;
+                .name{
+                    display: flex;
+                    flex: 1;
+                    flex-direction:row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    img{                        
+                        width:80px;
+                    }
+                    .price{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        p{
+                            font-size:20px;
+                            margin: 10px;
+                        }
+                        span{
+                            font-size: 25px;
+                            color: #076baf;
+                        }
+                    }
+                }
+                .addCart{
+                    width: 130px;
+                    height: 30px;
+                    font-size: 18px;
+                    margin:12px;
+                }
+            }
+        }
+}
+}
+
+
+
 @media screen and (max-width:768px){
     .customized{
         .makingStep{
@@ -599,6 +706,20 @@ textarea {
                 }
                 #ctrl_bar{
                     display: flex;
+                }
+            }
+            .cardBox{
+                width: 100%;
+            }
+            .pickCard{
+                width: 100%;
+                .cardText{
+                    width: 100%;
+                    margin: auto;
+                }
+                .cardRecord{
+                    width:100%;
+                    margin: auto;
                 }
             }
             .pics{
