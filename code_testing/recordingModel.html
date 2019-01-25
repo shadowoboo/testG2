@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recording Model</title>
+</head>
+    <style>
+        #visual{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .plotBlock{
+            flex: 1;
+            outline: 1px solid #000;
+        }
+    </style>
+<body>
+    <button id="play">播放</button>
+    <button id="stop">停止</button>
+    <div id="visual"></div>
+    <script>
+        //確認瀏覽器有沒有支援影音功能
+        //聲音容器
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        //影音介面(?)應該是這種感覺
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+        //navigator.getUserMedia(constraints, successCallback, errorCallback);
+        //constraints 可以設定 audio 或 video 的 true 或 false，聲音/影像各自的 開/關
+        //successCallback代表getUserMedia成功時，要做的事情
+        //errorCallback代表getUserMedia失敗時，要做的事情
+
+
+        //建立視覺化用div，裡面裝很多長條圖
+        var visual = document.getElementById("visual");
+        for(let i=1; i<=256; i++){
+            visual.innerHTML+="<div class='plotBlock'></div>";
+        }
+        var plotBlocks = document.getElementsByClassName("plotBlock");
+        //撥放按鈕
+        var play = document.getElementById('play');
+        //暫停按鈕
+        var stop = document.getElementById('stop');
+        //計時器
+        var timer;
+        //Web Audio API起手式：建一個聲音容器的物件
+        var context = new AudioContext();
+        navigator.getUserMedia({ audio: true }, function (stream) {
+            //建一個麥克風變數，代表我要接收的姻緣(X)因緣(X)...音源(O)
+            var mic = context.createMediaStreamSource(stream);
+            //建一個分析器，得到音頻的時間 / 頻率 / 讓資料變的視覺化之類的
+            var analyser = context.createAnalyser();
+            //把mic獲得的資料串給analyes做分析
+            mic.connect(analyser);
+            //把資料串到錄音流程的終點:喇叭。 聲音容器.destination
+            // analyser.connect(context.destination);
+            //設定分析器的取樣 N=2048。Fast Fourier Transfor (FFT) 快速傅立葉轉換!!!! 夭壽骨是工數啊啊啊啊!!!!
+            analyser.fftSize = 2048;
+            //frequencyBinCount 是 fftSize值的一半
+            var bufferLength = analyser.frequencyBinCount;
+            //某種物件，還沒搞懂
+            var dataArray = new Uint8Array(analyser.fftSize);
+            analyser.getByteFrequencyData(dataArray);
+
+            stop.onclick=function(){
+                clearTimeout(timer);
+            }
+
+            play.onclick=function(){
+                update();
+            }
+
+            update();
+
+            function update(){
+                //觀察存到的資料
+                console.log(dataArray);
+                //取值分析(?)
+                analyser.getByteFrequencyData(dataArray);
+                //視覺化顯示每一條長條圖
+                for (let j = 0; j < 256; j++) {
+                    // const el = dataArray[j];
+                    plotBlocks[j].style.height= dataArray[j]+"px";
+                }
+                //每20毫秒執行一次(取樣一次?)
+                timer = setTimeout(update,20);
+            }
+
+        }, function () {
+            console.log('error');
+        });
+    </script>
+</body>
+
+</html>
