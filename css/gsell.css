@@ -264,18 +264,37 @@ input[type=number]::-webkit-outer-spin-button {
   text-decoration: none;
   line-height: 1.6em; }
 
+a {
+  color: #076baf; }
+
 .clearfix {
   width: 100%;
   height: 0;
   clear: both; }
 
-input, select {
-  color: #076baf;
+input, select, option {
   font-family: g2Font;
-  src: url(../GenJyuuGothicX-Bold.ttf); }
+  src: url(../GenJyuuGothicX-Bold.ttf);
+  margin: 5px; }
 
-.serch serch_start {
-  color: #076baf; }
+#serch_title {
+  background-color: #f09c8a; }
+
+#google_serch {
+  margin: auto; }
+
+#serch_bar {
+  width: 20%;
+  float: left;
+  margin-left: 10%; }
+
+#serch_input {
+  width: 50%;
+  float: left; }
+
+.serch {
+  width: 10%;
+  float: left; }
 
 #map img {
   width: 100%; }
@@ -302,3 +321,12 @@ input, select {
     padding: 0 10px; }
     .map_serch_box .map_serch_item_info .map_serch_item_info_point, .map_serch_box .map_serch_item_info .map_serch_item_info_distance, .map_serch_box .map_serch_item_info .map_serch_info_line {
       margin-top: 5px; }
+
+@media screen and (min-width: 992px) {
+  #serch_bar {
+    width: 10%;
+    margin-left: 20%; }
+  #serch_input {
+    width: 30%; }
+  .serch {
+    width: 10%; } }

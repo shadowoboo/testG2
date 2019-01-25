@@ -14,13 +14,13 @@
     <!-- map serch -->
     <div id="google_serch">
         <div id="serch_title">
-            <p>定位搜尋</p>
+            <p>販賣機定位搜尋</p>
         </div>
 
         <form action="" method="get" name="serch_list" id="serch_form">
 
             <div id="serch_bar">
-                <select name="serch_place" class="serch search_select">
+                <select name="serch_place" class="search_select">
                     <option value="111">中壢市</option>
                     <option value="222">桃園市</option>
                     <option value="333">新北市</option>
@@ -29,31 +29,29 @@
             </div>
 
             <div id="serch_input">
-                <input type="text" name="serch_start" placeholder="起點" class="serch serch_start">
+                <input type="text" name="serch_start" placeholder="起點" class="serch_start">
                 <input type="text" name="serch_end" placeholder="目的地" id="serch_end">
             </div>
 
             <div class="serch">
-                <a href="#" class="serch serch_serch">
+                <a href="#" class="serch_serch">
                     <i class="fas fa-search"></i>
                 </a>
             </div>
+            <div class="clearfix"></div>
         </form>
     </div>
 
     <!-- map api -->
     <div id="mapSearch">
         <div id="map">
-            <img src="/images/nnnnn/map.PNG" alt="地圖">
+            <!-- <img src="/images/nnnnn/map.PNG" alt="地圖"> -->
         </div>
     </div>
 
 
-    <!-- <script src="/js/gsell.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script> -->
-
+    <script src="/js/gsell.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     <!-- 地圖篩選 -->
     <div class="map_serch_box">
         <div class="map_serch_item">
