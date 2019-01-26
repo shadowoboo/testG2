@@ -1,0 +1,227 @@
+*{
+    outline: 1px solid #f00;
+}
+$cloudTabColor:#076baf;
+body{
+    background-color: #b8f1ed;
+}
+
+.memWrap{
+    width: 100%;
+    height: auto;
+    
+    form{
+        width: 80%;
+        // margin: 45% auto 10% auto;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        //---------大頭貼上傳------------
+    .col-1{
+        width: 100%;
+        height: 100px;
+        
+        tr{
+            width: 100%;
+            height: 80px;
+            td{
+                text-align: center;
+                padding-top: 1%;
+                div {
+                    margin: auto;
+                    width: 30%;
+                    border: 2px dotted #076baf;
+                    border-radius: 50%;
+                     
+                    img{
+                        width: 70%; 
+                        padding-top: 2%;
+                                                 
+                        }
+                }
+                
+                p{
+                   padding: 10px; 
+                   color: #076baf;
+                   input{
+                       width: 50%;
+                      padding-top: 5px;
+                   }
+                    img{
+                        width: 3%;
+                    }
+                }
+
+            }
+            
+        
+        }
+
+    }
+    //-------------基本資料------------------------
+    .col-2{
+        width: 100%;
+        tr{
+            width: 100%;
+            height: 30px;
+            
+            td{
+                padding: 2% 3%;
+                text-align: center;
+
+                p{
+                    color: #076baf;
+                    padding: 1% ;
+                    input{
+                        color: #076baf;
+                        width: 80px;
+                        background-color: transparent;
+                        border: 1px solid #fff;
+                        
+                    }
+                    img{
+                        width: 3%;                  
+                    }
+                }
+            }
+        
+            
+            
+        }
+        tr:nth-child(5){
+            input{
+                font-size: 12px;
+            }
+            
+        }
+        
+    }
+    //----------- 成就等級------------
+    .col-3{
+        width: 100%;
+        height: 30px;
+        tr{
+            td{
+                padding: 2% 3%;
+                text-align: center;
+                height: 35px;
+               
+                p{
+                    color: #076baf;
+                    line-height: 1.6;
+                }
+            }
+            
+
+        }
+        tr:last-child{
+            
+            span{
+                color: #f00;
+                line-height: 1.6;
+                
+                }
+            }
+        } 
+    }
+    
+}
+
+//-------------------------以下為頁籤頁面---------------------------
+// .itemTab{
+//     width: 100%;
+//     height: auto;
+//     .cloudTab{
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//         .cloudItem1{
+//             #nowLevel{
+//                 position: relative;
+//                 h4{
+//                     position: absolute;
+//                     top: 32%;
+//                     left: 25%;
+//                     a{
+//                         color: $cloudTabColor;
+//                     }
+                    
+//                 }
+//             }
+//             #orderMan{
+//                 position: relative;
+//                 h4{
+//                     position: absolute;
+//                     top: 32%;
+//                     left: 25%;
+//                     a{
+//                         color: $cloudTabColor; 
+//                     }
+                    
+//                 }
+//             }
+//         }
+//         .cloudItem2{
+//             #proLove{
+//                 position: relative;
+//                 h4{
+//                     position: absolute;
+//                     top: 32%;
+//                     left: 25%;
+//                     a{
+//                         color: $cloudTabColor;
+//                     }
+                    
+//                 }
+//             }
+//             #coupon{
+//                 position: relative;
+//                 h4{
+//                     position: absolute;
+//                     top: 32%;
+//                     left: 23%;
+//                     a{
+//                         color: $cloudTabColor; 
+//                     }
+                    
+//                 }
+//             }
+
+//     }
+    
+    
+//  }
+// }
+
+
+
+
+@media screen and(max-width:768px){
+    .memWrap{
+        form{
+            margin: auto ;
+            margin-top: 45%;
+        }
+        
+    }
+}
+
+@media screen and(min-width:769px){
+    .memWrap{
+        
+        form{
+            margin: auto;
+            margin-top: 20%;
+            height: 330px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-content: space-around;
+            
+           
+        }
+       
+    }
+
+
+}
