@@ -676,13 +676,13 @@ a {
               transform: rotateY(180deg); }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBase {
               width: 400px;
-              height: 300px; }
+              height: 265px; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover {
               width: 400px;
-              height: 300px; }
+              height: 265px; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent {
               width: 400px;
-              height: 300px; }
+              height: 265px; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurface {
               background-color: #fff; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurfaceInner {
@@ -692,7 +692,8 @@ a {
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurfaceInner {
               background-color: #afa; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurface {
-              background-image: url(); }
+              background: url(../images/small/card01.png) no-repeat;
+              background-size: 100%; }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurfaceInner {
               background-image: url(); }
             .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurface {
@@ -722,7 +723,7 @@ a {
   100% {
     transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
           .pickCard .content .cardText .showCard .sectionCard .cardBaseCover .cardSurface {
-            background-image: url(); }
+            background-image: url(../images/small/card01.png); }
           .pickCard .content .cardText .showCard .sectionCard .cardBaseCover .cardSurfaceInner {
             background-image: url(); }
           .pickCard .content .cardText .showCard .sectionCard .cardBaseContent .cardSurface {
@@ -811,24 +812,32 @@ a {
     align-items: center;
     width: 350px;
     margin-bottom: 30px; }
+    .customized .makingStep p {
+      font-size: 15px; }
+    .customized .makingStep .cloud {
+      margin: 0 5px; }
     .customized .makingStep .step1:before {
-      top: 20px;
-      left: 40px; }
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
     .customized .makingStep .step1:after {
       display: none; }
     .customized .makingStep .step2:before {
-      top: 20px;
-      left: 40px; }
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
     .customized .makingStep .step2:after {
       display: none; }
     .customized .makingStep .step3:before {
-      top: 20px;
-      left: 40px; }
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
     .customized .makingStep .step3:after {
       display: none; }
     .customized .makingStep .step4:before {
-      top: 20px;
-      left: 40px; }
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
     .customized .makingStep .step4:after {
       display: none; }
   .customized .priceSign {
@@ -942,6 +951,13 @@ a {
       .customized .section_15 .pickCard .cardText {
         width: 100%;
         margin: auto; }
+        .customized .section_15 .pickCard .cardText .showCard {
+          position: absolute;
+          top: -400px;
+          left: 0;
+          z-index: 3;
+          width: 600px;
+          height: 400px; }
       .customized .section_15 .pickCard .cardRecord {
         width: 100%;
         margin: auto; }

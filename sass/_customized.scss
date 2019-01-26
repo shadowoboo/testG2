@@ -718,7 +718,8 @@ $cardY:600px;
         .cardBaseCover {
             .cardSurface {
                 // background-image: url("../code_testing/card_test_1.jpg");
-                background-image: url();
+                background: url(../images/small/card01.png) no-repeat;
+                background-size: 100%;
                 // background-size: contain;
             } //封面
             .cardSurfaceInner {
@@ -854,7 +855,7 @@ $cardY:600px;
     display: flex;
 
     //卡片控制
-    @include card3D(400px,300px);
+    @include card3D(400px,265px);
     .cardBase {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(100px);
         animation: cardCome 1.5s reverse;
@@ -877,7 +878,7 @@ $cardY:600px;
     .cardBaseCover {
         .cardSurface {
             // background-image: url("../code_testing/card_test_1.jpg");
-            background-image: url();
+            background-image: url(../images/small/card01.png);
             // background-size: contain;
         } //封面
         .cardSurfaceInner {
@@ -999,34 +1000,44 @@ $cardY:600px;
             align-items: center;
             width:350px;
             margin-bottom:30px;
+            p{
+                font-size: 15px;
+            }
+            .cloud{
+                margin: 0 5px;
+            }
             .step1{
                 &:before{
-                    top:20px;
-                    left:40px;
+                    font-size: 15px;
+                    top:17px;
+                    left:35px;
                 }
                 &:after {
                 display: none;}
             }
             .step2{
                 &:before{
-                    top:20px;
-                    left:40px;
+                    font-size: 15px;
+                    top:17px;
+                    left:35px;
                 }
                 &:after {
                 display: none;}
             }
             .step3{
                 &:before{
-                    top:20px;
-                    left:40px;
+                    font-size: 15px;
+                    top:17px;
+                    left:35px;
                 }
                 &:after {
                 display: none;}
             }
             .step4{
                 &:before{
-                    top:20px;
-                    left:40px;
+                    font-size: 15px;
+                    top:17px;
+                    left:35px;
                 }
                 &:after {
                 display: none;}
@@ -1076,6 +1087,14 @@ $cardY:600px;
                 .cardText{
                     width: 100%;
                     margin: auto;
+                    .showCard{
+                        position: absolute;
+                        top: -400px;
+                        left: 0;
+                        z-index: 3;
+                        width: 600px;
+                        height: 400px;
+                    }
                 }
                 .cardRecord{
                     width:100%;
