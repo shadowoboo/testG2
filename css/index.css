@@ -669,7 +669,6 @@ body {
     background-size: cover;
     width: 100%;
     height: 1000px;
-    margin-bottom: 100px;
     overflow: hidden;
     position: relative; }
     .index .customized .waveTop {
@@ -770,3 +769,72 @@ body {
           margin: 20px; }
           .index .customized .customizedCount .ctCard .ctBtns .ctBtn {
             padding: 20px 0; }
+  .index .preOrder {
+    width: 100%; }
+    .index .preOrder .poTitle {
+      background-image: url(../images/index/title-cloud.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      text-align: center;
+      height: 160px;
+      padding-top: 50px; }
+      .index .preOrder .poTitle h2 {
+        line-height: 50px;
+        color: #076baf; }
+    .index .preOrder .poCount {
+      width: 80%;
+      height: 800px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 50% / 50%;
+      background-color: #b8f1ed; }
+      .index .preOrder .poCount .poray {
+        position: relative;
+        transform: scale(1.6);
+        margin: auto;
+        height: 100%;
+        opacity: 0.7; }
+        .index .preOrder .poCount .poray ul {
+          position: absolute;
+          left: -1em;
+          right: -1em;
+          top: -1em;
+          bottom: -1em;
+          margin: auto;
+          padding: 0;
+          width: 0;
+          height: 0;
+          list-style: none;
+          animation: 200s rotate infinite linear; }
+          .index .preOrder .poCount .poray ul li, .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+            position: absolute;
+            border: 0 solid transparent;
+            border-width: 1.2em 20em;
+            border-color: transparent #eaab8c;
+            width: 0;
+            height: 0;
+            font-size: 20px; }
+          .index .preOrder .poCount .poray ul li {
+            left: -20em;
+            top: 50%;
+            margin-top: -1.2em;
+            transform: rotate(0.1deg); }
+          .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+            left: -20em;
+            top: -1.2em;
+            display: block;
+            content: ""; }
+          .index .preOrder .poCount .poray ul li:before {
+            transform: rotate(60deg); }
+          .index .preOrder .poCount .poray ul li:after {
+            transform: rotate(-60deg); }
+          .index .preOrder .poCount .poray ul li:nth-child(2) {
+            transform: rotate(15deg); }
+          .index .preOrder .poCount .poray ul li:nth-child(3) {
+            transform: rotate(30deg); }
+          .index .preOrder .poCount .poray ul li:nth-child(4) {
+            transform: rotate(45deg); }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }

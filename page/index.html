@@ -589,6 +589,29 @@
             </div>
         </section>
 
+        <section class="preOrder">
+            <div class="poTitle">
+                <h2>預購零食箱</h2>
+            </div>
+            <div class="poCount">
+                <div class="poray">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="poCard">
+                    <div class="poTrait"></div>
+                    <div class="poInside"></div>
+                </div>
+                <div class="poBox">
+                    <!-- <img src="https://picsum.photos/600/600/?random=1"> -->
+                </div>
+            </div>
+        </section>
+
     </div>
 
 
@@ -716,97 +739,97 @@
         const box_12 = document.querySelector("#box_12");
 
 
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", boxRotate);
-    }
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", boxRotate);
+        }
 
-    // 轉轉箱子功能鈕
-    // 缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
-    function boxRotate(e) {
-        console.log(`this.id: ${this.id}`);
-        switch (this.id) {
-            case "btn_front":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            case "btn_back":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            case "btn_top":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            case "btn_bottom":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            case "btn_left":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            case "btn_right":
-                boxBases.forEach(element => {
-                    element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-                });
-                $('.btns').removeClass('btnSelect');
-                $(this).addClass('btnSelect');
-                break;
-            // case "rotateX":
-            //     boxBases.forEach(element => {
-            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-            //         console.log("element.style.transform:" + element.style.transform);
-            //         let arr = element.style.transform.split(" ");
-            //         console.log(`arr: ${arr}`);
-            //         let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
-            //         arr[0] = "rotateX(" + newAngelX + "deg)";
-            //         console.log(arr[0]);
-            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-            //     });
-            //     break;
-            // case "rotateY":
-            //     boxBases.forEach(element => {
-            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-            //         console.log("element.style.transform:" + element.style.transform);
-            //         let arr = element.style.transform.split(" ");
-            //         console.log(`arr: ${arr}`);
-            //         let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
-            //         arr[1] = "rotateY(" + newAngelY + "deg)";
-            //         console.log(arr[1]);
-            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-            //     });
-            //     break;
-            // case "rotateZ":
-            //     boxBases.forEach(element => {
-            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-            //         console.log("element.style.transform:" + element.style.transform);
-            //         let arr = element.style.transform.split(" ");
-            //         console.log(`arr: ${arr}`);
-            //         let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
-            //         arr[2] = "rotateZ(" + newAngelZ + "deg)";
-            //         console.log(arr[2]);
-            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-            //     });
-            //     break;
-            // case "show":
-            //     boxBases.forEach(element => {
-            //         element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
-            //     });
+        // 轉轉箱子功能鈕
+        // 缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
+        function boxRotate(e) {
+            console.log(`this.id: ${this.id}`);
+            switch (this.id) {
+                case "btn_front":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                case "btn_back":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                case "btn_top":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                case "btn_bottom":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                case "btn_left":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                case "btn_right":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+                    });
+                    $('.btns').removeClass('btnSelect');
+                    $(this).addClass('btnSelect');
+                    break;
+                // case "rotateX":
+                //     boxBases.forEach(element => {
+                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+                //         console.log("element.style.transform:" + element.style.transform);
+                //         let arr = element.style.transform.split(" ");
+                //         console.log(`arr: ${arr}`);
+                //         let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
+                //         arr[0] = "rotateX(" + newAngelX + "deg)";
+                //         console.log(arr[0]);
+                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+                //     });
+                //     break;
+                // case "rotateY":
+                //     boxBases.forEach(element => {
+                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+                //         console.log("element.style.transform:" + element.style.transform);
+                //         let arr = element.style.transform.split(" ");
+                //         console.log(`arr: ${arr}`);
+                //         let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
+                //         arr[1] = "rotateY(" + newAngelY + "deg)";
+                //         console.log(arr[1]);
+                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+                //     });
+                //     break;
+                // case "rotateZ":
+                //     boxBases.forEach(element => {
+                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+                //         console.log("element.style.transform:" + element.style.transform);
+                //         let arr = element.style.transform.split(" ");
+                //         console.log(`arr: ${arr}`);
+                //         let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
+                //         arr[2] = "rotateZ(" + newAngelZ + "deg)";
+                //         console.log(arr[2]);
+                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+                //     });
+                //     break;
+                // case "show":
+                //     boxBases.forEach(element => {
+                //         element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
+                //     });
                 //先把蓋子蓋起來
                 // {
                 //     let arr = cover_out.style.transform.split(" ");
@@ -859,38 +882,38 @@
                 // }, 1700);
 
                 // break;
-        }
-    };
+            }
+        };
 
 
-    // 給箱子姿態初始值
-    boxBases.forEach(el => {
-        el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
-    })
-
-
-    // 驗證回傳值確實是陣列
-    console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
-    console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
-    console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
-    // cssGet(".boxBase","transform");
-
-    //抓css檔內樣式
-    //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
-    //原句:window.getComputedStyle(element, null).getPropertyValue("float");
-    //不抓偽類 ex: var result = cssGet(".class","width");
-    //抓偽類 ex: var result = cssGet(".class","width",":after");
-    //回傳值是一個陣列!!!!
-    //transform會得到矩陣，不是 translate / rotate 之類的
-    function cssGet(element, property = "width-height", pseudo = null) {
-        let el = document.querySelectorAll(element);
-        var arrData = [];
-        el.forEach(item => {
-            let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
-            arrData.push(data);
+        // 給箱子姿態初始值
+        boxBases.forEach(el => {
+            el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
         })
-        return arrData;
-    }
+
+
+        // 驗證回傳值確實是陣列
+        console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
+        console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
+        console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
+        // cssGet(".boxBase","transform");
+
+        //抓css檔內樣式
+        //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
+        //原句:window.getComputedStyle(element, null).getPropertyValue("float");
+        //不抓偽類 ex: var result = cssGet(".class","width");
+        //抓偽類 ex: var result = cssGet(".class","width",":after");
+        //回傳值是一個陣列!!!!
+        //transform會得到矩陣，不是 translate / rotate 之類的
+        function cssGet(element, property = "width-height", pseudo = null) {
+            let el = document.querySelectorAll(element);
+            var arrData = [];
+            el.forEach(item => {
+                let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
+                arrData.push(data);
+            })
+            return arrData;
+        }
     </script>
 
 
@@ -936,24 +959,24 @@
                     roulette.style.transform = 'rotate(-225deg)';
                     break;
             }
-            
+
             //取得被點擊顏色的色碼
             var colorCode = window.getComputedStyle(e.target).getPropertyValue("background-color");
             console.log(colorCode);
-            
+
             //將色碼設定給盒子
             // var box = document.getElementsByClassName('ctBox')[0];
             // box.style.backgroundColor = colorCode;
 
 
             //Js
-            let elem=document.getElementsByClassName("btnSelect");
+            let elem = document.getElementsByClassName("btnSelect");
             console.log(elem[0].id);
             let tar = elem[0].id;
-            tar = tar.replace("btn","suf");
+            tar = tar.replace("btn", "suf");
             console.log(tar);
-            let targetEl=document.getElementById(tar);
-            targetEl.style.backgroundColor=colorCode;
+            let targetEl = document.getElementById(tar);
+            targetEl.style.backgroundColor = colorCode;
 
             //為解決一開始選顏色會有error的狀況，在HTML預先加了btnSelect，但在案別的按鈕時就不能選顏色了！ 待解決
 
