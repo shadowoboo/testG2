@@ -1,0 +1,289 @@
+*{
+    outline: 1px solid #f00;
+}
+$tabColor:#076baf;
+body{
+    background-color: #b8f1ed;
+}
+
+.memWrap{
+    width: 100%;
+    height: auto;
+   
+    form{
+        width: 85%;
+        // margin: 45% auto 10% auto;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        //---------大頭貼上傳------------
+    .col-1{
+        width: 100%;
+        height: 100px;
+        
+        tr{
+            width: 100%;
+            height: 80px;
+            td{
+                text-align: center;
+                padding-top: 1%;
+                div{
+                   margin: auto;
+                   margin-top: 5%; 
+                    width: 30%;
+                    border: 2px dotted #076baf;
+                    border-radius: 50%;
+                     
+                    img{
+                        width: 70%; 
+                        padding-top: 2%;
+                                                 
+                        }
+                }
+                
+                p{
+                   padding: 10px; 
+                   color: #076baf;
+                   input{
+                       width: 50%;
+                      padding-top: 5px;
+                   }
+                    img{
+                        width: 3%;
+                    }
+                }
+
+            }
+            
+        
+        }
+
+    }
+    //-------------基本資料------------------------
+    .col-2{
+        width: 100%;
+        tr{
+            width: 100%;
+            height: 30px;
+            
+            td{
+                padding: 2% 3%;
+                text-align: center;
+
+                p{
+                    color: #076baf;
+                    padding: 1% ;
+                    input{
+                        color: #076baf;
+                        width: 80px;
+                        background-color: transparent;
+                        border: 1px solid #fff;
+                        
+                    }
+                    img{
+                        width: 3%;                  
+                    }
+                }
+            }
+        
+            
+            
+        }
+        tr:nth-child(5){
+            input{
+                font-size: 12px;
+            }
+            
+        }
+        
+    }
+    //----------- 成就等級------------
+    .col-3{
+        width: 100%;
+        height: 30px;
+        tr{
+            td{
+                padding: 2% 3%;
+                text-align: center;
+                height: 35px;
+               
+                p{
+                    color: #076baf;
+                    line-height: 1.6;
+                }
+            }
+            
+
+        }
+        tr:last-child{
+            
+            span{
+                color: #f00;
+                line-height: 1.6;
+                
+                }
+            }
+        } 
+    }
+    
+}
+
+//-------------------------以下為頁籤頁面---------------------------
+
+.itemTab2{
+    width: 100%;
+    height: auto;
+    margin: 10% auto;
+    .tab-list{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 3% auto;
+        li{
+            position: relative;
+            z-index: -1;
+            h4{
+                position: absolute;
+                top:32%;
+                left: 23%;
+                text-align: center;
+                color: $tabColor;
+                
+                
+                
+            }
+        }
+        li:last-child{
+            h4{
+                left: 18%;
+                
+            }
+        }
+
+    }
+    
+    .tab-panel{
+        width: 85%;
+        height: 50vh;
+        background-color: #fff;
+        border-radius: 15px;
+        margin: auto;
+
+
+    }
+    #tab-1{
+        .levelInfor{
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span{
+                font-size: 11px;
+            }
+            .topLevel{
+               width: 100%;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               line-height: 2;
+               span:first-child{
+                   
+               }
+            }
+            .procBar{
+                position: relative;
+                .baby{
+                    width: 8%;
+                    height: 8%;
+                    position: absolute;
+                    top:13%;
+                    left: 2%;
+                    img{
+                        width: 100%;
+                    } 
+                    
+
+                }
+                .colorBar{
+                    border: 1px solid #000;
+                    border-radius: 15px;
+                    width: 90%;
+                    height: 60px;
+                    margin: auto;
+                    .nowPro{
+                        width: 16%;
+                        height: 100%;
+                        background-color: #f8dcd3;
+                        border-radius: 15px 0 0 15px;
+                    }
+
+                }
+                .kid{
+                    position: absolute;
+                    top: 68%;
+                    left: 15%;
+                    width: 8%;
+                    height: 15%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                
+            }
+        }
+        .description{
+            p{
+                color: $tabColor; 
+                text-align: center;
+            }
+            .specify{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: space-around;
+                
+            }
+        }
+    }
+
+
+    
+}
+
+
+
+
+@media screen and(max-width:768px){
+    .memWrap{
+        form{
+            margin: auto ;
+            margin-top: 30%;
+        }
+        
+    }
+}
+
+@media screen and(min-width:769px){
+    .memWrap{
+        
+        form{
+            margin: auto;
+            margin-top: 10%;
+            height: 33vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-content: space-around;
+            
+           
+        }
+       
+    }
+
+
+}
