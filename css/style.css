@@ -545,7 +545,7 @@ body {
   width: 100%;
   height: auto; }
   .memWrap form {
-    width: 80%;
+    width: 85%;
     height: auto;
     background-color: #fff;
     border-radius: 10px; }
@@ -607,6 +607,40 @@ body {
       .memWrap form .col-3 tr:last-child span {
         color: #f00;
         line-height: 1.6; }
+
+.itemTab2 {
+  width: 100%;
+  height: auto; }
+  .itemTab2 .tab-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center; }
+    .itemTab2 .tab-list li {
+      position: relative; }
+      .itemTab2 .tab-list li h4 {
+        position: absolute;
+        top: 32%;
+        left: 25%;
+        color: #076baf; }
+    .itemTab2 .tab-list li:last-child h4 {
+      left: 22%; }
+  .itemTab2 .tab-panel {
+    width: 85%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: auto; }
+  .itemTab2 #tab-1 .description p {
+    color: #076baf;
+    text-align: center; }
+  .itemTab2 #tab-1 .description .specify {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around; }
 
 @media screen and (max-width: 768px) {
   .memWrap form {
