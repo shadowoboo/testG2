@@ -1,0 +1,45 @@
+    #visual {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    //視覺化的長條圖柱子
+    .plotBlock {
+        flex: 1;
+        // outline: 1px solid #000;
+        border: 1px solid #000;
+    }
+
+    //樣是我先隨便生一個醜的，按鈕請自己修改XD
+    //錄音鈕 / 停止鈕 二合一
+    .recordBtn{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fbc84a;
+        position: relative;
+        cursor: pointer;
+
+        //這是中間那顆方塊，可以利用background之類的換圖
+        //我先隨便寫個色塊
+        &::before{
+            content:"";
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-color: #076baf;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: 0.3s;
+        }
+        &.recording::before{
+            background-color: #af0715;
+        }
+    }

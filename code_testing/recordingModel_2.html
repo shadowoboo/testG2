@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>recording Model 2</title>
+    <link rel="stylesheet" href="../css/recordingModel_2.css">
+    <script src="../js/recorder.js"></script>
+</head>
+
+<body>
+
+    <!-- 私心視覺化 -->
+    <div id="visual"></div>
+
+    <!-- 錄音顯示介面 -->
+    <div class="audioItems" id="audioItems">
+        <h3 id="audioMsg">尚未新增錄音檔</h3>
+    </div>
+
+    <!-- 錄音操作鈕 -->
+    <div id="recordBtn" class="recordBtn"></div>
+
+
+    <!-- 撥放介面 -->
+
+
+    <script>
+        //ipad mini，chrome沒支援，還不說沒支援!!!等等。可能是getUserMedia過了但是後面有地方掛掉...
+        //可以操作，但是沒有反應。照理講...手機沒過localhost應該不能動啊，問號!!!
+
+        //確認瀏覽器有沒有支援影音功能
+        //聲音容器
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        //影音介面(?)應該是這種感覺
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+        //navigator.getUserMedia(constraints, successCallback, errorCallback);
+        //constraints 可以設定 audio 或 video 的 true 或 false，聲音/影像各自的 開/關
+        //successCallback代表getUserMedia成功時，要做的事情
+        //errorCallback代表getUserMedia失敗時，要做的事情
+
+        //使用recorder.js(無法解決https問題，先使用此套件QQ)
+        //建立錄音器
+        var recorder;
+
+        //抓存放播放條 跟 下載連結的容器
+        var audioItems = document.getElementById("audioItems");
+
+
+        //建立視覺化用div，裡面裝很多長條柱子
+        var visual = document.getElementById("visual");
+        for (let i = 1; i <= 256; i++) {
+            visual.innerHTML += "<div class='plotBlock'></div>";
+        }
+        var plotBlocks = document.getElementsByClassName("plotBlock");
+        // //撥放按鈕
+        // var play = document.getElementById('play');
+        // //暫停按鈕
+        // var stop = document.getElementById('stop');
+        //錄音按鈕
+        var recordBtn = document.getElementById("recordBtn");
+        //計時器
+        var timer;
+        //Web Audio API起手式：建一個聲音容器的物件
+        var context = new AudioContext();
+        //偷看一下設備能取得的採樣率
+        console.log(context.sampleRate)
+        // navigator.getUserMedia({ audio: true }, function (stream) {
+        //據說是比樓上更新版的介面，注意是用.then().catch()串接
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+            //建一個麥克風變數，代表我要接收的姻緣(X)因緣(X)...音源(O)
+            var mic = context.createMediaStreamSource(stream);
+            //建一個分析器，得到音頻的時間 / 頻率 / 讓資料變的視覺化之類的
+            var analyser = context.createAnalyser();
+            //把mic獲得的資料串給analyes做分析
+            mic.connect(analyser);
+            //把資料串到錄音流程的終點:喇叭。 聲音容器.destination
+            // analyser.connect(context.destination);
+            //設定分析器的取樣 N=2048。Fast Fourier Transfor (FFT) 快速傅立葉轉換!!!! 夭壽骨是工數啊啊啊啊!!!!
+            analyser.fftSize = 2048;
+            //frequencyBinCount 是 fftSize值的一半。除此之外我們對他一無所知
+            var bufferLength = analyser.frequencyBinCount;
+            //聲音數據撈進來，用指定的方法存成神奇陣列
+            // var dataArray = new Uint8Array(analyser.fftSize);
+            var dataArray = new Uint8Array(bufferLength);
+            // analyser.getByteFrequencyData(dataArray);
+
+            //按鈕觸發。
+            //若沒標籤，則添加標籤，開始錄音
+            //若有標籤，則移除標籤，停止錄音
+            recordBtn.onclick = function (e) {
+                if (e.target.classList.contains("recording")==true) {
+                    clearTimeout(timer);
+                    //按鈕變身，變樣式
+                    e.target.classList.remove("recording");
+                    // e.target.id = "play"
+                    //停止錄音
+                    recorder.stop();
+                    //建立可被下載的物件
+                    createDownloadLink();
+                    //清空錄音器
+                    recorder.clean;
+                }else{
+                    //建立錄音物件，把mic串進來
+                    recorder = new Recorder(mic);
+                    //利用recorder.js開始錄音
+                    recorder.record();
+                    //按鈕變身，變樣式
+                    e.target.classList.add("recording");
+                    // e.target.id = "stop";
+                    update();
+                }
+            }
+
+            // update();
+
+            //錄音開始時做的事情
+            //包括持續取值，顯示波型之類的
+            function update() {
+                //觀察存到的資料
+                // console.log(dataArray);
+                //取值分析(?)
+                analyser.getByteFrequencyData(dataArray);
+
+                //視覺化顯示每一條長條圖---------如果沒有視覺化，這段要註解掉!!!!!(超耗效能)-----start
+                for (let j = 0; j < 256; j++) {
+                    // const el = dataArray[j];
+                    plotBlocks[j].style.height = dataArray[j] + "px";
+                }
+                //視覺化顯示每一條長條圖---------如果沒有視覺化，這段要註解掉!!!!!(超耗效能)-----end
+
+                //每20毫秒執行一次(取樣一次?)
+                timer = setTimeout(update, 15);
+            }
+
+            //生出撥放裝置 (還有建立可以被下載的連結) 
+            function createDownloadLink() {
+                recorder.exportWAV(function (blob) {
+                    //建立一個可以被下載(上傳?)的物件包，之後觀察看要怎麼上傳
+                    var url = URL.createObjectURL(blob);
+                    //建立一個div來包住<audio> 跟 <button>之類的元素
+                    var item = document.createElement('div');
+                    //建立一個可以撥放錄音的audio元素
+                    var au = document.createElement('audio');
+                    //建立一個下載連結，不過其實我們不給下載嘻嘻
+                    // var hf = document.createElement('a');
+                    //建立一個刪除按鈕
+                    var btnDel = document.createElement("button");
+
+                    //開啟<audio>的內建控制器(撥放、停止之類有的沒的)
+                    //注意!!因為只能靠偽類改樣式，限制又很多，所以啊，重寫吧，我是說控制板
+                    //什麼ㄅ放鍵、ㄐ度條之類的，你贏了，我寫js吧。我寫。
+                    //如果很想用CSS控制的同學，請參考下面連結
+                    //http://jartto.wang/2018/04/25/rewrite-audio-style/
+                    au.controls = true;
+                    //指定<audio>要撥放錄音
+                    au.src = url;
+                    //<a>連結路徑
+                    // hf.href = url;
+                    //這個是指定下載名稱，還有觸發下載效果(?)
+                    // hf.download = new Date().toISOString() + '.wav';
+                    // hf.innerHTML = hf.download;
+                    //設id方便控制
+                    item.id = "audioItem";
+                    btnDel.id = "audioDel";
+                    btnDel.innerText = "刪除";
+                    btnDel.onclick = function (e) {
+                        //刪掉錄音這堆東西，燒毀~
+                        while (audioItems.firstChild) {
+                            audioItems.removeChild(audioItems.firstChild);
+                        }
+                        //然後，提示訊息將重獲新生
+                        let audioMsg = document.createElement("h3");
+                        let msg = "尚未新增錄音檔";
+                        audioMsg.id = "audioMsg";
+                        audioMsg.innerText = msg;
+                        audioItems.appendChild(audioMsg);
+
+                        //歸零波形圖-----------沒波形圖就不需要這段!!!------start
+                        for (let j = 0; j < 256; j++) {
+                            // const el = dataArray[j];
+                            plotBlocks[j].style.height = 0 + "px";
+                        }
+                        //歸零波形圖-----------沒波形圖就不需要這段!!!------end
+                    }
+
+                    //刪除audioItems的所有子元素
+                    while (audioItems.firstChild) {
+                        audioItems.removeChild(audioItems.firstChild);
+                    }
+
+
+                    //把新建的元素塞進去
+                    item.appendChild(au);
+                    item.appendChild(btnDel);
+                    // item.appendChild(hf);
+                    audioItems.appendChild(item);
+                });
+            }
+        }).catch(function (error) {
+            //抓不到錄音裝置、不給權限、http檔下來等等，心好累
+            //我就大喊是你的問題(絕對不可以啊!!!我們要好好幫客戶解決問題!!!)
+            //◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣
+            console.log('error:' + error);
+            audioMsg.innerText = "你的裝置不支援錄音呦 Q口Q";
+        });
+
+    </script>
+</body>
+
+</html>

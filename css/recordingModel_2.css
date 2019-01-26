@@ -1,0 +1,33 @@
+#visual {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.plotBlock {
+  flex: 1;
+  border: 1px solid #000; }
+
+.recordBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fbc84a;
+  position: relative;
+  cursor: pointer; }
+  .recordBtn::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #076baf;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 0.3s; }
+  .recordBtn.recording::before {
+    background-color: #af0715; }
