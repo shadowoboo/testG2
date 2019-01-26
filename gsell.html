@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/gsell.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+
+
 </head>
+
 <body>
     <!-- map serch -->
     <div id="google_serch">
@@ -38,79 +41,27 @@
                     <i class="fas fa-search"></i>
                 </a>
             </div>
-            <div class="clearfix"></div>
         </form>
     </div>
 
+
+
+
     <!-- map api -->
     <div id="mapSearch">
-        <div id="map">
-            <!-- <img src="/images/nnnnn/map.PNG" alt="地圖"> -->
-        </div>
-    </div>
+        <div id="map"></div>
+        <script src="/js/gsell.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxP0uxcl_z9Y2bY7OkrWZg5TRhtkANEog&callback=initMap">
+        </script>
+        <!-- 地圖篩選 -->
 
-
-    <script src="/js/gsell.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-    <!-- 地圖篩選 -->
-    <div class="map_serch_box">
-        <div class="map_serch_item">
-            <div class="map_serch_item_pic">
-                <img src="/images/nnnnn/s1.png" alt="sell_machine">
-            </div>
-
-            <div class="map_serch_item_info">
-                <div class="map_serch_item_info_point">
-                    <span>地點:桃園市中壢區中央路</span>
-                </div>
-                <div class="map_serch_item_info_distance">
-                    <span>距離: 100公尺</span>
-                </div>
-                <div class="map_serch_info_line">
-                    <a href="#">
-                        <span>規劃路線
-                        <i class="fas fa-location-arrow"></i></span>
-                    </a>
-                </div>
-                
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-
-    <div class="map_serch_box">
-            <div class="map_serch_item">
-                <div class="map_serch_item_pic">
-                    <img src="/images/nnnnn/s2.png" alt="sell_machine">
-                </div>
-    
-                <div class="map_serch_item_info">
-                    <div class="map_serch_item_info_point">
-                        <span>地點:桃園市中壢區中央路</span>
-                    </div>
-                    <div class="map_serch_item_info_distance">
-                        <span>距離: 100公尺</span>
-                    </div>
-                    <div class="map_serch_info_line">
-                        <a href="#">
-                            <span>規劃路線
-                            <i class="fas fa-location-arrow"></i></span>
-                        </a>
-                    </div>
-                    
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-
-
-        <div class="map_serch_box">
+        <div class="mapSearch_resullt">
+            <div class="map_serch_box">
                 <div class="map_serch_item">
                     <div class="map_serch_item_pic">
-                        <img src="/images/nnnnn/s3.png" alt="sell_machine">
+                        <img src="/images/nnnnn/s1.png" alt="sell_machine">
                     </div>
-        
+
                     <div class="map_serch_item_info">
                         <div class="map_serch_item_info_point">
                             <span>地點:桃園市中壢區中央路</span>
@@ -121,40 +72,118 @@
                         <div class="map_serch_info_line">
                             <a href="#">
                                 <span>規劃路線
-                                <i class="fas fa-location-arrow"></i></span>
+                                    <i class="fas fa-location-arrow"></i></span>
                             </a>
                         </div>
-                        
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
 
+            <!-- 第2個框 -->
             <div class="map_serch_box">
-                    <div class="map_serch_item">
-                        <div class="map_serch_item_pic">
-                            <img src="/images/nnnnn/s4.png" alt="sell_machine">
-                        </div>
-            
-                        <div class="map_serch_item_info">
-                            <div class="map_serch_item_info_point">
-                                <span>地點:桃園市中壢區中央路</span>
-                            </div>
-                            <div class="map_serch_item_info_distance">
-                                <span>距離: 100公尺</span>
-                            </div>
-                            <div class="map_serch_info_line">
-                                <a href="#">
-                                    <span>規劃路線
-                                    <i class="fas fa-location-arrow"></i></span>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="clearfix"></div>
+                <div class="map_serch_item">
+                    <div class="map_serch_item_pic">
+                        <img src="/images/nnnnn/s2.png" alt="sell_machine">
                     </div>
+
+                    <div class="map_serch_item_info">
+                        <div class="map_serch_item_info_point">
+                            <span>地點:桃園市中壢區中央路</span>
+                        </div>
+                        <div class="map_serch_item_info_distance">
+                            <span>距離: 100公尺</span>
+                        </div>
+                        <div class="map_serch_info_line">
+                            <a href="#">
+                                <span>規劃路線
+                                    <i class="fas fa-location-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-    
+            </div>
+
+            <!-- 第3個框 -->
+            <div class="map_serch_box">
+                <div class="map_serch_item">
+                    <div class="map_serch_item_pic">
+                        <img src="/images/nnnnn/s3.png" alt="sell_machine">
+                    </div>
+
+                    <div class="map_serch_item_info">
+                        <div class="map_serch_item_info_point">
+                            <span>地點:桃園市中壢區中央路</span>
+                        </div>
+                        <div class="map_serch_item_info_distance">
+                            <span>距離: 100公尺</span>
+                        </div>
+                        <div class="map_serch_info_line">
+                            <a href="#">
+                                <span>規劃路線
+                                    <i class="fas fa-location-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- 第4個框 -->
+            <div class="map_serch_box">
+                <div class="map_serch_item">
+                    <div class="map_serch_item_pic">
+                        <img src="/images/nnnnn/s1.png" alt="sell_machine">
+                    </div>
+
+                    <div class="map_serch_item_info">
+                        <div class="map_serch_item_info_point">
+                            <span>地點:桃園市中壢區中央路</span>
+                        </div>
+                        <div class="map_serch_item_info_distance">
+                            <span>距離: 100公尺</span>
+                        </div>
+                        <div class="map_serch_info_line">
+                            <a href="#">
+                                <span>規劃路線
+                                    <i class="fas fa-location-arrow"></i></span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+
+            <!-- 第5個框 -->
+            <div class="map_serch_box">
+                <div class="map_serch_item">
+                    <div class="map_serch_item_pic">
+                        <img src="/images/nnnnn/s3.png" alt="sell_machine">
+                    </div>
+
+                    <div class="map_serch_item_info">
+                        <div class="map_serch_item_info_point">
+                            <span>地點:桃園市中壢區中央路</span>
+                        </div>
+                        <div class="map_serch_item_info_distance">
+                            <span>距離: 100公尺</span>
+                        </div>
+                        <div class="map_serch_info_line">
+                            <a href="#">
+                                <span>規劃路線
+                                    <i class="fas fa-location-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+
 </html>

@@ -275,35 +275,37 @@ a {
 input, select, option {
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf);
-  margin: 5px; }
+  margin: 5px;
+  border: 1px solid #076baf;
+  border-radius: 5px;
+  padding: 5px 10px; }
 
-#serch_title {
-  background-color: #f09c8a; }
+input {
+  width: 200px;
+  display: inline-block; }
 
 #google_serch {
-  margin: auto; }
-
-#serch_bar {
-  width: 20%;
-  float: left;
-  margin-left: 10%; }
-
-#serch_input {
-  width: 50%;
-  float: left; }
-
-.serch {
-  width: 10%;
-  float: left; }
-
-#map img {
-  width: 100%; }
-
-#serch_form {
-  background-color: #f09c8a; }
+  background-color: #fcda85; }
 
 #serch_title {
   text-align: center; }
+
+#serch_form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0; }
+
+#serch_input {
+  width: 200px; }
+
+.serch_serch {
+  display: inline-block;
+  margin-left: 20px; }
+
+#map {
+  width: 100%;
+  height: 400px; }
 
 .map_serch_box {
   width: 98%;
@@ -323,10 +325,18 @@ input, select, option {
       margin-top: 5px; }
 
 @media screen and (min-width: 992px) {
-  #serch_bar {
-    width: 10%;
-    margin-left: 20%; }
+  #map {
+    width: 70%;
+    height: 90vh;
+    float: right;
+    position: fixed; }
+  .mapSearch_resullt {
+    width: 30%;
+    height: 80vh;
+    overflow-y: scroll; }
+  .map_serch_item {
+    height: 140px; }
+  #serch_form {
+    flex-wrap: nowrap; }
   #serch_input {
-    width: 30%; }
-  .serch {
-    width: 10%; } }
+    flex-wrap: nowrap; } }
