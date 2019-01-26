@@ -144,14 +144,15 @@
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px); }
   100% {
     transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
-  .section #btns7 {
-    width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-    .section #btns7 .btn7 {
-      width: 40px;
-      height: 20px;
-      background-color: #ffa;
-      text-align: center;
-      cursor: pointer; }
+
+#btns7 {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  #btns7 .btn7 {
+    width: 40px;
+    height: 20px;
+    background-color: #ffa;
+    text-align: center;
+    cursor: pointer; }
