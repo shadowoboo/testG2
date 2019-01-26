@@ -8,12 +8,11 @@
     background-color: #c1f3d2;
     section{
         position: relative;
+        padding-bottom: 10vh;
     }
 
+
     .mNone{//手機上不顯示的物件
-        display: none;
-    }
-    #part2{
         display: none;
     }
     .title{//標題雲
@@ -47,6 +46,15 @@
             // opacity: .7;
         }
     }
+
+    @keyframes floating {
+        0%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(5px);
+        }
+    }
     .item{
         &::before{
             content:'';
@@ -69,8 +77,10 @@
         width:21%;//252px
         margin: 5vh auto;
         position: relative;
-    
-
+        animation: floating 1s infinite alternate linear;
+        &:hover{
+            animation-play-state: paused;
+        }
         .itemCountry{
             width: 9.9%;
             position: absolute;
@@ -125,20 +135,22 @@
             .rollingItem{
                 display: flex;
                 flex-flow: row wrap;
-                width: 14%;
-                transform: rotate(30deg);
+                width: 12%;
+                transform: rotate(40deg);
                 position: absolute;
                 img{
                     width: 100%;
+                    height: 75%;
                 }
-                #roll_1{
-                    top: 0;
-                    right: 8%;
-                }
-                #roll_2{
-                    top: 0;
-                    right: 15%;
-                }
+            }
+            #roll_1 {
+                top: -25%;
+                left: -8%;
+            }
+
+            #roll_2 {
+                top: -25%;
+                left: 2%;
             }
             #titleAll{
                 margin-right: 0;
@@ -163,7 +175,105 @@
                right: 0;;
             }
 
+            #titleCat{
+                margin-left: 0;
+            }
 
+            #allPanel{
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+                font-family: g2Font;
+                aside{
+                        align-self: center;
+                        width: 9.1%;
+                        border-radius: 30px;
+                        background-color: #fff;
+                        overflow: hidden;
+                        box-shadow:1px 0px  10px rgba($color: #000, $alpha: .4);
+                        font-size: 20px;
+                    .switch {
+                        width: 100%;
+                        padding: 10px 5px;
+                        text-align: center;
+                        margin: 0 auto;
+                        color: #076baf;
+                        &:hover {
+                            color: #fff;
+                            background-color: #076baf;
+                        }
+                    }
+                }
+                #rankPanel{
+                    width: 31%;
+                    height: 0;
+                    padding-bottom: 31%; 
+                    background-image: url(/images/rankBoard/rankPanel.png);
+                    background-size: cover;
+                    position: relative;
+                    .switch{
+                        font-size: 26px;
+                        color: #076baf;
+                        width: 17%;
+                        height: 0;
+                        padding-bottom: 15%;
+                        border-radius: 100px;
+                        text-align: center;
+                        line-height: 2.5;
+                        position: absolute;
+                    }
+                    .sw_rk{
+                        cursor: pointer;
+                    }
+                    #rank_ring{
+                        width: 100%;
+                        position: absolute;
+                        top: 50%;
+                        transform:rotate(90deg);
+                        
+                    }
+                    #sw_ring{
+                        border: #076baf solid 3px;
+                        transform: translate(-30% ,-50%);
+
+                    }
+                    #sw_1{
+                        top: -5%;
+                        left: 41.5%;
+                        
+                    }
+                    #sw_2{
+                        top: 18%;
+                        left: 81%;
+                    }
+                    #sw_3{
+                        top: 63%;
+                        left: 81%;
+                    }
+                    #sw_4{
+                        bottom: -2.5%;
+                        left: 41.5%;
+                    }
+                    #sw_5{
+                        top: 63%;
+                        right: 81%;
+                    }
+                    #sw_6{
+                        top: 18%;
+                        right: 81%;
+                    }
+                }
+
+                #itemDetail{
+                    width: 45%;
+                    height: 80vh;
+                    overflow-x: hidden;
+                    overflow-y:auto; 
+                    background-color: #fff;
+                    border-radius: 40px;
+                }
+            }
     }
 
 

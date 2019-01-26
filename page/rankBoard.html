@@ -20,19 +20,22 @@
     <section>
         <!-- 背後一直滾動的商品 請參考阿嬤的移動膠片 -->
         <div class="rollingItem mNone" id="roll_1">
-            <img src="/images/rankBoard/itemG.png">
-            <img src="/images/rankBoard/itemR.png">
-            <img src="/images/rankBoard/itemB.png">
-            <img src="/images/rankBoard/itemG.png">
-            <img src="/images/rankBoard/itemR.png">
+            <ul>
+                <li><img src="/images/rankBoard/itemG.png"></li>
+                <li><img src="/images/rankBoard/itemR.png"></li>
+                <li><img src="/images/rankBoard/itemB.png"></li>
+                <li><img src="/images/rankBoard/itemG.png"></li>
+            </ul>
         </div>
         <div class="rollingItem mNone" id="roll_2">
-            <img src="/images/rankBoard/itemR.png">
-            <img src="/images/rankBoard/itemB.png">
-            <img src="/images/rankBoard/itemG.png">
-            <img src="/images/rankBoard/itemR.png">
-            <img src="/images/rankBoard/itemB.png">
-        </div> 
+            <ul>
+                <li><img src="/images/rankBoard/itemR.png"></li>
+                <li><img src="/images/rankBoard/itemB.png"></li>
+                <li><img src="/images/rankBoard/itemG.png"></li>
+                <li><img src="/images/rankBoard/itemR.png"></li>
+                <li><img src="/images/rankBoard/itemB.png"></li>
+            </ul>
+            </div> 
 
         <!-- 阿就放標題的雲 -->
         <div class="title" id="titleAll">
@@ -93,99 +96,98 @@
 
 
 
-    <section id="part2">
+    <section id="sec2">
         <!-- 阿就標題的雲  Cat=category-->
         <div class="title" id="titleCat">
             <h2>本月<br>巧克力排行</h2>
         </div>
 
-        <!-- 左側選種類的單 -->
-        <aside>
-            <div class="switch sw_class" id="sw_all">綜合排行</div>
-            <div class="switch sw_class" id="sw_cookie">餅乾</div>
-            <div class="switch sw_class" id="sw_candy">糖果</div>
-            <div class="switch sw_class" id="sw_choco">巧克力</div>
-            <div class="switch sw_class" id="sw_chip">洋芋片</div>
-        </aside>
+        <div id="allPanel">
+            <!-- 左側選種類的單 -->
+            <aside>
+                <div class="switch sw_class" id="sw_all">綜合排行</div>
+                <div class="switch sw_class" id="sw_cookie">餅乾</div>
+                <div class="switch sw_class" id="sw_candy">糖果</div>
+                <div class="switch sw_class" id="sw_choco">巧克力</div>
+                <div class="switch sw_class" id="sw_chip">洋芋片</div>
+            </aside>
 
-        <!-- 中間的轉盤 -->
-        <div id="rankPanel">
-            <img src="" alt="圓圈底圖">
-
-            <div id="rank_ring">
-                <!-- 先把置中再去對位置 -->
-                <div class="switch sw_ring" id="sw_ring"></div>
-            </div>
-
-            <div id="ipIcon">
-                <img src="" alt="各類別圖片" id="ipImg">
-                <img src="" alt="背景光" id="glow">
-            </div>
-
-            <div class="switch sw_rk" id="sw_1">1</div>
-            <div class="switch sw_rk" id="sw_2">2</div>
-            <div class="switch sw_rk" id="sw_3">3</div>
-            <div class="switch sw_rk" id="sw_4">4</div>
-            <div class="switch sw_rk" id="sw_5">5</div>
-            <div class="switch sw_rk" id="sw_6">6</div>
-        </div>
-
-        <div class="itemDetail">
-
-            <img src="" alt="商品圖">
-            <h4>[日本]</h4>
-            <h2>UHA味覺糖甘藷片</h2>
-            <div id="allRank">2019年1月綜合排行 第1名</div>
-            <div id="catRank">2019年1月餅乾排行 第1名</div>
-            <div id="flaRank">2019年1月甜食排行 第1名</div>
-
-            <div id="itemBtns">
-                <button class="detail">商品詳細</button>
-                <button class="cart">加入購物車</button>
-                <button class="heart"><i class="far fa-heart"></i></button>
-            </div>
-
-            <hr>
-
-            <div id="eva">
-                <div class="score">
-                    <p id="evaTimes">共348次評價</p>
-                    <p class="scoreAvg">4.7<span class="total">/5</span></p>
-                    <div class="starAvg"><img src="" alt="星等"></div>
+            <!-- 中間的轉盤 -->
+            <div id="rankPanel">
+                <div id="rank_ring">
+                    <div class="switch sw_ring" id="sw_ring"></div>
                 </div>
-                <div id="rader">
-                        <canvas id="radarCanvas"></canvas>
+
+                <div id="ipIcon">
+                    <img src="" alt="各類別圖片" id="ipImg">
+                    <img src="/images/rankBoard/ipGlow.png" alt="背景光" id="glow">
                 </div>
+
+                <div class="switch sw_rk" id="sw_1">1</div>
+                <div class="switch sw_rk" id="sw_2">2</div>
+                <div class="switch sw_rk" id="sw_3">3</div>
+                <div class="switch sw_rk" id="sw_4">4</div>
+                <div class="switch sw_rk" id="sw_5">5</div>
+                <div class="switch sw_rk" id="sw_6">6</div>
             </div>
 
-            <div id="comments">
-                <h3>商品評價</h3>
+            <div id="itemDetail">
 
-                <div class="comment">
+                <img src="" alt="商品圖">
+                <h4>[日本]</h4>
+                <h2>UHA味覺糖甘藷片</h2>
+                <div id="allRank">2019年1月綜合排行 第1名</div>
+                <div id="catRank">2019年1月餅乾排行 第1名</div>
+                <div id="flaRank">2019年1月甜食排行 第1名</div>
 
-                    <div class="mem">
-                        <div class="memCol">
-                            <img src="" alt="會員頭像" class="memImg">
-                        </div>
-                        <div class="memCol">
-                            <p class="memId">Apple12345678</p>
-                            <div class="starAvg"><img src="" alt="星等"></div>
-                        </div>
+                <div id="itemBtns">
+                    <button class="detail">商品詳細</button>
+                    <button class="cart">加入購物車</button>
+                    <button class="heart"><i class="far fa-heart"></i></button>
+                </div>
+
+                <hr>
+
+                <div id="eva">
+                    <div class="score">
+                        <p id="evaTimes">共348次評價</p>
+                        <p class="scoreAvg">4.7<span class="total">/5</span></p>
+                        <div class="starAvg"><img src="" alt="星等"></div>
                     </div>
-
-                    <p class="commentCtx">
-                        真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
-                    </p>
-
-                    <div class="commentBtns">
-                        <button class="like">說讚(0人)</button>
-                        <button class="share">分享</button>
-                        <button class="msg">隱藏留言</button>
-                    </div> 
+                    <div id="rader">
+                            <canvas id="radarCanvas"></canvas>
+                    </div>
                 </div>
+
+                <div id="comments">
+                    <h3>商品評價</h3>
+
+                    <div class="comment">
+
+                        <div class="mem">
+                            <div class="memCol">
+                                <img src="" alt="會員頭像" class="memImg">
+                            </div>
+                            <div class="memCol">
+                                <p class="memId">Apple12345678</p>
+                                <div class="starAvg"><img src="" alt="星等"></div>
+                            </div>
+                        </div>
+
+                        <p class="commentCtx">
+                            真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                        </p>
+
+                        <div class="commentBtns">
+                            <button class="like">說讚(0人)</button>
+                            <button class="share">分享</button>
+                            <button class="msg">隱藏留言</button>
+                        </div> 
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
     </section>
     <!-- footer Start -->
