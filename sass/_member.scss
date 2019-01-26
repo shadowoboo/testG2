@@ -1,7 +1,7 @@
 *{
     outline: 1px solid #f00;
 }
-$cloudTabColor:#076baf;
+$tabColor:#076baf;
 body{
     background-color: #b8f1ed;
 }
@@ -9,7 +9,7 @@ body{
 .memWrap{
     width: 100%;
     height: auto;
-    
+   
     form{
         width: 85%;
         // margin: 45% auto 10% auto;
@@ -27,8 +27,9 @@ body{
             td{
                 text-align: center;
                 padding-top: 1%;
-                div {
-                    margin: auto;
+                div{
+                   margin: auto;
+                   margin-top: 5%; 
                     width: 30%;
                     border: 2px dotted #076baf;
                     border-radius: 50%;
@@ -132,31 +133,41 @@ body{
 .itemTab2{
     width: 100%;
     height: auto;
+    margin: 10% auto;
     .tab-list{
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        text-align: center;
+        align-items: center;
+        margin: 3% auto;
         li{
             position: relative;
+            z-index: -1;
             h4{
                 position: absolute;
                 top:32%;
-                left: 25%;
-                color: $cloudTabColor;
+                left: 23%;
+                text-align: center;
+                color: $tabColor;
+                
+                
+                
             }
         }
         li:last-child{
             h4{
-                left: 22%;
+                left: 18%;
+                
             }
         }
 
     }
+    
     .tab-panel{
         width: 85%;
-        height: auto;
+        height: 50vh;
         background-color: #fff;
         border-radius: 15px;
         margin: auto;
@@ -164,16 +175,76 @@ body{
 
     }
     #tab-1{
+        .levelInfor{
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span{
+                font-size: 11px;
+            }
+            .topLevel{
+               width: 100%;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               line-height: 2;
+               span:first-child{
+                   
+               }
+            }
+            .procBar{
+                position: relative;
+                .baby{
+                    width: 8%;
+                    height: 8%;
+                    position: absolute;
+                    top:13%;
+                    left: 2%;
+                    img{
+                        width: 100%;
+                    } 
+                    
+
+                }
+                .colorBar{
+                    border: 1px solid #000;
+                    border-radius: 15px;
+                    width: 90%;
+                    height: 60px;
+                    margin: auto;
+                    .nowPro{
+                        width: 16%;
+                        height: 100%;
+                        background-color: #f8dcd3;
+                        border-radius: 15px 0 0 15px;
+                    }
+
+                }
+                .kid{
+                    position: absolute;
+                    top: 68%;
+                    left: 15%;
+                    width: 8%;
+                    height: 15%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                
+            }
+        }
         .description{
             p{
-                color: $cloudTabColor; 
+                color: $tabColor; 
                 text-align: center;
             }
             .specify{
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: center;
                 align-content: space-around;
                 
             }
@@ -191,7 +262,7 @@ body{
     .memWrap{
         form{
             margin: auto ;
-            margin-top: 45%;
+            margin-top: 30%;
         }
         
     }
@@ -202,8 +273,8 @@ body{
         
         form{
             margin: auto;
-            margin-top: 20%;
-            height: 330px;
+            margin-top: 10%;
+            height: 33vh;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;

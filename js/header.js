@@ -9,7 +9,8 @@ var canvas = document.getElementById('canvas');
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame ||
         function(callback) {
-            window.setTimeout(callback, 1000 / 60);
+            //-----------波浪秒數設定-----------
+            window.setTimeout(callback, 50000 / 60);
          };
         })();
 
@@ -26,8 +27,9 @@ var canvas = document.getElementById('canvas');
     //             "rgba(0,168,255, 0.3)"
     //             ];
     var lines = ["#fff",
-                "rgba(206, 235, 250, 0.7)",
-                "#eee8e8",
+                 "fdfbfb",
+                 "rgba(235,237,238, 0.3)"
+                
                 ];
 
     function loop() {
@@ -38,11 +40,12 @@ var canvas = document.getElementById('canvas');
             ctx.fillStyle = lines[j];
     //每个矩形的角度都不同，每个之间相差45度  
     var angle = (step + j * 45) * Math.PI / 180;
-    var deltaHeight = Math.sin(angle) * 50;
-    var deltaHeightRight = Math.cos(angle) * 50;
+    //-------------波浪幅度設定(原設定50->35)-------------------
+    var deltaHeight = Math.sin(angle) * 30;
+    var deltaHeightRight = Math.cos(angle) * 30;
     ctx.beginPath();
     ctx.moveTo(0, canvas.height / 2 + deltaHeight);
-    ctx.bezierCurveTo(canvas.width / 2, canvas.height / 2 + deltaHeight - 50, canvas.width / 2, canvas.height / 2 + deltaHeightRight - 50, canvas.width, canvas.height / 2 + deltaHeightRight);
+    ctx.bezierCurveTo(canvas.width / 2, canvas.height / 2 + deltaHeight - 30, canvas.width / 2, canvas.height / 2 + deltaHeightRight - 30, canvas.width, canvas.height / 2 + deltaHeightRight);
     ctx.lineTo(canvas.width, canvas.height);
     ctx.lineTo(0, canvas.height);
     ctx.lineTo(0, canvas.height / 2 + deltaHeight);

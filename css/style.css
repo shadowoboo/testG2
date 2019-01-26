@@ -81,12 +81,12 @@ a {
   .cloud .doc--bg2 {
     transform: rotate(180deg);
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     position: relative;
     overflow: hidden; }
     .cloud .doc--bg2 #canvas {
       width: 100%;
-      height: 20vh;
+      height: 15vh;
       position: absolute;
       top: 0;
       left: 0;
@@ -113,8 +113,8 @@ header {
       position: fixed;
       top: 2%; }
       header nav .menu .logo img {
-        width: 100px;
-        height: 100px; }
+        width: 90px;
+        height: 80px; }
     header nav .menu .list li:first-child:hover a {
       color: #53a9f5; }
     header nav .menu .list li:nth-child(4):hover a {
@@ -137,8 +137,8 @@ header {
 @media screen and (max-width: 767px) {
   body {
     margin-top: 50px; }
-  .doc--bg2 #canvas {
-    height: 10vh; }
+  .cloud .doc--bg2 #canvas {
+    height: 20vh; }
   header .smalSearch {
     display: none; }
   header .menu {
@@ -147,9 +147,10 @@ header {
     header .menu .logo {
       left: 38%; }
     header .menu #ham {
-      margin-top: 3%;
-      width: 40px;
+      margin-top: 4%;
+      width: 100%;
       height: 30px;
+      padding-left: 2%;
       cursor: pointer; }
       header .menu #ham span {
         display: block;
@@ -204,21 +205,17 @@ header {
     position: absolute;
     top: 10%;
     right: 0;
-    width: 35%;
+    width: 40%;
     height: 35px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     z-index: -1; }
     header .login li {
-      width: 25%;
-      font-size: 15px;
+      width: 30%;
+      font-size: 22px;
       line-height: 1.2;
-      align-self: center; }
-      header .login li span {
-        display: block;
-        font-size: 14px;
-        line-height: 1.2; } }
+      text-align: center; } }
 
 @media screen and (min-width: 768px) {
   body {
@@ -560,6 +557,7 @@ body {
           padding-top: 1%; }
           .memWrap form .col-1 tr td div {
             margin: auto;
+            margin-top: 5%;
             width: 30%;
             border: 2px dotted #076baf;
             border-radius: 50%; }
@@ -610,28 +608,76 @@ body {
 
 .itemTab2 {
   width: 100%;
-  height: auto; }
+  height: auto;
+  margin: 10% auto; }
   .itemTab2 .tab-list {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center; }
+    align-items: center;
+    margin: 3% auto; }
     .itemTab2 .tab-list li {
-      position: relative; }
+      position: relative;
+      z-index: -1; }
       .itemTab2 .tab-list li h4 {
         position: absolute;
         top: 32%;
-        left: 25%;
+        left: 23%;
+        text-align: center;
         color: #076baf; }
     .itemTab2 .tab-list li:last-child h4 {
-      left: 22%; }
+      left: 18%; }
   .itemTab2 .tab-panel {
     width: 85%;
-    height: auto;
+    height: 50vh;
     background-color: #fff;
     border-radius: 15px;
     margin: auto; }
+  .itemTab2 #tab-1 .levelInfor {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .itemTab2 #tab-1 .levelInfor span {
+      font-size: 11px; }
+    .itemTab2 #tab-1 .levelInfor .topLevel {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      line-height: 2; }
+    .itemTab2 #tab-1 .levelInfor .procBar {
+      position: relative; }
+      .itemTab2 #tab-1 .levelInfor .procBar .baby {
+        width: 8%;
+        height: 8%;
+        position: absolute;
+        top: 13%;
+        left: 2%; }
+        .itemTab2 #tab-1 .levelInfor .procBar .baby img {
+          width: 100%; }
+      .itemTab2 #tab-1 .levelInfor .procBar .colorBar {
+        border: 1px solid #000;
+        border-radius: 15px;
+        width: 90%;
+        height: 60px;
+        margin: auto; }
+        .itemTab2 #tab-1 .levelInfor .procBar .colorBar .nowPro {
+          width: 16%;
+          height: 100%;
+          background-color: #f8dcd3;
+          border-radius: 15px 0 0 15px; }
+      .itemTab2 #tab-1 .levelInfor .procBar .kid {
+        position: absolute;
+        top: 68%;
+        left: 15%;
+        width: 8%;
+        height: 15%; }
+        .itemTab2 #tab-1 .levelInfor .procBar .kid img {
+          width: 100%; }
   .itemTab2 #tab-1 .description p {
     color: #076baf;
     text-align: center; }
@@ -639,19 +685,19 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-content: space-around; }
 
 @media screen and (max-width: 768px) {
   .memWrap form {
     margin: auto;
-    margin-top: 45%; } }
+    margin-top: 30%; } }
 
 @media screen and (min-width: 769px) {
   .memWrap form {
     margin: auto;
-    margin-top: 20%;
-    height: 330px;
+    margin-top: 10%;
+    height: 33vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
