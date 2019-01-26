@@ -182,17 +182,17 @@ body{
             flex-direction: column;
             justify-content: center;
             span{
-                font-size: 11px;
+                font-size: 10px;
+                line-height: 2;
             }
             .topLevel{
+                // position: relative;
                width: 100%;
                display: flex;
-               justify-content: space-around;
-               align-items: center;
-               line-height: 2;
-               span:first-child{
-                   
-               }
+               justify-content: space-evenly;
+               align-items: flex-start;
+               
+               
             }
             .procBar{
                 position: relative;
@@ -233,6 +233,12 @@ body{
                     }
                 }
                 
+            }
+            .bottumLevel{
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                padding: 0 2%;
             }
         }
         .description{

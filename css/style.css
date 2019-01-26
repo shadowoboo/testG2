@@ -642,13 +642,13 @@ body {
     flex-direction: column;
     justify-content: center; }
     .itemTab2 #tab-1 .levelInfor span {
-      font-size: 11px; }
+      font-size: 10px;
+      line-height: 2; }
     .itemTab2 #tab-1 .levelInfor .topLevel {
       width: 100%;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      line-height: 2; }
+      justify-content: space-evenly;
+      align-items: flex-start; }
     .itemTab2 #tab-1 .levelInfor .procBar {
       position: relative; }
       .itemTab2 #tab-1 .levelInfor .procBar .baby {
@@ -678,6 +678,11 @@ body {
         height: 15%; }
         .itemTab2 #tab-1 .levelInfor .procBar .kid img {
           width: 100%; }
+    .itemTab2 #tab-1 .levelInfor .bottumLevel {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0 2%; }
   .itemTab2 #tab-1 .description p {
     color: #076baf;
     text-align: center; }
