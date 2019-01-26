@@ -197,8 +197,8 @@ span {
 .goToCustom {
   width: 160px;
   height: 60px;
-  color: #737374;
-  background-color: #fbe5dd;
+  color: #fff;
+  background-color: #076baf;
   border: 2px solid transparent;
   border-radius: 10px;
   padding: 0px;
@@ -209,8 +209,8 @@ span {
   cursor: pointer; }
   @media only screen and (min-width: 768px) {
     .goToCustom:hover {
-      color: #737374;
-      background-color: #fca8b7; } }
+      color: #fff;
+      background-color: #00457b; } }
 
 .subscribe {
   width: 210px;
@@ -653,14 +653,16 @@ body {
     .index .section_12 .LeaderboardSort {
       margin: 80px;
       text-align: center; }
-      .index .section_12 .LeaderboardSort :nth-child(2), .index .section_12 .LeaderboardSort :nth-child(3), .index .section_12 .LeaderboardSort :nth-child(4) {
+      .index .section_12 .LeaderboardSort :nth-child(2),
+      .index .section_12 .LeaderboardSort :nth-child(3),
+      .index .section_12 .LeaderboardSort :nth-child(4) {
         border-radius: 0px; }
       .index .section_12 .LeaderboardSort :nth-child(1) {
         border-radius: 10px 0 0 10px; }
       .index .section_12 .LeaderboardSort :nth-child(5) {
         border-radius: 0 10px 10px 0; }
   .index .customized {
-    background-image: url(../images/index/background.png);
+    background-image: url(../images/index/background_1.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -673,6 +675,11 @@ body {
     .index .customized .waveTop {
       position: absolute;
       top: -80px;
+      left: 0;
+      width: 1920px; }
+    .index .customized .waveBottom {
+      position: absolute;
+      bottom: -20px;
       left: 0;
       width: 1920px; }
     .index .customized .LeaderboardTitle {
@@ -688,4 +695,78 @@ body {
         color: #076baf; }
     .index .customized .customizedCount {
       display: flex;
-      justify-content: space-around; }
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      height: 500px; }
+      .index .customized .customizedCount #roulette {
+        background-color: #fff;
+        border: 2px solid #ddd;
+        width: 500px;
+        padding-bottom: 500px;
+        border-radius: 50%;
+        position: absolute;
+        transition: 1s;
+        left: -250px;
+        top: 0;
+        z-index: 5; }
+        .index .customized .customizedCount #roulette .color {
+          width: 18%;
+          height: 18%;
+          border-radius: 50%;
+          position: absolute; }
+        .index .customized .customizedCount #roulette #red {
+          background-color: #ff5050;
+          top: 4%;
+          left: 41%; }
+        .index .customized .customizedCount #roulette #orange {
+          background-color: #ff6600;
+          top: 16%;
+          left: 67%; }
+        .index .customized .customizedCount #roulette #yellow {
+          background-color: #ffff00;
+          top: 41%;
+          left: 78%; }
+        .index .customized .customizedCount #roulette #green {
+          background-color: #99ff66;
+          top: 66%;
+          left: 67%; }
+        .index .customized .customizedCount #roulette #blue {
+          background-color: #66ccff;
+          top: 78%;
+          left: 41%; }
+        .index .customized .customizedCount #roulette #indigo {
+          background-color: #000066;
+          top: 66%;
+          left: 15%; }
+        .index .customized .customizedCount #roulette #violet {
+          background-color: #cc33ff;
+          top: 41%;
+          left: 4%; }
+        .index .customized .customizedCount #roulette #black {
+          background-color: #000;
+          top: 16%;
+          left: 15%; }
+      .index .customized .customizedCount .ctCard {
+        width: 500px; }
+        .index .customized .customizedCount .ctCard .ctIntroduce {
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+          color: #737374;
+          letter-spacing: 5px;
+          margin: 20px; }
+          .index .customized .customizedCount .ctCard .ctIntroduce p {
+            font-size: 18px;
+            padding-top: 10px; }
+        .index .customized .customizedCount .ctCard .ctBtns {
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+          color: #737374;
+          letter-spacing: 5px;
+          margin: 20px; }
+          .index .customized .customizedCount .ctCard .ctBtns .ctBtn {
+            padding: 20px 0; }

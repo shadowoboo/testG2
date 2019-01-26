@@ -68,7 +68,7 @@ span{
 @include btn('dimension', 50px, 50px, $yellow, #fff, $yellow, 10px, 0px, $gray, $yellow, 22px);
 @include btn('action', 120px, 40px, $gray, $yellow, transparent, 10px, 0px, #fff, $deepyellow, 22px);
 @include btn('category', 120px, 50px, $blue, #fff, transparent, 10px, 0px, #fff, $blue, 28px);
-@include btn('goToCustom', 160px, 60px, $gray, #fbe5dd, transparent, 10px, 0px, $gray, #fca8b7, 28px);
+@include btn('goToCustom', 160px, 60px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 28px);
 @include btn('subscribe', 210px, 60px, $gray, #fcda85, transparent, 10px, 0px, $gray, #fbc84a, 28px);
 @include btn('month', 100px, 100px, #fff, $blue, transparent, 50%, 0px, $gray, #fbc84a, 22px);
 

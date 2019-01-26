@@ -13,7 +13,6 @@
     <script src="../js/Chart.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/common.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/boxModel.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
@@ -543,16 +542,25 @@
                 <h2>零食排行榜</h2>
             </div>
             <div class="customizedCount">
-                <div class="ctRoulette"></div>
-                <section class="section section_3" id="section_3">
+                <div id="roulette">
+                    <div class="color" id="red"></div>
+                    <div class="color" id="orange"></div>
+                    <div class="color" id="yellow"></div>
+                    <div class="color" id="green"></div>
+                    <div class="color" id="blue"></div>
+                    <div class="color" id="indigo"></div>
+                    <div class="color" id="violet"></div>
+                    <div class="color" id="black"></div>
+                </div>
+                <section class="section_15" id="section_15">
                     <div class="camera">
-                        <div class="box boxBase" id="box_3">
-                            <div class="surface surface_top">上</div>
-                            <div class="surface surface_down">下</div>
-                            <div class="surface surface_back">後</div>
-                            <div class="surface surface_font">前</div>
-                            <div class="surface surface_left">左</div>
-                            <div class="surface surface_right">右</div>
+                        <div class="box boxBase" id="box_15">
+                            <div class="surface surface_top ctBox" id="suf_top">上</div>
+                            <div class="surface surface_down ctBox">下</div>
+                            <div class="surface surface_back ctBox" id="suf_back">後</div>
+                            <div class="surface surface_font ctBox" id="suf_front">前</div>
+                            <div class="surface surface_left ctBox" id="suf_left">左</div>
+                            <div class="surface surface_right ctBox" id="suf_right">右</div>
                         </div>
                     </div>
                 </section>
@@ -564,14 +572,20 @@
                     <div class="ctBtns">
                         <h2>step 1 設計箱子</h2>
                         <div class="ctBtn" id="ctrl_bar">
-                            <button class="dimension btn_front" id="btn_front">前</button>
-                            <button class="dimension btn btn_back" id="btn_back">後</button>
-                            <button class="dimension btn btn_left" id="btn_left">左</button>
-                            <button class="dimension btn_right" id="btn_right">右</button>
-                            <button class="dimension btn_top" id="btn_top">上</button>
+                            <button class="dimension btns btn_front" id="btn_front">前</button>
+                            <button class="dimension btns btn_back" id="btn_back">後</button>
+                            <button class="dimension btns btn_left" id="btn_left">左</button>
+                            <button class="dimension btns btn_right" id="btn_right">右</button>
+                            <button class="dimension btns btn_top" id="btn_top">上</button>
+                        </div>
+                        <div class="ctBtnGo">
+                            <a href=""><button class="goToCustom">客製去!</button></a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="waveBottom">
+                <img src="../images/index/waveBottom.svg" alt="波浪圖">
             </div>
         </section>
 
@@ -689,7 +703,7 @@
     <!-- 箱子打開動畫 -->
     <script>
         const boxBases = document.querySelectorAll(".boxBase");
-        const btns = document.querySelectorAll(".btn");
+        const btns = document.querySelectorAll(".btns");
         //箱子上蓋測試
         const cover_out = document.querySelector("#cover_out");
         const cover_in = document.querySelector("#cover_in");
@@ -702,169 +716,263 @@
         const box_12 = document.querySelector("#box_12");
 
 
-    // for (var i = 0; i < btns.length; i++) {
-    //     btns[i].addEventListener("click", boxRotate);
-    // }
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", boxRotate);
+    }
 
     // 轉轉箱子功能鈕
     // 缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
-    // function boxRotate(e) {
-    //     console.log(`this.id: ${this.id}`);
-    //     switch (this.id) {
-    //         case "btn_front":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "btn_back":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "btn_top":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "btn_bottom":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "btn_left":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "btn_right":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-    //             });
-    //             break;
-    //         case "rotateX":
-    //             boxBases.forEach(element => {
-    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-    //                 console.log("element.style.transform:" + element.style.transform);
-    //                 let arr = element.style.transform.split(" ");
-    //                 console.log(`arr: ${arr}`);
-    //                 let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
-    //                 arr[0] = "rotateX(" + newAngelX + "deg)";
-    //                 console.log(arr[0]);
-    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-    //             });
-    //             break;
-    //         case "rotateY":
-    //             boxBases.forEach(element => {
-    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-    //                 console.log("element.style.transform:" + element.style.transform);
-    //                 let arr = element.style.transform.split(" ");
-    //                 console.log(`arr: ${arr}`);
-    //                 let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
-    //                 arr[1] = "rotateY(" + newAngelY + "deg)";
-    //                 console.log(arr[1]);
-    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-    //             });
-    //             break;
-    //         case "rotateZ":
-    //             boxBases.forEach(element => {
-    //                 // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-    //                 console.log("element.style.transform:" + element.style.transform);
-    //                 let arr = element.style.transform.split(" ");
-    //                 console.log(`arr: ${arr}`);
-    //                 let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
-    //                 arr[2] = "rotateZ(" + newAngelZ + "deg)";
-    //                 console.log(arr[2]);
-    //                 element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-    //             });
-    //             break;
-    //         case "show":
-    //             boxBases.forEach(element => {
-    //                 element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
-    //             });
-    //             //先把蓋子蓋起來
-    //             // {
-    //             //     let arr = cover_out.style.transform.split(" ");
-    //             //     console.log(`arr: ${arr}`);
-    //             //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
-    //             //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
-    //             // }
+    function boxRotate(e) {
+        console.log(`this.id: ${this.id}`);
+        switch (this.id) {
+            case "btn_front":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            case "btn_back":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            case "btn_top":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            case "btn_bottom":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            case "btn_left":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            case "btn_right":
+                boxBases.forEach(element => {
+                    element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+                });
+                $('.btns').removeClass('btnSelect');
+                $(this).addClass('btnSelect');
+                break;
+            // case "rotateX":
+            //     boxBases.forEach(element => {
+            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+            //         console.log("element.style.transform:" + element.style.transform);
+            //         let arr = element.style.transform.split(" ");
+            //         console.log(`arr: ${arr}`);
+            //         let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
+            //         arr[0] = "rotateX(" + newAngelX + "deg)";
+            //         console.log(arr[0]);
+            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+            //     });
+            //     break;
+            // case "rotateY":
+            //     boxBases.forEach(element => {
+            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+            //         console.log("element.style.transform:" + element.style.transform);
+            //         let arr = element.style.transform.split(" ");
+            //         console.log(`arr: ${arr}`);
+            //         let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
+            //         arr[1] = "rotateY(" + newAngelY + "deg)";
+            //         console.log(arr[1]);
+            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+            //     });
+            //     break;
+            // case "rotateZ":
+            //     boxBases.forEach(element => {
+            //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+            //         console.log("element.style.transform:" + element.style.transform);
+            //         let arr = element.style.transform.split(" ");
+            //         console.log(`arr: ${arr}`);
+            //         let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
+            //         arr[2] = "rotateZ(" + newAngelZ + "deg)";
+            //         console.log(arr[2]);
+            //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
+            //     });
+            //     break;
+            // case "show":
+            //     boxBases.forEach(element => {
+            //         element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
+            //     });
+                //先把蓋子蓋起來
+                // {
+                //     let arr = cover_out.style.transform.split(" ");
+                //     console.log(`arr: ${arr}`);
+                //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
+                //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
+                // }
 
-    //             // //延遲一段時間後...TADA~蓋子打開~
-    //             // setTimeout(e => {
-    //             //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
-    //             //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg) rotateY(180deg)";
-    //             // }, 1000);
-    //             // //再延遲一下...燈燈~電燈假發光~
-    //             // setTimeout(e => {
-    //             //     console.log(lights);
+                // //延遲一段時間後...TADA~蓋子打開~
+                // setTimeout(e => {
+                //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
+                //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg) rotateY(180deg)";
+                // }, 1000);
+                // //再延遲一下...燈燈~電燈假發光~
+                // setTimeout(e => {
+                //     console.log(lights);
 
-    //             //     lights.forEach(element => {
-    //             //         element.classList.add("showLight");
-    //             //     })
-    //             // }, 1000)
+                //     lights.forEach(element => {
+                //         element.classList.add("showLight");
+                //     })
+                // }, 1000)
 
-    //             //上蓋收納下蓋打開測試
-    //             //上蓋初始值要打開
-    //             //上下蓋改Y軸
-    //             cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg)";
-    //             cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg) rotateY(180deg)";
-    //             //下蓋初始關起來
-    //             cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(-90deg) ";
-    //             cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(-90deg)";
-    //             //box_12姿態固定
-    //             box_12.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
-    //             setTimeout(e => {
-    //                 box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
-    //             }, 400)
+                //上蓋收納下蓋打開測試
+                //上蓋初始值要打開
+                //上下蓋改Y軸
+                // cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg)";
+                // cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg) rotateY(180deg)";
+                // //下蓋初始關起來
+                // cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(-90deg) ";
+                // cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(-90deg)";
+                // //box_12姿態固定
+                // box_12.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+                // setTimeout(e => {
+                //     box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
+                // }, 400)
 
-    //             //延遲....上蓋關起來
-    //             setTimeout(e => {
-    //                 cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg)";
-    //                 cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg) rotateY(180deg)";
-    //             }, 1000);
-    //             //延遲...箱子抬起來
-    //             setTimeout(e => {
-    //                 box_12.style.transform = "rotateX(20deg) rotateY(0deg) rotateZ(0deg)";
-    //             }, 1500)
-    //             //延遲...下蓋兩片打開
-    //             setTimeout(e => {
-    //                 cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(30deg) ";
-    //                 cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(30deg)";
-    //             }, 1700);
+                // //延遲....上蓋關起來
+                // setTimeout(e => {
+                //     cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg)";
+                //     cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg) rotateY(180deg)";
+                // }, 1000);
+                // //延遲...箱子抬起來
+                // setTimeout(e => {
+                //     box_12.style.transform = "rotateX(20deg) rotateY(0deg) rotateZ(0deg)";
+                // }, 1500)
+                // //延遲...下蓋兩片打開
+                // setTimeout(e => {
+                //     cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(30deg) ";
+                //     cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(30deg)";
+                // }, 1700);
 
-    //             break;
-    //     }
-    // };
+                // break;
+        }
+    };
 
 
     // 給箱子姿態初始值
-    // boxBases.forEach(el => {
-    //     el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
-    // })
+    boxBases.forEach(el => {
+        el.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
+    })
 
 
     // 驗證回傳值確實是陣列
-    // console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
-    // console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
-    // console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
-    // // cssGet(".boxBase","transform");
+    console.log(`cssTest: ${cssGet("#box_12", "transform")}`); //每個.boxBase的transform屬性值，我全都要 
+    console.log(`cssTest type: ${typeof (cssGet("#box_12", "transform")[0])}`);//檢查 陣列內 值的型別為字串
+    console.log(`cssTest type arr: ${Object.prototype.toString.call(cssGet("#box_12", "transform"))}`);//檢查回傳值確實是陣列型態
+    // cssGet(".boxBase","transform");
 
-    // //抓css檔內樣式
-    // //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
-    // //原句:window.getComputedStyle(element, null).getPropertyValue("float");
-    // //不抓偽類 ex: var result = cssGet(".class","width");
-    // //抓偽類 ex: var result = cssGet(".class","width",":after");
-    // //回傳值是一個陣列!!!!
-    // //transform會得到矩陣，不是 translate / rotate 之類的
-    // function cssGet(element, property = "width-height", pseudo = null) {
-    //     let el = document.querySelectorAll(element);
-    //     var arrData = [];
-    //     el.forEach(item => {
-    //         let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
-    //         arrData.push(data);
-    //     })
-    //     return arrData;
-    // }
+    //抓css檔內樣式
+    //getPropertyValue不支援駝峰寫法=>表示不管大小寫~
+    //原句:window.getComputedStyle(element, null).getPropertyValue("float");
+    //不抓偽類 ex: var result = cssGet(".class","width");
+    //抓偽類 ex: var result = cssGet(".class","width",":after");
+    //回傳值是一個陣列!!!!
+    //transform會得到矩陣，不是 translate / rotate 之類的
+    function cssGet(element, property = "width-height", pseudo = null) {
+        let el = document.querySelectorAll(element);
+        var arrData = [];
+        el.forEach(item => {
+            let data = window.getComputedStyle(item, pseudo).getPropertyValue(property);
+            arrData.push(data);
+        })
+        return arrData;
+    }
+    </script>
+
+
+
+    <script>
+        //要讓被點擊的顏色旋轉到左手邊並將顏色套用到盒子上
+        function rotate(e) {
+            //因為點擊其他顏色的時候，上一個被點擊的顏色放大效果要取消
+            //所以有顏色被點擊時就一律將所有顏色先恢復成正常大小
+            for (var i = 0; i < colors.length; i++) {
+                colors[i].style.transform = 'scale(1)';
+            }
+            //只有被點擊的顏色會放大
+            e.target.style.transform = 'scale(1.4)';
+
+            //取得被點擊的顏色的id
+            var color = e.target.id;
+            var roulette = document.getElementById('roulette');
+            //根據顏色來絕對轉盤要轉到哪個角度
+            switch (color) {
+                case 'red':
+                    roulette.style.transform = 'rotate(90deg)';
+                    break;
+                case 'orange':
+                    roulette.style.transform = 'rotate(45deg)';
+                    break;
+                case 'yellow':
+                    roulette.style.transform = 'rotate(0deg)';
+                    break;
+                case 'green':
+                    roulette.style.transform = 'rotate(-45deg)';
+                    break;
+                case 'blue':
+                    roulette.style.transform = 'rotate(-90deg)';
+                    break;
+                case 'indigo':
+                    roulette.style.transform = 'rotate(-135deg)';
+                    break;
+                case 'violet':
+                    roulette.style.transform = 'rotate(-180deg)';
+                    break;
+                case 'black':
+                    roulette.style.transform = 'rotate(-225deg)';
+                    break;
+            }
+            
+            //取得被點擊顏色的色碼
+            var colorCode = window.getComputedStyle(e.target).getPropertyValue("background-color");
+            console.log(colorCode);
+            
+            //將色碼設定給盒子
+            // var box = document.getElementsByClassName('ctBox')[0];
+            // box.style.backgroundColor = colorCode;
+
+
+            //Js
+            let elem=document.getElementsByClassName("btnSelect");
+            console.log(elem[0].id);
+            let tar = elem[0].id;
+            tar = tar.replace("btn","suf");
+            console.log(tar);
+            let targetEl=document.getElementById(tar);
+            targetEl.style.backgroundColor=colorCode;
+
+            //為解決一開始選顏色會有error的狀況，在HTML預先加了btnSelect，但在案別的按鈕時就不能選顏色了！ 待解決
+
+            //Jq issue now
+            // var tarId = $('.btnSelect').attr("id");
+            // console.log(tarId)
+            // tarId = tarId.replace("btn","suf"); //Jq can not
+            // $(tarId).css({
+            //     backgroundColor: colorCode
+            // })
+        }
+        function doFirst() {
+            //取得顏色們的物件關聯並設定點擊事件的聆聽功能
+            colors = document.getElementsByClassName('color');
+            for (var i = 0; i < colors.length; i++) {
+                colors[i].addEventListener('click', rotate);
+            }
+        }
+        window.addEventListener('load', doFirst);
     </script>
 
 

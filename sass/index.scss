@@ -28,65 +28,65 @@ body {
                 background-position-x: center;
                 .countryImg {
                     width: 50px;
-                    position: absolute;
-                    // animation: ccc 1s linear;
-                    img{
+                    position: absolute; // animation: ccc 1s linear;
+                    img {
                         position: relative;
                         z-index: 1;
-                    }
-                    // @keyframes ccc {
+                    } // @keyframes ccc {
                     //     0%{transform: translateY(-900px)}
                     //     100%{transform: translateY(0px)}
                     // }
-                    .countryInfo{
+                    .countryInfo {
                         transition: 1s;
                         display: none;
                         position: relative;
                         z-index: 2;
                         width: 500px;
-                        background-color: rgba(255,255,255,0.9);
+                        background-color: rgba(255, 255, 255, 0.9);
                         border-radius: 10px;
-                        .countryInfoHeader{
+                        .countryInfoHeader {
                             display: flex;
                             align-items: center;
                             justify-content: space-around;
-                            .countryInfoRadar{
+                            .countryInfoRadar {
                                 height: 180px;
                                 width: 180px;
                             }
-                            .countryInfoImg{
+                            .countryInfoImg {
                                 width: 130px;
                             }
-                            .countryInfoStar{
+                            .countryInfoStar {
                                 width: 130px;
-                                li{
+                                li {
                                     font-size: 22px;
                                     font-family: g2Font;
                                     color: #737374;
                                 }
                             }
                         }
-                        .countryInfosection{
+                        .countryInfosection {
                             color: #737374;
                             width: 400px;
                             margin: auto;
-                            h2{
+                            h2 {
                                 text-align: center;
                             }
                         }
-                        .countryInfofooter{
+                        .countryInfofooter {
                             display: flex;
                             justify-content: space-around;
                             align-items: center;
                             padding: 20px 0;
-                            .countryInfoPrice{
+                            .countryInfoPrice {
                                 color: #737374;
-                                span{font-size: 28px;}
+                                span {
+                                    font-size: 28px;
+                                }
                             }
                         }
                     }
                 }
-                .countryImg:hover .countryInfo{
+                .countryImg:hover .countryInfo {
                     display: block;
                 }
                 .countryImg:before {
@@ -122,7 +122,7 @@ body {
                 }
                 >:nth-child(5) {
                     top: 240px;
-                    left: 560px;                
+                    left: 560px;
                 }
                 >:nth-child(6) {
                     top: 20px;
@@ -144,13 +144,12 @@ body {
                 top: 0;
                 left: 0;
             }
-            .snackMap{
+            .snackMap {
                 margin: auto;
                 transition: 2s;
-                .snackImg{
+                .snackImg {
                     width: 100px;
-                    position: absolute;
-                    // z-index: 666;
+                    position: absolute; // z-index: 666;
                 }
                 >:nth-child(1) {
                     top: 120px;
@@ -192,12 +191,16 @@ body {
                 }
             }
             @keyframes aaa {
-                0%{transform: scale(0.6)}
-                100%{transform: scale(0.8)}
+                0% {
+                    transform: scale(0.6)
+                }
+                100% {
+                    transform: scale(0.8)
+                }
             }
         }
-        .cloudMap{
-            .cloudImg{
+        .cloudMap {
+            .cloudImg {
                 width: 100px;
                 position: absolute;
             }
@@ -228,10 +231,9 @@ body {
                 right: 250px;
                 width: 50px;
             }
-
         }
-        .balloonMap{
-            .ballImg{
+        .balloonMap {
+            .ballImg {
                 width: 80px;
                 position: absolute;
             }
@@ -246,8 +248,12 @@ body {
                 animation: bbb 2s infinite alternate-reverse;
             }
             @keyframes bbb {
-                0%{transform: translateY(0)}
-                100%{transform: translateY(-100px)}
+                0% {
+                    transform: translateY(0)
+                }
+                100% {
+                    transform: translateY(-100px)
+                }
             }
         }
         @media screen and (min-width:768px) {
@@ -256,17 +262,14 @@ body {
             }
         }
     }
-
-
-    .section_12{
+    .section_12 {
         background-image: url(../images/index/cheese.png);
         background-repeat: no-repeat;
         height: 1340px;
         background-position-y: 60px;
         margin: 20px auto;
         position: relative;
-        
-        .LeaderboardTitle{
+        .LeaderboardTitle {
             background-image: url(../images/index/title-cloud.png);
             background-repeat: no-repeat;
             background-position: center center;
@@ -275,37 +278,37 @@ body {
             position: absolute;
             top: 240px;
             left: 0;
-            right: 0;
-            // position: relative;
-            h2{
+            right: 0; // position: relative;
+            h2 {
                 line-height: 160px;
                 color: $blue;
             }
-            #celebration{
+            #celebration {
                 position: absolute;
                 margin: auto;
-                top: -140px;;
+                top: -140px;
+                ;
                 right: 0;
                 left: 0;
             }
         }
-        .LeaderboardCount{
+        .LeaderboardCount {
             width: 1200px;
             height: 700px;
             margin: auto;
             display: flex;
             justify-content: space-around;
-            .LeaderboardNo2{
+            .LeaderboardNo2 {
                 align-self: center;
             }
-            .LeaderboardNo3{
+            .LeaderboardNo3 {
                 align-self: flex-end;
-            }            
-            .Crown{
+            }
+            .Crown {
                 width: 100px;
                 margin: auto;
                 position: relative;
-                h2{
+                h2 {
                     color: #fff;
                     position: absolute;
                     text-align: center;
@@ -314,139 +317,143 @@ body {
                     left: 0;
                 }
             }
-            .No2{
+            .No2 {
                 background-image: url(../images/index/blue-pack.png);
                 background-repeat: no-repeat;
                 background-size: 280px;
-                .commodityImg{
-                    img{
+                .commodityImg {
+                    img {
                         width: 38%;
                     }
                 }
             }
-            .No1{
+            .No1 {
                 background-image: url(../images/index/red-pack.png);
                 background-repeat: no-repeat;
                 background-size: 280px;
-                .commodityImg{
-                    img{
+                .commodityImg {
+                    img {
                         width: 40%;
-                    } 
+                    }
                 }
             }
-            .No3{
+            .No3 {
                 background-image: url(../images/index/green-pack.png);
                 background-repeat: no-repeat;
                 background-size: 280px;
                 align-self: end;
-                .commodityImg{
-                    img{
+                .commodityImg {
+                    img {
                         width: 50%;
                     }
                 }
             }
-            .Leaderboarditem{
+            .Leaderboarditem {
                 width: 280px;
                 height: 480px;
                 position: relative;
-                .LeaderboarCountry{
+                .LeaderboarCountry {
                     width: 40px;
                     padding-top: 30px;
                     position: absolute;
                     right: 15px;
                 }
-                .commodity{
+                .commodity {
                     text-align: center;
                     padding: 50px 0;
-                    .commodityImg{
+                    .commodityImg {
                         margin: auto;
                         width: 280px;
                         height: 220px;
                     }
                 }
-                .commodityPrice{
-                    p{
+                .commodityPrice {
+                    p {
                         font-size: 28px;
                     }
                 }
-                .commodityStar{
+                .commodityStar {
                     width: 150px;
                     margin: auto;
                 }
             }
         }
-        .LeaderboardIcon{
-            .lbIconImg{
+        .LeaderboardIcon {
+            .lbIconImg {
                 position: absolute;
             }
-            >:nth-child(1){
+            >:nth-child(1) {
                 bottom: 65%;
                 left: 22%;
                 animation: float 1.8s linear infinite alternate-reverse;
             }
-            >:nth-child(2){
+            >:nth-child(2) {
                 bottom: 51%;
                 left: 4%;
                 animation: float 2s linear infinite alternate;
             }
-            >:nth-child(3){
+            >:nth-child(3) {
                 bottom: 30%;
                 left: 8%;
                 animation: float 1.4s linear infinite alternate-reverse;
             }
-            >:nth-child(4){
+            >:nth-child(4) {
                 bottom: 56%;
                 left: 80%;
                 animation: float 1.2s linear infinite alternate;
             }
-            >:nth-child(5){
+            >:nth-child(5) {
                 bottom: 15%;
                 left: 40%;
                 animation: float 1.6s linear infinite alternate-reverse;
             }
-            >:nth-child(6){
+            >:nth-child(6) {
                 bottom: 13%;
                 left: 90%;
                 animation: float 1s linear infinite alternate;
             }
-            >:nth-child(7){
+            >:nth-child(7) {
                 bottom: 43%;
                 left: 95%;
-                animation: float 1.4s linear infinite alternate-reverse;            
+                animation: float 1.4s linear infinite alternate-reverse;
             }
-            >:nth-child(8){
+            >:nth-child(8) {
                 bottom: 32%;
                 left: 83%;
                 animation: float 1.8s linear infinite alternate;
             }
-            >:nth-child(9){
+            >:nth-child(9) {
                 bottom: 40%;
                 left: 58%;
                 animation: float 1.6s linear infinite alternate-reverse;
             }
             @keyframes float {
-                0%{transform: translateY(-10px)}
-                100%{transform: translateY(10px)}
+                0% {
+                    transform: translateY(-10px)
+                }
+                100% {
+                    transform: translateY(10px)
+                }
             }
         }
-        .LeaderboardSort{
+        .LeaderboardSort {
             margin: 80px;
             text-align: center;
-            :nth-child(2),:nth-child(3),:nth-child(4){
+            :nth-child(2),
+            :nth-child(3),
+            :nth-child(4) {
                 border-radius: 0px;
             }
-            :nth-child(1){
+            :nth-child(1) {
                 border-radius: 10px 0 0 10px;
             }
-            :nth-child(5){
+            :nth-child(5) {
                 border-radius: 0 10px 10px 0;
             }
         }
     }
-
-
-    .customized{
-        background-image: url(../images/index/background.png);
+    .customized {
+        background-image: url(../images/index/background_1.png);
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
@@ -456,13 +463,19 @@ body {
         margin-bottom: 100px;
         overflow: hidden;
         position: relative;
-        .waveTop{
+        .waveTop {
             position: absolute;
             top: -80px;
             left: 0;
             width: 1920px;
         }
-        .LeaderboardTitle{
+        .waveBottom {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 1920px;
+        }
+        .LeaderboardTitle {
             background-image: url(../images/index/title-cloud.png);
             background-repeat: no-repeat;
             background-position: center center;
@@ -470,14 +483,103 @@ body {
             height: 300px;
             padding: 110px 0;
             position: relative;
-            h2{
+            h2 {
                 line-height: 70px;
                 color: $blue;
             }
         }
-        .customizedCount{
+        .customizedCount {
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            height: 500px;
+            #roulette {
+                background-color: #fff;
+                border: 2px solid #ddd;
+                width: 500px;
+                padding-bottom: 500px;
+                border-radius: 50%;
+                position: absolute;
+                transition: 1s;
+                left: -250px;
+                top: 0;
+                z-index: 5;
+                .color {
+                    width: 18%;
+                    height: 18%;
+                    border-radius: 50%;
+                    position: absolute;
+                }
+                #red {
+                    background-color: #ff5050;
+                    top: 4%;
+                    left: 41%;
+                }
+                #orange {
+                    background-color: #ff6600;
+                    top: 16%;
+                    left: 67%;
+                }
+                #yellow {
+                    background-color: #ffff00;
+                    top: 41%;
+                    left: 78%;
+                }
+                #green {
+                    background-color: #99ff66;
+                    top: 66%;
+                    left: 67%
+                }
+                #blue {
+                    background-color: #66ccff;
+                    top: 78%;
+                    left: 41%;
+                }
+                #indigo {
+                    background-color: #000066;
+                    top: 66%;
+                    left: 15%;
+                }
+                #violet {
+                    background-color: #cc33ff;
+                    top: 41%;
+                    left: 4%
+                }
+                #black {
+                    background-color: #000;
+                    top: 16%;
+                    left: 15%;
+                }
+            }
+            .ctCard {
+                width: 500px;
+                .ctIntroduce {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    text-align: center;
+                    color:#737374;
+                    letter-spacing: 5px;
+                    margin: 20px;
+                    p{
+                        font-size: 18px;
+                        padding-top: 10px;
+                    }
+                }
+                .ctBtns{
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    text-align: center;
+                    color:#737374;
+                    letter-spacing: 5px;
+                    margin: 20px;
+                    .ctBtn{
+                        padding: 20px 0;
+                    }
+                }
+            }
         }
     }
 }
