@@ -548,13 +548,15 @@ a {
       width: 80%;
       margin: auto; }
       .pickCard .content .cardText #text {
-        width: 100%;
+        width: 80%;
         height: 30px;
+        margin: auto;
         margin-bottom: 15px;
         border-radius: 10px; }
       .pickCard .content .cardText textarea {
-        width: 100%;
+        width: 80%;
         padding: 20px;
+        margin: auto;
         margin-bottom: 15px;
         border-radius: 10px; }
     .pickCard .content .cardRecord {

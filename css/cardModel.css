@@ -1,0 +1,157 @@
+.textTeam {
+  width: 80%;
+  height: 100px;
+  max-width: 350px;
+  min-width: 50px;
+  max-height: 200px;
+  min-height: 50px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  overflow: auto;
+  resize: none;
+  font-size: 20px;
+  background-color: transparent; }
+  .textTeam:hover {
+    outline: #3333334b solid 1px; }
+  .textTeam:hover .ctrlPos {
+    background-color: #afa;
+    color: #333; }
+  .textTeam:hover .textResize {
+    border-style: solid;
+    border-width: 0 0 15px 15px;
+    border-color: transparent transparent #007bff transparent;
+    cursor: se-resize; }
+  .textTeam .ctrlPos {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    color: transparent; }
+    .textTeam .ctrlPos:hover {
+      cursor: move; }
+  .textTeam .textarea {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: calc(100% - 20px);
+    width: 100%;
+    overflow: hidden; }
+    .textTeam .textarea:focus {
+      box-shadow: #007bff 0px 0px 0px 2px inset; }
+    .textTeam .textarea:empty:before {
+      content: attr(placeholder);
+      color: #aaa; }
+
+.section {
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  display: flex; }
+  .section .cardCamera {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; }
+    .section .cardCamera .cardBase {
+      margin: auto;
+      outline: red dashed 5px;
+      position: relative;
+      background-color: transparent;
+      transform-origin: center center;
+      transform-style: preserve-3d;
+      transition: 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .section .cardCamera .cardBaseCover {
+      transform-origin: center top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .5s;
+      backface-visibility: visible; }
+    .section .cardCamera .cardBaseContent {
+      transform-origin: center top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: .5s; }
+    .section .cardCamera .cardSurface,
+    .section .cardCamera .cardSurfaceInner {
+      width: 100%;
+      height: 100%;
+      background-color: #aaf;
+      text-align: center;
+      font-size: 60px;
+      transition: .5s;
+      overflow: hidden;
+      backface-visibility: hidden;
+      position: relative; }
+    .section .cardCamera .cardSurfaceInner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg); }
+    .section .cardCamera .cardBase {
+      width: 400px;
+      height: 300px; }
+    .section .cardCamera .cardBaseCover {
+      width: 400px;
+      height: 300px; }
+    .section .cardCamera .cardBaseContent {
+      width: 400px;
+      height: 300px; }
+    .section .cardCamera .cardBaseCover .cardSurface {
+      background-color: #ffa; }
+    .section .cardCamera .cardBaseCover .cardSurfaceInner {
+      background-color: #aaf; }
+    .section .cardCamera .cardBaseContent .cardSurface {
+      background-color: #ffa; }
+    .section .cardCamera .cardBaseContent .cardSurfaceInner {
+      background-color: #afa; }
+    .section .cardCamera .cardBaseCover .cardSurface {
+      background-image: url(); }
+    .section .cardCamera .cardBaseCover .cardSurfaceInner {
+      background-image: url(); }
+    .section .cardCamera .cardBaseContent .cardSurface {
+      background-image: url(); }
+    .section .cardCamera .cardBaseContent .cardSurfaceInner {
+      background-image: url(); }
+    .section .cardCamera .cardBaseContent {
+      box-shadow: 10px 10px 30px #333; }
+    .section .cardCamera .cardBaseCover {
+      box-shadow: 10px 10px 50px #333; }
+  .section .cardBase {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+    animation: cardCome 1.5s reverse; }
+  .section .cardBaseCover {
+    transform: rotateX(150deg);
+    animation: cardOpen 1.5s reverse; }
+
+@keyframes cardOpen {
+  0% {
+    transform: rotateX(150deg); }
+  100% {
+    transform: rotateX(0deg); } }
+
+@keyframes cardCome {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px); }
+  100% {
+    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
+  .section #btns7 {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    .section #btns7 .btn7 {
+      width: 40px;
+      height: 20px;
+      background-color: #ffa;
+      text-align: center;
+      cursor: pointer; }
