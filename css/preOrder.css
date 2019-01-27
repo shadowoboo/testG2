@@ -1,0 +1,1144 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*以下是個人喜好*/
+/*圖片隨容器寬變化、去除圖片縫隙*/
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+/*連結消除底線、字體顏色改為黑色*/
+a {
+  text-decoration: none;
+  color: black; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: g2Font;
+  src: url(../GenJyuuGothicX-Bold.ttf); }
+
+html {
+  font-size: 34px; }
+
+h1, h2, h3, h4, p, span {
+  font-family: g2Font;
+  line-height: 1.6em; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 1rem; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 22px; }
+
+p {
+  font-size: 16px; }
+
+span {
+  font-size: 14px; }
+
+input:focus {
+  outline: none; }
+
+.cart {
+  width: 150px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .cart:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .cart:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.detail {
+  width: 150px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .detail:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .detail:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.step {
+  width: 130px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .step:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .step:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.dimension {
+  width: 50px;
+  height: 50px;
+  color: #fbc84a;
+  background-color: #fff;
+  border: 2px solid #fbc84a;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .dimension:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .dimension:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.action {
+  width: 120px;
+  height: 40px;
+  color: #737374;
+  background-color: #fbc84a;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .action:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .action:hover {
+      color: #fff;
+      background-color: #ffb600; } }
+
+.category {
+  width: 120px;
+  height: 50px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  .category:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .category:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.goToCustom {
+  width: 160px;
+  height: 60px;
+  color: #737374;
+  background-color: #fbe5dd;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  .goToCustom:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .goToCustom:hover {
+      color: #737374;
+      background-color: #fca8b7; } }
+
+.subscribe {
+  width: 210px;
+  height: 60px;
+  color: #737374;
+  background-color: #fcda85;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  .subscribe:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .subscribe:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  .month:focus {
+    outline: none; }
+  @media only screen and (min-width: 768px) {
+    .month:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  position: relative; }
+  .month::after {
+    content: '';
+    display: block;
+    background-color: #00457b;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1; }
+
+.heart, .trash {
+  width: 56px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .heart:hover, .trash:hover {
+      background-color: #076baf;
+      color: #fff; } }
+
+.numInput {
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  position: relative;
+  border-radius: 10px;
+  margin: 10px 0px;
+  font-family: g2Font;
+  text-align: center; }
+  .numInput span {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #076baf;
+    position: absolute;
+    top: -2px;
+    line-height: 40px;
+    font-size: 30px;
+    cursor: pointer; }
+  .numInput .numMinus {
+    left: 0px;
+    border-radius: 10px 0 0 10px; }
+  .numInput .numPlus {
+    right: 0px;
+    border-radius: 0 10px 10px 0; }
+
+input[type=number] {
+  border: 0px solid transparent;
+  background-color: transparent;
+  font-size: 22px;
+  line-height: 40px;
+  font-family: g2Font;
+  text-align: center;
+  width: 100%; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+body {
+  background-color: #fcde91; }
+
+h1, h2, h3, h4, p, span {
+  color: #737374; }
+
+.clearfix {
+  content: "";
+  clear: both; }
+
+.preOrder .wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center; }
+  @media only screen and (max-width: 576px) {
+    .preOrder .wrap {
+      padding: 10px;
+      margin-top: 30px; } }
+  .preOrder .wrap img {
+    width: 100%; }
+  .preOrder .wrap .title {
+    width: 260px;
+    margin: auto;
+    text-align: center;
+    background-image: url(../images/blair/title.png);
+    background-repeat: no-repeat; }
+    .preOrder .wrap .title h2 {
+      line-height: 163px;
+      color: #076baf; }
+  @media only screen and (max-width: 390px) {
+    .preOrder .wrap .month {
+      width: 70px;
+      height: 70px;
+      font-size: 16px; } }
+  .preOrder .wrap .cards {
+    width: 100%;
+    margin-top: 25px;
+    margin: auto;
+    padding: 24px 0 40px 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 100px; }
+    @media only screen and (max-width: 768px) {
+      .preOrder .wrap .cards {
+        padding: 24px 0; } }
+  .preOrder .wrap .month {
+    margin: 10px; }
+  .preOrder .wrap .cardContainer {
+    font-size: 0; }
+    .preOrder .wrap .cardContainer .card {
+      padding: 14px;
+      display: inline-block;
+      border: 16px solid #ea5a5a;
+      border-radius: 32px;
+      width: 330px;
+      margin: 10px 16px;
+      color: #737374; }
+      @media only screen and (max-width: 576px) {
+        .preOrder .wrap .cardContainer .card {
+          width: 80%; } }
+      .preOrder .wrap .cardContainer .card .cardImg {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 10px; }
+      .preOrder .wrap .cardContainer .card .review {
+        padding: 4px;
+        margin-top: 8px; }
+      .preOrder .wrap .cardContainer .card .profile {
+        width: 25%;
+        border-radius: 50%;
+        overflow: hidden; }
+      .preOrder .wrap .cardContainer .card .profile, .preOrder .wrap .cardContainer .card .reviewLeft {
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle; }
+      .preOrder .wrap .cardContainer .card .reviewLeft {
+        width: 58%; }
+      .preOrder .wrap .cardContainer .card .account {
+        margin: 4px 0; }
+      .preOrder .wrap .cardContainer .card .star {
+        width: 80%; }
+      .preOrder .wrap .cardContainer .card .reviewWord {
+        margin: 10px 0 0 0; }
+  .preOrder .wrap .steps {
+    text-align: center; }
+    .preOrder .wrap .steps .lineContainer {
+      display: none; }
+    @media only screen and (min-width: 768px) {
+      .preOrder .wrap .steps .lineContainer {
+        display: block;
+        width: 25%;
+        float: left;
+        position: relative;
+        transform: translateY(20px); }
+        .preOrder .wrap .steps .lineContainer::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #fcde91;
+          transform-origin: right center; }
+      .preOrder .wrap .steps #lineContainer1 {
+        margin-left: 21.875%; }
+        .preOrder .wrap .steps #lineContainer1::after {
+          animation: spread 9s 3s infinite; }
+      .preOrder .wrap .steps #lineContainer2 {
+        margin-left: 6.25%; }
+        .preOrder .wrap .steps #lineContainer2::after {
+          animation: spread 9s 6s infinite; }
+      @keyframes spread {
+        0% {
+          transform: scaleX(1); }
+        11.111111% {
+          transform: scaleX(0); }
+        100% {
+          transform: scaleX(0); } } }
+    .preOrder .wrap .steps .orderStep {
+      width: 80%;
+      margin: 26px 10%;
+      float: left;
+      position: relative; }
+      @media only screen and (min-width: 768px) {
+        .preOrder .wrap .steps .orderStep {
+          margin: 10px 10%; } }
+      .preOrder .wrap .steps .orderStep #step1_2, .preOrder .wrap .steps .orderStep #step1_3, .preOrder .wrap .steps .orderStep #step1_4, .preOrder .wrap .steps .orderStep #step2_2, .preOrder .wrap .steps .orderStep #step2_3, .preOrder .wrap .steps .orderStep #step2_4, .preOrder .wrap .steps .orderStep #step3_2, .preOrder .wrap .steps .orderStep #step3_3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.8s; }
+      .preOrder .wrap .steps .orderStep #step1_3 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep #step1_4 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep #step2_2 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep #step2_3 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep #step3_2 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep #step3_3 {
+        opacity: 0; }
+      .preOrder .wrap .steps .orderStep h3 {
+        color: #737374; }
+        .preOrder .wrap .steps .orderStep h3 span {
+          font-size: 34px; }
+      .preOrder .wrap .steps .orderStep h4 {
+        color: #076baf; }
+    @media only screen and (max-width: 576px) {
+      .preOrder .wrap .steps #step1_2, .preOrder .wrap .steps #step1_3, .preOrder .wrap .steps #step1_4, .preOrder .wrap .steps #step2_2, .preOrder .wrap .steps #step2_3, .preOrder .wrap .steps #step2_4, .preOrder .wrap .steps #step3_2, .preOrder .wrap .steps #step3_3 {
+        animation-direction: alternate; }
+      .preOrder .wrap .steps #step1_2 {
+        animation: blink 3s infinite; }
+      .preOrder .wrap .steps #step1_3 {
+        animation: blink 3s 1s infinite; }
+      .preOrder .wrap .steps #step1_4 {
+        animation: blink 3s 2s infinite; }
+      .preOrder .wrap .steps #step2_2 {
+        animation: blink 3s infinite; }
+      .preOrder .wrap .steps #step2_3 {
+        animation: blink 3s 1s infinite; }
+      .preOrder .wrap .steps #step3_2 {
+        animation: blink 3s infinite; }
+      .preOrder .wrap .steps #step3_3 {
+        animation: blink 3s 1s infinite; }
+      @keyframes blink {
+        0% {
+          opacity: 0; }
+        33.333333% {
+          opacity: 1; }
+        100% {
+          opacity: 1; } } }
+    @media only screen and (min-width: 576px) {
+      .preOrder .wrap .steps .orderStep {
+        width: 25%;
+        margin: 10px 0 10px 6.25%; }
+      @keyframes blink {
+        0% {
+          opacity: 0; }
+        11.111111% {
+          opacity: 1; }
+        100% {
+          opacity: 1; } }
+      .preOrder .wrap .steps #step1_2 {
+        animation: blink 9s infinite; }
+      .preOrder .wrap .steps #step1_3 {
+        animation: blink 9s 1s infinite; }
+      .preOrder .wrap .steps #step1_4 {
+        animation: blink 9s 2s infinite; }
+      .preOrder .wrap .steps #step2_2 {
+        animation: blink 9s 4s infinite; }
+      .preOrder .wrap .steps #step2_3 {
+        animation: blink 9s 5s infinite; }
+      .preOrder .wrap .steps #step3_2 {
+        animation: blink 9s 7s infinite; }
+      .preOrder .wrap .steps #step3_3 {
+        animation: blink 9s 8s infinite; } }
+  .preOrder .wrap .orderCards {
+    position: relative;
+    margin-top: 60px; }
+    @media only screen and (min-width: 576px) {
+      .preOrder .wrap .orderCards {
+        margin: auto; } }
+    @media only screen and (min-width: 768px) {
+      .preOrder .wrap .orderCards {
+        margin-top: 100px; } }
+    @media only screen and (min-width: 992px) {
+      .preOrder .wrap .orderCards {
+        width: 90%; } }
+    .preOrder .wrap .orderCards .orderCard {
+      position: relative;
+      margin: auto;
+      border: 16px solid #ea5a5a;
+      background-color: #fff;
+      border-radius: 32px;
+      padding: 14px;
+      margin-top: 20px; }
+      .preOrder .wrap .orderCards .orderCard h4 {
+        color: #076baf; }
+    .preOrder .wrap .orderCards #orderCard1 {
+      width: 100%;
+      z-index: 20; }
+      .preOrder .wrap .orderCards #orderCard1 #buy1 {
+        display: none; }
+      @media only screen and (min-width: 576px) {
+        .preOrder .wrap .orderCards #orderCard1 {
+          position: absolute;
+          transform: rotate(-2deg);
+          width: 80%;
+          top: 10%; }
+          .preOrder .wrap .orderCards #orderCard1 #buy1 {
+            display: inline-block; } }
+      @media only screen and (min-width: 768px) {
+        .preOrder .wrap .orderCards #orderCard1 {
+          width: 650px; } }
+      .preOrder .wrap .orderCards #orderCard1 p {
+        margin-bottom: 14px; }
+    .preOrder .wrap .orderCards .slideUp {
+      animation: slideUp 2s forwards; }
+
+@keyframes slideUp {
+  from {
+    transform: rotate(-2deg) translateY(0);
+    opacity: 1; }
+  to {
+    transform: rotate(-2deg) translateY(-400%);
+    opacity: 0; } }
+    .preOrder .wrap .orderCards .slideUp2 {
+      animation: slideUp2 2s forwards; }
+
+@keyframes slideUp2 {
+  from {
+    transform: rotate(1deg) translateY(0);
+    opacity: 1; }
+  to {
+    transform: rotate(1deg) translateY(-400%);
+    opacity: 0; } }
+    .preOrder .wrap .orderCards #orderCard2 {
+      z-index: 19; }
+      .preOrder .wrap .orderCards #orderCard2 #buy2 {
+        display: none; }
+      @media only screen and (min-width: 576px) {
+        .preOrder .wrap .orderCards #orderCard2 {
+          position: absolute;
+          transform: rotate(1deg);
+          top: 20%; }
+          .preOrder .wrap .orderCards #orderCard2 #buy2 {
+            display: inline-block; } }
+      @media only screen and (min-width: 992px) {
+        .preOrder .wrap .orderCards #orderCard2 {
+          right: 2%; } }
+      @media only screen and (max-width: 560px) and (min-width: 375px) {
+        .preOrder .wrap .orderCards #orderCard2 {
+          padding: 14px 0; } }
+      .preOrder .wrap .orderCards #orderCard2 .monthBox {
+        float: left;
+        position: relative;
+        margin-bottom: 14px; }
+        .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+          position: absolute;
+          opacity: 0; }
+        @media only screen and (max-width: 374px) {
+          .preOrder .wrap .orderCards #orderCard2 .monthBox {
+            width: 30%;
+            margin-left: 2.5%; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+              display: none; } }
+        @media only screen and (max-width: 576px) and (min-width: 375px) {
+          .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+            animation: fall 5s infinite; }
+          .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg1 {
+            animation-delay: 0.1s; }
+          .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg2 {
+            animation-delay: 0.25s; }
+          .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg3 {
+            animation-delay: 0.35s; } }
+        @media only screen and (max-width: 579px) and (min-width: 375px) {
+          .preOrder .wrap .orderCards #orderCard2 .monthBox {
+            width: 100px;
+            margin-left: calc((100% - 300px) / 4);
+            height: 200px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+              width: 45px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg1 {
+              top: 155px;
+              left: 5px;
+              animation-delay: 0.1s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg2 {
+              top: 155px;
+              left: 50px;
+              animation-delay: 0.25s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg3 {
+              top: 145px;
+              left: 27.5px;
+              animation-delay: 0.35s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs2 {
+              transform: translateY(-25px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs3 {
+              transform: translateY(-50px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs4 {
+              transform: translateY(-75px); } }
+        @media only screen and (max-width: 767px) and (min-width: 580px) {
+          .preOrder .wrap .orderCards #orderCard2 .monthBox {
+            width: 160px;
+            margin-left: calc((100% - 480px) / 4);
+            height: 300px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+              width: 75px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg1 {
+              top: 225px;
+              left: 5px;
+              animation-delay: 0.1s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg2 {
+              top: 225px;
+              left: 80px;
+              animation-delay: 0.25s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg3 {
+              top: 202px;
+              left: 42.5px;
+              animation-delay: 0.35s; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs2 {
+              transform: translateY(-40px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs3 {
+              transform: translateY(-80px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs4 {
+              transform: translateY(-120px); } }
+        @media only screen and (min-width: 768px) {
+          .preOrder .wrap .orderCards #orderCard2 .monthBox {
+            width: 220px;
+            height: 400px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg {
+              width: 100px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg1 {
+              top: 300px;
+              left: 10px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg2 {
+              top: 300px;
+              left: 110px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImg3 {
+              top: 270px;
+              left: 60px; }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs2 {
+              transform: translateY(-60px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs3 {
+              transform: translateY(-120px); }
+            .preOrder .wrap .orderCards #orderCard2 .monthBox .boxImgs4 {
+              transform: translateY(-180px); } }
+        .preOrder .wrap .orderCards #orderCard2 .monthBox .fall {
+          animation: fall 5s infinite; }
+
+@keyframes fall {
+  0% {
+    transform: translateY(-400%);
+    opacity: 0; }
+  20% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+      .preOrder .wrap .orderCards #orderCard2 #buy2 {
+        opacity: 0; }
+    .preOrder .wrap .orderCards #orderCard3 {
+      padding: 10px;
+      max-width: 648px; }
+      .preOrder .wrap .orderCards #orderCard3 .card3_img {
+        position: relative; }
+        .preOrder .wrap .orderCards #orderCard3 .card3_img #box_bottom {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 18; }
+        .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild1 {
+            position: absolute;
+            width: 22%;
+            top: 31.8%;
+            left: 17.2%;
+            transform: rotate(5deg);
+            z-index: 1;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild2 {
+            position: absolute;
+            width: 22%;
+            top: 27.2%;
+            left: 41.38%;
+            transform: rotate(15deg);
+            z-index: 1;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild3 {
+            position: absolute;
+            width: 22%;
+            top: 31.8%;
+            left: 61.52%;
+            transform: rotate(-10deg);
+            z-index: 1;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild4 {
+            position: absolute;
+            width: 22%;
+            top: 45.45%;
+            left: 20.69%;
+            transform: rotate(11deg);
+            z-index: 2;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild5 {
+            position: absolute;
+            width: 22%;
+            top: 45.45%;
+            left: 41.38%;
+            transform: rotate(-15deg);
+            z-index: 2;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+          .preOrder .wrap .orderCards #orderCard3 .card3_img .card3_box .boxChild6 {
+            position: absolute;
+            width: 22%;
+            top: 45.45%;
+            left: 60.34%;
+            transform: rotate(11deg);
+            z-index: 2;
+            animation: floating 1.5s infinite;
+            animation-direction: alternate; }
+
+@keyframes floating {
+  from {
+    transform: translateY(-10px); }
+  to {
+    transform: translateY(10px); } }
+      .preOrder .wrap .orderCards #orderCard3 h4 {
+        margin-top: 18px; }
+      .preOrder .wrap .orderCards #orderCard3 input[type=radio] {
+        display: none; }
+      .preOrder .wrap .orderCards #orderCard3 label {
+        margin: 6px 10px;
+        display: inline-block; }
+        @media only screen and (min-width: 500px) {
+          .preOrder .wrap .orderCards #orderCard3 label {
+            margin: 0 20px; } }
+      .preOrder .wrap .orderCards #orderCard3 form span {
+        position: relative; }
+      .preOrder .wrap .orderCards #orderCard3 input[type=radio]:checked + span::after {
+        content: '';
+        width: 120%;
+        height: 130%;
+        position: absolute;
+        top: -58%;
+        left: -20%;
+        border: 2px solid #076baf;
+        border-radius: 12px;
+        padding: 6px; }
+      .preOrder .wrap .orderCards #orderCard3 .snackPanels {
+        margin: 14px 0; }
+        .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel {
+          width: 45%;
+          margin-left: 3.333%;
+          float: left;
+          font-size: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap; }
+          @media only screen and (min-width: 375px) and (max-width: 424px) {
+            .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel {
+              width: 42%;
+              margin-left: 5.333%; } }
+          @media only screen and (min-width: 425px) and (max-width: 599px) {
+            .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel {
+              width: 34%;
+              margin-left: 10.666667%; } }
+          @media only screen and (min-width: 600px) and (max-width: 659px) {
+            .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel {
+              width: 44%;
+              margin-left: 4%; } }
+          @media only screen and (min-width: 660px) {
+            .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel {
+              width: 40%;
+              margin-left: 6.66667%;
+              flex-wrap: nowrap; } }
+          .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel .grow {
+            flex-grow: 1; }
+          .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel p {
+            font-size: 18px; }
+            @media only screen and (min-width: 576px) {
+              .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel p {
+                font-size: 22px; } }
+          .preOrder .wrap .orderCards #orderCard3 .snackPanels .panel input[type=number] {
+            line-height: 36px; }
+      .preOrder .wrap .orderCards #orderCard3 #msg {
+        color: #ea5a5a;
+        margin-bottom: 14px; }
+      .preOrder .wrap .orderCards #orderCard3 .cart {
+        opacity: 1; }
+        @media only screen and (min-width: 576px) {
+          .preOrder .wrap .orderCards #orderCard3 .cart {
+            opacity: 0; } }
+
+.preOrder #bgChips {
+  display: none; }
+  @media only screen and (min-width: 1200px) {
+    .preOrder #bgChips {
+      display: block;
+      transform: rotate(40deg);
+      max-width: 295px;
+      position: absolute;
+      top: 2700px;
+      left: -120px;
+      z-index: -1;
+      opacity: 0.9; } }
+
+.preOrder #bgChips_2 {
+  display: none; }
+  @media only screen and (min-width: 1200px) {
+    .preOrder #bgChips_2 {
+      display: block;
+      max-width: 190px;
+      position: absolute;
+      top: 1350px;
+      right: 0;
+      z-index: -1;
+      opacity: 0.9; } }
+
+.preOrder #bgChips1 {
+  display: none; }
+
+.preOrder #bgChips2 {
+  display: none; }
+
+.preOrder #bgChips3 {
+  display: none; }
+
+.preOrder #bgChips4 {
+  display: none; }
+
+.preOrder #bgChips5 {
+  display: none; }
+
+.preOrder #bgChips6 {
+  display: none; }
+
+.preOrder #bgChips7 {
+  display: none; }
+
+.preOrder #bgChips8 {
+  display: none; }
+
+.preOrder #bgChips9 {
+  display: none; }
+
+.preOrder #bgChips10 {
+  display: none; }
+
+.preOrder #bgChips11 {
+  display: none; }
+
+.preOrder #bgChips12 {
+  display: none; }
+
+.preOrder #bgChips13 {
+  display: none; }
+
+.preOrder #bgChips14 {
+  display: none; }
+
+.preOrder #bgChips15 {
+  display: none; }
+
+.preOrder #bgChips16 {
+  display: none; }
+
+.preOrder #bgChips17 {
+  display: none; }
+
+.preOrder #bgChips18 {
+  display: none; }
+
+.preOrder #bgChips19 {
+  display: none; }
+
+.preOrder #bgChips20 {
+  display: none; }
+
+@media only screen and (min-width: 1200px) {
+  .preOrder #bgChips1 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 2700px;
+    left: 100px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips2 {
+    display: block;
+    position: absolute;
+    max-width: 80px;
+    top: 2790px;
+    left: 140px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips3 {
+    display: block;
+    position: absolute;
+    max-width: 44px;
+    top: 2750px;
+    left: 140px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips4 {
+    display: block;
+    position: absolute;
+    max-width: 74px;
+    top: 2600px;
+    left: 90px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips5 {
+    display: block;
+    position: absolute;
+    max-width: 45px;
+    top: 2500px;
+    left: 120px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips6 {
+    display: block;
+    position: absolute;
+    max-width: 68px;
+    top: 2400px;
+    left: 70px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips7 {
+    display: block;
+    position: absolute;
+    max-width: 68px;
+    top: 2300px;
+    left: 80px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips8 {
+    display: block;
+    position: absolute;
+    max-width: 68px;
+    top: 2200px;
+    left: 60px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips9 {
+    display: block;
+    position: absolute;
+    max-width: 68px;
+    top: 2050px;
+    left: 60px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips10 {
+    display: block;
+    position: absolute;
+    max-width: 68px;
+    top: 1950px;
+    left: 70px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); } }
+
+@media only screen and (min-width: 1200px) {
+  .preOrder #bgChips11 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 1380px;
+    right: 70px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips12 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 1450px;
+    right: 110px;
+    transform: rotate(10deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips13 {
+    display: block;
+    position: absolute;
+    max-width: 65px;
+    top: 1250px;
+    right: 40px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips14 {
+    display: block;
+    position: absolute;
+    max-width: 70px;
+    top: 1150px;
+    right: 30px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips15 {
+    display: block;
+    position: absolute;
+    max-width: 70px;
+    top: 1000px;
+    right: 40px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips16 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 900px;
+    right: 30px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips17 {
+    display: block;
+    position: absolute;
+    max-width: 55px;
+    top: 800px;
+    right: 20px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips18 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 750px;
+    right: 40px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips19 {
+    display: block;
+    position: absolute;
+    max-width: 65px;
+    top: 620px;
+    right: 30px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); }
+  .preOrder #bgChips20 {
+    display: block;
+    position: absolute;
+    max-width: 60px;
+    top: 500px;
+    right: 20px;
+    transform: rotate(40deg);
+    z-index: -2;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); } }

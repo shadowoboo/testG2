@@ -14,14 +14,19 @@ $moblie: 768px;
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf);
 }
+html{
+    font-size: 34px
+}
 h1,h2,h3,h4,p,span{
     font-family: g2Font;
+    line-height: 1.6em;
 }
 h1{
     font-size: 40px;
 }
 h2{
-    font-size: 34px;
+    // font-size: 34px;
+    font-size: 1rem;
 }
 h3{
     font-size: 28px;
@@ -36,6 +41,11 @@ span{
     font-size: 14px;
 }
 
+input{
+    &:focus{
+        outline: none;
+    }
+}
 
 @mixin btn($btns, $width, $height, $color, $bgc, $bordercolor, $bordius, $pad, $hovColor, $hovBgc, $font) {
     .#{$btns} {
@@ -51,13 +61,15 @@ span{
         text-decoration: none;
         font-size: $font;
         cursor: pointer;
+        &:focus{
+            outline: none;
+        }
         @media only screen and (min-width: $moblie) {
            &:hover {
                 color: $hovColor;
                 background-color: $hovBgc;
             }
-        }
-        
+        }   
     }
 }
 
@@ -138,6 +150,7 @@ input[type=number]{
     border: 0px solid transparent;
     background-color: transparent;
     font-size: 22px;
+    line-height: 40px;
     font-family: g2Font;
     text-align: center;
     width: 100%;
