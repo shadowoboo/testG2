@@ -296,8 +296,9 @@ input {
   justify-content: center;
   padding: 5px 0; }
 
-#serch_input {
-  width: 200px; }
+@media screen and (max-width: 575px) {
+  #serch_input {
+    width: 200px; } }
 
 .serch_serch {
   display: inline-block;
