@@ -603,13 +603,105 @@
                     </ul>
                 </div>
                 <div class="poCard">
-                    <div class="poTrait"></div>
-                    <div class="poInside"></div>
+                    <div class="poTrait">
+                        <h2>預購5大特點</h2>
+                        <div class="traitCount">
+                            <p>絕對<br>是新品</p>
+                            <p>像開禮物<br>一樣驚喜</p>
+                            <p>零食<br>不重複</p>
+                            <p>每月<br>定期扣款</p>
+                            <p>隨時能<br>取消訂閱</p>
+                        </div>
+                        <div class="traitGo">
+                            <a href="#"><button class="subscribe">馬上預購!</button></a>
+                        </div>
+                    </div>
+                    <div class="poInside">
+                        <p>裡面有什麼？</p>
+                        <div class="insideBtn" id="show">
+                            <button class="month">2019<br>1月期</button>
+                            <button class="month">2019<br>2月期</button>
+                            <button class="month">2019<br>3月期</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="poBox">
-                    <!-- <img src="https://picsum.photos/600/600/?random=1"> -->
+                    <section class="section section_9" id="section_9">
+                        <div class="camera">
+                            <div class="box boxBase" id="box_9">
+
+                                <div class="surface surface_top" id="cover_out">上</div>
+                                <div class="surface surface_top_inner" id="cover_in">
+                                    <div class="way">
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                    </div>
+                                    <div class="way">
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                        <div class="light"></div>
+                                    </div>
+                                </div>
+                                <div class="surface surface_down">下</div>
+                                <div class="surface surface_back">後</div>
+                                <div class="surface surface_font">前</div>
+                                <div class="surface surface_left">左</div>
+                                <div class="surface surface_right">右</div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
+        </section>
+
+
+        <section class="igShare">
+            <div class="igTitle">
+                <h2>IG分享牆</h2>
+            </div>
+            <div class="igCount">
+                <div class="chocoGroup">
+                    <img src="../images/index/Chocolate-group.svg" alt="巧克力">
+                    <div class="igImg">
+                        <img src="../images/index/igImg-1.png" alt="分享圖">
+                        <img src="../images/index/igImg-2.png" alt="分享圖">
+                        <img src="../images/index/igImg-3.png" alt="分享圖">
+                        <img src="../images/index/igImg-4.png" alt="分享圖">
+                        <img src="../images/index/igImg-5.png" alt="分享圖">
+                        <img src="../images/index/igImg-6.png" alt="分享圖">
+                        <img src="../images/index/igImg-8.png" alt="分享圖">
+                    </div>
+                    <div class="igName">
+                        <h4>Molly1020</h4>
+                    </div>
+                    <div class="igText">
+                        <p>在連假前收到<span>@sanckMaster</span>的一月零食箱，太開心啦嗷嗷！廉價的零食...</p>
+                        <span>#大零食家#新年新希望#超好吃</span>
+                    </div>
+                </div>
+                <div class="chocoPack">
+                    <img src="../images/index/Chocolate-pack1.svg" alt="巧克力包裝">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="vmMap">
+            <div class="vmTitle">
+                <h2>尋找販賣機</h2>
+            </div>
+            
         </section>
 
     </div>
@@ -743,6 +835,7 @@
             btns[i].addEventListener("click", boxRotate);
         }
 
+        document.getElementById('show').addEventListener("click", boxRotate);
         // 轉轉箱子功能鈕
         // 缺陷:style.transform是抓 css inline style的值，所以必須給箱子inline style的初始值 
         function boxRotate(e) {
@@ -790,98 +883,31 @@
                     $('.btns').removeClass('btnSelect');
                     $(this).addClass('btnSelect');
                     break;
-                // case "rotateX":
-                //     boxBases.forEach(element => {
-                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-                //         console.log("element.style.transform:" + element.style.transform);
-                //         let arr = element.style.transform.split(" ");
-                //         console.log(`arr: ${arr}`);
-                //         let newAngelX = parseInt(arr[0].replace("rotateX(", "").replace("deg)", "")) + 10;
-                //         arr[0] = "rotateX(" + newAngelX + "deg)";
-                //         console.log(arr[0]);
-                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-                //     });
-                //     break;
-                // case "rotateY":
-                //     boxBases.forEach(element => {
-                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-                //         console.log("element.style.transform:" + element.style.transform);
-                //         let arr = element.style.transform.split(" ");
-                //         console.log(`arr: ${arr}`);
-                //         let newAngelY = parseInt(arr[1].replace("rotateY(", "").replace("deg)", "")) + 10;
-                //         arr[1] = "rotateY(" + newAngelY + "deg)";
-                //         console.log(arr[1]);
-                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-                //     });
-                //     break;
-                // case "rotateZ":
-                //     boxBases.forEach(element => {
-                //         // element.style.transform = "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
-                //         console.log("element.style.transform:" + element.style.transform);
-                //         let arr = element.style.transform.split(" ");
-                //         console.log(`arr: ${arr}`);
-                //         let newAngelZ = parseInt(arr[2].replace("rotateZ(", "").replace("deg)", "")) + 10;
-                //         arr[2] = "rotateZ(" + newAngelZ + "deg)";
-                //         console.log(arr[2]);
-                //         element.style.transform = `${arr[0]} ${arr[1]} ${arr[2]}`;
-                //     });
-                //     break;
-                // case "show":
-                //     boxBases.forEach(element => {
-                //         element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(0deg)";
-                //     });
-                //先把蓋子蓋起來
-                // {
-                //     let arr = cover_out.style.transform.split(" ");
-                //     console.log(`arr: ${arr}`);
-                //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg)";
-                //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg)";
-                // }
+                case "show":
+                    boxBases.forEach(element => {
+                        element.style.transform = "rotateX(270deg) rotateY(180deg) rotateZ(30deg)";
+                    });
+                    //先把蓋子蓋起來
+                    {
+                        let arr = cover_out.style.transform.split(" ");
+                        console.log(`arr: ${arr}`);
+                        cover_out.style.transform = "translate3d(0, 40px, -100px) rotateX(90deg)";
+                        cover_in.style.transform = "translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg)";
+                    }
 
-                // //延遲一段時間後...TADA~蓋子打開~
-                // setTimeout(e => {
-                //     cover_out.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg)";
-                //     cover_in.style.transform = "translate3d(0, 75px, -150px) rotateX(200deg) rotateY(180deg)";
-                // }, 1000);
-                // //再延遲一下...燈燈~電燈假發光~
-                // setTimeout(e => {
-                //     console.log(lights);
-
-                //     lights.forEach(element => {
-                //         element.classList.add("showLight");
-                //     })
-                // }, 1000)
-
-                //上蓋收納下蓋打開測試
-                //上蓋初始值要打開
-                //上下蓋改Y軸
-                // cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg)";
-                // cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(200deg) rotateY(180deg)";
-                // //下蓋初始關起來
-                // cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(-90deg) ";
-                // cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(-90deg)";
-                // //box_12姿態固定
-                // box_12.style.transform = "rotateX(-30deg) rotateY(30deg) rotateZ(0deg)";
-                // setTimeout(e => {
-                //     box_12.style.transform = "rotateX(-30deg) rotateY(0deg) rotateZ(0deg)";
-                // }, 400)
-
-                // //延遲....上蓋關起來
-                // setTimeout(e => {
-                //     cover_out_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg)";
-                //     cover_in_12.style.transform = "translate3d(0, 40px, -120px) rotateX(90deg) rotateY(180deg)";
-                // }, 1000);
-                // //延遲...箱子抬起來
-                // setTimeout(e => {
-                //     box_12.style.transform = "rotateX(20deg) rotateY(0deg) rotateZ(0deg)";
-                // }, 1500)
-                // //延遲...下蓋兩片打開
-                // setTimeout(e => {
-                //     cover_dl_12.style.transform = "translate3d(-200px, 160px, 0px) rotateY(-90deg) rotateX(30deg) ";
-                //     cover_dr_12.style.transform = "translate3d(200px, 160px, 0px)  rotateY(90deg) rotateX(30deg)";
-                // }, 1700);
-
-                // break;
+                    //延遲一段時間後...TADA~蓋子打開~
+                    setTimeout(e => {
+                        cover_out.style.transform = "translate3d(0, 40px, -100px) rotateX(200deg)";
+                        cover_in.style.transform = "translate3d(0, 40px, -100px) rotateX(200deg) rotateY(180deg)";
+                    }, 1000);
+                    //再延遲一下...燈燈~電燈假發光~
+                    setTimeout(e => {
+                        console.log(lights);
+                        lights.forEach(element => {
+                            element.classList.add("showLight");
+                        })
+                    }, 1000);
+                    break;
             }
         };
 

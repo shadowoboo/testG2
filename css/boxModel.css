@@ -91,12 +91,12 @@
 
 #section_9 .boxBase {
   border: red 2px solid;
-  width: 500px;
-  height: 150px;
+  width: 400px;
+  height: 120px;
   position: relative;
   background-color: transparent;
   transform-origin: center center;
-  transform: translateZ(-150px) rotateX(-90deg) rotateY(-180deg);
+  transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
   transform-style: preserve-3d;
   transition: .3s;
   display: flex;
@@ -113,50 +113,50 @@
   transition: .5s; }
 
 #section_9 .surface_top {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 75px, -150px) rotateX(90deg);
-  line-height: 300px;
+  transform: translate3d(0, 40px, -100px) rotateX(90deg);
+  line-height: 200px;
   backface-visibility: hidden; }
 
 #section_9 .surface_top_inner {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg);
-  line-height: 300px;
+  transform: translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg);
+  line-height: 200px;
   backface-visibility: hidden; }
 
 #section_9 .surface_down {
-  width: 500px;
-  height: 300px;
-  transform: rotateX(-90deg) translateZ(75px);
-  line-height: 300px; }
+  width: 400px;
+  height: 200px;
+  transform: rotateX(-90deg) translateZ(60px);
+  line-height: 200px; }
 
 #section_9 .surface_font {
-  width: 500px;
-  height: 150px;
-  transform: rotateY(0deg) translateZ(150px);
-  line-height: 150px; }
+  width: 400px;
+  height: 120px;
+  transform: rotateY(0deg) translateZ(100px);
+  line-height: 120px; }
 
 #section_9 .surface_back {
-  width: 500px;
-  height: 150px;
-  transform: rotateY(180deg) translateZ(150px);
-  line-height: 150px; }
+  width: 400px;
+  height: 120px;
+  transform: rotateY(180deg) translateZ(100px);
+  line-height: 120px; }
 
 #section_9 .surface_left {
-  width: 300px;
-  height: 150px;
-  transform: rotateY(-90deg) translateZ(250px);
-  line-height: 150px; }
+  width: 200px;
+  height: 120px;
+  transform: rotateY(-90deg) translateZ(200px);
+  line-height: 120px; }
 
 #section_9 .surface_right {
-  width: 300px;
-  height: 150px;
-  transform: rotateY(90deg) translateZ(250px);
-  line-height: 150px; }
+  width: 200px;
+  height: 120px;
+  transform: rotateY(90deg) translateZ(200px);
+  line-height: 120px; }
 
 #section_9 .surface_top {
   background-color: #076baf; }
@@ -181,14 +181,14 @@
 
 @keyframes cover_rotate {
   100% {
-    transform: translate3d(0, 75px, -150px) rotateX(210deg); } }
+    transform: translate3d(0, 40px, -100px) rotateX(210deg); } }
 
 #section_9 .surface_top_inner {
   animation: cover_inner_rotate 3s; }
 
 @keyframes cover_inner_rotate {
   100% {
-    transform: translate3d(0, 75px, -150px) rotateX(210deg) rotateY(180deg); } }
+    transform: translate3d(0, 40px, -100px) rotateX(210deg) rotateY(180deg); } }
 
 #section_9 .surface_top_inner {
   background-color: #076baf;

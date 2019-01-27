@@ -262,14 +262,19 @@ $(document).ready(function () {
                 'opacity': '1',
                 'transition': '2.5s',
             });
-        }
-        
+        }  
     });
-
-
-
-
-
-
+    
+    $('.chocoGroup').css({
+        'transform': 'translateX(-1000px)'
+    });
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > $('.igCount').offset().top - 500) {
+            $('.chocoGroup').css({
+                'transform': 'translateX(0)',
+                'transition': '1s'
+            });
+        }
+    });
 
 });

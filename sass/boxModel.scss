@@ -230,20 +230,20 @@
 //展示箱子打開效果
 //首頁用
 #section_9{
-    @include box3D_cover(500px, 300px,150px);
+    @include box3D_cover(400px, 200px,120px);
     //藍：#076baf
     //黃：#fbc84a
 
     //正面蓋子打開
     .surface_top{
         animation: cover_rotate 3s ;
-        @include cover_rotate(210deg,500px,300px,150px);
+        @include cover_rotate(210deg,400px,200px,120px);
     }
 
     //內側蓋子打開
     .surface_top_inner{
         animation: cover_inner_rotate 3s ;
-        @include cover_inner_rotate(210deg,500px,300px,150px);
+        @include cover_inner_rotate(210deg,400px,200px,120px);
     }
     
 
