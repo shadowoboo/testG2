@@ -254,7 +254,7 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color:#ffd66e;
+        background-color:#fff;
    
         .pic{
             flex:5;
@@ -284,10 +284,10 @@ section {
         }
         .purchaseDetail{
             width: 45%;
-            height: 300px;
+            height:470px;
             margin: 16px;
             background-color: #ffffff;
-            border:10px solid #fbc84a;
+            border:7px solid #fbc84a;
             border-radius: 10px;
             overflow-y: scroll;
             .item{
@@ -361,8 +361,6 @@ section {
             cursor: pointer;
         }
 }
-
-
 
 }
 .showBox{
@@ -440,6 +438,43 @@ a {
   display:none;
 }
 
+
+
+.tab-group-2{
+    list-style:none;
+    padding:0;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    li a {
+      display:block;
+      text-decoration:none;
+      padding:15px;
+      color:$gray-light;
+      font-size:20px;
+      float:left;
+      width:50%;
+      text-align:center;
+      cursor:pointer;
+      transition:.5s ease;
+      &:hover {
+      //   background:$main-dark;
+        color:$activeColor;
+      }
+    }
+    .active a {
+      background:#fbc84a;
+      color:$activeColor;
+    }
+  }
+  
+
+.tab-content-2 > div:last-child {
+    display:none;
+  }
+
 .form {
     flex:1;
     background:rgba($form-bg,.9);
@@ -460,7 +495,7 @@ a {
     align-items: center;
     width:100%;
     height:300px;
-    background-color: #ffd66e;
+    background-color: #fff;
     .colorBtn{
         width: 50px;
         height: 50px;
@@ -568,7 +603,7 @@ a {
         align-items:center;
         width: 100%;
         height: 300px;
-        background-color:#ffd66e;
+        background-color:#fff;
         .cardStyle{
             display: flex;
             flex-flow: row wrap;
@@ -906,6 +941,7 @@ $cardY:600px;
             flex-direction: row;
             width: 80%;
             margin: auto;
+            
         }
     }
 }
@@ -990,7 +1026,13 @@ $cardY:600px;
                 }
             }
         }
+
+
 }
+}
+
+#card{
+    height: 400px;
 }
 
 

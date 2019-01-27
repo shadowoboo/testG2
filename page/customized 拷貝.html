@@ -1214,48 +1214,36 @@
                 </div>
         
                 <div class="section section_15" id="section_15">
-                        <div class="form">
-                                <ul class="tab-group-2">
-                                    <li class="tab-2 active"><a href="#box">客製箱</a></li>
-                                    <li class="tab-2"><a href="#card">卡片</a></li>
-                                </ul>
-                                <div class="tab-content-2">
-                                    <div id="box">   
-                                            <div class="leftBox">
-                                                    <div id="ctrl_bar">
-                                                        <div class="btn btn_front dimension" id="btn_front">前</div>
-                                                        <div class="btn btn_back dimension" id="btn_back">後</div>
-                                                        <div class="btn btn_top dimension" id="btn_top">上</div>
-                                                        <div class="btn btn_left dimension" id="btn_left">左</div>
-                                                        <div class="btn btn_right dimension" id="btn_right">右</div>
-                                                       
-                                                        <div class="btn rotateZ dimension" id="rotateZ">轉</div> 
-                                                    </div>
-                                                    <div class="showBox" style="width:80%;">
-                                                            <div class="camera">
-                                                                <div class="box boxBase" id="box_15">
-                                                                    <div class="surface surface_top" id="cover_out_15">
-                                                                        <img src="ip2.png" id="a1" alt="">
-                                                                    </div>
-                                                                    <div class="surface surface_top_inner" id="cover_in_15">
-                                                                
-                                                                    </div>
-                                                                    <div class="surface surface_down"></div>
-                                                                    <div class="surface surface_back"></div>
-                                                                    <div class="surface surface_font"></div>
-                                                                    <div class="surface surface_left"></div>
-                                                                    <div class="surface surface_right"></div>
-                                                                </div>
-                                                            </div>                     
-                                                            <div class="btn show action" id="show" style="line-height: 35px;margin:3px auto;">3D展示</div>
-                                                    </div>
-                                                </div>  
+                    <div class="leftBox">
+                        <div id="ctrl_bar">
+                            <div class="btn btn_front dimension" id="btn_front">前</div>
+                            <div class="btn btn_back dimension" id="btn_back">後</div>
+                            <div class="btn btn_top dimension" id="btn_top">上</div>
+                            <div class="btn btn_left dimension" id="btn_left">左</div>
+                            <div class="btn btn_right dimension" id="btn_right">右</div>
+                            <!-- <div class="btn rotateX" id="rotateX">轉</div> -->
+                                <!-- <div class="btn rotateY" id="rotateY">Y軸轉轉</div>-->
+                            <div class="btn rotateZ dimension" id="rotateZ">轉</div> 
+                        </div>
+                        <div class="showBox" style="width:80%;">
+                                <div class="camera">
+                                    <div class="box boxBase" id="box_15">
+                                        <div class="surface surface_top" id="cover_out_15">
+                                            <img src="ip2.png" id="a1" alt="">
                                         </div>
-                                    <div id="card">   
-                                        <img src="../images/small/card01.png" alt="">  
+                                        <div class="surface surface_top_inner" id="cover_in_15">
+                                    
+                                        </div>
+                                        <div class="surface surface_down"></div>
+                                        <div class="surface surface_back"></div>
+                                        <div class="surface surface_font"></div>
+                                        <div class="surface surface_left"></div>
+                                        <div class="surface surface_right"></div>
                                     </div>
-                                </div><!-- tab-content -->
-                            </div>
+                                </div>                     
+                                <div class="btn show action" id="show" style="line-height: 35px;margin:3px auto;">3D展示</div>
+                        </div>
+                    </div>  
                     <div class="purchaseDetail">
                         <div class="item title">
                             <p>品名</p>
@@ -1769,22 +1757,6 @@
     
     });
 </script>
-<script>
-        $('.tab-2 a').on('click', function (e) {
-        
-        e.preventDefault();
-        
-        $(this).parent().addClass('active');
-        $(this).parent().siblings().removeClass('active');
-        
-        target = $(this).attr('href');
-        
-        $('.tab-content-2 > div').not(target).hide();
-        
-        $(target).fadeIn(600);
-        
-        });
-    </script>
 <script>
 //卡片內分業選擇區
     $(document).ready(function () {
