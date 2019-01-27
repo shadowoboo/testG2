@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>recording Model 2</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/recordingModel_2.css">
-    <script src="../js/recorder.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- 我偷懶用的函式，所以還是要連，不然程式不會動 -->
     <script src="shadowLib.js"></script>
+    <!-- 錄音外掛。我想我跳下去玩一定會來不及。謝謝你 9527 -->
+    <script src="../js/recorder.js"></script>
+    <!-- 為了各種符號，掛載fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,17 +24,27 @@
     <div id="visual"></div>
 
     <!-- 錄音顯示介面 -->
-    <div class="audioItems" id="audioItems">
+    <!-- <div class="audioItems" id="audioItems">
         <h3 id="audioMsg">尚未新增錄音檔</h3>
-    </div>
+    </div> -->
 
-    <!-- 錄音操作鈕 -->
-    <div id="recordBtn" class="recordBtn"></div>
-
+<!-- MobII.mp3 -->
 
     <!-- 撥放介面實體 -->
     <div id="audioItem">
-        <audio src="MobII.mp3" id="au_player"></audio>
+        <!-- 一開始不給src，待錄音有值會自動增加 -->
+        <audio id="au_player"></audio>
+
+        <div class="au_btns" id="au_btns">
+            <button class="au_btn" id="au_btn_play"><i class="fas fa-play"></i></button>
+            <button class="au_btn" id="au_btn_stop"><i class="fas fa-stop"></i></button>
+            <button class="au_btn" id="au_btn_vol"><i class="fas fa-volume-up"></i></button>
+            <div class="volBar" id="volBar">
+                <div class="vol_proBar" id="vol_proBar"></div>
+                <div class="vol_barNote" id="vol_barNote"></div>
+            </div>
+            <button id="audioDel" class="au_btn trash"><i class="far fa-trash-alt"></i></button>
+        </div>
 
         <div class="au_ctrl">
             <div class="defBar" id="defBar">
@@ -40,19 +57,14 @@
                 <span>/</span>
                 <span class="au_timeAll" id="au_timeAll">00:00</span>
             </div>
-
-            <div class="au_btns" id="au_btns">
-                <button class="au_btn" id="au_btn_play">播</button>
-                <button class="au_btn" id="au_btn_stop">停</button>
-                <button class="au_btn" id="au_btn_vol">響</button>
-                <button id="audioDel" class="au_btn">刪</button>
-                <div class="volBar" id="volBar">
-                    <div class="vol_proBar" id="vol_proBar"></div>
-                    <div class="vol_barNote" id="vol_barNote"></div>
-                </div>
-            </div>
         </div>
+
+        <!-- 錄音操作鈕 -->
+        <div id="recordBtn" class="recordBtn"><i class="fas fa-microphone"></i></div>
     </div>
+
+
+
 
 
     <script>
@@ -105,7 +117,7 @@
             //把mic獲得的資料串給analyes做分析
             mic.connect(analyser);
             //把資料串到錄音流程的終點:喇叭。 聲音容器.destination
-            // analyser.connect(context.destination);
+            // analyser.connect(context.destination); //直接打開很吵
             //設定分析器的取樣 N=2048。Fast Fourier Transfor (FFT) 快速傅立葉轉換!!!! 夭壽骨是工數啊啊啊啊!!!!
             analyser.fftSize = 2048;
             //frequencyBinCount 是 fftSize值的一半。除此之外我們對他一無所知
@@ -119,10 +131,14 @@
             //若沒標籤，則添加標籤，開始錄音
             //若有標籤，則移除標籤，停止錄音
             recordBtn.onclick = function (e) {
-                if (e.target.classList.contains("recording") == true) {
+                if (e.target.classList.contains("recording") == true || e.target.parentNode.classList.contains("recording") == true) {
                     clearTimeout(timer);
                     //按鈕變身，變樣式
-                    e.target.classList.remove("recording");
+                    if(e.target.id!= "recordBtn"){
+                        e.target.parentNode.classList.remove("recording");
+                    }else{
+                        e.target.classList.remove("recording");
+                    }
                     // e.target.id = "play"
                     //停止錄音
                     recorder.stop();
@@ -136,9 +152,21 @@
                     //利用recorder.js開始錄音
                     recorder.record();
                     //按鈕變身，變樣式
-                    e.target.classList.add("recording");
+                    if (e.target.id != "recordBtn") {
+                        e.target.parentNode.classList.add("recording");
+                    } else {
+                        e.target.classList.add("recording");
+                    }
                     // e.target.id = "stop";
                     update();
+
+                    //恢復正常效果
+                    $id("au_btns").style.opacity = 1;
+                    $id("defBar").style.opacity = 1;
+                    $id("au_time").style.opacity = 1;
+
+                    //播放器應該不可以撥放
+                    auStop();
                 }
             }
 
@@ -168,65 +196,72 @@
                 recorder.exportWAV(function (blob) {
                     //建立一個可以被下載(上傳?)的物件包，之後觀察看要怎麼上傳
                     var url = URL.createObjectURL(blob);
-                    //建立一個div來包住<audio> 跟 <button>之類的元素
-                    var item = document.createElement('div');
-                    //建立一個可以撥放錄音的audio元素
-                    var au = document.createElement('audio');
-                    //建立一個下載連結，不過其實我們不給下載嘻嘻
-                    // var hf = document.createElement('a');
-                    //建立一個刪除按鈕
-                    var btnDel = document.createElement("button");
 
-                    //開啟<audio>的內建控制器(撥放、停止之類有的沒的)
-                    //注意!!因為只能靠偽類改樣式，限制又很多，所以啊，重寫吧，我是說控制板
-                    //什麼ㄅ放鍵、ㄐ度條之類的，你贏了，我寫js吧。我寫。
-                    //如果很想用CSS控制的同學，請參考下面連結
-                    //http://jartto.wang/2018/04/25/rewrite-audio-style/
-                    au.controls = true;
-                    //指定<audio>要撥放錄音
-                    au.src = url;
-                    //指定au的id，撥放器動作靠他惹
-                    au.id = "au_player";
-                    //<a>連結路徑
-                    // hf.href = url;
-                    //這個是指定下載名稱，還有觸發下載效果(?)
-                    // hf.download = new Date().toISOString() + '.wav';
-                    // hf.innerHTML = hf.download;
-                    //設id方便控制
-                    item.id = "audioItem";
-                    btnDel.id = "audioDel";
-                    btnDel.innerText = "刪除";
-                    btnDel.onclick = function (e) {
-                        //刪掉錄音這堆東西，燒毀~
-                        while (audioItems.firstChild) {
-                            audioItems.removeChild(audioItems.firstChild);
-                        }
-                        //然後，提示訊息將重獲新生
-                        let audioMsg = document.createElement("h3");
-                        let msg = "尚未新增錄音檔";
-                        audioMsg.id = "audioMsg";
-                        audioMsg.innerText = msg;
-                        audioItems.appendChild(audioMsg);
+                    //改audio撥放器的src路徑就好
+                    $id("au_player").src = url;
 
-                        //歸零波形圖-----------沒波形圖就不需要這段!!!------start
-                        for (let j = 0; j < 256; j++) {
-                            // const el = dataArray[j];
-                            plotBlocks[j].style.height = 0 + "px";
-                        }
-                        //歸零波形圖-----------沒波形圖就不需要這段!!!------end
-                    }
+                    // //建立一個div來包住<audio> 跟 <button>之類的元素
+                    // var item = document.createElement('div');
+                    // //建立一個可以撥放錄音的audio元素
+                    // var au = document.createElement('audio');
+                    // //建立一個下載連結，不過其實我們不給下載嘻嘻
+                    // // var hf = document.createElement('a');
+                    // //建立一個刪除按鈕
+                    // var btnDel = document.createElement("button");
 
-                    //刪除audioItems的所有子元素
-                    while (audioItems.firstChild) {
-                        audioItems.removeChild(audioItems.firstChild);
-                    }
+                    // //開啟<audio>的內建控制器(撥放、停止之類有的沒的)
+                    // //注意!!因為只能靠偽類改樣式，限制又很多，所以啊，重寫吧，我是說控制板
+                    // //什麼ㄅ放鍵、ㄐ度條之類的，你贏了，我寫js吧。我寫。
+                    // //如果很想用CSS控制的同學，請參考下面連結
+                    // //http://jartto.wang/2018/04/25/rewrite-audio-style/
+                    // au.controls = true;
+                    // //指定<audio>要撥放錄音
+                    // au.src = url;
+                    // //指定au的id，撥放器動作靠他惹
+                    // au.id = "au_player";
+                    // //<a>連結路徑
+                    // // hf.href = url;
+                    // //這個是指定下載名稱，還有觸發下載效果(?)
+                    // // hf.download = new Date().toISOString() + '.wav';
+                    // // hf.innerHTML = hf.download;
+                    // //設id方便控制
+                    // item.id = "audioItem";
+                    // btnDel.id = "audioDel";
+                    // btnDel.innerText = "刪除";
+                    // btnDel.onclick = function (e) {
+                    //     //刪掉錄音這堆東西，燒毀~
+                    //     while (audioItems.firstChild) {
+                    //         audioItems.removeChild(audioItems.firstChild);
+                    //     }
+                    //然後，提示訊息將重獲新生
+                    // let audioMsg = document.createElement("h3");
+                    // let msg = "尚未新增錄音檔";
+                    // audioMsg.id = "audioMsg";
+                    // audioMsg.innerText = msg;
+                    // audioItems.appendChild(audioMsg);
+
+                    //改src路徑就好
+                    // $id("au_player").src = "";
+
+                    // //歸零波形圖-----------沒波形圖就不需要這段!!!------start
+                    // for (let j = 0; j < 256; j++) {
+                    //     // const el = dataArray[j];
+                    //     plotBlocks[j].style.height = 0 + "px";
+                    // }
+                    // //歸零波形圖-----------沒波形圖就不需要這段!!!------end
+                    // }
+
+                    // //刪除audioItems的所有子元素
+                    // while (audioItems.firstChild) {
+                    //     audioItems.removeChild(audioItems.firstChild);
+                    // }
 
 
-                    //把新建的元素塞進去
-                    item.appendChild(au);
-                    item.appendChild(btnDel);
-                    // item.appendChild(hf);
-                    audioItems.appendChild(item);
+                    // //把新建的元素塞進去
+                    // item.appendChild(au);
+                    // item.appendChild(btnDel);
+                    // // item.appendChild(hf);
+                    // audioItems.appendChild(item);
                 });
             }
         }).catch(function (error) {
@@ -241,10 +276,14 @@
         function auPlayAndPause(e) {
             if (!$id("au_player").paused && !$id("au_player").ended) {
                 $id("au_player").pause();
-                $id("au_btn_play").innerText = "播";
+                // $id("au_btn_play").innerText = "播";
+                $id("au_btn_play").classList.remove("select");
+                $id("au_btn_play").innerHTML = "<i class='fas fa-play'></i>";
             } else {
                 $id("au_player").play();
-                $id("au_btn_play").innerText = "暫";
+                // $id("au_btn_play").innerText = "暫";
+                $id("au_btn_play").classList.add("select");
+                $id("au_btn_play").innerHTML="<i class='fas fa-pause'></i>";
                 setInterval(() => {
                     if (!$id("au_player").ended) {
                         barSize = parseInt(window.getComputedStyle($id("defBar")).width);
@@ -254,8 +293,10 @@
                     } else {
                         $id("proBar").style.width = '0px';
                         $id("barNote").style.left = "0px";
-                        $id("au_btn_play").innerText = "播";
+                        // $id("au_btn_play").innerText = "播";
                         $id("au_player").currentTime = 0;
+                        $id("au_btn_play").classList.remove("select");
+                        $id("au_btn_play").innerHTML = "<i class='fas fa-play'></i>";
                     }
                 }, 100);
             }
@@ -263,7 +304,8 @@
 
         function auStop(e) {
             $id("au_player").pause();
-            $id("au_btn_play").innerText = "播";
+            // $id("au_btn_play").innerText = "播";
+            $id("au_btn_play").classList.remove("select");
             $id("proBar").style.width = '0px';
             $id("barNote").style.left = "0%";
             $id("au_player").currentTime = 0;
@@ -272,8 +314,10 @@
         function auMute(e) {
             if ($id("au_player").muted == true) {
                 $id("au_player").muted = false;
+                $id("au_btn_vol").innerHTML = "<i class='fas fa-volume-up'></i>";
             } else {
                 $id("au_player").muted = true;
+                $id("au_btn_vol").innerHTML="<i class='fas fa-volume-mute'></i>";
             }
         }
 
@@ -317,12 +361,27 @@
         $id("au_player").addEventListener("ended", auStop);
         $id("au_player").addEventListener("canplaythrough", auUpdateTimeAll);
         $id("au_player").addEventListener("timeupdate", auUpdateTimeNow);
-        $id("barNote").addEventListener("mousedown",dragStartBarNote);
-        $id("vol_barNote").addEventListener("mousedown",dragStartVolBarNote);
+        $id("barNote").addEventListener("mousedown", dragStartBarNote);
+        $id("vol_barNote").addEventListener("mousedown", dragStartVolBarNote);
+        $id("audioDel").addEventListener("click", removeAudioSrc);
+
+        function removeAudioSrc(e) {
+            $id("au_player").src = "";
+            //上個半透效果`,表示沒作用
+            $id("au_btns").style.opacity = 0.5;
+            $id("defBar").style.opacity = 0.5;
+            $id("au_time").style.opacity = 0.5;
+            //歸零波形圖-----------沒波形圖就不需要這段!!!------start
+            for (let j = 0; j < 256; j++) {
+                // const el = dataArray[j];
+                plotBlocks[j].style.height = 0 + "px";
+            }
+            //歸零波形圖-----------沒波形圖就不需要這段!!!------end
+        }
 
         //移除事件監聽時傳入的參數 要等於 添加事件監聽時傳入的參數
         //不然mousemove會一直跑!!!!!
-         function dragStartBarNote(e) {
+        function dragStartBarNote(e) {
             //避免拖曳途中選到東西然後莫名無法 mouseup
             var body = document.getElementsByTagName("body");
             console.log(body[0]);
@@ -366,10 +425,15 @@
             console.log("mouse UP UP UP");
             window.removeEventListener("mousemove", dragBarNote);
             console.log("remove EVENT mouse move !!");
+            //結束後聲音恢復
+            $id("au_player").muted = false;
             window.removeEventListener("mouseup", dragEndBarNote);
         }
 
         function dragBarNote(e2) {
+            //拖曳時聲音mute掉
+            $id("au_player").muted=true;
+            //抓進度條長度
             var barSize = parseInt(window.getComputedStyle($id("defBar")).width);
             var minX = $id("defBar").offsetLeft; //進度條最左側離視窗距離
             console.log(`minX: ${minX}`);
@@ -408,7 +472,7 @@
 
 
 
-        //聲音調拖曳---------------------------------開始
+        //音量拖曳---------------------------------開始
         function dragEndVolBarNote(e) {
             //還原body跟所有子元素下可選狀態
             var body = document.getElementsByTagName("body");
@@ -452,7 +516,20 @@
                 $id("au_player").volume = newVol;
             }
         }
-        //聲音調拖曳---------------------------------開始
+        //音量拖曳---------------------------------結束
+
+        console.log(`$id("au_player").src: ${$id("au_player").src}`);
+        
+
+        //load進來第一次讀值沒東西就怒關一波
+        if(($id("au_player").src=="") || ($id("au_player").id == undefined) || ($id("au_player").id == null)){
+            //上個半透效果,表示沒作用
+            $id("au_btns").style.opacity = 0.5;
+            $id("defBar").style.opacity = 0.5;
+            $id("au_time").style.opacity = 0.5;
+
+            //按鈕不給用
+        }
     </script>
 </body>
 

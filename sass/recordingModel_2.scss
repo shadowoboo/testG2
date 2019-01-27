@@ -1,3 +1,6 @@
+@import 'common';
+
+    
     #visual {
         width: 100%;
         height: 300px;
@@ -18,42 +21,51 @@
     .recordBtn{
         width: 60px;
         height: 60px;
+        font-size: 36px;
+        line-height: 60px;
+        text-align: center;
         border-radius: 50%;
         background-color: #fbc84a;
         position: relative;
         cursor: pointer;
+        &:hover{
+            color:$blue;
+        }
+        &.recording{
+            color:$coral;
+        }
 
-        //這是中間那顆方塊，可以利用background之類的換圖
-        //我先隨便寫個色塊
-        &::before{
-            content:"";
-            display: block;
-            width: 25px;
-            height: 25px;
-            background-color: #076baf;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            transition: 0.3s;
-        }
-        &.recording::before{
-            background-color: #af0715;
-        }
+        // //這是中間那顆方塊，可以利用background之類的換圖
+        // //我先隨便寫個色塊
+        // &::before{
+        //     content:"";
+        //     display: block;
+        //     width: 25px;
+        //     height: 25px;
+        //     background-color: #076baf;
+        //     position: absolute;
+        //     top: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     right: 0;
+        //     margin: auto;
+        //     transition: 0.3s;
+        // }
+        // &.recording::before{
+        //     background-color: #af0715;
+        // }
     }
 
 
-    //撥放器樣式-----------開始
+    //撥放介面樣式-----------開始
     //播放條寬度
-    $defBarWidth:300px;
+    $defBarWidth:350px * 0.8;
     //撥放條高度
     $defBarHeight:10px;
     //撥放拉桿寬度
     $barNoteWidth:10px;
     //撥放拉桿高度
-    $barNoteHeight:40px;
+    $barNoteHeight:30px;
     //播放條整包
     .defBar{
         width:$defBarWidth ;
@@ -63,6 +75,10 @@
         //給拉桿定位用
         position: relative;
         cursor: pointer;
+        &:hover .proBar,
+        &:hover .barNote{
+            background-color: $deepblue;
+        }
         //進度條
         .proBar{
             //寬度隨播放進度變化
@@ -85,16 +101,10 @@
             //用公式置中這樣
             top: -($barNoteHeight/2) + ($defBarHeight/2) ;
             left:0%; //隨撥放時間移動
-            transform: translateX(-50%);
+            // transform: translateX(-50%); //使用上好像沒有很在意位置的精準度
             cursor: pointer;
             // transition: 0.1s linear;
-
-            //額外特效
-            // opacity: 0;
         }
-        // &:hover .barNote{
-        //     // opacity: 1;
-        // }
     }
 
 
@@ -115,6 +125,10 @@
         //給拉桿定位用
         position: relative;
         cursor: pointer;
+        &:hover .vol_proBar,
+        &:hover .vol_barNote{
+            background-color: #fff;
+        }
 
         //三角形風格
         // clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
@@ -145,4 +159,55 @@
     .au_btn{
         cursor: pointer;
     }
-    //撥放器樣式-----------結束
+    //撥放介面元件樣式-----------結束
+
+
+    //撥放介面結構樣式----------------------開始
+    #audioItem{
+        width: 350px;
+        height: 300px;
+        // background-color: #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .au_btns{
+            width: 80%;
+            height: 50px;
+            background-color: $yellow;
+            border: 7px solid $blue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .au_btn, .trash {
+                width: 25px;
+                height: 25px;
+                color: $blue;
+                background-color: transparent;
+                border: unset;
+                border-radius: 10px;
+                padding: 0px;
+                text-align: center;
+                font-size: 22px;
+                cursor: pointer;
+                @media only screen and (min-width: $moblie) {
+                &:hover {
+                        // background-color: $blue;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .au_ctrl{
+            .defBar{
+                margin-bottom: 25px;
+            }
+            .au_time{
+                width: 100%;
+                text-align: right;
+                span{color: $blue;}
+            }
+        }
+    }
+    //撥放介面結構樣式----------------------結束
