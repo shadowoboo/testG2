@@ -31,3 +31,49 @@
     transition: 0.3s; }
   .recordBtn.recording::before {
     background-color: #af0715; }
+
+.defBar {
+  width: 300px;
+  height: 10px;
+  background-color: #fbc84a;
+  position: relative;
+  cursor: pointer; }
+  .defBar .proBar {
+    width: 0%;
+    height: inherit;
+    background-color: #076baf;
+    cursor: pointer; }
+  .defBar .barNote {
+    width: 10px;
+    height: 40px;
+    background-color: #076baf;
+    position: absolute;
+    top: -15px;
+    left: 0%;
+    transform: translateX(-50%);
+    cursor: pointer; }
+
+.volBar {
+  width: 50px;
+  height: 5px;
+  background-color: #fbc84a;
+  position: relative;
+  cursor: pointer; }
+  .volBar .vol_proBar {
+    width: 100%;
+    height: inherit;
+    background-color: #076baf;
+    cursor: pointer; }
+  .volBar .vol_barNote {
+    width: 15px;
+    height: 15px;
+    background-color: #076baf;
+    position: absolute;
+    top: -5px;
+    left: 100%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border-radius: 50%; }
+
+.au_btn {
+  cursor: pointer; }

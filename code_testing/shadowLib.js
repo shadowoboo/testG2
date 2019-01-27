@@ -58,3 +58,13 @@ function windowClick(e) {
         //console.log(`$(this): ${$(this)}`); //jq
     })
 }
+
+
+//把秒數轉00:00 (分:秒)
+function formatTime(seconds) {
+    minutes = Math.floor(seconds / 60);
+    minutes = (minutes >= 10) ? minutes : "0" + minutes;
+    seconds = Math.floor(seconds % 60);
+    seconds = (seconds >= 10) ? seconds : "0" + seconds;
+    return minutes + ":" + seconds;
+}

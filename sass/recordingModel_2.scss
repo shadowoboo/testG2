@@ -43,3 +43,106 @@
             background-color: #af0715;
         }
     }
+
+
+    //撥放器樣式-----------開始
+    //播放條寬度
+    $defBarWidth:300px;
+    //撥放條高度
+    $defBarHeight:10px;
+    //撥放拉桿寬度
+    $barNoteWidth:10px;
+    //撥放拉桿高度
+    $barNoteHeight:40px;
+    //播放條整包
+    .defBar{
+        width:$defBarWidth ;
+        height:$defBarHeight ;
+        //播放條背景色
+        background-color: #fbc84a;
+        //給拉桿定位用
+        position: relative;
+        cursor: pointer;
+        //進度條
+        .proBar{
+            //寬度隨播放進度變化
+            width: 0%;
+            //高度繼承播放條就好
+            height: inherit;
+            //撥放時的進度條顏色
+            background-color: #076baf;
+            cursor: pointer;
+            // transition:  0.1s linear;
+        }
+        //拉桿
+        .barNote{
+            width: $barNoteWidth;
+            height: $barNoteHeight;
+            // width: 0;
+            // height: 0px;
+            background-color: #076baf;
+            position: absolute;
+            //用公式置中這樣
+            top: -($barNoteHeight/2) + ($defBarHeight/2) ;
+            left:0%; //隨撥放時間移動
+            transform: translateX(-50%);
+            cursor: pointer;
+            // transition: 0.1s linear;
+
+            //額外特效
+            // opacity: 0;
+        }
+        // &:hover .barNote{
+        //     // opacity: 1;
+        // }
+    }
+
+
+    //音量條寬度
+    $volBarWidth:50px;
+    //音量條高度
+    $volBarHeight:5px;
+    //音量拉桿寬度
+    $vol_barNoteWidth:15px;
+    //音量拉桿高度
+    $vol_barNoteHeight:15px;
+    //音量條整包
+    .volBar{
+        width:$volBarWidth ;
+        height:$volBarHeight ;
+        //播放條背景色
+        background-color: #fbc84a;
+        //給拉桿定位用
+        position: relative;
+        cursor: pointer;
+
+        //三角形風格
+        // clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+        //進度條
+        .vol_proBar{
+            //寬度隨音量調整變化，html5音量預設是 1 ，所以我們寬度也設100%
+            width: 100%;
+            //高度繼承音量條就好
+            height: inherit;
+            //音量調整bar的顏色
+            background-color: #076baf;
+            cursor: pointer;
+        }
+        //拉桿
+        .vol_barNote{
+            width: $vol_barNoteWidth;
+            height: $vol_barNoteHeight;
+            background-color: #076baf;
+            position: absolute;
+            //用公式置中這樣
+            top: -($vol_barNoteHeight/2) + ($volBarHeight/2) ;
+            left:100%; //隨音量時間移動，html5音量預設是1，所以我們left也設100%
+            transform: translateX(-50%);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    }
+    .au_btn{
+        cursor: pointer;
+    }
+    //撥放器樣式-----------結束
