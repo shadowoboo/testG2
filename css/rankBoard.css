@@ -363,9 +363,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .rankBoard {
   background-color: #c1f3d2; }
-  .rankBoard section {
-    position: relative;
-    padding-bottom: 10vh; }
+  .rankBoard #sec1, .rankBoard #sec2 {
+    position: relative; }
+  .rankBoard #sec2 {
+    padding: 10vh 0; }
   .rankBoard .mNone {
     display: none; }
   .rankBoard .title {
@@ -527,10 +528,31 @@ input[type=number]::-webkit-outer-spin-button {
           background-color: #00457b; }
         .rankBoard .commentBtns .btnMsg:focus {
           outline: none; } }
+  .rankBoard .msgBox {
+    width: 100%;
+    display: flex;
+    margin: 10px 0; }
+    .rankBoard .msgBox .msg {
+      width: 80%;
+      height: 30px;
+      border: solid 2px #076baf;
+      border-radius: 10px; }
+    .rankBoard .msgBox .sendMsg {
+      width: 20%;
+      height: 30px;
+      color: #fff;
+      background-color: #076baf;
+      border: 2px solid #076baf;
+      position: relative;
+      border-radius: 10px;
+      font-family: g2Font;
+      text-align: center; }
   @media screen and (min-width: 768px) {
-    .rankBoard section {
+    .rankBoard #sec1, .rankBoard #sec2 {
       max-width: 1200px;
       margin: auto; }
+    .rankBoard #sec1 {
+      margin-top: 110px; }
     .rankBoard .rollingItem {
       display: flex;
       flex-flow: row wrap;
@@ -555,14 +577,16 @@ input[type=number]::-webkit-outer-spin-button {
       top: 0;
       left: 52%; }
     .rankBoard #rank_2 {
-      margin-top: 10%;
       left: 26%; }
     .rankBoard #rank_3 {
       position: absolute;
       bottom: 0;
       right: 0; }
     .rankBoard #titleCat {
-      margin-left: 0; }
+      position: absolute;
+      left: 0;
+      top: 50px;
+      transition: .4s; }
     .rankBoard #allPanel {
       display: flex;
       flex-flow: row;
@@ -578,6 +602,7 @@ input[type=number]::-webkit-outer-spin-button {
         box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.4);
         font-size: 20px; }
         .rankBoard #allPanel aside .switch {
+          cursor: pointer;
           width: 100%;
           padding: 10px 5px;
           text-align: center;
@@ -586,11 +611,15 @@ input[type=number]::-webkit-outer-spin-button {
           .rankBoard #allPanel aside .switch:hover {
             color: #fff;
             background-color: #076baf; }
+        .rankBoard #allPanel aside .catLoc {
+          color: #fff;
+          background-color: #076baf; }
       .rankBoard #allPanel #rankPanel {
         width: 31%;
         height: 0;
         padding-bottom: 31%;
-        position: relative; }
+        position: relative;
+        transition: .4s; }
         .rankBoard #allPanel #rankPanel #panelRing {
           position: absolute;
           z-index: 0;
@@ -607,12 +636,16 @@ input[type=number]::-webkit-outer-spin-button {
           position: absolute; }
         .rankBoard #allPanel #rankPanel .sw_rk {
           cursor: pointer; }
+          .rankBoard #allPanel #rankPanel .sw_rk:hover {
+            background-color: #076baf;
+            color: #fff; }
         .rankBoard #allPanel #rankPanel #sw_ring {
           left: 41.5%;
           top: 0%;
           transform: translateY(-50%) rotate(0deg);
           box-shadow: 0 0 0 4px #076baf;
-          transform-origin: center 345%; }
+          transform-origin: center 345%;
+          transition: .5s; }
         .rankBoard #allPanel #rankPanel #sw_1 {
           top: 0%;
           transform: translateY(-50%);
@@ -654,11 +687,12 @@ input[type=number]::-webkit-outer-spin-button {
             z-index: 0; }
       .rankBoard #allPanel .itemDetail {
         width: 45%;
-        height: 90vh;
+        height: 80vh;
         overflow-x: hidden;
         overflow-y: auto;
         background-color: #fff;
-        border-radius: 40px; }
+        border-radius: 40px;
+        transition: .4s; }
         .rankBoard #allPanel .itemDetail .blank {
           padding: 5%;
           text-align: center; }
@@ -734,25 +768,12 @@ input[type=number]::-webkit-outer-spin-button {
                   height: 100%; }
               .rankBoard #allPanel .itemDetail .comments .mem .memCol .commentCtx {
                 color: #737374; }
-              .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox {
-                width: 100%;
-                display: flex;
-                margin: 10px 0; }
-                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox .msg {
-                  width: 80%;
-                  height: 30px;
-                  border: solid 1px #076baf;
-                  border-radius: 7px; }
-                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox .sendMsg {
-                  width: 20%;
-                  height: 30px;
-                  color: #fff;
-                  background-color: #076baf;
-                  border: 2px solid #076baf;
-                  position: relative;
-                  border-radius: 10px;
-                  font-family: g2Font;
-                  text-align: center; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgs {
+                height: 0;
+                overflow: hidden;
+                transition: .3s; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgsShow {
+                height: 100%; }
               .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num {
                 display: flex;
                 padding: 17.5px 0;
