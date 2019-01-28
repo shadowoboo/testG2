@@ -433,8 +433,8 @@ img {
   #copy {
     line-height: 20px;
     font-size: 10px; }
-  #floor {
-    img: 110%; }
+  #floor img {
+    width: 110%; }
   @keyframes shadow-shift {
     0% {
       top: 80px;

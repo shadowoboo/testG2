@@ -159,7 +159,9 @@ img{
     }
 
     #floor {
-        img: 110%;
+        img {
+            width:110%;
+        }
     }
 
     @keyframes shadow-shift {
