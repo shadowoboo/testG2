@@ -1,3 +1,4 @@
+@import "reset";
 @import 'common';
 
 *{
@@ -42,6 +43,14 @@ input {
 
 #serch_title {
     text-align: center;
+    background: url(/images/nnnnn/title.png);
+    background-repeat: no-repeat;
+    width: 260px;
+    margin: auto;
+    h2 {
+        line-height: 163px;
+        color: $blue;
+    }
 }
 
 
@@ -64,6 +73,7 @@ input {
 .serch_serch {
     display: inline-block;
     margin-left: 20px;
+    padding-top: 15px;
 }
 
 
@@ -101,7 +111,9 @@ input {
         }  
     }
 
-   
+    .map_serch_info_line a span{
+        color: $blue;
+    }
 
 }
 

@@ -1,3 +1,62 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*以下是個人喜好*/
+/*圖片隨容器寬變化、去除圖片縫隙*/
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+/*連結消除底線、字體顏色改為黑色*/
+a {
+  text-decoration: none;
+  color: black; }
+
 * {
   box-sizing: border-box; }
 
@@ -291,7 +350,14 @@ input {
   background-color: #f09c8a; }
 
 #serch_title {
-  text-align: center; }
+  text-align: center;
+  background: url(/images/nnnnn/title.png);
+  background-repeat: no-repeat;
+  width: 260px;
+  margin: auto; }
+  #serch_title h2 {
+    line-height: 163px;
+    color: #076baf; }
 
 #serch_form {
   margin: auto;
@@ -305,7 +371,8 @@ input {
 
 .serch_serch {
   display: inline-block;
-  margin-left: 20px; }
+  margin-left: 20px;
+  padding-top: 15px; }
 
 #map {
   width: 100%;
@@ -327,6 +394,8 @@ input {
     padding: 0 10px; }
     .map_serch_box .map_serch_item_info .map_serch_item_info_point, .map_serch_box .map_serch_item_info .map_serch_item_info_distance, .map_serch_box .map_serch_item_info .map_serch_info_line {
       margin-top: 5px; }
+  .map_serch_box .map_serch_info_line a span {
+    color: #076baf; }
 
 @media screen and (min-width: 992px) {
   #map {
