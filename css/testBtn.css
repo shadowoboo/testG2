@@ -9,14 +9,13 @@ html {
   font-size: 34px; }
 
 h1, h2, h3, h4, p, span {
-  font-family: g2Font;
-  line-height: 1.6em; }
+  font-family: g2Font; }
 
 h1 {
   font-size: 40px; }
 
 h2 {
-  font-size: 1rem; }
+  font-size: 34px; }
 
 h3 {
   font-size: 28px; }
@@ -30,7 +29,7 @@ p {
 span {
   font-size: 14px; }
 
-input:focus {
+input:focus, select:focus {
   outline: none; }
 
 .cart {
@@ -156,8 +155,8 @@ input:focus {
 .goToCustom {
   width: 160px;
   height: 60px;
-  color: #737374;
-  background-color: #fbe5dd;
+  color: #fff;
+  background-color: #076baf;
   border: 2px solid transparent;
   border-radius: 10px;
   padding: 0px;
@@ -170,8 +169,8 @@ input:focus {
     outline: none; }
   @media only screen and (min-width: 768px) {
     .goToCustom:hover {
-      color: #737374;
-      background-color: #fca8b7; } }
+      color: #fff;
+      background-color: #00457b; } }
 
 .subscribe {
   width: 210px;

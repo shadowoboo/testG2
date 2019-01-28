@@ -19,14 +19,12 @@ html{
 }
 h1,h2,h3,h4,p,span{
     font-family: g2Font;
-    line-height: 1.6em;
 }
 h1{
     font-size: 40px;
 }
 h2{
-    // font-size: 34px;
-    font-size: 1rem;
+    font-size: 34px;
 }
 h3{
     font-size: 28px;
@@ -40,13 +38,11 @@ p{
 span{
     font-size: 14px;
 }
-
-input{
+input, select{
     &:focus{
         outline: none;
     }
 }
-
 @mixin btn($btns, $width, $height, $color, $bgc, $bordercolor, $bordius, $pad, $hovColor, $hovBgc, $font) {
     .#{$btns} {
         width: $width;
@@ -79,7 +75,7 @@ input{
 @include btn('dimension', 50px, 50px, $yellow, #fff, $yellow, 10px, 0px, $gray, $yellow, 22px);
 @include btn('action', 120px, 40px, $gray, $yellow, transparent, 10px, 0px, #fff, $deepyellow, 22px);
 @include btn('category', 120px, 50px, $blue, #fff, transparent, 10px, 0px, #fff, $blue, 28px);
-@include btn('goToCustom', 160px, 60px, $gray, #fbe5dd, transparent, 10px, 0px, $gray, #fca8b7, 28px);
+@include btn('goToCustom', 160px, 60px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 28px);
 @include btn('subscribe', 210px, 60px, $gray, #fcda85, transparent, 10px, 0px, $gray, #fbc84a, 28px);
 @include btn('month', 100px, 100px, #fff, $blue, transparent, 50%, 0px, $gray, #fbc84a, 22px);
 
