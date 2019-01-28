@@ -705,7 +705,6 @@ input[type=number]::-webkit-outer-spin-button {
             background: linear-gradient(to right, #e97d58 85%, white 10%);
             margin: auto; }
             .rankBoard #allPanel .itemDetail .eva .star img {
-              vertical-align: middle;
               width: 100%;
               height: 100%; }
         .rankBoard #allPanel .itemDetail .comments {
