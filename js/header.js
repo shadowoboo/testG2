@@ -17,7 +17,7 @@ var canvas = document.getElementById('canvas');
         window.onresize = function(){
             canvas.width = canvas.parentNode.offsetWidth;
             canvas.height = canvas.parentNode.offsetHeight;
-}
+} 
 
     //初始角度为0  
     var step = 0;
