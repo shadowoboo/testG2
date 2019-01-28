@@ -294,7 +294,7 @@ footer {
   /* border: 5px solid transparent; */
   z-index: 2; }
   @media screen and (max-width: 767px) {
-    .snack .pic .snack .pic {
+    .snack .pic {
       top: -100px;
       left: 0; } }
 
@@ -308,7 +308,7 @@ footer {
 
 #floor {
   position: absolute;
-  top: 28%;
+  top: 26%;
   z-index: -1; }
 
 #copy {
@@ -405,7 +405,7 @@ img {
   .snack {
     height: 42px; }
   .snack .pic {
-    top: -85px;
+    top: -95px;
     width: 70px;
     left: 0; }
   #copy {
@@ -415,26 +415,26 @@ img {
     bottom: 0; }
   @keyframes shadow-shift {
     0% {
-      top: 30px;
+      top: -10px;
       left: 0;
       width: 70px; }
     25% {
-      top: 60px;
+      top: 20px;
       left: 0;
       transform: rotate(5deg);
       width: 50px;
       opacity: 0.5; }
     50% {
-      top: 30px;
+      top: -10px;
       left: 0;
       width: 70px; }
     75% {
-      top: 60px;
+      top: 20px;
       left: 30px;
       transform: rotate(-5deg);
       width: 50px;
       opacity: 0.5; }
     100% {
-      top: 30px;
+      top: -10px;
       left: 0;
       width: 70px; } } }
