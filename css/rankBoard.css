@@ -1,3 +1,62 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*以下是個人喜好*/
+/*圖片隨容器寬變化、去除圖片縫隙*/
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+/*連結消除底線、字體顏色改為黑色*/
+a {
+  text-decoration: none;
+  color: black; }
+
 * {
   box-sizing: border-box; }
 
@@ -259,6 +318,17 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
+#index h1 {
+  font-size: 72px;
+  background-color: #111;
+  color: #ccc; }
+
+#index a {
+  background-color: #ccc;
+  color: crimson;
+  border-radius: 5px;
+  padding: 10px; }
+
 .rankBoard {
   background-color: #c1f3d2; }
   .rankBoard section {
@@ -297,7 +367,7 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(5px); } }
   .rankBoard .item {
     min-width: 200px;
-    width: 21%;
+    width: 23.33%;
     margin: 5vh auto;
     position: relative;
     animation: floating 1s infinite alternate linear; }
@@ -318,49 +388,58 @@ input[type=number]::-webkit-outer-spin-button {
     .rankBoard .item:hover {
       animation-play-state: paused; }
     .rankBoard .item .itemCountry {
-      width: 9.9%;
+      width: 14.29%;
       position: absolute;
-      top: 20%;
-      right: 13%;
-      border-radius: 100px;
-      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); }
+      top: 20.5%;
+      right: 4.25%;
+      border-radius: 100px; }
     .rankBoard .item .itemCtx {
       width: 62.3%;
+      height: 55%;
       position: absolute;
-      top: 28%;
-      left: 18%;
-      text-align: center; }
+      top: 30%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      flex-flow: wrap; }
       .rankBoard .item .itemCtx .itemImg {
-        width: 76%;
+        width: 90%;
         margin: auto; }
         .rankBoard .item .itemCtx .itemImg img {
           width: 100%; }
+      .rankBoard .item .itemCtx .itemName {
+        line-height: 1.3em; }
       .rankBoard .item .itemCtx .score {
+        margin: auto;
         font-size: 38px;
         line-height: .9em;
         color: #e97d58; }
     .rankBoard .item .star {
-      width: 64%;
-      max-width: 163px;
+      width: 74.4%;
       position: absolute;
-      bottom: 9%;
-      left: 17%;
+      bottom: 4.6%;
+      left: 0;
+      right: 0;
+      margin: auto;
       border-radius: 100px;
       background: linear-gradient(to right, #e97d58 85%, white 10%); }
       .rankBoard .item .star img {
         vertical-align: middle;
-        width: 100%; }
+        width: 100%;
+        height: 100%; }
   .rankBoard .commentBtns {
     display: flex;
-    padding-top: 10px;
-    border-bottom: solid 1px #076baf; }
+    justify-content: space-between;
+    padding-top: 10px; }
     .rankBoard .commentBtns .like {
       width: 28.5%;
       height: 30px;
       color: #fff;
       background-color: #076baf;
       border: 2px solid transparent;
-      border-radius: 10px 0 0 0;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -377,7 +456,7 @@ input[type=number]::-webkit-outer-spin-button {
       color: #076baf;
       background-color: #fff;
       border: 2px solid #076baf;
-      border-radius: 0px;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -394,7 +473,7 @@ input[type=number]::-webkit-outer-spin-button {
       color: #fff;
       background-color: #076baf;
       border: 2px solid transparent;
-      border-radius: 0 10px 0 0;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -405,10 +484,6 @@ input[type=number]::-webkit-outer-spin-button {
         .rankBoard .commentBtns .btnMsg:hover {
           color: #fff;
           background-color: #00457b; } }
-    .rankBoard .commentBtns .like,
-    .rankBoard .commentBtns .share,
-    .rankBoard .commentBtns .btnMsg {
-      font-family: GenJyuuGothicX-Light; }
   @media screen and (min-width: 768px) {
     .rankBoard section {
       max-width: 1200px;
@@ -476,7 +551,7 @@ input[type=number]::-webkit-outer-spin-button {
         .rankBoard #allPanel #rankPanel #panelRing {
           position: absolute;
           z-index: 0;
-          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4)); }
+          filter: drop-shadow(2.5px 0 6px rgba(0, 0, 0, 0.4)); }
         .rankBoard #allPanel #rankPanel .switch {
           font-size: 26px;
           color: #076baf;
@@ -553,7 +628,6 @@ input[type=number]::-webkit-outer-spin-button {
             font-size: 22px;
             line-height: 30px; }
         .rankBoard #allPanel .itemDetail .rank {
-          font-family: GenJyuuGothicX-Light;
           margin: 12.5px 0;
           padding: 5.5px 0;
           border-radius: 10px;
@@ -580,7 +654,6 @@ input[type=number]::-webkit-outer-spin-button {
             color: #076baf; }
           .rankBoard #allPanel .itemDetail .eva .scoreAvg {
             font-size: 64px;
-            font-family: GenJyuuGothicX-Medium;
             color: #e97d58; }
           .rankBoard #allPanel .itemDetail .eva .star {
             width: 68.15%;
@@ -589,7 +662,8 @@ input[type=number]::-webkit-outer-spin-button {
             margin: auto; }
             .rankBoard #allPanel .itemDetail .eva .star img {
               vertical-align: middle;
-              width: 100%; }
+              width: 100%;
+              height: 100%; }
         .rankBoard #allPanel .itemDetail .comments {
           text-align: left; }
           .rankBoard #allPanel .itemDetail .comments h3 {
@@ -611,9 +685,29 @@ input[type=number]::-webkit-outer-spin-button {
                 border-radius: 100px;
                 background: linear-gradient(to right, #e97d58 100%, white 10%); }
                 .rankBoard #allPanel .itemDetail .comments .mem .memCol .star img {
-                  vertical-align: middle; }
+                  vertical-align: middle;
+                  height: 100%; }
               .rankBoard #allPanel .itemDetail .comments .mem .memCol .commentCtx {
-                font-family: GenJyuuGothicX-Light; }
+                color: #737374; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox {
+                width: 100%;
+                display: flex;
+                margin: 10px 0; }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox .msg {
+                  width: 80%;
+                  height: 30px;
+                  border: solid 1px #076baf;
+                  border-radius: 7px; }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msgBox .sendMsg {
+                  width: 20%;
+                  height: 30px;
+                  color: #fff;
+                  background-color: #076baf;
+                  border: 2px solid #076baf;
+                  position: relative;
+                  border-radius: 10px;
+                  font-family: g2Font;
+                  text-align: center; }
               .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num {
                 display: flex;
                 padding: 17.5px 0;
@@ -623,4 +717,6 @@ input[type=number]::-webkit-outer-spin-button {
                 .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .memId {
                   padding: 17.5px 0; }
                 .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .msgCol {
-                  margin-left: 10px; } }
+                  margin-left: 10px; }
+                  .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .msgCol .msgCtx {
+                    color: #737374; } }

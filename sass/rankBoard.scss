@@ -1,5 +1,6 @@
+@import "reset";
 @import 'common';
-
+@import "index";
 
 .rankBoard{
     //body
@@ -70,7 +71,7 @@
             animation: rollGlow 5s  infinite linear;
         }
         min-width: 200px;
-        width:21%;//252px
+        width:23.33%;//252px
         margin: 5vh auto;
         position: relative;
         animation: floating 1s infinite alternate linear;
@@ -78,64 +79,68 @@
             animation-play-state: paused;
         }
         .itemCountry{
-            width: 9.9%;
+            width: 14.29%;
             position: absolute;
-            top: 20%;
-            right: 13%;
+            top: 20.5%;
+            right: 4.25%;
             border-radius: 100px;
-            box-shadow :0px 0px 20px rgba($color: #fff, $alpha: .7);
         }
         .itemCtx{
             width: 62.3%;
-            // height: 244px;
+            height: 55%;
             position: absolute;
-            top: 28%;
-            left: 18%;
+            top: 30%;
+            left: 0;
+            right: 0;
+            margin: auto;
             text-align: center;
+            display: flex;
+            flex-flow: wrap;
             .itemImg{
-               width: 76%;
+               width: 90%;
                margin: auto;
                 img{
                     width: 100%;
                 }
             }
+            .itemName{
+                line-height: 1.3em;
+            }
             .score{
+                margin: auto;
                 font-size: 38px;
                 line-height: .9em;
                 color: #e97d58;
+                
             }
 
         }
         .star{
-            width: 64%;
-            max-width: 163px;
+            width: 74.4%;
             position: absolute;
-            bottom: 9%;
-            left: 17%;
+            bottom: 4.6%;
+            left: 0;
+            right: 0;
+            margin: auto;
             border-radius: 100px;
             background: linear-gradient(to right, rgb(233,125,88) 85%,rgb(255,255,255)10%);
             img{
                 vertical-align: middle;
                 width:100%;
-
+                height: 100%;
             }
         }
     }
 
     .commentBtns {
         display: flex;
+        justify-content: space-between;
         padding-top: 10px;
-        border-bottom: solid 1px #076baf;
-        @include btn('like', 28.5%, 30px, #fff, $blue, transparent, 10px 0 0 0, 0px, #fff, $deepblue, 16px);
-        @include btn('share', 28.5%, 30px, $blue, #fff, $blue, 0px, 0px, #fff, $blue, 16px);
-        @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 0 10px 0 0, 0px, #fff, $deepblue, 16px);
-
-        .like,
-        .share,
-        .btnMsg {
-            font-family: GenJyuuGothicX-Light;
-        }
-
+        // border-bottom: solid 1px #076baf;
+        @include btn('like', 28.5%, 30px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 16px);
+        @include btn('share', 28.5%, 30px, $blue, #fff, $blue, 10px, 0px, #fff, $blue, 16px);
+        @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 10px , 0px, #fff, $deepblue, 16px);
+        
     }
 // screen start
     @media screen and (min-width:$moblie) {
@@ -224,7 +229,7 @@
                     #panelRing {
                         position: absolute;
                         z-index: 0;
-                        filter: drop-shadow(1px 1px 10px rgba(0,0,0,.4));
+                        filter: drop-shadow(2.5px 0 6px rgba(0, 0, 0, 0.4));
                     }
                     .switch{
                         font-size: 26px;
@@ -324,7 +329,7 @@
                       }  
                     }
                     .rank{
-                        font-family: GenJyuuGothicX-Light;
+                        
                         margin:12.5px 0;
                         padding:5.5px 0 ; 
                         border-radius: 10px; 
@@ -361,7 +366,6 @@
                         }
                         .scoreAvg{
                             font-size: 64px;
-                            font-family: GenJyuuGothicX-Medium;
                             color: #e97d58;
                         }
                         .star{
@@ -372,6 +376,7 @@
                             img {
                                 vertical-align: middle;
                                 width: 100%;
+                                height: 100%;
 
                             }
                         }
@@ -401,13 +406,35 @@
                                     background: linear-gradient(to right, rgb(233, 125, 88) 100%, rgb(255, 255, 255)10%);
                                     img{
                                         vertical-align: middle;
+                                        height: 100%;
                                     }
                                 }
                                 .commentCtx{
-                                    font-family: GenJyuuGothicX-Light;
+                                    color: #737374;
                             
                                 }
-
+                                .msgBox{
+                                    width: 100%;
+                                    display: flex;
+                                    margin: 10px 0 ;
+                                    .msg{
+                                        width: 80%;
+                                        height: 30px;
+                                        border: solid 1px #076baf;
+                                        border-radius: 7px;
+                                    }
+                                    .sendMsg{
+                                        width: 20%;
+                                        height: 30px;
+                                        color: #fff;
+                                        background-color: $blue;
+                                        border: 2px solid $blue;
+                                        position: relative;
+                                        border-radius: 10px;
+                                        font-family: g2Font;
+                                        text-align: center;
+                                    }
+                                }
                                 .msg_num{
                                     display: flex;
                                     padding:17.5px 0 ; 
@@ -420,6 +447,9 @@
                                     }
                                     .msgCol{
                                         margin-left: 10px;
+                                        .msgCtx{
+                                            color: #737374;
+                                        }
                                     }
                                 }
                             }
