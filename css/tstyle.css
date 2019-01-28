@@ -57,17 +57,6 @@ a {
   text-decoration: none;
   color: black; }
 
-#index h1 {
-  font-size: 72px;
-  background-color: #111;
-  color: #ccc; }
-
-#index a {
-  background-color: #ccc;
-  color: crimson;
-  border-radius: 5px;
-  padding: 10px; }
-
 a {
   display: block;
   font-family: g2Font;

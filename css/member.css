@@ -3,7 +3,9 @@ body {
 
 .memWrap {
   width: 100%;
-  height: auto; }
+  height: auto;
+  max-width: 1200px;
+  margin: auto; }
   .memWrap form {
     width: 85%;
     height: auto;
@@ -74,6 +76,7 @@ body {
         line-height: 1.6; }
 
 .itemTab2 {
+  max-width: 1200px;
   width: 100%;
   margin: 10% auto; }
   .itemTab2 .tab-list {
@@ -151,19 +154,25 @@ body {
       justify-content: space-between;
       align-items: baseline;
       padding: 2%; }
-  .itemTab2 #tab-1 .description p {
+  .itemTab2 #tab-1 .description h4 {
     color: #076baf;
     text-align: center;
-    line-height: 1.6; }
-  .itemTab2 #tab-1 .description .specify .col4 span {
-    line-height: 2;
-    padding-left: 2%;
-    color: #076baf; }
-  .itemTab2 #tab-1 .description .specify .col4 li {
-    line-height: 1.6;
-    font-size: 12px;
-    padding-left: 2%;
-    color: #076baf; }
+    line-height: 2; }
+  .itemTab2 #tab-1 .description .specify {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .itemTab2 #tab-1 .description .specify .col4 {
+      width: 50%; }
+      .itemTab2 #tab-1 .description .specify .col4 p {
+        line-height: 2;
+        padding-left: 2%;
+        color: #076baf; }
+      .itemTab2 #tab-1 .description .specify .col4 li {
+        line-height: 1.6;
+        font-size: 16px;
+        padding-left: 2%;
+        color: #076baf; }
   .itemTab2 #tab-1 .description .btn {
     padding: 2% 0; }
     .itemTab2 #tab-1 .description .btn p {
@@ -174,7 +183,8 @@ body {
       border-radius: 5px;
       line-height: 1.6;
       margin: auto;
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
   .itemTab2 #tab-2 .orderList {
     display: flex;
     flex-direction: column;
@@ -184,17 +194,17 @@ body {
       line-height: 1.6; }
       .itemTab2 #tab-2 .orderList table th {
         color: #076baf;
-        font-size: 15px;
+        font-size: 16px;
         font-family: g2Font; }
       .itemTab2 #tab-2 .orderList table td {
         color: #076baf;
-        font-size: 13px; }
+        font-size: 15px; }
     .itemTab2 #tab-2 .orderList table:first-child th {
       width: 30%;
       padding: 1% 3%; }
     .itemTab2 #tab-2 .orderList table:last-child th {
       width: 33%;
-      padding: 0 3%; }
+      padding: 1% 3%; }
   .itemTab2 #tab-2 .total {
     text-align: right;
     padding: 1% 2%; }
@@ -238,7 +248,7 @@ body {
 @media screen and (min-width: 769px) {
   .memWrap form {
     margin: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     height: 33vh;
     display: flex;
     flex-direction: row;
@@ -279,7 +289,7 @@ body {
       .itemTab2 #tab-1 .description .btn {
         padding: 2% 0; }
         .itemTab2 #tab-1 .description .btn p {
-          width: 10%;
+          width: 15%;
           font-size: 16px; }
     .itemTab2 #tab-2 .orderList {
       display: flex;
@@ -290,6 +300,6 @@ body {
         .itemTab2 #tab-2 .orderList table td {
           padding-left: 1%; }
       .itemTab2 #tab-2 .orderList table:first-child th {
-        width: 20%; }
+        width: 50%; }
       .itemTab2 #tab-2 .orderList table:last-child th {
-        width: 20%; } }
+        width: 50%; } }

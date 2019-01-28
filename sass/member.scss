@@ -9,6 +9,8 @@ body{
 .memWrap{
     width: 100%;
     height: auto;
+    max-width: 1200px;
+    margin: auto;
    
     form{
         width: 85%;
@@ -137,6 +139,7 @@ body{
 //-------------------------以下為頁籤頁面---------------------------
 
 .itemTab2{
+    max-width: 1200px;
     width: 100%;
     // height: 100vh;
     margin: 10% auto;
@@ -258,15 +261,19 @@ body{
             }
         }
         .description{
-            p{
+            h4{
                 color: $tabColor; 
                 text-align: center;
-                line-height: 1.6;
+                line-height: 2;
             }
             
             .specify{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
                 .col4{
-                    span{
+                    width: 50%;
+                    p{
                         line-height: 2;
                         padding-left: 2%;
                         color: $tabColor; 
@@ -274,7 +281,7 @@ body{
                     }
                     li{
                         line-height: 1.6;
-                        font-size: 12px;
+                        font-size: 16px;
                         padding-left: 2%;
                         color: $tabColor;
                     }
@@ -292,6 +299,7 @@ body{
                     line-height: 1.6;
                     margin: auto;
                     cursor: pointer;
+                    text-align: center;
                 }
                 
             }
@@ -313,12 +321,12 @@ body{
                 th{
                    
                     color: $tabColor;
-                    font-size: 15px;
+                    font-size: 16px;
                     font-family: g2Font;
                 }
                 td{
                     color: $tabColor;
-                    font-size: 13px;
+                    font-size: 15px;
                 }
             }
             table:first-child{
@@ -333,7 +341,7 @@ body{
             table:last-child{
                 th{
                     width: 33%;
-                    padding: 0 3%;
+                    padding: 1% 3%;
                 }
             }
                         
@@ -405,7 +413,7 @@ body{
       
 
 
-
+//--------------------手機RWD--------------------------
 
 @media screen and(max-width:768px){
     .memWrap{
@@ -416,13 +424,14 @@ body{
         
     }
 }
+//------------------桌機ＲＷＤ--------------------------
 
 @media screen and(min-width:769px){
     .memWrap{
         
         form{
             margin: auto;
-            margin-top: 10%;
+            margin-top: 15%;
             height: 33vh;
             display: flex;
             flex-direction: row;
@@ -484,7 +493,7 @@ body{
                 .btn{
                     padding: 2% 0;
                      p{
-                         width: 10%; 
+                         width: 15%; 
                          font-size: 16px; 
                          
                      }
@@ -510,14 +519,15 @@ body{
                 table:first-child{
                 
                     th{
-                        width: 20%;
+                        width: 50%;
                         
                     }     
     
                 }
                 table:last-child{
                     th{
-                        width: 20%;
+                        
+                        width: 50%;
                     }
                 }
             }
