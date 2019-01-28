@@ -49,3 +49,4 @@
 const memFunctionTab = document.querySelectorAll(".tab-list li");
 const tabLink= document.querySelectorAll("tab-control");
 
+
