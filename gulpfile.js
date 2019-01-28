@@ -3,11 +3,15 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var jquery = require('gulp-jquery');
+var sourcemaps = require('gulp-sourcemaps');
 
 // sass 編譯函式
 gulp.task('sass', function () {
     return gulp.src('./sass/*.scss') //來源目錄
+        .pipe(sourcemaps.init()) // Initializes sourcemaps
         .pipe(sass().on('error', sass.logError)) //經由sass 轉譯
+        // 寫入sourcemaps到當前資料夾(以下下列dest('../css')為基準點，sourceRoot：以匯出的資料夾為基準點找他原本的scss資料夾位置。
+        .pipe(sourcemaps.write('./', { includeContent: false, sourceRoot: '../sass' }))
         .pipe(gulp.dest('./css')); //目的地目錄
 });
 
