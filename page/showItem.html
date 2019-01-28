@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大零食家 每月排行</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/showItem.css">
+
+    <script src="/js/common.js"></script>
+    <script src="/js/Chart.js"></script>
+</head>
+
+<body id="showItem">
+    <!-- header Start -->
+    <!-- header End -->
+
+    <section id='item'>
+        <div class="itemCol leftCol">
+            <img class="itemImg" src="/images/rankBoard/item4.jpg" alt="商品圖">
+            <div class="rank" id="allRank">2019年1月綜合排行 第1名</div>
+            <div class="rank" id="catRank">2019年1月餅乾排行 第1名</div>
+            <div class="rank" id="flaRank">2019年1月甜食排行 第1名</div>
+
+            <div id="rankGrid">
+                    <div class="col">
+                        <img class="crown"src="/images/rankBoard/crown.png" alt="皇冠">
+                    </div>
+
+                    <div class="col radar">
+                        <canvas class="radarCanvas"></canvas>
+                    </div>
+                    <div class="col score">
+                                <p id="rate">好評度</p>
+                                <p class="scoreAvg">4.7<span class="total">/5</span></p>
+                                <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                                <p class="evaTimes">共348次評價</p>
+                    </div>
+                    <div class="col stars">
+                        <p>甜<span id="sweet" class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></span><span>4.9</span></p>
+                        <p>酸<span id="sour" class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></span><span>4.0</span></p>
+                        <p>辣<span id="spicy" class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></span><span>0.0</span></p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="itemCol rightCol">
+            <h2>
+                [日本]UHA味覺糖甘藷片
+            </h2>
+            <p id="itemDsc">
+                UHA味覺糖推出的蕃薯片系列，採用鹿耳島黃金千貫品種的白皮地瓜製作，經常當作日本燒烤的主要原料，片片厚切，口感稍硬頗具咬勁，甜度適中和芳醇的香味，令人一吃上癮。收錄在2018年9月零食箱中。
+            </p>
+            <p id="price">價格<span>$45</span></p>
+            <div id="itemNum">
+                <p>數量</p>
+                <div class="numInput">
+                    <span class="numMinus">-</span><input type="number" value="1"><span class="numPlus">+</span>
+                </div>
+                <button class="cart">加入購物車</button>
+                <button class="heart"><i class="far fa-heart"></i></button>
+            </div>
+            <p>
+                成分
+                <span id="ingre">蕃薯,砂糖,棕櫚油,抗氧化劑(維生素E)</span>
+            </p>
+            <div class="map">
+                <p>尋找最近的販賣機</p>
+                <img src="/images/rankBoard/map.png" alt="地圖">
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <section id="comment">
+        <div class="comments">
+            <h3>商品評價</h3>
+
+            <div class="comment">
+
+                <div class="mem">
+                    <div class="memPic">
+                        <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                    </div>
+
+                    <div class="memCol">
+                        <p class="memId">Apple12345678</p>
+                        <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                        <p class="commentCtx">
+                            真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                        </p>
+
+                        <div class="commentBtns">
+                            <button class="like"><i class="far fa-thumbs-up"></i>(0人)</button>
+                            <button class="share"><i class="fas fa-share"></i>分享</button>
+                            <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
+                        </div>
+
+                        <div class="msgs">
+                            <div class="msg_num msg_1">
+                                <div class="memPic">
+                                    <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                </div>
+                                <div class="msgCol">
+                                    <p class="memId">Apple12345678</p>
+                                    <p class="msgCtx">太啦!</p>
+                                </div>
+                            </div>
+                            <div class="msg_num msg_2">
+                                <div class="memPic">
+                                    <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                </div>
+                                <div class="msgCol">
+                                    <p class="memId">Bpple12345678</p>
+                                    <p class="msgCtx">再啦!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mem">
+                    <div class="memPic">
+                        <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                    </div>
+
+                    <div class="memCol">
+                        <p class="memId">Apple12345678</p>
+                        <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                        <p class="commentCtx">
+                            真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                        </p>
+
+                        <div class="commentBtns">
+                            <button class="like"><i class="far fa-thumbs-up"></i>按讚(0人)</button>
+                            <button class="share"><i class="fas fa-share"></i>分享</button>
+                            <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id='moreItem'>
+        
+    </section>
+    <!-- footer Start -->
+    <!-- footer End -->
+</body>
+<script src="/js/rankBoard.js"></script>
+
+</html>

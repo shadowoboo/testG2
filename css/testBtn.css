@@ -9,7 +9,8 @@ html {
   font-size: 34px; }
 
 h1, h2, h3, h4, p, span {
-  font-family: g2Font; }
+  font-family: g2Font;
+  line-height: 1.6em; }
 
 h1 {
   font-size: 40px; }
