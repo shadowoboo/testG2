@@ -113,8 +113,8 @@ header {
       position: fixed;
       top: 2%; }
       header nav .menu .logo img {
-        width: 90px;
-        height: 80px; }
+        width: 85px;
+        height: 70px; }
     header nav .menu .list li:first-child:hover a {
       color: #53a9f5; }
     header nav .menu .list li:nth-child(4):hover a {
@@ -145,7 +145,7 @@ header {
     width: 100%;
     height: auto; }
     header .menu .logo {
-      left: 38%; }
+      left: 39%; }
     header .menu #ham {
       margin-top: 4%;
       width: 100%;
@@ -203,12 +203,12 @@ header {
           display: none; }
   header .login {
     position: absolute;
-    top: 10%;
+    top: 12%;
     right: 0;
-    width: 40%;
+    width: 28%;
     height: 35px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     z-index: -1; }
     header .login li {
@@ -253,22 +253,22 @@ header {
               top: 25px;
               left: 0px; }
     header .login {
-      width: 20%;
+      width: 18%;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-top: -1.3%; }
+      margin-top: -2.3%; }
       header .login li {
         text-align: center;
         width: 30%;
-        padding: 1% 2%; }
+        padding: 1% 3%; }
         header .login li span {
           display: block;
           font-size: 14px;
           line-height: 1.6; }
       header .login li:first-child {
-        width: 15%; }
+        width: 20%; }
       header .login li:last-child {
         width: 15%; } }
 
@@ -531,179 +531,3 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
-
-* {
-  outline: 1px solid #f00; }
-
-body {
-  background-color: #b8f1ed; }
-
-.memWrap {
-  width: 100%;
-  height: auto; }
-  .memWrap form {
-    width: 85%;
-    height: auto;
-    background-color: #fff;
-    border-radius: 10px; }
-    .memWrap form .col-1 {
-      width: 100%;
-      height: 100px; }
-      .memWrap form .col-1 tr {
-        width: 100%;
-        height: 80px; }
-        .memWrap form .col-1 tr td {
-          text-align: center;
-          padding-top: 1%; }
-          .memWrap form .col-1 tr td div {
-            margin: auto;
-            margin-top: 5%;
-            width: 30%;
-            border: 2px dotted #076baf;
-            border-radius: 50%; }
-            .memWrap form .col-1 tr td div img {
-              width: 70%;
-              padding-top: 2%; }
-          .memWrap form .col-1 tr td p {
-            padding: 10px;
-            color: #076baf; }
-            .memWrap form .col-1 tr td p input {
-              width: 50%;
-              padding-top: 5px; }
-            .memWrap form .col-1 tr td p img {
-              width: 3%; }
-    .memWrap form .col-2 {
-      width: 100%; }
-      .memWrap form .col-2 tr {
-        width: 100%;
-        height: 30px; }
-        .memWrap form .col-2 tr td {
-          padding: 2% 3%;
-          text-align: center; }
-          .memWrap form .col-2 tr td p {
-            color: #076baf;
-            padding: 1%; }
-            .memWrap form .col-2 tr td p input {
-              color: #076baf;
-              width: 80px;
-              background-color: transparent;
-              border: 1px solid #fff; }
-            .memWrap form .col-2 tr td p img {
-              width: 3%; }
-      .memWrap form .col-2 tr:nth-child(5) input {
-        font-size: 12px; }
-    .memWrap form .col-3 {
-      width: 100%;
-      height: 30px; }
-      .memWrap form .col-3 tr td {
-        padding: 2% 3%;
-        text-align: center;
-        height: 35px; }
-        .memWrap form .col-3 tr td p {
-          color: #076baf;
-          line-height: 1.6; }
-      .memWrap form .col-3 tr:last-child span {
-        color: #f00;
-        line-height: 1.6; }
-
-.itemTab2 {
-  width: 100%;
-  height: auto;
-  margin: 10% auto; }
-  .itemTab2 .tab-list {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 3% auto; }
-    .itemTab2 .tab-list li {
-      position: relative;
-      z-index: -1; }
-      .itemTab2 .tab-list li h4 {
-        position: absolute;
-        top: 32%;
-        left: 23%;
-        text-align: center;
-        color: #076baf; }
-    .itemTab2 .tab-list li:last-child h4 {
-      left: 18%; }
-  .itemTab2 .tab-panel {
-    width: 85%;
-    height: 50vh;
-    background-color: #fff;
-    border-radius: 15px;
-    margin: auto; }
-  .itemTab2 #tab-1 .levelInfor {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .itemTab2 #tab-1 .levelInfor span {
-      font-size: 10px;
-      line-height: 2; }
-    .itemTab2 #tab-1 .levelInfor .topLevel {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: flex-start; }
-    .itemTab2 #tab-1 .levelInfor .procBar {
-      position: relative; }
-      .itemTab2 #tab-1 .levelInfor .procBar .baby {
-        width: 8%;
-        height: 8%;
-        position: absolute;
-        top: 13%;
-        left: 2%; }
-        .itemTab2 #tab-1 .levelInfor .procBar .baby img {
-          width: 100%; }
-      .itemTab2 #tab-1 .levelInfor .procBar .colorBar {
-        border: 1px solid #000;
-        border-radius: 15px;
-        width: 90%;
-        height: 60px;
-        margin: auto; }
-        .itemTab2 #tab-1 .levelInfor .procBar .colorBar .nowPro {
-          width: 16%;
-          height: 100%;
-          background-color: #f8dcd3;
-          border-radius: 15px 0 0 15px; }
-      .itemTab2 #tab-1 .levelInfor .procBar .kid {
-        position: absolute;
-        top: 68%;
-        left: 15%;
-        width: 8%;
-        height: 15%; }
-        .itemTab2 #tab-1 .levelInfor .procBar .kid img {
-          width: 100%; }
-    .itemTab2 #tab-1 .levelInfor .bottumLevel {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 0 2%; }
-  .itemTab2 #tab-1 .description p {
-    color: #076baf;
-    text-align: center; }
-  .itemTab2 #tab-1 .description .specify {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-around; }
-
-@media screen and (max-width: 768px) {
-  .memWrap form {
-    margin: auto;
-    margin-top: 30%; } }
-
-@media screen and (min-width: 769px) {
-  .memWrap form {
-    margin: auto;
-    margin-top: 10%;
-    height: 33vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: space-around; } }
