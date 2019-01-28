@@ -431,7 +431,7 @@ img {
 
 @media screen and (min-width: 578px) and (max-width: 767px) {
   #copy {
-    line-height: 20px;
+    line-height: 12px;
     font-size: 10px; }
   #floor img {
     width: 110%; }
