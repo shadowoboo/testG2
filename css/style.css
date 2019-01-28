@@ -625,9 +625,6 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-body {
-  background-color: #fadfd4; }
-
 section {
   width: 100%;
   height: 100vh;
@@ -852,15 +849,17 @@ section {
       top: 50%;
       left: 50%; }
   .section_15 .pics {
-    width: 100%;
-    height: 300px;
+    width: 300px;
+    height: 230px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #fff; }
     .section_15 .pics .pic {
       flex: 5;
       cursor: move; }
+      .section_15 .pics .pic img {
+        width: 60px; }
   .section_15 #btns15 {
     position: relative;
     z-index: 10;
@@ -888,6 +887,7 @@ section {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
       height: 60px;
       background-color: #ffff;
       border: 3px solid #fbc84a; }
@@ -939,7 +939,8 @@ section {
   justify-content: flex-start;
   align-items: center; }
   .leftBox #ctrl_bar {
-    margin: 12px; }
+    margin: 0px;
+    z-index: 10; }
     .leftBox #ctrl_bar .btn {
       width: 50px;
       height: 50px;
@@ -1024,7 +1025,6 @@ a {
 .form {
   flex: 1;
   background: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
   border-radius: 10px;
   margin: 12px;
   border: 10px solid #fbc849; }
