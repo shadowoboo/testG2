@@ -448,6 +448,7 @@
       box-shadow: 2px 2px 5px #0000004b;
       cursor: pointer; }
 
+<<<<<<< HEAD
 .section_15 {
   display: flex;
   position: relative;
@@ -546,6 +547,8 @@
       top: 50%;
       left: 50%; }
 
+=======
+>>>>>>> jonathan
 #ctrl_bar {
   display: flex;
   justify-content: space-around; }

@@ -1,0 +1,1287 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*以下是個人喜好*/
+/*圖片隨容器寬變化、去除圖片縫隙*/
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+/*連結消除底線、字體顏色改為黑色*/
+a {
+  text-decoration: none;
+  color: black; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: g2Font;
+  src: url(../GenJyuuGothicX-Medium.ttf); }
+
+h1, h2, h3, h4, p, span {
+  font-family: g2Font; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 34px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 22px; }
+
+p {
+  font-size: 16px; }
+
+span {
+  font-size: 14px; }
+
+.cart {
+  width: 150px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .cart:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.detail {
+  width: 150px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .detail:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.step {
+  width: 130px;
+  height: 45px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .step:hover {
+      color: #fff;
+      background-color: #00457b; } }
+
+.dimension {
+  width: 50px;
+  height: 50px;
+  color: #fbc84a;
+  background-color: #fff;
+  border: 2px solid #fbc84a;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .dimension:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.action {
+  width: 120px;
+  height: 40px;
+  color: #737374;
+  background-color: #fbc84a;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .action:hover {
+      color: #fff;
+      background-color: #ffb600; } }
+
+.category {
+  width: 120px;
+  height: 50px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .category:hover {
+      color: #fff;
+      background-color: #076baf; } }
+
+.goToCustom {
+  width: 160px;
+  height: 60px;
+  color: #737374;
+  background-color: #fbe5dd;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .goToCustom:hover {
+      color: #737374;
+      background-color: #fca8b7; } }
+
+.subscribe {
+  width: 210px;
+  height: 60px;
+  color: #737374;
+  background-color: #fcda85;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .subscribe:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  background-color: #076baf;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 0px;
+  font-family: g2Font;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .month:hover {
+      color: #737374;
+      background-color: #fbc84a; } }
+
+.month {
+  position: relative; }
+  .month::after {
+    content: '';
+    display: block;
+    background-color: #00457b;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1; }
+
+.heart, .trash {
+  width: 56px;
+  height: 45px;
+  color: #076baf;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  border-radius: 10px;
+  padding: 0px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer; }
+  @media only screen and (min-width: 768px) {
+    .heart:hover, .trash:hover {
+      background-color: #076baf;
+      color: #fff; } }
+
+.numInput {
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #076baf;
+  position: relative;
+  border-radius: 10px;
+  margin: 10px 0px;
+  font-family: g2Font;
+  text-align: center; }
+  .numInput span {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #076baf;
+    position: absolute;
+    top: -2px;
+    line-height: 40px;
+    font-size: 30px;
+    cursor: pointer; }
+  .numInput .numMinus {
+    left: 0px;
+    border-radius: 10px 0 0 10px; }
+  .numInput .numPlus {
+    right: 0px;
+    border-radius: 0 10px 10px 0; }
+
+input[type=number] {
+  border: 0px solid transparent;
+  background-color: transparent;
+  font-size: 22px;
+  font-family: g2Font;
+  text-align: center;
+  width: 100%; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+body {
+  background-color: #fadfd4; }
+
+section {
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.cus {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+
+.customized {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #fadfd4;
+  overflow: hidden; }
+  .customized .makingStep {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    height: 100px;
+    margin: 50px;
+    margin-bottom: 100px; }
+    .customized .makingStep .cloud {
+      width: 120px; }
+    .customized .makingStep .step1 {
+      position: relative; }
+      .customized .makingStep .step1:before {
+        font-family: g2Font;
+        content: "1";
+        position: absolute;
+        top: 27px;
+        left: 54px;
+        font-size: 22px; }
+      .customized .makingStep .step1:after {
+        content: "";
+        position: absolute;
+        top: 38px;
+        left: 121px;
+        width: 108px;
+        height: 4px;
+        background-color: #fff; }
+    .customized .makingStep .step2 {
+      position: relative; }
+      .customized .makingStep .step2:before {
+        font-family: g2Font;
+        content: "2";
+        position: absolute;
+        top: 27px;
+        left: 54px;
+        font-size: 22px; }
+      .customized .makingStep .step2:after {
+        content: "";
+        position: absolute;
+        top: 38px;
+        left: 121px;
+        width: 108px;
+        height: 4px;
+        background-color: #fff; }
+    .customized .makingStep .step3 {
+      position: relative; }
+      .customized .makingStep .step3:before {
+        font-family: g2Font;
+        content: "3";
+        position: absolute;
+        top: 27px;
+        left: 54px;
+        font-size: 22px; }
+      .customized .makingStep .step3:after {
+        content: "";
+        position: absolute;
+        top: 38px;
+        left: 121px;
+        width: 108px;
+        height: 4px;
+        background-color: #fff; }
+    .customized .makingStep .step4 {
+      position: relative; }
+      .customized .makingStep .step4:before {
+        font-family: g2Font;
+        content: "4";
+        position: absolute;
+        top: 27px;
+        left: 54px;
+        font-size: 22px; }
+    .customized .makingStep p {
+      font-family: g2Font;
+      font-size: 22px;
+      text-align: center;
+      color: #737374;
+      padding: 5px;
+      font-weight: 900; }
+  .customized .priceSign {
+    font-family: g2Font;
+    font-size: 30px;
+    padding: 5px 10px;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    background-color: #fbc84a;
+    transform: translateY(-50px); }
+  .customized .snackHouse {
+    background-color: #df9bac;
+    border-radius: 10px;
+    border: 19px solid #fca8b7; }
+    .customized .snackHouse .roof {
+      position: relative;
+      transform: scale(1.1) translateY(-62px); }
+    .customized .snackHouse .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px; }
+      .customized .snackHouse .container .box {
+        width: 50%;
+        height: 300px; }
+      .customized .snackHouse .container .boxImg {
+        width: 50%;
+        height: 300px; }
+
+.section_15 {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: -33px; }
+  .section_15 .camera {
+    height: 245px;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px; }
+  .section_15 .boxBase {
+    width: 350px;
+    height: 150px;
+    position: relative;
+    background-color: transparent;
+    transform-origin: center center;
+    transform: translateZ(-125px) rotateX(-90deg) rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section_15 .surface {
+    background-color: #aaf;
+    border: 1px dashed #0000004b;
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    transform-origin: center center;
+    transition: .5s; }
+  .section_15 .surface_top {
+    width: 350px;
+    height: 250px;
+    transform-origin: top center;
+    transform: translate3d(0, 50px, -125px) rotateX(90deg);
+    line-height: 250px;
+    backface-visibility: hidden; }
+  .section_15 .surface_top_inner {
+    width: 350px;
+    height: 250px;
+    transform-origin: top center;
+    transform: translate3d(0, 50px, -125px) rotateX(90deg) rotateY(180deg);
+    line-height: 250px;
+    backface-visibility: hidden; }
+  .section_15 .surface_down {
+    width: 350px;
+    height: 250px;
+    transform: rotateX(-90deg) translateZ(75px);
+    line-height: 250px; }
+  .section_15 .surface_front {
+    width: 350px;
+    height: 150px;
+    transform: rotateY(0deg) translateZ(125px);
+    line-height: 150px; }
+  .section_15 .surface_back {
+    width: 350px;
+    height: 150px;
+    transform: rotateY(180deg) translateZ(125px);
+    line-height: 150px; }
+  .section_15 .surface_left {
+    width: 250px;
+    height: 150px;
+    transform: rotateY(-90deg) translateZ(175px);
+    line-height: 150px; }
+  .section_15 .surface_right {
+    width: 250px;
+    height: 150px;
+    transform: rotateY(90deg) translateZ(175px);
+    line-height: 150px; }
+  .section_15 .surface_top {
+    background-color: #076baf; }
+  .section_15 .surface_down {
+    background-color: #076baf; }
+  .section_15 .surface_front {
+    background-color: #fbc84a; }
+  .section_15 .surface_back {
+    background-color: #fbc84a; }
+  .section_15 .surface_left {
+    background-color: #fbc84a; }
+  .section_15 .surface_right {
+    background-color: #fbc84a; }
+  .section_15 .surface {
+    overflow: hidden; }
+    .section_15 .surface .droped_img {
+      display: block;
+      cursor: move; }
+      .section_15 .surface .droped_img.select {
+        outline: #e26565 dashed 10px;
+        transition: 0.3s; }
+    .section_15 .surface #a1 {
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+  .section_15 .pics {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; }
+    .section_15 .pics .pic {
+      flex: 5;
+      cursor: move; }
+  .section_15 #btns15 {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    margin: 12px auto; }
+    .section_15 #btns15 .btn {
+      font-size: 30px;
+      text-align: center;
+      padding: 0 15px;
+      cursor: pointer; }
+    .section_15 #btns15 img {
+      width: 35px; }
+    .section_15 #btns15 i {
+      font-size: 27px;
+      margin-top: 4px; }
+  .section_15 .purchaseDetail {
+    width: 45%;
+    height: 470px;
+    margin: 16px;
+    background-color: #ffffff;
+    border: 7px solid #fbc84a;
+    border-radius: 10px; }
+    .section_15 .purchaseDetail .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: 60px;
+      background-color: #ffff;
+      border: 3px solid #fbc84a; }
+      .section_15 .purchaseDetail .title p {
+        font-size: 20px;
+        font-weight: 900; }
+    .section_15 .purchaseDetail .list {
+      height: 400px;
+      overflow-y: scroll; }
+      .section_15 .purchaseDetail .list .item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        border: 3px solid #fbc84a; }
+        .section_15 .purchaseDetail .list .item .pic {
+          width: 100px;
+          height: 50px;
+          background-size: 100%; }
+        .section_15 .purchaseDetail .list .item .pic01 {
+          background: url(../images/customized/shopping/chocolate/choco-4.png) center no-repeat;
+          background-size: 100%; }
+        .section_15 .purchaseDetail .list .item .pic02 {
+          background: url(../images/customized/shopping/chocolate/58671.png) center no-repeat;
+          background-size: 100%; }
+        .section_15 .purchaseDetail .list .item .pic03 {
+          background: url(../images/customized/shopping/chocolate/58665.png) center no-repeat;
+          background-size: 100%; }
+        .section_15 .purchaseDetail .list .item .pic04 {
+          background: url(../images/customized/shopping/chocolate/milk_405x400_100g_new_swissclassic_milk.png) center no-repeat;
+          background-size: 100%; }
+        .section_15 .purchaseDetail .list .item p {
+          font-size: 15px; }
+        .section_15 .purchaseDetail .list .item span {
+          font-size: 15px; }
+
+.cardBox {
+  width: 500px;
+  margin: auto; }
+
+.leftBox {
+  display: flex;
+  flex: 2;
+  height: 400px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
+  .leftBox #ctrl_bar {
+    margin: 12px; }
+    .leftBox #ctrl_bar .btn {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+      cursor: pointer; }
+
+.showBox {
+  width: 100%;
+  height: 250px; }
+
+.stepRegion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  text-align: center; }
+  .stepRegion .mt {
+    margin: 15px 10px; }
+
+a {
+  text-decoration: none;
+  transition: .5s ease; }
+  a:hover {
+    color: #fac031; }
+
+.tab-group-1 {
+  list-style: none;
+  padding: 0; }
+  .tab-group-1:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .tab-group-1 li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: #121111;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease; }
+    .tab-group-1 li a:hover {
+      color: #076baf; }
+  .tab-group-1 .active a {
+    background: #fbc84a;
+    color: #076baf; }
+
+.tab-content-1 > div:last-child {
+  display: none; }
+
+.tab-group-2 {
+  list-style: none;
+  padding: 0; }
+  .tab-group-2:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .tab-group-2 li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: #121111;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease; }
+    .tab-group-2 li a:hover {
+      color: #076baf; }
+  .tab-group-2 .active a {
+    background: #fbc84a;
+    color: #076baf; }
+
+.tab-content-2 > div:last-child {
+  display: none; }
+
+.form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 12px;
+  border: 10px solid #fbc849; }
+  .form a {
+    font-family: g2Font; }
+
+.top-row .pickColor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background-color: #fff; }
+  .top-row .pickColor .colorBtn {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    border: 2px solid #9b9b9b;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer; }
+  .top-row .pickColor .color1 {
+    background-color: #f68484; }
+  .top-row .pickColor .color2 {
+    background-color: #6397db; }
+  .top-row .pickColor .color3 {
+    background-color: #69ff8a; }
+  .top-row .pickColor .color4 {
+    background-color: #f584ff; }
+  .top-row .pickColor .color5 {
+    background-color: #fae674; }
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%; }
+  .top-row > div:last-child {
+    margin: 0; }
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #fbc84a;
+  color: #076baf;
+  transition: all 0.5s ease;
+  -webkit-appearance: none; }
+  .button:hover, .button:focus {
+    background: #fac031; }
+
+.button-block {
+  display: block;
+  width: 100%; }
+
+.forgot {
+  margin-top: -20px;
+  text-align: right; }
+
+.pickCard {
+  flex: 1;
+  color: dimgray;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 12px;
+  border: 10px solid #fbc849; }
+  .pickCard ul {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center; }
+    .pickCard ul .tab {
+      font-family: g2Font;
+      text-decoration: none;
+      padding: 15px;
+      color: #121111;
+      font-size: 20px;
+      float: left;
+      width: 33.333%;
+      text-align: center;
+      cursor: pointer;
+      transition: .5s ease; }
+    .pickCard ul .yellow {
+      background-color: #fbc84a;
+      color: #076baf; }
+  .pickCard .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: #fff; }
+    .pickCard .content .cardStyle {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
+      .pickCard .content .cardStyle .small {
+        flex-grow: 1;
+        width: 40%;
+        height: 100px;
+        margin: 4px;
+        background-size: 100%;
+        cursor: pointer; }
+    .pickCard .content .cardText {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      margin: auto; }
+      .pickCard .content .cardText #btns7 {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; }
+        .pickCard .content .cardText #btns7 .btn7 {
+          width: auto;
+          height: auto;
+          font-family: g2Font;
+          font-size: 22px;
+          padding: 15px; }
+      .pickCard .content .cardText #text {
+        width: 80%;
+        height: 30px;
+        margin: auto;
+        margin-bottom: 15px;
+        border-radius: 10px; }
+      .pickCard .content .cardText .showCard {
+        position: absolute;
+        top: -185px;
+        left: -666px;
+        z-index: 3;
+        width: 600px;
+        height: 400px; }
+        .pickCard .content .cardText .showCard .textTeam {
+          width: 80%;
+          height: 100px;
+          max-width: 350px;
+          min-width: 50px;
+          max-height: 200px;
+          min-height: 50px;
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          overflow: auto;
+          resize: none;
+          font-size: 20px;
+          background-color: transparent; }
+          .pickCard .content .cardText .showCard .textTeam:hover {
+            outline: #3333334b solid 1px; }
+          .pickCard .content .cardText .showCard .textTeam:hover .ctrlPos {
+            background-color: #afa;
+            color: #333; }
+          .pickCard .content .cardText .showCard .textTeam:hover .textResize {
+            border-style: solid;
+            border-width: 0 0 15px 15px;
+            border-color: transparent transparent #007bff transparent;
+            cursor: se-resize; }
+          .pickCard .content .cardText .showCard .textTeam .ctrlPos {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            height: 20px;
+            background-color: transparent;
+            color: transparent; }
+            .pickCard .content .cardText .showCard .textTeam .ctrlPos:hover {
+              cursor: move; }
+          .pickCard .content .cardText .showCard .textTeam .textarea {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: calc(100% - 20px);
+            width: 100%;
+            overflow: hidden; }
+            .pickCard .content .cardText .showCard .textTeam .textarea:focus {
+              box-shadow: #007bff 0px 0px 0px 2px inset; }
+            .pickCard .content .cardText .showCard .textTeam .textarea:empty:before {
+              content: attr(placeholder);
+              color: #aaa; }
+        .pickCard .content .cardText .showCard .sectionCard {
+          width: 100%;
+          height: 50vh;
+          display: flex; }
+          .pickCard .content .cardText .showCard .sectionCard .cardCamera {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBase {
+              margin: auto;
+              position: relative;
+              background-color: transparent;
+              transform-origin: center center;
+              transform-style: preserve-3d;
+              transition: 0.3s;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover {
+              transform-origin: center top;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transition: .5s;
+              backface-visibility: visible; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent {
+              transform-origin: center top;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transition: .5s; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardSurface,
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardSurfaceInner {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              font-size: 60px;
+              transition: .5s;
+              overflow: hidden;
+              backface-visibility: hidden;
+              position: relative; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardSurfaceInner {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: rotateY(180deg); }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBase {
+              width: 400px;
+              height: 265px; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover {
+              width: 400px;
+              height: 265px; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent {
+              width: 400px;
+              height: 265px; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurface {
+              background-color: #fff; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurfaceInner {
+              background-color: #aaf; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurface {
+              background-color: #fff; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurfaceInner {
+              background-color: #afa; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurface {
+              background: url(../images/small/card01.png) no-repeat;
+              background-size: 100%; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover .cardSurfaceInner {
+              background-image: url(); }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurface {
+              background-image: url(); }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent .cardSurfaceInner {
+              background-image: url(); }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseContent {
+              box-shadow: 10px 5px 50px #999; }
+            .pickCard .content .cardText .showCard .sectionCard .cardCamera .cardBaseCover {
+              box-shadow: 10px 5px 50px #999; }
+          .pickCard .content .cardText .showCard .sectionCard .cardBase {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(100px);
+            animation: cardCome 1.5s reverse; }
+          .pickCard .content .cardText .showCard .sectionCard .cardBaseCover {
+            transform: rotateX(150deg);
+            animation: cardOpen 1.5s reverse; }
+
+@keyframes cardOpen {
+  0% {
+    transform: rotateX(150deg); }
+  100% {
+    transform: rotateX(0deg); } }
+
+@keyframes cardCome {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(100px); }
+  100% {
+    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg) translateZ(-300px); } }
+          .pickCard .content .cardText .showCard .sectionCard .cardBaseCover .cardSurface {
+            background-image: url(../images/small/card01.png); }
+          .pickCard .content .cardText .showCard .sectionCard .cardBaseCover .cardSurfaceInner {
+            background-image: url(); }
+          .pickCard .content .cardText .showCard .sectionCard .cardBaseContent .cardSurface {
+            background-image: url(); }
+          .pickCard .content .cardText .showCard .sectionCard .cardBaseContent .cardSurfaceInner {
+            background-image: url(); }
+    .pickCard .content .cardRecord {
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      margin: auto; }
+
+.shopping {
+  width: 100%;
+  height: 396px; }
+  .shopping .goodBox {
+    flex: 1;
+    color: dimgray;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 12px;
+    border: 10px solid #fbc849; }
+    .shopping .goodBox ul {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: center; }
+      .shopping .goodBox ul .good {
+        font-family: g2Font;
+        text-decoration: none;
+        padding: 15px;
+        color: #121111;
+        font-size: 20px;
+        float: left;
+        width: 33.333%;
+        text-align: center;
+        cursor: pointer;
+        transition: .5s ease; }
+      .shopping .goodBox ul .yellow {
+        background-color: #fbc84a;
+        color: #076baf; }
+    .shopping .goodBox .good-content {
+      display: flex;
+      flex-flow: wrap row;
+      align-items: center;
+      width: 100%;
+      height: 300px; }
+      .shopping .goodBox .good-content .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 150px;
+        border: 5px solid #fbc84a; }
+        .shopping .goodBox .good-content .item .name {
+          display: flex;
+          flex: 1;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 100%; }
+          .shopping .goodBox .good-content .item .name img {
+            width: 80px; }
+          .shopping .goodBox .good-content .item .name .price {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; }
+            .shopping .goodBox .good-content .item .name .price p {
+              font-size: 20px;
+              margin: 10px; }
+            .shopping .goodBox .good-content .item .name .price span {
+              font-size: 25px;
+              color: #076baf; }
+        .shopping .goodBox .good-content .item .addCart {
+          width: 130px;
+          height: 30px;
+          font-size: 18px;
+          margin: 12px; }
+
+#card {
+  height: 400px; }
+  #card img {
+    margin-top: 40px; }
+
+@media screen and (max-width: 768px) {
+  .customized .makingStep {
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    margin-bottom: 30px; }
+    .customized .makingStep p {
+      font-size: 15px; }
+    .customized .makingStep .cloud {
+      margin: 0 5px; }
+    .customized .makingStep .step1:before {
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
+    .customized .makingStep .step1:after {
+      display: none; }
+    .customized .makingStep .step2:before {
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
+    .customized .makingStep .step2:after {
+      display: none; }
+    .customized .makingStep .step3:before {
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
+    .customized .makingStep .step3:after {
+      display: none; }
+    .customized .makingStep .step4:before {
+      font-size: 15px;
+      top: 17px;
+      left: 35px; }
+    .customized .makingStep .step4:after {
+      display: none; }
+  .customized .priceSign {
+    position: relative;
+    top: 58px;
+    z-index: 88;
+    right: -35%;
+    transform: inherit; }
+  .customized .snackHouse {
+    width: 100%;
+    height: 100%; }
+  .customized .section_15 {
+    width: 100%;
+    flex-direction: column;
+    align-items: center; }
+    .customized .section_15 .camera {
+      height: 245px;
+      display: flex;
+      justify-content: center;
+      perspective: 1000px; }
+    .customized .section_15 .boxBase {
+      width: 250px;
+      height: 100px;
+      position: relative;
+      background-color: transparent;
+      transform-origin: center center;
+      transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
+      transform-style: preserve-3d;
+      transition: .3s;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .customized .section_15 .surface {
+      background-color: #aaf;
+      border: 1px dashed #0000004b;
+      position: absolute;
+      text-align: center;
+      font-size: 60px;
+      transform-origin: center center;
+      transition: .5s; }
+    .customized .section_15 .surface_top {
+      width: 250px;
+      height: 200px;
+      transform-origin: top center;
+      transform: translate3d(0, 50px, -100px) rotateX(90deg);
+      line-height: 200px;
+      backface-visibility: hidden; }
+    .customized .section_15 .surface_top_inner {
+      width: 250px;
+      height: 200px;
+      transform-origin: top center;
+      transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
+      line-height: 200px;
+      backface-visibility: hidden; }
+    .customized .section_15 .surface_down {
+      width: 250px;
+      height: 200px;
+      transform: rotateX(-90deg) translateZ(50px);
+      line-height: 200px; }
+    .customized .section_15 .surface_front {
+      width: 250px;
+      height: 100px;
+      transform: rotateY(0deg) translateZ(100px);
+      line-height: 100px; }
+    .customized .section_15 .surface_back {
+      width: 250px;
+      height: 100px;
+      transform: rotateY(180deg) translateZ(100px);
+      line-height: 100px; }
+    .customized .section_15 .surface_left {
+      width: 200px;
+      height: 100px;
+      transform: rotateY(-90deg) translateZ(125px);
+      line-height: 100px; }
+    .customized .section_15 .surface_right {
+      width: 200px;
+      height: 100px;
+      transform: rotateY(90deg) translateZ(125px);
+      line-height: 100px; }
+    .customized .section_15 .surface_top {
+      background-color: #076baf; }
+    .customized .section_15 .surface_down {
+      background-color: #076baf; }
+    .customized .section_15 .surface_front {
+      background-color: #fbc84a; }
+    .customized .section_15 .surface_back {
+      background-color: #fbc84a; }
+    .customized .section_15 .surface_left {
+      background-color: #fbc84a; }
+    .customized .section_15 .surface_right {
+      background-color: #fbc84a; }
+    .customized .section_15 .purchaseDetail {
+      width: 100%; }
+    .customized .section_15 .leftBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 450px; }
+      .customized .section_15 .leftBox .camera {
+        height: 250px; }
+        .customized .section_15 .leftBox .camera .boxBase {
+          position: relative;
+          top: 60px; }
+      .customized .section_15 .leftBox #ctrl_bar {
+        display: flex; }
+    .customized .section_15 .cardBox {
+      width: 100%; }
+    .customized .section_15 .pickCard {
+      width: 100%; }
+      .customized .section_15 .pickCard .cardText {
+        width: 100%;
+        margin: auto; }
+        .customized .section_15 .pickCard .cardText .showCard {
+          position: absolute;
+          top: -400px;
+          left: 0;
+          z-index: 3;
+          width: 600px;
+          height: 400px; }
+          .customized .section_15 .pickCard .cardText .showCard .cardBaseContent {
+            top: 8px !important;
+            left: -79px !important;
+            height: 200px !important;
+            width: 300px !important; }
+          .customized .section_15 .pickCard .cardText .showCard .cardBaseCover {
+            display: none; }
+      .customized .section_15 .pickCard .cardRecord {
+        width: 100%;
+        margin: auto; }
+    .customized .section_15 .pics {
+      width: 100%; }
+  .form {
+    width: 100%; }
+  .shopping {
+    height: auto; }
+    .shopping .goodBox ul {
+      display: block; }
+    .shopping .goodBox .good-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 500px;
+      overflow-y: scroll; }
+      .shopping .goodBox .good-content .item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 5px solid #fbc84a; }
+  #card {
+    height: auto; }
+    #card img {
+      width: 101%;
+      margin: auto; } }
