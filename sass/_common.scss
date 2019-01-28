@@ -14,8 +14,12 @@ $moblie: 768px;
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf);
 }
+html{
+    font-size: 34px
+}
 h1,h2,h3,h4,p,span{
     font-family: g2Font;
+    line-height: 1.6em;
 }
 h1{
     font-size: 40px;
@@ -35,8 +39,11 @@ p{
 span{
     font-size: 14px;
 }
-
-
+input, select{
+    &:focus{
+        outline: none;
+    }
+}
 @mixin btn($btns, $width, $height, $color, $bgc, $bordercolor, $bordius, $pad, $hovColor, $hovBgc, $font) {
     .#{$btns} {
         width: $width;
@@ -51,10 +58,16 @@ span{
         text-decoration: none;
         font-size: $font;
         cursor: pointer;
+        &:focus{
+            outline: none;
+        }
         @media only screen and (min-width: $moblie) {
-           &:hover {
+            &:hover {
                 color: $hovColor;
                 background-color: $hovBgc;
+            }
+            &:focus{
+                outline: none;
             }
         }
         
@@ -67,7 +80,7 @@ span{
 @include btn('dimension', 50px, 50px, $yellow, #fff, $yellow, 10px, 0px, $gray, $yellow, 22px);
 @include btn('action', 120px, 40px, $gray, $yellow, transparent, 10px, 0px, #fff, $deepyellow, 22px);
 @include btn('category', 120px, 50px, $blue, #fff, transparent, 10px, 0px, #fff, $blue, 28px);
-@include btn('goToCustom', 160px, 60px, $gray, #fbe5dd, transparent, 10px, 0px, $gray, #fca8b7, 28px);
+@include btn('goToCustom', 160px, 60px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 28px);
 @include btn('subscribe', 210px, 60px, $gray, #fcda85, transparent, 10px, 0px, $gray, #fbc84a, 28px);
 @include btn('month', 100px, 100px, #fff, $blue, transparent, 50%, 0px, $gray, #fbc84a, 22px);
 
@@ -138,6 +151,7 @@ input[type=number]{
     border: 0px solid transparent;
     background-color: transparent;
     font-size: 22px;
+    line-height: 40px;
     font-family: g2Font;
     text-align: center;
     width: 100%;

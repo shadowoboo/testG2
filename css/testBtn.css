@@ -5,8 +5,12 @@
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf); }
 
+html {
+  font-size: 34px; }
+
 h1, h2, h3, h4, p, span {
-  font-family: g2Font; }
+  font-family: g2Font;
+  line-height: 1.6em; }
 
 h1 {
   font-size: 40px; }
@@ -26,6 +30,9 @@ p {
 span {
   font-size: 14px; }
 
+input:focus, select:focus {
+  outline: none; }
+
 .cart {
   width: 150px;
   height: 45px;
@@ -39,10 +46,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .cart:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .cart:hover {
       color: #fff;
-      background-color: #00457b; } }
+      background-color: #00457b; }
+    .cart:focus {
+      outline: none; } }
 
 .detail {
   width: 150px;
@@ -57,10 +68,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .detail:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .detail:hover {
       color: #fff;
-      background-color: #076baf; } }
+      background-color: #076baf; }
+    .detail:focus {
+      outline: none; } }
 
 .step {
   width: 130px;
@@ -75,10 +90,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .step:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .step:hover {
       color: #fff;
-      background-color: #00457b; } }
+      background-color: #00457b; }
+    .step:focus {
+      outline: none; } }
 
 .dimension {
   width: 50px;
@@ -93,10 +112,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .dimension:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .dimension:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .dimension:focus {
+      outline: none; } }
 
 .action {
   width: 120px;
@@ -111,10 +134,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .action:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .action:hover {
       color: #fff;
-      background-color: #ffb600; } }
+      background-color: #ffb600; }
+    .action:focus {
+      outline: none; } }
 
 .category {
   width: 120px;
@@ -129,16 +156,20 @@ span {
   text-decoration: none;
   font-size: 28px;
   cursor: pointer; }
+  .category:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .category:hover {
       color: #fff;
-      background-color: #076baf; } }
+      background-color: #076baf; }
+    .category:focus {
+      outline: none; } }
 
 .goToCustom {
   width: 160px;
   height: 60px;
-  color: #737374;
-  background-color: #fbe5dd;
+  color: #fff;
+  background-color: #076baf;
   border: 2px solid transparent;
   border-radius: 10px;
   padding: 0px;
@@ -147,10 +178,14 @@ span {
   text-decoration: none;
   font-size: 28px;
   cursor: pointer; }
+  .goToCustom:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .goToCustom:hover {
-      color: #737374;
-      background-color: #fca8b7; } }
+      color: #fff;
+      background-color: #00457b; }
+    .goToCustom:focus {
+      outline: none; } }
 
 .subscribe {
   width: 210px;
@@ -165,10 +200,14 @@ span {
   text-decoration: none;
   font-size: 28px;
   cursor: pointer; }
+  .subscribe:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .subscribe:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .subscribe:focus {
+      outline: none; } }
 
 .month {
   width: 100px;
@@ -183,10 +222,14 @@ span {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
+  .month:focus {
+    outline: none; }
   @media only screen and (min-width: 768px) {
     .month:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .month:focus {
+      outline: none; } }
 
 .month {
   position: relative; }
@@ -249,6 +292,7 @@ input[type=number] {
   border: 0px solid transparent;
   background-color: transparent;
   font-size: 22px;
+  line-height: 40px;
   font-family: g2Font;
   text-align: center;
   width: 100%; }
