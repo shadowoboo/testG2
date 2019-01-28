@@ -350,6 +350,65 @@ input[type=number]::-webkit-outer-spin-button {
       .rankBoard .item .star img {
         vertical-align: middle;
         width: 100%; }
+  .rankBoard .commentBtns {
+    display: flex;
+    padding-top: 10px;
+    border-bottom: solid 1px #076baf; }
+    .rankBoard .commentBtns .like {
+      width: 28.5%;
+      height: 30px;
+      color: #fff;
+      background-color: #076baf;
+      border: 2px solid transparent;
+      border-radius: 10px 0 0 0;
+      padding: 0px;
+      font-family: g2Font;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer; }
+      @media only screen and (min-width: 768px) {
+        .rankBoard .commentBtns .like:hover {
+          color: #fff;
+          background-color: #00457b; } }
+    .rankBoard .commentBtns .share {
+      width: 28.5%;
+      height: 30px;
+      color: #076baf;
+      background-color: #fff;
+      border: 2px solid #076baf;
+      border-radius: 0px;
+      padding: 0px;
+      font-family: g2Font;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer; }
+      @media only screen and (min-width: 768px) {
+        .rankBoard .commentBtns .share:hover {
+          color: #fff;
+          background-color: #076baf; } }
+    .rankBoard .commentBtns .btnMsg {
+      width: 28.5%;
+      height: 30px;
+      color: #fff;
+      background-color: #076baf;
+      border: 2px solid transparent;
+      border-radius: 0 10px 0 0;
+      padding: 0px;
+      font-family: g2Font;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer; }
+      @media only screen and (min-width: 768px) {
+        .rankBoard .commentBtns .btnMsg:hover {
+          color: #fff;
+          background-color: #00457b; } }
+    .rankBoard .commentBtns .like,
+    .rankBoard .commentBtns .share,
+    .rankBoard .commentBtns .btnMsg {
+      font-family: GenJyuuGothicX-Light; }
   @media screen and (min-width: 768px) {
     .rankBoard section {
       max-width: 1200px;
@@ -413,51 +472,155 @@ input[type=number]::-webkit-outer-spin-button {
         width: 31%;
         height: 0;
         padding-bottom: 31%;
-        background-image: url(/images/rankBoard/rankPanel.png);
-        background-size: cover;
         position: relative; }
+        .rankBoard #allPanel #rankPanel #panelRing {
+          position: absolute;
+          z-index: 0;
+          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.4)); }
         .rankBoard #allPanel #rankPanel .switch {
           font-size: 26px;
           color: #076baf;
           width: 17%;
           height: 0;
-          padding-bottom: 15%;
+          padding-bottom: 17%;
           border-radius: 100px;
           text-align: center;
           line-height: 2.5;
           position: absolute; }
         .rankBoard #allPanel #rankPanel .sw_rk {
           cursor: pointer; }
-        .rankBoard #allPanel #rankPanel #rank_ring {
-          width: 100%;
-          position: absolute;
-          top: 50%;
-          transform: rotate(90deg); }
         .rankBoard #allPanel #rankPanel #sw_ring {
-          border: #076baf solid 3px;
-          transform: translate(-30%, -50%); }
+          left: 41.5%;
+          top: 0%;
+          transform: translateY(-50%) rotate(0deg);
+          box-shadow: 0 0 0 4px #076baf;
+          transform-origin: center 345%; }
         .rankBoard #allPanel #rankPanel #sw_1 {
-          top: -5%;
+          top: 0%;
+          transform: translateY(-50%);
           left: 41.5%; }
         .rankBoard #allPanel #rankPanel #sw_2 {
-          top: 18%;
-          left: 81%; }
+          top: 16%;
+          left: 85%; }
         .rankBoard #allPanel #rankPanel #sw_3 {
-          top: 63%;
-          left: 81%; }
+          top: 66.5%;
+          left: 85%; }
         .rankBoard #allPanel #rankPanel #sw_4 {
-          bottom: -2.5%;
-          left: 41.5%; }
+          bottom: 0%;
+          left: 41.5%;
+          transform: translateY(50%); }
         .rankBoard #allPanel #rankPanel #sw_5 {
-          top: 63%;
-          right: 81%; }
+          top: 66.5%;
+          right: 85%; }
         .rankBoard #allPanel #rankPanel #sw_6 {
-          top: 18%;
-          right: 81%; }
-      .rankBoard #allPanel #itemDetail {
+          top: 16%;
+          right: 85%; }
+        .rankBoard #allPanel #rankPanel #ipIcon {
+          width: 100%;
+          height: 0;
+          padding-bottom: 100%;
+          position: relative; }
+          .rankBoard #allPanel #rankPanel #ipIcon img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto; }
+          .rankBoard #allPanel #rankPanel #ipIcon #ipImg {
+            width: 44.5%;
+            z-index: 2;
+            animation: floating 1s infinite alternate linear; }
+          .rankBoard #allPanel #rankPanel #ipIcon #glow {
+            width: 100%;
+            z-index: 0; }
+      .rankBoard #allPanel .itemDetail {
         width: 45%;
-        height: 80vh;
+        height: 90vh;
         overflow-x: hidden;
         overflow-y: auto;
         background-color: #fff;
-        border-radius: 40px; } }
+        border-radius: 40px; }
+        .rankBoard #allPanel .itemDetail .blank {
+          padding: 5%;
+          text-align: center; }
+        .rankBoard #allPanel .itemDetail .itemImg {
+          width: 50%; }
+        .rankBoard #allPanel .itemDetail h2 {
+          padding: 10px 0;
+          line-height: 30px; }
+          .rankBoard #allPanel .itemDetail h2 p {
+            font-size: 22px;
+            line-height: 30px; }
+        .rankBoard #allPanel .itemDetail .rank {
+          font-family: GenJyuuGothicX-Light;
+          margin: 12.5px 0;
+          padding: 5.5px 0;
+          border-radius: 10px;
+          color: #fff;
+          letter-spacing: 2.8px; }
+        .rankBoard #allPanel .itemDetail #allRank {
+          background-color: #ea5a5a; }
+        .rankBoard #allPanel .itemDetail #catRank {
+          background-color: #00b96d; }
+        .rankBoard #allPanel .itemDetail #flaRank {
+          background-color: #5cb3ff; }
+        .rankBoard #allPanel .itemDetail .itemBtns {
+          margin: 25px 0;
+          display: flex;
+          justify-content: space-around; }
+        .rankBoard #allPanel .itemDetail .eva {
+          display: flex;
+          justify-content: space-around; }
+          .rankBoard #allPanel .itemDetail .eva .score, .rankBoard #allPanel .itemDetail .eva .radar {
+            width: 50%; }
+          .rankBoard #allPanel .itemDetail .eva .evaTimes {
+            text-align: center;
+            font-size: 16px;
+            color: #076baf; }
+          .rankBoard #allPanel .itemDetail .eva .scoreAvg {
+            font-size: 64px;
+            font-family: GenJyuuGothicX-Medium;
+            color: #e97d58; }
+          .rankBoard #allPanel .itemDetail .eva .star {
+            width: 68.15%;
+            border-radius: 100px;
+            background: linear-gradient(to right, #e97d58 85%, white 10%);
+            margin: auto; }
+            .rankBoard #allPanel .itemDetail .eva .star img {
+              vertical-align: middle;
+              width: 100%; }
+        .rankBoard #allPanel .itemDetail .comments {
+          text-align: left; }
+          .rankBoard #allPanel .itemDetail .comments h3 {
+            padding: 15px 0 0 0;
+            color: #076baf; }
+          .rankBoard #allPanel .itemDetail .comments .mem {
+            display: flex;
+            padding-bottom: 17.5px; }
+            .rankBoard #allPanel .itemDetail .comments .mem .memPic {
+              width: 49.63%;
+              position: relative;
+              z-index: 2; }
+            .rankBoard #allPanel .itemDetail .comments .mem .memCol {
+              margin-left: 10px; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .star {
+                margin: 7px 0 0 0;
+                width: 39.877%;
+                transform: translate(-11%, 0);
+                border-radius: 100px;
+                background: linear-gradient(to right, #e97d58 100%, white 10%); }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .star img {
+                  vertical-align: middle; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .commentCtx {
+                font-family: GenJyuuGothicX-Light; }
+              .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num {
+                display: flex;
+                padding: 17.5px 0;
+                border-bottom: #076baf solid 1px; }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .memPic {
+                  width: 14.77%; }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .memId {
+                  padding: 17.5px 0; }
+                .rankBoard #allPanel .itemDetail .comments .mem .memCol .msg_num .msgCol {
+                  margin-left: 10px; } }

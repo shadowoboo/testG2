@@ -1,8 +1,6 @@
 @import 'common';
 
-// *{
-//     outline: red solid 1px;
-// }
+
 .rankBoard{
     //body
     background-color: #c1f3d2;
@@ -69,8 +67,6 @@
             margin: auto;
             background-size: cover;
             background-image: url(/images/rankBoard/glow.png);
-            // background: radial-gradient(ellipse at center, rgb(255,255,255) 0%,rgba(255,255,255,.8) 100%);
-            // border-radius: 50%;
             animation: rollGlow 5s  infinite linear;
         }
         min-width: 200px;
@@ -126,8 +122,23 @@
         }
     }
 
+    .commentBtns {
+        display: flex;
+        padding-top: 10px;
+        border-bottom: solid 1px #076baf;
+        @include btn('like', 28.5%, 30px, #fff, $blue, transparent, 10px 0 0 0, 0px, #fff, $deepblue, 16px);
+        @include btn('share', 28.5%, 30px, $blue, #fff, $blue, 0px, 0px, #fff, $blue, 16px);
+        @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 0 10px 0 0, 0px, #fff, $deepblue, 16px);
+
+        .like,
+        .share,
+        .btnMsg {
+            font-family: GenJyuuGothicX-Light;
+        }
+
+    }
 // screen start
-    @media screen and (min-width:768px){
+    @media screen and (min-width:$moblie) {
         section{
             max-width: 1200px;
             margin: auto;
@@ -209,70 +220,212 @@
                     width: 31%;
                     height: 0;
                     padding-bottom: 31%; 
-                    background-image: url(/images/rankBoard/rankPanel.png);
-                    background-size: cover;
                     position: relative;
+                    #panelRing {
+                        position: absolute;
+                        z-index: 0;
+                        filter: drop-shadow(1px 1px 10px rgba(0,0,0,.4));
+                    }
                     .switch{
                         font-size: 26px;
                         color: #076baf;
                         width: 17%;
                         height: 0;
-                        padding-bottom: 15%;
+                        padding-bottom: 17%;
                         border-radius: 100px;
                         text-align: center;
                         line-height: 2.5;
                         position: absolute;
+                    
                     }
                     .sw_rk{
                         cursor: pointer;
                     }
-                    #rank_ring{
-                        width: 100%;
-                        position: absolute;
-                        top: 50%;
-                        transform:rotate(90deg);
-                        
-                    }
                     #sw_ring{
-                        border: #076baf solid 3px;
-                        transform: translate(-30% ,-50%);
-
+                        left: 41.5%;
+                        top: 0%;
+                        transform: translateY(-50%) rotate(0deg);
+                        box-shadow: 0 0 0 4px #076baf;
+                        transform-origin:center 345%;
                     }
                     #sw_1{
-                        top: -5%;
+                        top: 0%;
+                        transform: translateY(-50%);
                         left: 41.5%;
                         
                     }
                     #sw_2{
-                        top: 18%;
-                        left: 81%;
+                        top: 16%;
+                        left: 85%;
                     }
                     #sw_3{
-                        top: 63%;
-                        left: 81%;
+                        top: 66.5%;
+                        left: 85%;
                     }
                     #sw_4{
-                        bottom: -2.5%;
+                        bottom: 0%;
                         left: 41.5%;
+                        transform: translateY(50%);
                     }
                     #sw_5{
-                        top: 63%;
-                        right: 81%;
+                        top: 66.5%;
+                        right: 85%;
                     }
                     #sw_6{
-                        top: 18%;
-                        right: 81%;
+                        top: 16%;
+                        right: 85%;
+                    }
+
+                    #ipIcon{
+                        width: 100%;
+                        height: 0;
+                        padding-bottom: 100%;
+                        position: relative;
+                        img{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            margin: auto;
+                        }
+                        #ipImg{
+                            width: 44.5%;
+                            z-index: 2;
+                            animation: floating 1s infinite alternate linear;
+                        }
+                        #glow{
+                            width: 100%;
+                            z-index: 0;
+                        }
                     }
                 }
 
-                #itemDetail{
+                .itemDetail{
                     width: 45%;
-                    height: 80vh;
+                    height: 90vh;
                     overflow-x: hidden;
                     overflow-y:auto; 
                     background-color: #fff;
                     border-radius: 40px;
-                }
+                    .blank{
+                        padding: 5%;
+                        text-align: center;
+                    }
+                    .itemImg{
+                        width: 50%;
+                    }                
+                    h2{
+                        padding: 10px 0 ;
+                        line-height: 30px;
+                      p{
+                          font-size: 22px;
+                          line-height: 30px;
+                      }  
+                    }
+                    .rank{
+                        font-family: GenJyuuGothicX-Light;
+                        margin:12.5px 0;
+                        padding:5.5px 0 ; 
+                        border-radius: 10px; 
+                        color: #fff;
+                        letter-spacing: 2.8px;
+                    }
+                    #allRank{
+                        background-color: #ea5a5a;
+                    }
+                    #catRank{
+                        background-color: #00b96d;
+                    }
+                    #flaRank{
+                        background-color: #5cb3ff;
+                    }
+
+                    .itemBtns{
+                        margin: 25px 0;
+                        display: flex;
+                        justify-content: space-around;
+                    }
+
+                    .eva{
+                        display: flex;
+                        justify-content: space-around;
+                        .score,.radar{
+                            width: 50%;
+                        }
+                        .evaTimes{
+                            text-align: center;
+                            font-size: 16px;
+                            color: #076baf;
+
+                        }
+                        .scoreAvg{
+                            font-size: 64px;
+                            font-family: GenJyuuGothicX-Medium;
+                            color: #e97d58;
+                        }
+                        .star{
+                            width: 68.15%;
+                            border-radius: 100px;
+                            background: linear-gradient(to right, rgb(233, 125, 88) 85%, rgb(255, 255, 255)10%);
+                            margin: auto;
+                            img {
+                                vertical-align: middle;
+                                width: 100%;
+
+                            }
+                        }
+                    }
+
+                    .comments{
+                        text-align: left;
+                        h3{
+                            padding: 15px 0 0 0;
+                            color: #076baf;
+                        }
+                        .mem{
+                            display: flex;
+                            padding-bottom: 17.5px;
+                            .memPic{
+                                width: 49.63%;
+                                position: relative;
+                                z-index: 2;
+                            }
+                            .memCol{
+                                margin-left: 10px;
+                                .star{
+                                    margin: 7px 0 0 0;
+                                    width: 39.877%;
+                                    transform: translate(-11% ,0);
+                                    border-radius: 100px;
+                                    background: linear-gradient(to right, rgb(233, 125, 88) 100%, rgb(255, 255, 255)10%);
+                                    img{
+                                        vertical-align: middle;
+                                    }
+                                }
+                                .commentCtx{
+                                    font-family: GenJyuuGothicX-Light;
+                            
+                                }
+
+                                .msg_num{
+                                    display: flex;
+                                    padding:17.5px 0 ; 
+                                    border-bottom: #076baf solid 1px;
+                                    .memPic{
+                                        width: 14.77%;
+                                    }
+                                    .memId{
+                                        padding: 17.5px 0;
+                                    }
+                                    .msgCol{
+                                        margin-left: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }  
             }
     }
 

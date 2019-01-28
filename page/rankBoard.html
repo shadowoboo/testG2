@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/rankBoard.css">
 
     <script src="/js/common.js"></script>
+    <script src="/js/Chart.js"></script>
 </head>
 <body class="rankBoard">
     <!-- header Start -->
@@ -114,13 +115,14 @@
 
             <!-- 中間的轉盤 -->
             <div id="rankPanel">
-                <div id="rank_ring">
+                <img id="panelRing"src="/images/rankBoard/rankPanel.png" alt="排行圓環">
+                <!-- <div id="rank_ring"> -->
                     <div class="switch sw_ring" id="sw_ring"></div>
-                </div>
+                <!-- </div> -->
 
                 <div id="ipIcon">
-                    <img src="" alt="各類別圖片" id="ipImg">
-                    <img src="/images/rankBoard/ipGlow.png" alt="背景光" id="glow">
+                    <img src="/images/rankBoard/ipCookie.png" alt="各類別圖片" id="ipImg">
+                    <img src="/images/rankBoard/ipGlow.png" alt="背景光" id="C">
                 </div>
 
                 <div class="switch sw_rk" id="sw_1">1</div>
@@ -131,66 +133,110 @@
                 <div class="switch sw_rk" id="sw_6">6</div>
             </div>
 
-            <div id="itemDetail">
+            <div class="itemDetail">
+                <div class="blank">
 
-                <img src="" alt="商品圖">
-                <h4>[日本]</h4>
-                <h2>UHA味覺糖甘藷片</h2>
-                <div id="allRank">2019年1月綜合排行 第1名</div>
-                <div id="catRank">2019年1月餅乾排行 第1名</div>
-                <div id="flaRank">2019年1月甜食排行 第1名</div>
+                    <img class="itemImg"src="/images/rankBoard/item4.jpg" alt="商品圖">
+                    <h2><p>[日本]</p>
+                    UHA味覺糖甘藷片</h2>
+                    <div class="rank" id="allRank">2019年1月綜合排行 第1名</div>
+                    <div class="rank" id="catRank">2019年1月餅乾排行 第1名</div>
+                    <div class="rank" id="flaRank">2019年1月甜食排行 第1名</div>
 
-                <div id="itemBtns">
-                    <button class="detail">商品詳細</button>
-                    <button class="cart">加入購物車</button>
-                    <button class="heart"><i class="far fa-heart"></i></button>
-                </div>
-
-                <hr>
-
-                <div id="eva">
-                    <div class="score">
-                        <p id="evaTimes">共348次評價</p>
-                        <p class="scoreAvg">4.7<span class="total">/5</span></p>
-                        <div class="starAvg"><img src="" alt="星等"></div>
+                    <div class="itemBtns">
+                        <button class="detail">商品詳細</button>
+                        <button class="cart">加入購物車</button>
+                        <button class="heart"><i class="far fa-heart"></i></button>
                     </div>
-                    <div id="rader">
-                            <canvas id="radarCanvas"></canvas>
-                    </div>
-                </div>
 
-                <div id="comments">
-                    <h3>商品評價</h3>
+                    <hr>
 
-                    <div class="comment">
-
-                        <div class="mem">
-                            <div class="memCol">
-                                <img src="" alt="會員頭像" class="memImg">
-                            </div>
-                            <div class="memCol">
-                                <p class="memId">Apple12345678</p>
-                                <div class="starAvg"><img src="" alt="星等"></div>
-                            </div>
+                    <div class="eva">
+                        <div class="score">
+                            <p class="evaTimes">共348次評價</p>
+                            <p class="scoreAvg">4.7<span class="total">/5</span></p>
+                            <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
                         </div>
-
-                        <p class="commentCtx">
-                            真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
-                        </p>
-
-                        <div class="commentBtns">
-                            <button class="like">說讚(0人)</button>
-                            <button class="share">分享</button>
-                            <button class="msg">隱藏留言</button>
-                        </div> 
+                        <div class="radar">
+                                <canvas class="radarCanvas"></canvas>
+                        </div>
                     </div>
+
+                    <div class="comments">
+                        <h3>商品評價</h3>
+
+                        <div class="comment">
+
+                            <div class="mem">
+                                <div class="memPic">
+                                    <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                </div>
+
+                                <div class="memCol">
+                                    <p class="memId">Apple12345678</p>
+                                    <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                                    <p class="commentCtx">
+                                        真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                                    </p>
+
+                                    <div class="commentBtns">
+                                        <button class="like"><i class="far fa-thumbs-up"></i>按讚(0人)</button>
+                                        <button class="share"><i class="fas fa-share"></i>分享</button>
+                                        <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
+                                    </div>
+
+                                    <div class="msgs">
+                                        <div class="msg_num msg_1">
+                                            <div class="memPic">
+                                                <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                            </div>
+                                            <div class="msgCol">
+                                                <p class="memId">Apple12345678</p>
+                                                <p class="msgCtx">太啦!</p>
+                                            </div>
+                                        </div>
+                                        <div class="msg_num msg_2">
+                                            <div class="memPic">
+                                                <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                            </div>
+                                            <div class="msgCol">
+                                                <p class="memId">Bpple12345678</p>
+                                                <p class="msgCtx">再啦!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mem">
+                                <div class="memPic">
+                                    <img src="/images/rankBoard/memPic.png" alt="會員頭像" class="memImg">
+                                </div>
+
+                                <div class="memCol">
+                                    <p class="memId">Apple12345678</p>
+                                    <div class="star"><img src="/images/rankBoard/starMask.png" alt="星等"></div>
+                                    <p class="commentCtx">
+                                        真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!真是台美味了，要是在也吃不到要怎麼辦啊啊啊啊啊。價格實惠又好吃!!!!!!!
+                                    </p>
+
+                                    <div class="commentBtns">
+                                        <button class="like"><i class="far fa-thumbs-up"></i>按讚(0人)</button>
+                                        <button class="share"><i class="fas fa-share"></i>分享</button>
+                                        <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-
-
             </div>
         </div>
     </section>
     <!-- footer Start -->
     <!-- footer End -->
 </body>
+<script src="/js/rankBoard.js"></script>
 </html>
