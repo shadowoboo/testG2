@@ -262,6 +262,9 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
   padding: 0; }
 
+body {
+  overflow: hidden; }
+
 footer {
   height: 400px;
   /* background: #4cc7f4; */
@@ -308,18 +311,15 @@ footer {
 
 #floor {
   position: absolute;
-  top: 26%;
+  top: 30%;
   z-index: -1; }
 
 #copy {
   position: absolute;
-  top: 76%;
+  bottom: 0;
   left: 42%;
-  z-index: 0; }
-  @media screen and (max-width: 767px) {
-    #copy {
-      top: 66%;
-      left: 36%; } }
+  z-index: 0;
+  line-height: 30px; }
 
 @keyframes bounce {
   0% {
@@ -370,7 +370,12 @@ footer {
 img {
   width: 100%; }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 578px) and (max-width: 767px) {
+  #copy {
+    line-height: 20px;
+    font-size: 10px; }
+  #floor {
+    img: 110%; }
   @keyframes shadow-shift {
     0% {
       top: 80px;
@@ -400,41 +405,46 @@ img {
 @media screen and (max-width: 575px) {
   footer {
     height: 300px; }
+  #floor {
+    top: 24%;
+    overflow: hidden; }
+    #floor img {
+      width: 200%; }
   .pic {
     width: 50%; }
   .snack {
     height: 42px; }
   .snack .pic {
     top: -95px;
-    width: 70px;
+    width: 60px;
     left: 0; }
   #copy {
     font-size: 8px;
     left: 33%;
-    top: 60%;
-    bottom: 0; }
+    bottom: 0;
+    line-height: 20px; }
   @keyframes shadow-shift {
     0% {
       top: -10px;
       left: 0;
-      width: 70px; }
+      width: 60px; }
     25% {
       top: 20px;
       left: 0;
       transform: rotate(5deg);
-      width: 50px;
+      width: 40px;
       opacity: 0.5; }
     50% {
       top: -10px;
       left: 0;
-      width: 70px; }
+      width: 60px; }
     75% {
       top: 20px;
       left: 30px;
       transform: rotate(-5deg);
-      width: 50px;
+      width: 40px;
       opacity: 0.5; }
     100% {
       top: -10px;
       left: 0;
-      width: 70px; } } }
+      width: 60px; } } }

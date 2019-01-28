@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    overflow: hidden;
+}
+
 footer {
     // width: 100%;
     height: 400px;
@@ -64,20 +68,16 @@ footer {
 
 #floor {
     position: absolute;
-    top: 26%;
+    top: 30%;
     z-index: -1;
 }
 
 #copy {
     position: absolute;
-    top: 76%;
+    bottom: 0;
     left: 42%;
     z-index: 0;
-    @media screen and (max-width: 767px) {
-        top: 66%;
-        left: 36%;
-    }
-       
+    line-height: 30px; 
 }
 
 
@@ -151,8 +151,16 @@ img{
 }
 
 
-@media screen and (max-width: 767px) {
-   
+@media screen and (min-width: 578px) and (max-width: 767px) {
+    #copy {
+        line-height: 20px;
+        font-size: 10px;
+    }
+
+    #floor {
+        img: 110%;
+    }
+
     @keyframes shadow-shift {
         0% {
             top: 80px;
@@ -191,6 +199,15 @@ img{
     footer {
         height: 300px;
     }
+
+    #floor {
+        top: 24%;
+        overflow: hidden;
+        img {
+            width: 200%;
+        }
+    }
+
     .pic {
         width: 50%;
     }
@@ -201,7 +218,7 @@ img{
     
     .snack .pic {
         top: -95px;
-        width: 70px;
+        width: 60px;
         left: 0;
     }
 
@@ -209,8 +226,8 @@ img{
     #copy {
         font-size: 8px;
         left: 33%;
-        top: 60%;
         bottom: 0;
+        line-height: 20px;
     }
 
 
@@ -218,31 +235,31 @@ img{
         0% {
             top: -10px;
             left: 0;
-            width: 70px;
+            width: 60px;
         }
         25% {
             top: 20px;
             left: 0;
             transform: rotate(5deg);
-            width: 50px;
+            width: 40px;
             opacity: 0.5;
         }
         50% {
             top: -10px;
             left: 0;
-            width: 70px;
+            width: 60px;
         }
         75% {
             top: 20px;
             left: 30px;
             transform: rotate(-5deg);
-            width: 50px;
+            width: 40px;
             opacity: 0.5;
         }
         100% {
             top: -10px;
             left: 0;
-            width: 70px;
+            width: 60px;
         }
     }
 

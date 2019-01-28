@@ -264,6 +264,9 @@ input[type=number]::-webkit-outer-spin-button {
   text-decoration: none;
   line-height: 1.6em; }
 
+span {
+  color: #737374; }
+
 a {
   color: #076baf; }
 
@@ -285,7 +288,7 @@ input {
   display: inline-block; }
 
 #google_serch {
-  background-color: #fcda85; }
+  background-color: #f09c8a; }
 
 #serch_title {
   text-align: center; }
