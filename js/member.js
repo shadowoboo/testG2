@@ -17,7 +17,7 @@
         
 
 //         //點擊頁籤時的動作
-//         $this.on('click','.tab-control',function(e){
+//         $this.click(function(e){
 //             console.log(`9999`);
             
 //             //停止超連結預設動作
@@ -40,13 +40,17 @@
 
 //             }
 //         });
+        
 
 //     });
 
 // });
 
 
-const memFunctionTab = document.querySelectorAll(".tab-list li");
-const tabLink= document.querySelectorAll("tab-control");
+// const memFunctionTab = document.querySelectorAll(".tab-list li");
+// const tabLink= document.querySelectorAll("tab-control");
 
 
+$(".tab-control").clcik((e)=>{
+    
+})

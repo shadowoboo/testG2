@@ -361,18 +361,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-* {
-  margin: 0;
-  padding: 0; }
-
-body {
-  overflow: hidden; }
-
 footer {
-  height: 400px;
+  height: 500px;
   /* background: #4cc7f4; */
   display: flex;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  top: 10%; }
 
 .container {
   position: relative;
@@ -414,7 +409,7 @@ footer {
 
 #floor {
   position: absolute;
-  top: 30%;
+  top: 48%;
   z-index: -1; }
 
 #copy {
