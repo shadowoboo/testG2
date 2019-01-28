@@ -1,6 +1,6 @@
-// *{
-//     outline: 1px solid #f00;
-// }
+@import "reset";
+@import "common";
+
 
 body{
     background-color: #fadfd4;
@@ -202,7 +202,7 @@ section {
     // .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: center center;transform: translate3d(0,0,0)  rotateX(0deg) rotateY(180deg);line-height:  $boxJ; top:0; left:0; backface-visibility:hidden;}
     .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
     
-    .surface_font{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
+    .surface_front{width: $boxI;height: $boxK;transform:rotateY(0deg) translateZ(($boxJ/2));line-height: $boxK;}
     .surface_back{width: $boxI;height: $boxK;transform:rotateY(180deg) translateZ(($boxJ/2));line-height: $boxK;}
     
     .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
@@ -210,7 +210,7 @@ section {
 
     .surface_top{background-color: #076baf;}
     .surface_down{background-color: #076baf;}
-    .surface_font{background-color: #fbc84a;}
+    .surface_front{background-color: #fbc84a;}
     .surface_back{background-color: #fbc84a;}
     .surface_left{background-color: #fbc84a;}
     .surface_right{background-color: #fbc84a;}
@@ -255,11 +255,13 @@ section {
         justify-content: center;
         align-items: center;
         background-color:#fff;
-   
         .pic{
             flex:5;
             cursor: move;
             // user-select: none;//讓使用者選div，不要選到圖片
+            // img{
+            //     width: 50px;
+            // }
             }
         }
         #btns15{
@@ -275,11 +277,11 @@ section {
                     cursor: pointer;
                 }
                 img{
-                    width: 40px;
-                    height: 40px;
+                    width:35px;
                 }
                 i{
-                    font-size: 40px;
+                    font-size: 27px;
+                    margin-top: 4px;
                 }
         }
         .purchaseDetail{
@@ -289,11 +291,26 @@ section {
             background-color: #ffffff;
             border:7px solid #fbc84a;
             border-radius: 10px;
+            .title{
+                display: flex;
+                flex-direction: row;
+                justify-content:space-around;
+                height:60px;
+                background-color:#ffff;                
+                border: 3px solid #fbc84a;
+                p{
+                    font-size:20px;
+                    font-weight: 900;   
+                }   
+            }
+        .list{
+            height:400px;
             overflow-y: scroll;
             .item{
                 display: flex;
                 flex-direction: row;
                 justify-content:space-around;
+                align-items: center;
                 align-items: center;
                 width: 100%;
                 height: 100px;
@@ -326,14 +343,7 @@ section {
                     font-size: 15px;
                 }
             }
-            .title{
-                height:60px;
-                background-color:#ffff;
-                p{
-                    font-size:20px;
-                    font-weight: 900;   
-                }   
-            }
+         }
         }
 }
 
@@ -437,7 +447,6 @@ a {
 .tab-content-1 > div:last-child {
   display:none;
 }
-
 
 
 .tab-group-2{
@@ -575,6 +584,8 @@ a {
     margin: 12px;
     border: 10px solid #fbc849;
     ul{
+        position: relative;
+        z-index:10;
         width: 100%;
         display: flex;
         flex: 1;
@@ -773,10 +784,12 @@ $cardY:600px;
 
         //陰影測試
         .cardBaseContent{
-            box-shadow: 10px 10px 30px #333;
+            box-shadow: 10px 5px 50px #999;
+            // box-shadow: 10px 10px 30px #333;
         }
         .cardBaseCover{
-            box-shadow: 10px 10px 50px #333;
+            box-shadow: 10px 5px 50px #999;
+            // box-shadow: 10px 10px 50px #333;
         }
     }
 }
@@ -1033,6 +1046,9 @@ $cardY:600px;
 
 #card{
     height: 400px;
+    img{
+        margin-top: 40px;
+    }
 }
 
 
@@ -1137,6 +1153,15 @@ $cardY:600px;
                         z-index: 3;
                         width: 600px;
                         height: 400px;
+                        .cardBaseContent{
+                            top: 8px !important;
+                            left: -79px !important;
+                            height: 200px !important;
+                            width: 300px !important;
+                        }
+                        .cardBaseCover{
+                            display: none;
+                        }
                     }
                 }
                 .cardRecord{
@@ -1150,7 +1175,7 @@ $cardY:600px;
         }
     }
     .form{
-        width: 90%;
+        width:100%;
     }
     .shopping{
         height: auto;
@@ -1162,7 +1187,8 @@ $cardY:600px;
                 display: flex;
                 align-items: center;
                 width: 100%;
-                height:auto;
+                height: 500px;
+                overflow-y: scroll;
                 .item{
                     width: 100%;
                     display: flex;
@@ -1174,5 +1200,13 @@ $cardY:600px;
                 }
             }
 
+    }
+
+    #card{
+        height: auto;
+        img{
+            width: 101%;
+            margin: auto;
+        }
     }
 }

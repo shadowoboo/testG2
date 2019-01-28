@@ -1,15 +1,4 @@
 @charset "UTF-8";
-#index h1 {
-  font-size: 72px;
-  background-color: #111;
-  color: #ccc; }
-
-#index a {
-  background-color: #ccc;
-  color: crimson;
-  border-radius: 5px;
-  padding: 10px; }
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
