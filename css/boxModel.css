@@ -1,10 +1,5 @@
-.section {
-  width: 100%;
-  height: 100vh; }
-
 #section_3 .camera {
-  width: 100%;
-  height: 100%;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,12 +91,12 @@
 
 #section_9 .boxBase {
   border: red 2px solid;
-  width: 500px;
-  height: 150px;
+  width: 400px;
+  height: 120px;
   position: relative;
   background-color: transparent;
   transform-origin: center center;
-  transform: translateZ(-150px) rotateX(-90deg) rotateY(-180deg);
+  transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
   transform-style: preserve-3d;
   transition: .3s;
   display: flex;
@@ -118,50 +113,50 @@
   transition: .5s; }
 
 #section_9 .surface_top {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 75px, -150px) rotateX(90deg);
-  line-height: 300px;
+  transform: translate3d(0, 40px, -100px) rotateX(90deg);
+  line-height: 200px;
   backface-visibility: hidden; }
 
 #section_9 .surface_top_inner {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 75px, -150px) rotateX(90deg) rotateY(180deg);
-  line-height: 300px;
+  transform: translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg);
+  line-height: 200px;
   backface-visibility: hidden; }
 
 #section_9 .surface_down {
-  width: 500px;
-  height: 300px;
-  transform: rotateX(-90deg) translateZ(75px);
-  line-height: 300px; }
+  width: 400px;
+  height: 200px;
+  transform: rotateX(-90deg) translateZ(60px);
+  line-height: 200px; }
 
 #section_9 .surface_font {
-  width: 500px;
-  height: 150px;
-  transform: rotateY(0deg) translateZ(150px);
-  line-height: 150px; }
+  width: 400px;
+  height: 120px;
+  transform: rotateY(0deg) translateZ(100px);
+  line-height: 120px; }
 
 #section_9 .surface_back {
-  width: 500px;
-  height: 150px;
-  transform: rotateY(180deg) translateZ(150px);
-  line-height: 150px; }
+  width: 400px;
+  height: 120px;
+  transform: rotateY(180deg) translateZ(100px);
+  line-height: 120px; }
 
 #section_9 .surface_left {
-  width: 300px;
-  height: 150px;
-  transform: rotateY(-90deg) translateZ(250px);
-  line-height: 150px; }
+  width: 200px;
+  height: 120px;
+  transform: rotateY(-90deg) translateZ(200px);
+  line-height: 120px; }
 
 #section_9 .surface_right {
-  width: 300px;
-  height: 150px;
-  transform: rotateY(90deg) translateZ(250px);
-  line-height: 150px; }
+  width: 200px;
+  height: 120px;
+  transform: rotateY(90deg) translateZ(200px);
+  line-height: 120px; }
 
 #section_9 .surface_top {
   background-color: #076baf; }
@@ -186,14 +181,14 @@
 
 @keyframes cover_rotate {
   100% {
-    transform: translate3d(0, 75px, -150px) rotateX(210deg); } }
+    transform: translate3d(0, 40px, -100px) rotateX(210deg); } }
 
 #section_9 .surface_top_inner {
   animation: cover_inner_rotate 3s; }
 
 @keyframes cover_inner_rotate {
   100% {
-    transform: translate3d(0, 75px, -150px) rotateX(210deg) rotateY(180deg); } }
+    transform: translate3d(0, 40px, -100px) rotateX(210deg) rotateY(180deg); } }
 
 #section_9 .surface_top_inner {
   background-color: #076baf;
@@ -226,7 +221,7 @@
 
 .section_12 .camera {
   width: 100%;
-  height: 100%;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +230,7 @@
 .section_12 .boxBase {
   border: red 2px solid;
   width: 400px;
-  height: 100px;
+  height: 120px;
   position: relative;
   background-color: transparent;
   transform-origin: center center;
@@ -259,7 +254,7 @@
   width: 400px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 50px, -100px) rotateX(90deg);
+  transform: translate3d(0, 40px, -100px) rotateX(90deg);
   line-height: 200px;
   backface-visibility: hidden; }
 
@@ -267,53 +262,53 @@
   width: 400px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
+  transform: translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg);
   line-height: 200px;
   backface-visibility: hidden; }
 
 .section_12 .surface_down {
   width: 400px;
   height: 200px;
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(60px);
   line-height: 200px; }
 
 .section_12 .surface_down_left {
   width: 200px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(-200px, 150px, 0) rotateY(-90deg) rotateX(-90deg);
+  transform: translate3d(-200px, 160px, 0) rotateY(-90deg) rotateX(-90deg);
   line-height: 200px; }
 
 .section_12 .surface_down_right {
   width: 200px;
   height: 200px;
   transform-origin: top center;
-  transform: translate3d(200px, 150px, 0) rotateY(90deg) rotateX(-90deg);
+  transform: translate3d(200px, 160px, 0) rotateY(90deg) rotateX(-90deg);
   line-height: 200px; }
 
 .section_12 .surface_font {
   width: 400px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(0deg) translateZ(100px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_back {
   width: 400px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(180deg) translateZ(100px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_left {
   width: 200px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(-90deg) translateZ(200px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_right {
   width: 200px;
-  height: 100px;
+  height: 120px;
   transform: rotateY(90deg) translateZ(200px);
-  line-height: 100px; }
+  line-height: 120px; }
 
 .section_12 .surface_top {
   background-color: #076baf; }
@@ -333,13 +328,225 @@
 .section_12 .surface_right {
   background-color: #fbc84a; }
 
+.section_15 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; }
+  .section_15 .camera {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; }
+  .section_15 .boxBase {
+    border: red 2px solid;
+    width: 400px;
+    height: 100px;
+    position: relative;
+    background-color: transparent;
+    transform-origin: center center;
+    transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section_15 .surface {
+    background-color: #aaf;
+    border: 1px dashed #0000004b;
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    transform-origin: center center;
+    transition: .5s; }
+  .section_15 .surface_top {
+    width: 400px;
+    height: 200px;
+    transform-origin: top center;
+    transform: translate3d(0, 50px, -100px) rotateX(90deg);
+    line-height: 200px;
+    backface-visibility: hidden; }
+  .section_15 .surface_top_inner {
+    width: 400px;
+    height: 200px;
+    transform-origin: top center;
+    transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
+    line-height: 200px;
+    backface-visibility: hidden; }
+  .section_15 .surface_down {
+    width: 400px;
+    height: 200px;
+    transform: rotateX(-90deg) translateZ(50px);
+    line-height: 200px; }
+  .section_15 .surface_font {
+    width: 400px;
+    height: 100px;
+    transform: rotateY(0deg) translateZ(100px);
+    line-height: 100px; }
+  .section_15 .surface_back {
+    width: 400px;
+    height: 100px;
+    transform: rotateY(180deg) translateZ(100px);
+    line-height: 100px; }
+  .section_15 .surface_left {
+    width: 200px;
+    height: 100px;
+    transform: rotateY(-90deg) translateZ(200px);
+    line-height: 100px; }
+  .section_15 .surface_right {
+    width: 200px;
+    height: 100px;
+    transform: rotateY(90deg) translateZ(200px);
+    line-height: 100px; }
+  .section_15 .surface_top {
+    background-color: #076baf; }
+  .section_15 .surface_down {
+    background-color: #076baf; }
+  .section_15 .surface_font {
+    background-color: #fbc84a; }
+  .section_15 .surface_back {
+    background-color: #fbc84a; }
+  .section_15 .surface_left {
+    background-color: #fbc84a; }
+  .section_15 .surface_right {
+    background-color: #fbc84a; }
+  .section_15 .surface {
+    overflow: hidden; }
+    .section_15 .surface .droped_img {
+      display: block;
+      cursor: move; }
+      .section_15 .surface .droped_img.select {
+        outline: #000000 dashed 10px;
+        transition: 0.3s; }
+    .section_15 .surface #a1 {
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+  .section_15 .pics {
+    width: 30%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section_15 .pics .pic {
+      width: 100px;
+      height: 100px;
+      cursor: move; }
+  .section_15 #btns15 {
+    width: 25%;
+    display: flex;
+    justify-content: space-around; }
+    .section_15 #btns15 .btn {
+      width: 100px;
+      height: 40px;
+      margin: 0px 10px;
+      padding: 10px;
+      background-color: #ffa;
+      text-align: center;
+      box-shadow: 2px 2px 5px #0000004b;
+      cursor: pointer; }
+
+.section_15 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  right: 20%; }
+  .section_15 .camera {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; }
+  .section_15 .boxBase {
+    border: red 2px solid;
+    width: 360px;
+    height: 120px;
+    position: relative;
+    background-color: transparent;
+    transform-origin: center center;
+    transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section_15 .surface {
+    background-color: #aaf;
+    border: 1px dashed #0000004b;
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    transform-origin: center center;
+    transition: .5s; }
+  .section_15 .surface_top {
+    width: 360px;
+    height: 200px;
+    transform-origin: top center;
+    transform: translate3d(0, 40px, -100px) rotateX(90deg);
+    line-height: 200px;
+    backface-visibility: hidden; }
+  .section_15 .surface_top_inner {
+    width: 360px;
+    height: 200px;
+    transform-origin: top center;
+    transform: translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg);
+    line-height: 200px;
+    backface-visibility: hidden; }
+  .section_15 .surface_down {
+    width: 360px;
+    height: 200px;
+    transform: rotateX(-90deg) translateZ(60px);
+    line-height: 200px; }
+  .section_15 .surface_font {
+    width: 360px;
+    height: 120px;
+    transform: rotateY(0deg) translateZ(100px);
+    line-height: 120px; }
+  .section_15 .surface_back {
+    width: 360px;
+    height: 120px;
+    transform: rotateY(180deg) translateZ(100px);
+    line-height: 120px; }
+  .section_15 .surface_left {
+    width: 200px;
+    height: 120px;
+    transform: rotateY(-90deg) translateZ(180px);
+    line-height: 120px; }
+  .section_15 .surface_right {
+    width: 200px;
+    height: 120px;
+    transform: rotateY(90deg) translateZ(180px);
+    line-height: 120px; }
+  .section_15 .surface_top {
+    background-color: #076baf; }
+  .section_15 .surface_down {
+    background-color: #076baf; }
+  .section_15 .surface_font {
+    background-color: #fbc84a; }
+  .section_15 .surface_back {
+    background-color: #fbc84a; }
+  .section_15 .surface_left {
+    background-color: #fbc84a; }
+  .section_15 .surface_right {
+    background-color: #fbc84a; }
+  .section_15 .surface {
+    overflow: hidden; }
+    .section_15 .surface .droped_img {
+      display: block;
+      cursor: move; }
+      .section_15 .surface .droped_img.select {
+        outline: #000000 dashed 10px;
+        transition: 0.3s; }
+    .section_15 .surface #a1 {
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+
 #ctrl_bar {
-  position: fixed;
-  z-index: 10;
-  width: 90%;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, 0%);
   display: flex;
   justify-content: space-around; }
   #ctrl_bar .btn {

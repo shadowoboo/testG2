@@ -29,12 +29,13 @@ gulp.task('default', ['sass'], function () {
         server: {
             //根目錄
             baseDir: "./",
-            index: "index.html"
+            index: "page/index.html"
         }
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch("*.html").on('change', reload);
+    gulp.watch("page/*.html").on('change', reload);
     gulp.watch("js/*.js").on('change', reload);
     gulp.watch("images/*").on('change', reload);
     // gulp.watch("images/*").on('change', reload);

@@ -48,6 +48,9 @@
 ### 4. sass/testBtn.scss, css/testBtn.css
     這兩個檔案是我用來確認效果所以生成的，不用理他
 <<<<<<< HEAD
+    
+=======
+>>>>>>> rick
 ### 5. code testing
     - confetti: 彩帶效果
     - enteringAnimation: 漂浮動畫和一些淡入的動畫，可以加在裝飾性的東西上
@@ -58,5 +61,3 @@
     - radar2.0: 拖拉雷達圖
     - roulette: 客製化轉盤選顏色
     - sparkle: 閃亮亮效果
-=======
->>>>>>> 9984b3a442c34d15134d2c2062f732e204b962fd
