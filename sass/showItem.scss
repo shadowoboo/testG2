@@ -16,6 +16,7 @@
                 width: 65%;
             }
             .rank{
+                font-size: 22px;
                 font-family:g2Font;
                 margin:12.5px 0;
                 padding:5.5px 0 ; 
@@ -67,6 +68,7 @@
                         border-radius: 100px;
                         background: linear-gradient(to right, rgb(233, 125, 88) 85%, rgb(255, 255, 255)10%);
                         margin: auto;
+                        font-size: 0;
                         img {
                             vertical-align: middle;
                             width: 100%;
@@ -88,6 +90,7 @@
                              vertical-align: middle;
                          }
                          .star{
+                             font-size: 0;
                             border-radius: 100px;
                          }
                          #sweet{
@@ -165,6 +168,7 @@
             .memCol{
                 margin-left: 10px;
                 .star{
+                    font-size: 0;
                     margin: 7px 0 0 0;
                     width: 16.45%;
                     transform: translate(-11% ,0);
@@ -175,6 +179,7 @@
                     }
                 }
                 .commentCtx{
+                    color: #737374;
                     font-family: g2Font;
                     padding: 10px 0 ;
                 }
@@ -191,6 +196,9 @@
                     }
                     .msgCol{
                         margin-left: 10px;
+                        .msgCtx{
+                            color: #737374;
+                        }
                     }
                 }
             }
@@ -198,12 +206,35 @@
     }
     .commentBtns {
         display: flex;
+        justify-content: space-between;
         padding-top: 10px;
-        border-bottom: solid 1px #076baf;
-        @include btn('like', 28.5%, 30px, #fff, $blue, transparent, 10px 0 0 0, 0px, #fff, $deepblue, 16px);
-        @include btn('share', 28.5%, 30px, $blue, #fff, $blue, 0px, 0px, #fff, $blue, 16px);
-        @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 0 10px 0 0, 0px, #fff, $deepblue, 16px);
-
+        // border-bottom: solid 1px #076baf;
+        @include btn('like', 28.5%, 30px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 16px);
+        @include btn('share', 28.5%, 30px, $blue, #fff, $blue, 10px, 0px, #fff, $blue, 16px);
+        @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 10px , 0px, #fff, $deepblue, 16px);
+        
+    }
+    .msgBox{
+        width: 100%;
+        display: flex;
+        margin: 10px 0 ;
+        .msg{
+            width: 80%;
+            height: 30px;
+            border: solid 1px #076baf;
+            border-radius: 7px;
+        }
+        .sendMsg{
+            width: 20%;
+            height: 30px;
+            color: #fff;
+            background-color: $blue;
+            border: 2px solid $blue;
+            position: relative;
+            border-radius: 10px;
+            font-family: g2Font;
+            text-align: center;
+        }
     }
 // screen start
     @media screen and (min-width:$moblie) {

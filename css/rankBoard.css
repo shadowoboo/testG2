@@ -458,7 +458,6 @@ input[type=number]::-webkit-outer-spin-button {
       border-radius: 100px;
       background: linear-gradient(to right, #e97d58 85%, white 10%); }
       .rankBoard .item .star img {
-        vertical-align: middle;
         width: 100%;
         height: 100%; }
   .rankBoard .commentBtns {
@@ -672,6 +671,7 @@ input[type=number]::-webkit-outer-spin-button {
             font-size: 22px;
             line-height: 30px; }
         .rankBoard #allPanel .itemDetail .rank {
+          font-size: 22px;
           margin: 12.5px 0;
           padding: 5.5px 0;
           border-radius: 10px;
@@ -703,7 +703,8 @@ input[type=number]::-webkit-outer-spin-button {
             width: 68.15%;
             border-radius: 100px;
             background: linear-gradient(to right, #e97d58 85%, white 10%);
-            margin: auto; }
+            margin: auto;
+            font-size: 0; }
             .rankBoard #allPanel .itemDetail .eva .star img {
               width: 100%;
               height: 100%; }
@@ -726,6 +727,7 @@ input[type=number]::-webkit-outer-spin-button {
                 width: 39.877%;
                 transform: translate(-11%, 0);
                 border-radius: 100px;
+                font-size: 0;
                 background: linear-gradient(to right, #e97d58 100%, white 10%); }
                 .rankBoard #allPanel .itemDetail .comments .mem .memCol .star img {
                   vertical-align: middle;
