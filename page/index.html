@@ -674,13 +674,13 @@
                 <div class="chocoGroup">
                     <img src="../images/index/Chocolate-group.svg" alt="巧克力">
                     <div class="igImg">
-                        <img src="../images/index/igImg-1.png" alt="分享圖">
-                        <img src="../images/index/igImg-2.png" alt="分享圖">
-                        <img src="../images/index/igImg-3.png" alt="分享圖">
-                        <img src="../images/index/igImg-4.png" alt="分享圖">
-                        <img src="../images/index/igImg-5.png" alt="分享圖">
-                        <img src="../images/index/igImg-6.png" alt="分享圖">
-                        <img src="../images/index/igImg-8.png" alt="分享圖">
+                        <img src="../images/index/igImg-2.png" id="large" alt="分享圖">
+                        <img src="../images/index/igImg-2.png" class="small" alt="分享圖">
+                        <img src="../images/index/igImg-3.png" class="small" alt="分享圖">
+                        <img src="../images/index/igImg-4.png" class="small" alt="分享圖">
+                        <img src="../images/index/igImg-5.png" class="small" alt="分享圖">
+                        <img src="../images/index/igImg-1.png" class="small" alt="分享圖">
+                        <img src="../images/index/igImg-8.png" class="small" alt="分享圖">
                     </div>
                     <div class="igName">
                         <h4>Molly1020</h4>
@@ -698,10 +698,37 @@
 
 
         <section class="vmMap">
-            <div class="vmTitle">
-                <h2>尋找販賣機</h2>
+            <div id="mapSearch">
+                <div id="map"></div>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxP0uxcl_z9Y2bY7OkrWZg5TRhtkANEog&callback=initMap">
+                </script>
+                <div class="mapRoof">
+                    <img src="../images/index/shed.png" alt="地圖的屋頂">
+                </div>
             </div>
-            
+            <div class="vmCount">
+                <div class="vmTitle">
+                    <h2>尋找販賣機</h2>
+                </div>
+                <div class="vmInfo">
+                    <div class="vmLocate">
+                        <div class="locateImg">
+                            <img src="../images/index/coordinate.png" alt="定位圖">
+                        </div>
+                        <div class="locateImg">
+                            <img src="../images/index/coordinate.png" alt="定位圖">
+                        </div>
+                        <div class="locateImg">
+                            <img src="../images/index/coordinate.png" alt="定位圖">
+                        </div>
+                    </div>
+                    <div class="vmImg">
+                        <img src="../images/index/vending-1.png" alt="販賣機">
+                        <img src="../images/index/vending-2.png" alt="販賣機">
+                        <img src="../images/index/vending-3.png" alt="販賣機">
+                    </div>
+                </div>
+            </div>
         </section>
 
     </div>
@@ -1022,6 +1049,41 @@
             }
         }
         window.addEventListener('load', doFirst);
+    </script>
+
+    <script>
+
+        function showLarge(e) {
+            var small = e.target;
+            var src = small.src;
+            document.getElementById("large").src = src;
+        }
+
+
+        window.addEventListener("load", function () {
+            //var imgs = document.querySelectorAll(".small");
+            var imgs = document.getElementsByClassName("small");
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].addEventListener("click", showLarge, false);
+            }
+
+        }, false);
+
+    </script>
+
+    <script>
+        // Initialize and add the map初始化並添加地圖
+        function initMap() {
+            // 下面的代碼構造了一個新的Google地圖對象，並向地圖添加了屬性，包括中心和縮放級別。
+
+            // 位置
+            var uluru = { lat: 24.9650192, lng: 121.1909533 };
+            // The map, centered at Uluru地圖以烏魯魯為中心
+            var map = new google.maps.Map(
+                document.getElementById('map'), { zoom: 4, center: uluru });
+            // The marker, positioned at Uluru標記，位於烏魯魯。下面的代碼在地圖上放置一個標記。
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+        }
     </script>
 
 
