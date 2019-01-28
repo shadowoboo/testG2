@@ -602,6 +602,20 @@ body {
         width: 100px;
         margin: auto;
         position: relative; }
+        .index .section_12 .LeaderboardCount .Crown::before {
+          content: '';
+          display: block;
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          z-index: -1;
+          top: -50px;
+          left: -50px;
+          right: 0;
+          margin: auto;
+          background-size: cover;
+          background-image: url(../images/rankBoard/glow.png);
+          animation: rollGlow 5s infinite linear; }
         .index .section_12 .LeaderboardCount .Crown h2 {
           color: #fff;
           position: absolute;
@@ -609,25 +623,34 @@ body {
           top: 20px;
           right: 0;
           left: 0; }
+
+@keyframes rollGlow {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
       .index .section_12 .LeaderboardCount .No2 {
         background-image: url(../images/index/blue-pack.png);
         background-repeat: no-repeat;
         background-size: 280px; }
         .index .section_12 .LeaderboardCount .No2 .commodityImg img {
-          width: 38%; }
+          width: 31%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .No1 {
         background-image: url(../images/index/red-pack.png);
         background-repeat: no-repeat;
         background-size: 280px; }
         .index .section_12 .LeaderboardCount .No1 .commodityImg img {
-          width: 40%; }
+          width: 36%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .No3 {
         background-image: url(../images/index/green-pack.png);
         background-repeat: no-repeat;
         background-size: 280px;
         align-self: end; }
         .index .section_12 .LeaderboardCount .No3 .commodityImg img {
-          width: 50%; }
+          width: 40%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .Leaderboarditem {
         width: 280px;
         height: 480px;
@@ -644,8 +667,13 @@ body {
             margin: auto;
             width: 280px;
             height: 220px; }
+          .index .section_12 .LeaderboardCount .Leaderboarditem .commodity .cart {
+            margin: 5px 0; }
+          .index .section_12 .LeaderboardCount .Leaderboarditem .commodity .commodityTitle {
+            color: #737374; }
         .index .section_12 .LeaderboardCount .Leaderboarditem .commodityPrice p {
-          font-size: 28px; }
+          font-size: 22px;
+          color: #737374; }
         .index .section_12 .LeaderboardCount .Leaderboarditem .commodityStar {
           width: 150px;
           margin: auto; }
@@ -861,7 +889,9 @@ body {
           height: 0;
           list-style: none;
           animation: 200s rotate infinite linear; }
-          .index .preOrder .poCount .poray ul li, .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+          .index .preOrder .poCount .poray ul li,
+          .index .preOrder .poCount .poray ul li:before,
+          .index .preOrder .poCount .poray ul li:after {
             position: absolute;
             border: 0 solid transparent;
             border-width: 1.2em 20em;
@@ -874,7 +904,8 @@ body {
             top: 50%;
             margin-top: -1.2em;
             transform: rotate(0.1deg); }
-          .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+          .index .preOrder .poCount .poray ul li:before,
+          .index .preOrder .poCount .poray ul li:after {
             left: -20em;
             top: -1.2em;
             display: block;
@@ -926,7 +957,7 @@ body {
         .index .preOrder .poCount .poCard .poInside .insideBtn {
           text-align: right; }
           .index .preOrder .poCount .poCard .poInside .insideBtn .month {
-            box-shadow: 6px 6px 0  0 #00457b;
+            box-shadow: 6px 6px 0 0 #00457b;
             margin: 0 10px; }
   .index .igShare {
     width: 100%;
