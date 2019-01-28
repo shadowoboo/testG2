@@ -68,7 +68,8 @@ html {
   font-size: 34px; }
 
 h1, h2, h3, h4, p, span {
-  font-family: g2Font; }
+  font-family: g2Font;
+  line-height: 1.6em; }
 
 h1 {
   font-size: 40px; }
@@ -109,7 +110,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .cart:hover {
       color: #fff;
-      background-color: #00457b; } }
+      background-color: #00457b; }
+    .cart:focus {
+      outline: none; } }
 
 .detail {
   width: 150px;
@@ -129,7 +132,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .detail:hover {
       color: #fff;
-      background-color: #076baf; } }
+      background-color: #076baf; }
+    .detail:focus {
+      outline: none; } }
 
 .step {
   width: 130px;
@@ -149,7 +154,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .step:hover {
       color: #fff;
-      background-color: #00457b; } }
+      background-color: #00457b; }
+    .step:focus {
+      outline: none; } }
 
 .dimension {
   width: 50px;
@@ -169,7 +176,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .dimension:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .dimension:focus {
+      outline: none; } }
 
 .action {
   width: 120px;
@@ -189,7 +198,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .action:hover {
       color: #fff;
-      background-color: #ffb600; } }
+      background-color: #ffb600; }
+    .action:focus {
+      outline: none; } }
 
 .category {
   width: 120px;
@@ -209,7 +220,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .category:hover {
       color: #fff;
-      background-color: #076baf; } }
+      background-color: #076baf; }
+    .category:focus {
+      outline: none; } }
 
 .goToCustom {
   width: 160px;
@@ -229,7 +242,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .goToCustom:hover {
       color: #fff;
-      background-color: #00457b; } }
+      background-color: #00457b; }
+    .goToCustom:focus {
+      outline: none; } }
 
 .subscribe {
   width: 210px;
@@ -249,7 +264,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .subscribe:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .subscribe:focus {
+      outline: none; } }
 
 .month {
   width: 100px;
@@ -269,7 +286,9 @@ input:focus, select:focus {
   @media only screen and (min-width: 768px) {
     .month:hover {
       color: #737374;
-      background-color: #fbc84a; } }
+      background-color: #fbc84a; }
+    .month:focus {
+      outline: none; } }
 
 .month {
   position: relative; }
