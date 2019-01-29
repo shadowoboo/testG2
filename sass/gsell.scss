@@ -17,6 +17,10 @@ span {
 a {
     color: $blue; 
 }
+
+body {
+    background-color: #f09c8a;
+}
 .clearfix {
     width: 100%;
     height: 0;
@@ -38,12 +42,12 @@ input {
 }
 
 #google_serch {
-    background-color: #f09c8a;
+   margin-top: 140px;
 }
 
 #serch_title {
     text-align: center;
-    background: url(/images/nnnnn/title.png);
+    background: url(../images/nnnnn/title.png);
     background-repeat: no-repeat;
     width: 260px;
     margin: auto;
@@ -86,6 +90,10 @@ input {
     height: 400px;
 }
 
+.mapSearch_resullt {
+    background-color: #fff;
+}
+
 
 .map_serch_box{
     width: 98%;
@@ -121,7 +129,7 @@ input {
 @media screen and (min-width: 992px){
     #map {
         width: 70%;
-        height: 90vh;
+        height: 80vh;
         float: right;
         position: fixed;
     }
