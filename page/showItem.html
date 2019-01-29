@@ -5,20 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>大零食家 每月排行</title>
+    <title>大零食家 - [日本]UHA味覺糖甘藷片</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href=../css/tstyle.css"> -->
     <link rel="stylesheet" href="/css/showItem.css">
-
+    <link rel="stylesheet" href="/css/nnnnn.css">
+    <link rel="stylesheet" href="/css/header.css">
+    
     <script src="/js/common.js"></script>
     <script src="/js/Chart.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/showMsg.js"></script>
 </head>
 
 <body id="showItem">
-    <!-- header Start -->
-    <!-- header End -->
+
+    <section class="cloud">
+        <!--------手機用導覽列圖--------  -->
+        <div class="doc doc--bg2">
+            <canvas id="canvas"></canvas>
+        </div>
+    </section>
+    <header>
+        <h1>大零食家</h1>
+        <!-- ---------navBar上的巧克力搜尋---------------- -->
+        <div class="smalSearch">
+            <img src="../images/tina/smlSearch.png" alt="搜尋">
+        </div>
+        <nav>
+
+
+            <div class="menu">
+                <!-------- -----手機漢堡----------- -->
+
+                <div id="ham">
+                    <span class="btnTop"></span>
+                    <span class="btnMid"></span>
+                    <span class="btnBot"></span>
+                </div>
+                <!----    在手機上打開此logo;桌機上關掉此logo------ -->
+                <div class="logo">
+                    <a href="../page/index.html"><img src="../images/tina/LOGO2.png" alt="大零食家"></a>
+
+                </div>
+                <div id="list_appear">
+                    <!-- ----------手機選單離開-------- -->
+                    <div id="cros">
+
+                        <span class="leave">X</span>
+                    </div>
+                    <ul class="list">
+                        <li><a href="../page/rankBoard.html">零食排行榜</a></li>
+                        <li><a href="../page/customized.html">客製零食箱</a> </li>
+                        <!-- 在手機上要關掉這個li的logo -->
+                        <li><a href="../page/index.html"><img src="../images/tina/LOGO1.png" alt="大零食家"></a></li>
+                        <li id="store"> <a href="../page/shopping.html">零食商店街</a>
+                            <ul id="Submenu" class="subMenu">
+                                <li><a href="../page/showItem.html">零食單品</a></li>
+                                <li id="snBox"><a href="../page/preOrder.html">預購零食箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../page/gsell.html">尋找販賣機</a> </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </nav>
+
+
+        <ul class="login">
+            <li><i class="fas fa-shopping-cart"></i></li>
+            <li><i class="fas fa-user-circle"></i></li>
+        </ul>
+    </header>
 
     <section id='item'>
         <div class="itemCol leftCol">
@@ -77,9 +140,6 @@
 
 
     </section>
-
-
-
     <section id="comment">
         <div class="comments">
             <h3>商品評價</h3>
@@ -103,7 +163,12 @@
                             <button class="share"><i class="fas fa-share"></i>分享</button>
                             <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
                         </div>
-
+                        <div>
+                            <form class="msgBox"action="">
+                                    <input type="text" class="msg" name="msg" placeholder="留言......">
+                                    <input type="submit" class="sendMsg" value="送出">
+                            </form>
+                        </div>
                         <div class="msgs">
                             <div class="msg_num msg_1">
                                 <div class="memPic">
@@ -139,24 +204,200 @@
                         </p>
 
                         <div class="commentBtns">
-                            <button class="like"><i class="far fa-thumbs-up"></i>按讚(0人)</button>
+                            <button class="like"><i class="far fa-thumbs-up"></i>(0人)</button>
                             <button class="share"><i class="fas fa-share"></i>分享</button>
                             <button class="btnMsg"><i class="fas fa-comment"></i>顯示留言</button>
                         </div>
-
+                        <div>
+                            <form class="msgBox"action="">
+                                    <input type="text" class="msg" name="msg" placeholder="留言......">
+                                    <input type="submit" class="sendMsg" value="送出">
+                            </form>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
+        <div id="pagination">
+            <ul>
+                <li class="page-item"><a href="#" id="last" class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+                <li class="page-item"><a href="#"  class="page-link nowLoc">01</a></li>
+                <li class="page-item"><a href="#"  class="page-link">02</a></li>
+                <li class="page-item"><a href="#" class="page-link">03</a></li>
+                <li class="page-item"><a href="#" id="next" class="page-link"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id='moreItem'>
+        <div class="title">
+            <h2>推薦商品</h2>
+        </div>
+        <div class="itemList">
+            <div class="item red" >
+                <img class="country" src="../images/blair/jp-no2.png" alt="">
+                <img class="itemImg" src="../images/blair/item3.png" alt="">
+                <h4 class="itemName">[日本]Pure 草莓優格軟糖</h4>
+                <img class="star" src="../images/blair/star.png" alt="star">
+                <p class="price">$80</p>
+                <div class="itemBtns">
+                    <button class="cart">加入購物車</button>
+                    <button class="heart"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="item red" >
+                <img class="country" src="../images/blair/us-no1.png" alt="">
+                <img class="itemImg" src="../images/blair/nuts.png" alt="">
+                <h4 class="itemName">[美國]Tuty BBQ花生粒</h4>
+                <img class="star" src="../images/blair/star.png" alt="star">
+                <p class="price">$90</p>
+                <div class="itemBtns">
+                    <button class="cart">加入購物車</button>
+                    <button class="heart"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="item red">
+                <img class="country" src="../images/blair/de-no3.png" alt="">
+                <img class="itemImg" src="../images/blair/item2.png" alt="">
+                <h4 class="itemName">[德國]Chikito 牛奶巧克力</h4>
+                <img class="star" src="../images/blair/star.png" alt="star">
+                <p class="price">$60</p>
+                <div class="itemBtns">
+                    <button class="cart">加入購物車</button>
+                    <button class="heart"><i class="far fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </section>
 
-    <section id='moreItem'>
-        
-    </section>
-    <!-- footer Start -->
-    <!-- footer End -->
+    <footer>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+
+        <div id="floor">
+            <img src="/images/nnnnn/floor.png" alt="floor">
+            <p id="copy">Copyright©2019 Snack Master</p>
+        </div>
+    </footer>
 </body>
 <script src="/js/rankBoard.js"></script>
-
 </html>

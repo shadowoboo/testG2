@@ -361,6 +361,10 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
+.clearfix {
+  content: "";
+  clear: both; }
+
 #showItem {
   background-color: #fcda85; }
   #showItem #item {
@@ -374,6 +378,7 @@ input[type=number]::-webkit-outer-spin-button {
       #showItem #item .itemCol .itemImg {
         width: 65%; }
       #showItem #item .itemCol .rank {
+        font-size: 22px;
         font-family: g2Font;
         margin: 12.5px 0;
         padding: 5.5px 0;
@@ -411,7 +416,8 @@ input[type=number]::-webkit-outer-spin-button {
           width: 68.15%;
           border-radius: 100px;
           background: linear-gradient(to right, #e97d58 85%, white 10%);
-          margin: auto; }
+          margin: auto;
+          font-size: 0; }
           #showItem #item .itemCol #rankGrid .score .star img {
             vertical-align: middle;
             width: 100%; }
@@ -426,6 +432,7 @@ input[type=number]::-webkit-outer-spin-button {
             #showItem #item .itemCol #rankGrid .stars p img {
               vertical-align: middle; }
             #showItem #item .itemCol #rankGrid .stars p .star {
+              font-size: 0;
               border-radius: 100px; }
             #showItem #item .itemCol #rankGrid .stars p #sweet {
               background: linear-gradient(to right, #e97d58 85%, white 10%); }
@@ -480,6 +487,7 @@ input[type=number]::-webkit-outer-spin-button {
       #showItem #comment .mem .memCol {
         margin-left: 10px; }
         #showItem #comment .mem .memCol .star {
+          font-size: 0;
           margin: 7px 0 0 0;
           width: 16.45%;
           transform: translate(-11%, 0);
@@ -488,8 +496,15 @@ input[type=number]::-webkit-outer-spin-button {
           #showItem #comment .mem .memCol .star img {
             vertical-align: middle; }
         #showItem #comment .mem .memCol .commentCtx {
+          color: #737374;
           font-family: g2Font;
           padding: 10px 0; }
+        #showItem #comment .mem .memCol .msgs {
+          height: 0;
+          overflow: hidden;
+          transition: .3s; }
+        #showItem #comment .mem .memCol .msgsShow {
+          height: 100%; }
         #showItem #comment .mem .memCol .msg_num {
           display: flex;
           padding: 17.5px 0;
@@ -500,17 +515,41 @@ input[type=number]::-webkit-outer-spin-button {
             padding: 17.5px 0; }
           #showItem #comment .mem .memCol .msg_num .msgCol {
             margin-left: 10px; }
+            #showItem #comment .mem .memCol .msg_num .msgCol .msgCtx {
+              color: #737374; }
+    #showItem #comment #pagination ul {
+      display: flex;
+      justify-content: center; }
+      #showItem #comment #pagination ul li {
+        margin: 0 7.5px;
+        font-size: 20px; }
+        #showItem #comment #pagination ul li a {
+          color: #076baf;
+          padding: 5px 10px;
+          font-family: g2font; }
+        #showItem #comment #pagination ul li .nowLoc, #showItem #comment #pagination ul li a:hover {
+          color: #fff;
+          background-color: #076baf; }
+        #showItem #comment #pagination ul li .fas {
+          color: #fff; }
+        #showItem #comment #pagination ul li #next, #showItem #comment #pagination ul li #last {
+          background-color: #076baf;
+          padding: 5px 10px; }
+        #showItem #comment #pagination ul li #last {
+          border-radius: 8px 0 0 8px; }
+        #showItem #comment #pagination ul li #next {
+          border-radius: 0 8px 8px 0; }
   #showItem .commentBtns {
     display: flex;
-    padding-top: 10px;
-    border-bottom: solid 1px #076baf; }
+    justify-content: space-between;
+    padding-top: 10px; }
     #showItem .commentBtns .like {
       width: 28.5%;
       height: 30px;
       color: #fff;
       background-color: #076baf;
       border: 2px solid transparent;
-      border-radius: 10px 0 0 0;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -531,7 +570,7 @@ input[type=number]::-webkit-outer-spin-button {
       color: #076baf;
       background-color: #fff;
       border: 2px solid #076baf;
-      border-radius: 0px;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -552,7 +591,7 @@ input[type=number]::-webkit-outer-spin-button {
       color: #fff;
       background-color: #076baf;
       border: 2px solid transparent;
-      border-radius: 0 10px 0 0;
+      border-radius: 10px;
       padding: 0px;
       font-family: g2Font;
       text-align: center;
@@ -567,9 +606,98 @@ input[type=number]::-webkit-outer-spin-button {
           background-color: #00457b; }
         #showItem .commentBtns .btnMsg:focus {
           outline: none; } }
-  @media screen and (min-width: 768px) {
-    #showItem section {
-      max-width: 1200px;
+  #showItem .msgBox {
+    width: 100%;
+    display: flex;
+    margin: 10px 0; }
+    #showItem .msgBox .msg {
+      width: 80%;
+      height: 30px;
+      border: solid 2px #076baf;
+      border-radius: 10px; }
+    #showItem .msgBox .sendMsg {
+      width: 20%;
+      height: 30px;
+      color: #fff;
+      background-color: #076baf;
+      border: 2px solid #076baf;
+      position: relative;
+      border-radius: 10px;
+      font-family: g2Font;
+      text-align: center;
+      cursor: pointer; }
+      #showItem .msgBox .sendMsg:hover {
+        background-color: #00457b; }
+  #showItem #moreItem {
+    background-color: transparent;
+    margin: auto; }
+    #showItem #moreItem .title {
+      width: 21.666%;
       margin: auto;
-      background-color: #fff;
-      padding: 20px; } }
+      text-align: center;
+      background-image: url(../images/blair/title.png);
+      background-repeat: no-repeat; }
+      #showItem #moreItem .title h2 {
+        line-height: 163px;
+        color: #076baf; }
+    #showItem #moreItem .itemList {
+      margin-top: 30px;
+      text-align: center; }
+      #showItem #moreItem .itemList:after {
+        clear: both;
+        display: block;
+        content: ""; }
+      #showItem #moreItem .itemList .red {
+        background-image: url(../images/blair/red-pack.png); }
+      #showItem #moreItem .itemList .green {
+        background-image: url(../images/blair/green-pack.png); }
+      #showItem #moreItem .itemList .blue {
+        background-image: url(../images/blair/blue-pack.png); }
+      #showItem #moreItem .itemList .item {
+        width: 280px;
+        height: 480px;
+        float: left;
+        margin-left: calc(50% - 140px);
+        position: relative; }
+        @media only screen and (min-width: 768px) {
+          #showItem #moreItem .itemList .item {
+            margin-left: 69.33333px; } }
+        @media only screen and (min-width: 840px) {
+          #showItem #moreItem .itemList .item {
+            margin-left: calc(25% - 210px); } }
+        #showItem #moreItem .itemList .item .country {
+          width: 40px;
+          position: absolute;
+          top: 30px;
+          right: 15px; }
+        #showItem #moreItem .itemList .item .itemImg {
+          width: 140px;
+          margin-top: 70px; }
+        #showItem #moreItem .itemList .item .itemName {
+          width: 196px;
+          margin: auto;
+          margin-top: 10px; }
+        #showItem #moreItem .itemList .item .star {
+          width: 140px;
+          vertical-align: middle; }
+        #showItem #moreItem .itemList .item .price {
+          margin-top: 4px;
+          font-size: 22px; }
+        #showItem #moreItem .itemList .item .itemBtns {
+          margin-top: 6px; }
+          #showItem #moreItem .itemList .item .itemBtns .cart,
+          #showItem #moreItem .itemList .item .itemBtns .heart {
+            vertical-align: middle; }
+  @media screen and (min-width: 768px) {
+    #showItem #item,
+    #showItem #comment,
+    #showItem #moreItem {
+      max-width: 1200px;
+      padding: 20px; }
+    #showItem #item {
+      margin: 150px auto;
+      margin-bottom: 0px;
+      background-color: #fff; }
+    #showItem #comment {
+      margin: 50px auto;
+      background-color: #fff; } }
