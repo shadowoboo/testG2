@@ -1,4 +1,3 @@
-
 body{
     background-color: #fadfd4;
 }
@@ -15,6 +14,7 @@ section {
 .cus{
     width: 100%;
     height: 100vh;
+    margin-top: 15vh;
     overflow: hidden;
 }
 
@@ -35,7 +35,7 @@ section {
         height:100px;
         margin:50px;
         margin-bottom:100px;
-        .cloud{
+        .cloudy{
             width:120px;
         }
         .step1{
@@ -1074,7 +1074,7 @@ $cardY:600px;
             p{
                 font-size: 15px;
             }
-            .cloud{
+            .cloudy{
                 margin: 0 5px;
             }
             .step1{
