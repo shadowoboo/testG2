@@ -25,27 +25,27 @@ function allPanel(){
             switch ($(this).attr('id')) {
                 case 'sw_all':
                     newTitleCtx = "本月<br>綜合排行";
-                    newIp = "/images/rankBoard/ipCookie.png";
+                    newIp = "../images/rankBoard/ipCookie.png";
                     break;
 
                 case 'sw_cookie':
                     newTitleCtx = "本月<br>餅乾排行";
-                    newIp = "/images/rankBoard/ipCookie.png";
+                    newIp = "../images/rankBoard/ipCookie.png";
                     break;
 
                 case 'sw_candy':
                     newTitleCtx = "本月<br>糖果排行";
-                    newIp = "/images/rankBoard/ipCandy.png";
+                    newIp = "../images/rankBoard/ipCandy.png";
                     break;
 
                 case 'sw_choco':
                     newTitleCtx = "本月<br>巧克力排行";
-                    newIp = "/images/rankBoard/ipChoco.png";
+                    newIp = "../images/rankBoard/ipChoco.png";
                     break;
 
                 case 'sw_chip':
                     newTitleCtx = "本月<br>洋芋片排行";
-                    newIp = "/images/rankBoard/ipChips.png";
+                    newIp = "../images/rankBoard/ipChips.png";
                     break;
             }
 
