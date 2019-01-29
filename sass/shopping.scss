@@ -13,6 +13,10 @@ h1,h2,h3,h4,p,span{
     clear: both;
 }
 .shopping{
+    margin-top: 120px;
+    @media only screen and (min-width: $sm) {
+        margin-top: 150px;
+    }
     .wrap{
         width: 100%;
         max-width: 1200px; 
@@ -84,6 +88,7 @@ h1,h2,h3,h4,p,span{
         }
         .items{
             margin-top: 60px;
+            margin-bottom: 50px;
             text-align: center;
             .red{
                 background-image: url(../images/blair/red-pack.png);
@@ -142,6 +147,36 @@ h1,h2,h3,h4,p,span{
                 }
             }
         }
+        #pagination ul{
+            display: flex;
+            justify-content: center;
+            li{
+               margin: 0 7.5px;
+               font-size: 20px;
+               a{
+                   color: #076baf;
+                   padding:5px 10px ; 
+                   font-family:g2font;
+               }
+               .nowLoc,a:hover{
+                   color: #fff;
+                   background-color: #076baf;
+               }
+               .fas{
+                   color: #fff;
+               }
+               #next,#last{
+                   background-color: #076baf;
+                   padding: 5px 10px;
+               }
+               #last{
+                   border-radius: 8px 0 0 8px;
+               }
+               #next{
+                   border-radius: 0 8px 8px 0;
+               }
+           }
+        }
         .mint{
             display: none;
             @media only screen and (min-width: 1200px) {
@@ -150,8 +185,10 @@ h1,h2,h3,h4,p,span{
                 position: fixed;
                 top: 40%;
                 right: 20px;
+                z-index: 9;
                 .info{
                     width: 200px;
+                    height: 155px;
                     margin: auto;
                     background-color: rgba(#fff, 0.9);
                     padding: 14px;
@@ -182,6 +219,9 @@ h1,h2,h3,h4,p,span{
                     .star{
                         width: 80%;
                         margin: auto;
+                    }
+                    #msg{
+                        margin-top: 32px;
                     }
                 }
                 .radar{

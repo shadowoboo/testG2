@@ -1,7 +1,3 @@
-@import "reset";
-@import "common";
-
-
 body{
     background-color: #fadfd4;
 }
@@ -18,6 +14,7 @@ section {
 .cus{
     width: 100%;
     height: 100vh;
+    margin-top: 15vh;
     overflow: hidden;
 }
 
@@ -27,6 +24,7 @@ section {
     justify-content:space-around;
     align-items: center;
     width: 100%;
+    height: 100vh;
     background-color: #fadfd4;
     overflow: hidden;
     .makingStep{
@@ -38,7 +36,7 @@ section {
         height:100px;
         margin:50px;
         margin-bottom:100px;
-        .cloud{
+        .cloudy{
             width:120px;
         }
         .step1{
@@ -252,6 +250,7 @@ section {
         width:100%;
         height:300px;
         display: flex;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
         background-color:#fff;
@@ -262,6 +261,9 @@ section {
             // img{
             //     width: 50px;
             // }
+            img{
+                width:75px;
+            }
             }
         }
         #btns15{
@@ -286,7 +288,7 @@ section {
         }
         .purchaseDetail{
             width: 45%;
-            height:470px;
+            height:400px;
             margin: 16px;
             background-color: #ffffff;
             border:7px solid #fbc84a;
@@ -304,7 +306,7 @@ section {
                 }   
             }
         .list{
-            height:400px;
+            height:330px;
             overflow-y: scroll;
             .item{
                 display: flex;
@@ -355,12 +357,14 @@ section {
 .leftBox{
     display: flex;
     flex:2;
-    height: 400px;
+    height:360px;
     flex-direction: row;
     justify-content: flex-start;
     align-items:center;
     //測試頁按鈕
     #ctrl_bar{
+        position: relative;
+        z-index: 9;
         margin: 12px;
         .btn{
             width: 50px;
@@ -383,6 +387,7 @@ section {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    height: 16vh;
     text-align: center;
     .mt{
         margin:15px 10px;
@@ -489,7 +494,7 @@ a {
     background:rgba($form-bg,.9);
     max-width:600px;
     border-radius:10px;
-    margin:12px;
+    margin:0 40px;
     border:10px solid #fbc849;
     a{
         font-family: g2Font;
@@ -499,15 +504,15 @@ a {
 .top-row {
  .pickColor{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height:300px;
+    width:300px;
+    margin:101px 0;
     background-color: #fff;
     .colorBtn{
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         margin: 3px;
         border:2px solid rgb(155, 155, 155);
         border-radius: 50%;
@@ -521,13 +526,22 @@ a {
         background-color: rgb(99, 151, 219);
     }
     .color3{
-        background-color: rgb(105, 255, 138);
+        background-color: rgb(142, 240, 163);
     }
     .color4{
         background-color: rgb(245, 132, 255);
     }
     .color5{
         background-color: rgb(250, 230, 116);
+    }
+    .color6{
+        background-color: rgb(186, 141, 238);
+    }
+    .color7{
+        background-color: rgb(245, 163, 127);
+    }
+    .color8{
+        background-color: rgb(109, 216, 190);
     }
  }
   &:after {
@@ -540,9 +554,9 @@ a {
     float:left;
     width:48%;
     margin-right:4%;
-    &:last-child { 
-      margin:0;
-    }
+    // &:last-child { 
+    //   margin:0;
+    // }
   }
 }
 
@@ -579,7 +593,7 @@ a {
     flex: 1;
     color: rgba(105,105,105,1);
     background: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
+    // max-width: 600px;
     border-radius: 10px;
     margin: 12px;
     border: 10px solid #fbc849;
@@ -1062,7 +1076,7 @@ $cardY:600px;
             p{
                 font-size: 15px;
             }
-            .cloud{
+            .cloudy{
                 margin: 0 5px;
             }
             .step1{
@@ -1192,7 +1206,7 @@ $cardY:600px;
                 .item{
                     width: 100%;
                     display: flex;
-                    flex-direction: row;
+                    flex-direction:column;
                     flex-wrap: wrap;
                     align-items: center;
                     border: 5px solid #fbc84a;

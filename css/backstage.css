@@ -361,188 +361,103 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-footer {
-  height: 300px;
-  margin-top: 50px;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  top: 10%; }
+@font-face {
+  font-family: g2Regular;
+  src: url(../GenJyuuGothicX-Regular.ttf); }
 
-.container {
-  position: relative;
-  min-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  animation: 10s march linear infinite; }
+body {
+  background-color: #fcde91; }
 
-.snack {
-  position: relative;
-  width: 180px;
-  height: 25px;
-  border-radius: 20px / 50px;
-  box-sizing: border-box;
-  animation: 1.8s bounce infinite; }
+h1, h2, h3, h4, p, span {
+  color: #737374; }
 
-.snack .pic {
-  position: absolute;
-  top: -130px;
-  left: 7%;
-  width: 118px;
-  /* border-radius: 50%; */
-  /* border: 5px solid transparent; */
-  z-index: 2; }
-  @media screen and (max-width: 767px) {
-    .snack .pic {
-      top: -100px;
-      left: 0; } }
+.clearfix {
+  content: "";
+  clear: both; }
 
-.snack .shadow {
-  position: absolute;
-  width: 80px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.05);
-  animation: 1.8s shadow-shift infinite; }
-
-#floor {
-  position: absolute;
-  bottom: 0;
-  z-index: -1; }
-
-#copy {
-  position: absolute;
-  bottom: 0;
-  left: 42%;
-  z-index: 0;
-  line-height: 30px; }
-
-@keyframes bounce {
-  0% {
-    top: 30px; }
-  25% {
-    top: 0;
-    transform: rotate(-5deg); }
-  50% {
-    top: 30px; }
-  75% {
-    top: 0;
-    transform: rotate(5deg); }
-  100% {
-    top: 30px; } }
-
-@keyframes shadow-shift {
-  0% {
-    top: 40px;
-    left: 0;
-    width: 150px; }
-  25% {
-    top: 70px;
-    left: 0;
-    transform: rotate(5deg);
-    width: 120px;
-    opacity: 0.5; }
-  50% {
-    top: 40px;
-    left: 0;
-    width: 150px; }
-  75% {
-    top: 70px;
-    left: 30px;
-    transform: rotate(-5deg);
-    width: 120px;
-    opacity: 0.5; }
-  100% {
-    top: 40px;
-    left: 0;
-    width: 150px; } }
-
-@keyframes march {
-  0% {
-    left: 0px; }
-  100% {
-    left: -800px; } }
-
-img {
-  width: 100%; }
-
-@media screen and (min-width: 578px) and (max-width: 767px) {
-  #copy {
-    line-height: 12px;
-    font-size: 10px; }
-  #floor img {
-    width: 110%; }
-  @keyframes shadow-shift {
-    0% {
-      top: 80px;
-      left: 0;
-      width: 120px; }
-    25% {
-      top: 110px;
-      left: 0;
-      transform: rotate(5deg);
-      width: 90px;
-      opacity: 0.5; }
-    50% {
-      top: 80px;
-      left: 0;
-      width: 120px; }
-    75% {
-      top: 110px;
-      left: 30px;
-      transform: rotate(-5deg);
-      width: 90px;
-      opacity: 0.5; }
-    100% {
-      top: 80px;
-      left: 0;
-      width: 120px; } } }
-
-@media screen and (max-width: 575px) {
-  footer {
-    height: 300px; }
-  #floor {
-    top: 45%;
-    overflow: hidden; }
-    #floor img {
-      width: 200%; }
-  .pic {
-    width: 50%; }
-  .snack {
-    height: 42px; }
-  .snack .pic {
-    top: -95px;
-    width: 60px;
-    left: 0; }
-  #copy {
-    font-size: 8px;
-    left: 33%;
-    bottom: 0;
-    line-height: 15px; }
-  @keyframes shadow-shift {
-    0% {
-      top: -10px;
-      left: 0;
-      width: 60px; }
-    25% {
-      top: 20px;
-      left: 0;
-      transform: rotate(5deg);
-      width: 40px;
-      opacity: 0.5; }
-    50% {
-      top: -10px;
-      left: 0;
-      width: 60px; }
-    75% {
-      top: 20px;
-      left: 30px;
-      transform: rotate(-5deg);
-      width: 40px;
-      opacity: 0.5; }
-    100% {
-      top: -10px;
-      left: 0;
-      width: 60px; } } }
+.backstage {
+  color: #737374;
+  font-family: g2font; }
+  .backstage #menu {
+    width: 230px;
+    height: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent #076baf transparent transparent;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center; }
+    .backstage #menu #logo {
+      width: 70%;
+      margin: auto;
+      margin-bottom: 30px; }
+    .backstage #menu #manager {
+      color: deeppink;
+      font-size: 16px;
+      text-decoration: underline; }
+    .backstage #menu #menuUl {
+      font-size: 22px; }
+      .backstage #menu #menuUl li {
+        display: block;
+        margin: 40px 0; }
+        .backstage #menu #menuUl li a {
+          color: #737374; }
+          .backstage #menu #menuUl li a:hover {
+            text-decoration: underline;
+            color: #076baf; }
+  .backstage #contentWrap {
+    padding-top: 30px; }
+    .backstage #contentWrap #content {
+      overflow-x: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      margin-left: 260px;
+      margin-right: 30px; }
+      .backstage #contentWrap #content button {
+        margin-top: 10px; }
+      .backstage #contentWrap #content table {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        font-size: 18px;
+        width: 200%;
+        text-align: center; }
+        .backstage #contentWrap #content table tr:nth-child(even) {
+          background-color: rgba(115, 115, 116, 0.1); }
+        .backstage #contentWrap #content table th, .backstage #contentWrap #content table td {
+          width: 110px;
+          vertical-align: middle;
+          padding: 4px; }
+        .backstage #contentWrap #content table td {
+          overflow: hidden;
+          height: 40px;
+          font-family: g2Regular; }
+          .backstage #contentWrap #content table td a {
+            color: #737374; }
+        .backstage #contentWrap #content table #ingredient {
+          width: 500px; }
+      .backstage #contentWrap #content #pagination ul {
+        display: flex;
+        justify-content: center; }
+        .backstage #contentWrap #content #pagination ul li {
+          margin: 0 7.5px;
+          font-size: 20px; }
+          .backstage #contentWrap #content #pagination ul li a {
+            color: #076baf;
+            padding: 5px 10px;
+            font-family: g2font; }
+          .backstage #contentWrap #content #pagination ul li .nowLoc, .backstage #contentWrap #content #pagination ul li a:hover {
+            color: #fff;
+            background-color: #076baf; }
+          .backstage #contentWrap #content #pagination ul li .fas {
+            color: #fff; }
+          .backstage #contentWrap #content #pagination ul li #next, .backstage #contentWrap #content #pagination ul li #last {
+            background-color: #076baf;
+            padding: 5px 10px; }
+          .backstage #contentWrap #content #pagination ul li #last {
+            border-radius: 8px 0 0 8px; }
+          .backstage #contentWrap #content #pagination ul li #next {
+            border-radius: 0 8px 8px 0; }
+    .backstage #contentWrap footer {
+      margin-left: 260px;
+      padding: 20px 0;
+      text-align: center; }

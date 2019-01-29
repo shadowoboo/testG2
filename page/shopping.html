@@ -8,15 +8,78 @@
         crossorigin="anonymous">
     <title>大零食家 - 零食商店街</title>
     <link rel="stylesheet" href="../css/shopping.css">
+    <link rel="stylesheet" href="../css/nnnnn.css">
+    <link rel="stylesheet" href="../css/header.css">
     <script src="../js/common.js"></script>
     <script src="../js/Chart.js"></script>
     <script src="../js/shopping.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+    <section class="cloud">
+        <!--------手機用導覽列圖--------  -->
+    
+        <div class="doc doc--bg2">
+            <canvas id="canvas"></canvas>
+        </div>
+    </section>
+    <header>
+        <h1>大零食家</h1>
+        <!-- ---------navBar上的巧克力搜尋---------------- -->
+        <div class="smalSearch">
+            <img src="../images/tina/smlSearch.png" alt="搜尋">
+        </div>
+        <nav>
+    
+    
+            <div class="menu">
+                <!-------- -----手機漢堡----------- -->
+    
+                <div id="ham">
+                    <span class="btnTop"></span>
+                    <span class="btnMid"></span>
+                    <span class="btnBot"></span>
+                </div>
+                <!----    在手機上打開此logo;桌機上關掉此logo------ -->
+                <div class="logo">
+                    <a href="index.html"><img src="../images/tina/LOGO2.png" alt="大零食家"></a>
+    
+                </div>
+                <div id="list_appear">
+                    <!-- ----------手機選單離開-------- -->
+                    <div id="cros">
+    
+                        <span class="leave">X</span>
+                    </div>
+                    <ul class="list">
+                        <li><a href="rankBoard.html">零食排行榜</a></li>
+                        <li><a href="customized.html">客製零食箱</a> </li>
+                        <!-- 在手機上要關掉這個li的logo -->
+                        <li><a href="index.html"><img src="../images/tina/LOGO1.png" alt="大零食家"></a></li>
+                        <li id="store"> <a href="shopping.html">零食商店街</a>
+                            <ul id="Submenu" class="subMenu">
+                                <li><a href="shopping.html">零食單品</a></li>
+                                <li id="snBox"><a href="preOrder.html">預購零食箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gsell.html">尋找販賣機</a> </li>
+                    </ul>
+                </div>
+            </div>
+    
+    
+        </nav>
+    
+    
+        <ul class="login">
+            <li><i class="fas fa-shopping-cart"></i></li>
+            <li><i class="fas fa-user-circle"></i></li>
+        </ul>
+    </header>
     <div class="shopping">
         <div class="wrap">
             <div class="title">
-                <h2>零食商店街</h2>
+                <h2>零食單品</h2>
             </div>
             <div class="search">
                 <img src="../images/blair/pocky.png" alt="">
@@ -44,113 +107,145 @@
                 <i class="fas fa-search"></i>
             </div>
             <div class="items">
-                <div class="item red" id="5|5|4|4">
-                    <img class="country" src="../images/blair/jp-no2.png" alt="">
-                    <img class="itemImg" src="../images/blair/item3.png" alt="">
-                    <h4 class="itemName">[日本]Pure 草莓優格軟糖</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                <a href="showItem.html">
+                   <div class="item red" id="5.0|5|4|4">
+                        <img class="country" src="../images/blair/jp-no2.png" alt="">
+                        <img class="itemImg" src="../images/blair/item3.png" alt="">
+                        <h4 class="itemName">[日本]Pure 草莓優格軟糖</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div> 
+                </a>
+                <a href="showItem.html">
+                    <div class="item red" id="4.3|4|3|3">
+                        <img class="country" src="../images/blair/us-no1.png" alt="">
+                        <img class="itemImg" src="../images/blair/nuts.png" alt="">
+                        <h4 class="itemName">[美國]Tuty BBQ花生粒</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$90</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item red" id="4|4|3|3">
-                    <img class="country" src="../images/blair/us-no1.png" alt="">
-                    <img class="itemImg" src="../images/blair/nuts.png" alt="">
-                    <h4 class="itemName">[美國]Tuty BBQ花生粒</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$90</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item red" id="5.0|4|3|2">
+                        <img class="country" src="../images/blair/de-no3.png" alt="">
+                        <img class="itemImg" src="../images/blair/item2.png" alt="">
+                        <h4 class="itemName">[德國]Chikito 牛奶巧克力</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$60</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item red">
-                    <img class="country" src="../images/blair/de-no3.png" alt="">
-                    <img class="itemImg" src="../images/blair/item2.png" alt="">
-                    <h4 class="itemName">[德國]Chikito 牛奶巧克力</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$60</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item blue" id="3.8|2|0|0">
+                        <img class="country" src="../images/blair/jp-no2.png" alt="">
+                        <img class="itemImg" src="../images/blair/item3.png" alt="">
+                        <h4 class="itemName">[日本]Pure 草莓優格軟糖</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item blue">
-                    <img class="country" src="../images/blair/jp-no2.png" alt="">
-                    <img class="itemImg" src="../images/blair/item3.png" alt="">
-                    <h4 class="itemName">[日本]Pure 草莓優格軟糖</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item blue" id="4.8|0|3|1">
+                        <img class="country" src="../images/blair/de-no3.png" alt="">
+                        <img class="itemImg" src="../images/blair/popcorn.png" alt="">
+                        <h4 class="itemName">[匈牙利]Mogyi 焦糖爆米花</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item blue">
-                    <img class="country" src="../images/blair/de-no3.png" alt="">
-                    <img class="itemImg" src="../images/blair/popcorn.png" alt="">
-                    <h4 class="itemName">[匈牙利]Mogyi 焦糖爆米花</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item blue" id="5.0|5|0|1">
+                        <img class="country" src="../images/blair/jp-no2.png" alt="">
+                        <img class="itemImg" src="../images/blair/item2.png" alt="">
+                        <h4 class="itemName">[英國]Chikito 牛奶巧克力</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item blue">
-                    <img class="country" src="../images/blair/jp-no2.png" alt="">
-                    <img class="itemImg" src="../images/blair/item2.png" alt="">
-                    <h4 class="itemName">[英國]Chikito 牛奶巧克力</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item green"  id="3.7|1|5|2">
+                        <img class="country" src="../images/blair/de-no3.png" alt="">
+                        <img class="itemImg" src="../images/blair/candy2.png" alt="">
+                        <h4 class="itemName">[德國]Trolli 蟲蟲軟糖</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item green">
-                    <img class="country" src="../images/blair/de-no3.png" alt="">
-                    <img class="itemImg" src="../images/blair/candy2.png" alt="">
-                    <h4 class="itemName">[德國]Trolli 蟲蟲軟糖</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item green" id="4.9|2|5|1">
+                        <img class="country" src="../images/blair/jp-no2.png" alt="">
+                        <img class="itemImg" src="../images/blair/item.png" alt="">
+                        <h4 class="itemName">[日本]摩巴頂級巧克力軟餅</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item green">
-                    <img class="country" src="../images/blair/jp-no2.png" alt="">
-                    <img class="itemImg" src="../images/blair/item.png" alt="">
-                    <h4 class="itemName">[日本]摩巴頂級巧克力軟餅</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
+                </a>
+                <a href="showItem.html">
+                    <div class="item green" id="3.2|1|1|5">
+                        <img class="country" src="../images/blair/us-no1.png" alt="">
+                        <img class="itemImg" src="../images/blair/nuts.png" alt="">
+                        <h4 class="itemName">[美國]Tuty BBQ花生粒</h4>
+                        <img class="star" src="../images/blair/star.png" alt="star">
+                        <p class="price">$80</p>
+                        <div class="itemBtns">
+                            <button class="cart">加入購物車</button>
+                            <button class="heart"><i class="far fa-heart"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="item green">
-                    <img class="country" src="../images/blair/us-no1.png" alt="">
-                    <img class="itemImg" src="../images/blair/nuts.png" alt="">
-                    <h4 class="itemName">[美國]Tuty BBQ花生粒</h4>
-                    <img class="star" src="../images/blair/star.png" alt="star">
-                    <p class="price">$80</p>
-                    <div class="itemBtns">
-                        <button class="cart">加入購物車</button>
-                        <button class="heart"><i class="far fa-heart"></i></button>
-                    </div>
-                </div>
+                </a>
                 <div class="clearfix"></div>
+            </div>
+            <div id="pagination">
+                <ul>
+                    <li class="page-item"><a href="#" id="last" class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+                    <li class="page-item"><a href="#" class="page-link nowLoc">01</a></li>
+                    <li class="page-item"><a href="#" class="page-link">02</a></li>
+                    <li class="page-item"><a href="#" class="page-link">03</a></li>
+                    <li class="page-item"><a href="#" id="next" class="page-link"><i class="fas fa-chevron-right"></i></a></li>
+                </ul>
             </div>
             <div class="mint">
                 <div class="info">
-                    <h4>好評度</h4>
+                    <h4 id="goodTitle"></h4>
+                    <span id="mintStar"></span>
+                    <span id="mintFive"></span>
+                    <!-- <img class="star" src="../images/blair/star.png" alt="star"> -->
+                    <!-- <h4>好評度</h4>
                     <span id="mintStar">4.9</span>
                     <span id="mintFive">/5</span>
-                    <img class="star" src="../images/blair/star.png" alt="star">
+                    <img class="star" src="../images/blair/star.png" alt="star"> -->
+                    <h4 id="msg">我可以告訴你商品的評價星等喔!</h4>
                 </div>
                 <div class="radar">
                     <canvas id="radarCanvas"></canvas>
@@ -171,5 +266,133 @@
         <img src="../images/blair/5-3.png" alt="" id="bgChips9">
         <img src="../images/blair/5-4.png" alt="" id="bgChips10">
     </div>
+    <footer>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='snack ipf'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipf.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipc'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipc.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+            <div class='snack ipcho'>
+                <div class="pic">
+                    <img src="../images/nnnnn/ipcho.png" alt="ipPicture">
+                </div>
+                <div class='shadow'></div>
+            </div>
+        </div>
+    
+        <div id="floor">
+            <img src="../images/nnnnn/floor.png" alt="floor">
+            <p id="copy">Copyright©2019 Snack Master</p>
+        </div>
+    </footer>
+    <script src="../js/header.js"></script>
 </body>
 </html>
