@@ -13,11 +13,9 @@
     <script src="../js/Chart.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/common.js"></script>
-    <script src="js/header.js" defer></script>
     <link rel="stylesheet" href="../css/boxModel.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="css/header.css">
-    <!-- <link rel="stylesheet" href="../css/nnnnn.css"> -->
+    <link rel="stylesheet" href="../css/header.css">
     <title>Document</title>
 </head>
 
@@ -25,28 +23,22 @@
     <div class="index">
         <section class="cloud">
             <!--------手機用導覽列圖--------  -->
-
+    
             <div class="doc doc--bg2">
                 <canvas id="canvas"></canvas>
             </div>
-
-
-
         </section>
-
-
+    
         <header>
             <h1>大零食家</h1>
             <!-- ---------navBar上的巧克力搜尋---------------- -->
             <div class="smalSearch">
-                <img src="images/tina/smlSearch.png" alt="搜尋">
+                <img src="../images/tina/smlSearch.png" alt="搜尋">
             </div>
             <nav>
-
-
                 <div class="menu">
                     <!-------- -----手機漢堡----------- -->
-
+    
                     <div id="ham">
                         <span class="btnTop"></span>
                         <span class="btnMid"></span>
@@ -54,20 +46,20 @@
                     </div>
                     <!----    在手機上打開此logo;桌機上關掉此logo------ -->
                     <div class="logo">
-                        <a href="index.html"><img src="images/tina/LOGO2.png" alt="大零食家"></a>
-
+                        <a href="../testG2/page/index.html"><img src="../images/tina/LOGO2.png" alt="大零食家"></a>
+    
                     </div>
                     <div id="list_appear">
                         <!-- ----------手機選單離開-------- -->
                         <div id="cros">
-
+    
                             <span class="leave">X</span>
                         </div>
                         <ul class="list">
                             <li><a href="rankBoard.html">零食排行榜</a></li>
                             <li><a href="customized.html">客製零食箱</a> </li>
                             <!-- 在手機上要關掉這個li的logo -->
-                            <li><a href="index.html"><img src="images/tina/LOGO1.png" alt="大零食家"></a></li>
+                            <li><a href="index.html"><img src="../images/tina/LOGO1.png" alt="大零食家"></a></li>
                             <li id="store"> <a href="shopping.html">零食商店街</a>
                                 <ul id="Submenu" class="subMenu">
                                     <li><a href="showItem.html">零食單品</a></li>
@@ -78,16 +70,39 @@
                         </ul>
                     </div>
                 </div>
-
-
             </nav>
-
-
+    
             <ul class="login">
                 <li><i class="fas fa-shopping-cart"></i></li>
                 <li><i class="fas fa-user-circle"></i></li>
             </ul>
         </header>
+
+        <div class="search">
+            <img src="../images/blair/pocky.png" alt="搜尋圖">
+            <select name="country" id="country">
+                <option value="">國家</option>
+                <option value="">英國</option>
+                <option value="">美國</option>
+                <option value="">日本</option>
+                <option value="">泰國</option>
+            </select>
+            <select name="kind" id="kind">
+                <option value="">種類</option>
+                <option value="">巧克力</option>
+                <option value="">糖果</option>
+                <option value="">餅乾</option>
+                <option value="">洋芋片</option>
+            </select>
+            <select name="flavor" id="flavor">
+                <option value="">口味</option>
+                <option value="">酸</option>
+                <option value="">甜</option>
+                <option value="">辣</option>
+            </select>
+            <input type="text" placeholder="想找什麼零食呢？">
+            <i class="fas fa-search"></i>
+        </div>
 
 
         <section class="section">
@@ -801,133 +816,12 @@
             </div>
         </section>
 
-        <!-- <footer>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-            <div class='container'>
-                <div class='snack ipf'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipf.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipc'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipc.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-                <div class='snack ipcho'>
-                    <div class="pic">
-                        <img src="/images/nnnnn/ipcho.png" alt="ipPicture">
-                    </div>
-                    <div class='shadow'></div>
-                </div>
-            </div>
-
+        <footer class="footer">
             <div id="floor">
                 <img src="../images/nnnnn/floor.png" alt="floor">
                 <p id="copy">Copyright©2019 Snack Master</p>
             </div>
-        </footer> -->
+        </footer>
 
     </div>
 
@@ -1283,6 +1177,8 @@
             var marker = new google.maps.Marker({ position: uluru, map: map });
         }
     </script>
+    
+    <script src="../js/header.js" defer></script>
 
 
 

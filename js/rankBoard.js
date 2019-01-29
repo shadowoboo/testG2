@@ -1,3 +1,115 @@
+function moveR() {
+        $('.itemDetail').css({
+            'opacity': '0',
+            'transform': 'translateX(100%)'
+        })
+        setTimeout(() => {
+            $('.itemDetail').css({
+                'opacity': '1',
+                'transform': 'translateX(0%)'
+            })
+        }, 400);
+}
+
+function allPanel(){
+    $('.sw_class').each(function () {
+        $('.sw_class').click(function(e){
+            $('.sw_class').removeClass('catLoc');
+            $(this).addClass('catLoc');
+
+            $('#titleCat').css({
+                'opacity': '0',
+                'transform': 'translateX(-100%)'
+            })
+            moveR();
+            switch ($(this).attr('id')) {
+                case 'sw_all':
+                    newTitleCtx = "本月<br>綜合排行";
+                    newIp = "/images/rankBoard/ipCookie.png";
+                    break;
+
+                case 'sw_cookie':
+                    newTitleCtx = "本月<br>餅乾排行";
+                    newIp = "/images/rankBoard/ipCookie.png";
+                    break;
+
+                case 'sw_candy':
+                    newTitleCtx = "本月<br>糖果排行";
+                    newIp = "/images/rankBoard/ipCandy.png";
+                    break;
+
+                case 'sw_choco':
+                    newTitleCtx = "本月<br>巧克力排行";
+                    newIp = "/images/rankBoard/ipChoco.png";
+                    break;
+
+                case 'sw_chip':
+                    newTitleCtx = "本月<br>洋芋片排行";
+                    newIp = "/images/rankBoard/ipChips.png";
+                    break;
+            }
+
+
+            $('#ipImg').attr('src',newIp);
+            $('#sw_ring').css('transform', 'translateY(-50%) rotate(0deg)');
+            $('#rankPanel').css({
+                'opacity': '0',
+                'transform': 'scale(0)'
+            }) ;
+            setTimeout(() => {
+                $('#rankPanel').css({
+                    'opacity': '1',
+                    'transform': 'scale(1)'
+                });
+                $('#titleCatCtx').html(newTitleCtx);
+            }, 400);
+            
+            setTimeout(() => {
+                $('#titleCat').css({
+                    'opacity': '1',
+                    'transform': 'translateX(0%)'
+                })
+            }, 400);
+        });
+    });
+}
+
+function ringPanel() {
+    $('.sw_rk').each(function () {
+        
+        $('.sw_rk').click(function (e) {
+
+            moveR();
+            switch ($(this).attr('id')) {
+                case 'sw_1':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(0deg)');
+                break;
+
+                case 'sw_2':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(60deg)');
+                break;
+
+                case 'sw_3':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(120deg)');
+                break;
+
+                case 'sw_4':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(180deg)');
+                break;
+
+                case 'sw_5':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(240deg)');
+                break;
+
+                case 'sw_6':
+                    $('#sw_ring').css('transform', 'translateY(-50%) rotate(300deg)');
+                break;
+            }
+        })
+    });
+    
+}
+
 function createRadar() {
     var ctx = document.getElementsByClassName("radarCanvas")[0].getContext('2d');
     Chart.defaults.global.legend.display = false;
@@ -53,9 +165,8 @@ function createRadar() {
     
 function init(){
     createRadar();
-
-
-
+    ringPanel();
+    allPanel();
 }
 
 window.addEventListener('load',init,false);
