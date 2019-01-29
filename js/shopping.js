@@ -6,10 +6,6 @@ function createRadar() {
     //改字體大小
     // Chart.defaults.global.defaultFontSize = '12';
     //因為畫完一次圖表之後希望可以再變動，所以用變數代表每個項目的值
-    good = 3;
-    sweet = 3;
-    sour = 3;
-    spicy = 3;
     radarOptions =
         {
             scale:
@@ -42,7 +38,7 @@ function createRadar() {
             labels: ["好評度", "甜", "酸", "辣"],
             datasets: [{
                 // label: '# of Votes',
-                data: [good, sweet, sour, spicy],
+                data: [0, 0, 0, 0],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
@@ -59,14 +55,43 @@ function createRadar() {
 }
 //取得新的值並依此更新雷達圖
 function showRadar(e){
-   var id = e.target.id;
-   var kindArr = id.split('|');
-   console.log(kindArr);
+    var id = e.target.id;
+    var kindArr = id.split('|');
+    var good = kindArr[0];
+    var sweet = kindArr[1];
+    var sour = kindArr[2];
+    var spicy = kindArr[3];
+    //重新把口味變數設定給雷達圖
+    radarCanvas.data.datasets[0].data = [good, sweet, sour, spicy];
+    //更新雷達圖
+    radarCanvas.update();
+
+    var msg = document.getElementById('msg');
+    msg.innerText = '';
+    document.getElementById('goodTitle').innerText = '好評度';
+    document.getElementById('mintStar').innerText = good;
+    document.getElementById('mintFive').innerText = '/5';
+    var newImg = document.createElement('img');
+    newImg.className = 'star';
+    newImg.src = '../images/blair/star.png';
+    newImg.id = 'mintImg';
+    document.getElementsByClassName('info')[0].insertBefore(newImg, msg);
+
+}
+function cancelRadar(){
+    radarCanvas.data.datasets[0].data = [0, 0, 0, 0];
+    radarCanvas.update();
+    document.getElementsByClassName('info')[0].removeChild(document.getElementById('mintImg'));
+    document.getElementById('goodTitle').innerText = '';
+    document.getElementById('mintStar').innerText = '';
+    document.getElementById('mintFive').innerText = '';
+    document.getElementById('msg').innerText = '我可以告訴你商品的評價星等喔!';
 }
 window.addEventListener('load', function (){
     createRadar();
     var items = document.getElementsByClassName('item');
     for(var i = 0; i < items.length; i++){
-        items[i].addEventListener('mouseover', showRadar);
+        items[i].addEventListener('mouseenter', showRadar);
+        items[i].addEventListener('mouseleave', cancelRadar);
     }
 });

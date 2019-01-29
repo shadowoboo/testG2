@@ -416,7 +416,8 @@ input {
 .serch_serch {
   display: inline-block;
   margin-left: 20px;
-  padding-top: 15px; }
+  padding-top: 15px;
+  font-size: 26px; }
 
 #map {
   width: 100%;
@@ -451,8 +452,6 @@ input {
     width: 30%;
     height: 80vh;
     overflow-y: scroll; }
-  .map_serch_item {
-    height: 140px; }
   #serch_form {
     flex-wrap: nowrap; }
   #serch_input {

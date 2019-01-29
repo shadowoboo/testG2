@@ -66,6 +66,7 @@ a {
   width: 100%;
   height: 100px;
   position: fixed;
+  z-index: 10;
   top: 0; }
   .cloud .doc--bg2 {
     transform: rotate(180deg);
@@ -86,14 +87,15 @@ header {
   height: 15vh;
   margin: auto;
   position: fixed;
-  top: 0; }
+  top: 0;
+  z-index: 9999; }
   header h1 {
     display: none; }
   header .smalSearch {
-    width: 120px;
-    height: 30px;
-    padding: 5px;
-    margin-top: 2.3%; }
+    width: 14%;
+    height: auto;
+    padding: 1%;
+    margin-top: 0.3%; }
     header .smalSearch img {
       width: 100%; }
   header nav .menu {
@@ -112,16 +114,18 @@ header {
       color: #d88aa2; }
     header nav .menu .list li:last-child:hover a {
       color: #f09c8a; }
-    header nav .menu .list #store:hover .subMenu {
-      display: block; }
-    header nav .menu .list #store a:hover {
-      color: #f0dc29; }
-    header nav .menu .list #store .subMenu {
-      width: 140px;
-      display: none; }
-      header nav .menu .list #store .subMenu li {
-        width: 120px;
-        height: 30px; }
+    header nav .menu .list #store {
+      height: auto; }
+      header nav .menu .list #store:hover .subMenu {
+        display: block; }
+      header nav .menu .list #store a:hover {
+        color: #f0dc29; }
+      header nav .menu .list #store .subMenu {
+        width: 100%;
+        display: none; }
+        header nav .menu .list #store .subMenu li {
+          width: 100%;
+          height: auto; }
   header .login li {
     color: #737374; }
 
@@ -182,8 +186,8 @@ header {
         height: 100vh;
         background-color: #8fcfcb; }
         header .menu #list_appear .list li {
-          width: 150px;
-          height: 80px;
+          width: 80%;
+          height: 100px;
           margin: auto;
           display: flex;
           flex-direction: column;
@@ -204,7 +208,7 @@ header {
     z-index: -1; }
     header .login li {
       width: 30%;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1.2;
       text-align: center; } }
 
@@ -238,13 +242,13 @@ header {
               margin-top: 45px; }
           header nav .menu #list_appear .list #store {
             position: relative;
-            top: 0; }
+            top: 0%; }
             header nav .menu #list_appear .list #store .subMenu {
               position: absolute;
-              top: 25px;
+              top: 80%;
               left: 0px; }
     header .login {
-      width: 18%;
+      width: 12%;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -254,10 +258,8 @@ header {
         text-align: center;
         width: 30%;
         padding: 1% 3%; }
-        header .login li span {
-          display: block;
-          font-size: 14px;
-          line-height: 1.6; }
+        header .login li i {
+          font-size: 18px; }
       header .login li:first-child {
         width: 20%; }
       header .login li:last-child {
@@ -855,12 +857,15 @@ section {
     width: 100%;
     height: 300px;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     background-color: #fff; }
     .section_15 .pics .pic {
       flex: 5;
       cursor: move; }
+      .section_15 .pics .pic img {
+        width: 75px; }
   .section_15 #btns15 {
     position: relative;
     z-index: 10;
@@ -939,6 +944,8 @@ section {
   justify-content: flex-start;
   align-items: center; }
   .leftBox #ctrl_bar {
+    position: relative;
+    z-index: 9;
     margin: 12px; }
     .leftBox #ctrl_bar .btn {
       width: 50px;
@@ -1026,22 +1033,22 @@ a {
   background: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   border-radius: 10px;
-  margin: 12px;
+  margin: 0 40px;
   border: 10px solid #fbc849; }
   .form a {
     font-family: g2Font; }
 
 .top-row .pickColor {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 300px;
+  width: 300px;
+  margin: 101px 0;
   background-color: #fff; }
   .top-row .pickColor .colorBtn {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 3px;
     border: 2px solid #9b9b9b;
     border-radius: 50%;
@@ -1052,11 +1059,17 @@ a {
   .top-row .pickColor .color2 {
     background-color: #6397db; }
   .top-row .pickColor .color3 {
-    background-color: #69ff8a; }
+    background-color: #8ef0a3; }
   .top-row .pickColor .color4 {
     background-color: #f584ff; }
   .top-row .pickColor .color5 {
     background-color: #fae674; }
+  .top-row .pickColor .color6 {
+    background-color: #ba8dee; }
+  .top-row .pickColor .color7 {
+    background-color: #f5a37f; }
+  .top-row .pickColor .color8 {
+    background-color: #6dd8be; }
 
 .top-row:after {
   content: "";
@@ -1067,8 +1080,6 @@ a {
   float: left;
   width: 48%;
   margin-right: 4%; }
-  .top-row > div:last-child {
-    margin: 0; }
 
 .button {
   border: 0;
@@ -1098,7 +1109,6 @@ a {
   flex: 1;
   color: dimgray;
   background: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
   border-radius: 10px;
   margin: 12px;
   border: 10px solid #fbc849; }
@@ -1584,7 +1594,7 @@ a {
       .shopping .goodBox .good-content .item {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         border: 5px solid #fbc84a; }

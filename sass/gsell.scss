@@ -74,6 +74,7 @@ input {
     display: inline-block;
     margin-left: 20px;
     padding-top: 15px;
+    font-size: 26px;
 }
 
 
@@ -131,9 +132,6 @@ input {
         overflow-y: scroll;
     }
 
-    .map_serch_item {
-        height: 140px;
-    }
 
     #serch_form {
         flex-wrap: nowrap;
