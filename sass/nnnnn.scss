@@ -11,7 +11,7 @@
 
 footer {
     // width: 100%;
-    height: 500px;
+    height: 300px;
     // margin: 0;
     // padding: 0;
     /* background: #4cc7f4; */
@@ -19,6 +19,7 @@ footer {
     overflow: hidden;
     position: relative;
     top: 10%;
+    margin-top: 200px;
 }
 
 .container {
@@ -71,8 +72,9 @@ footer {
 
 #floor {
     position: absolute;
-    top: 48%;
+    // top: 48%;
     z-index: -1;
+    bottom: 0;
 }
 
 #copy {
