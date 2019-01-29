@@ -45,12 +45,11 @@
 //     });
 
 // });
+//--------頁籤開始----------------
+// $(document).ready(function(){
+//     var _index = 0;
+//     $('.tab-control').click(function(){
+//          //選擇到的移除原先的class,再增加一個active
+//     });
+// });
 
-
-// const memFunctionTab = document.querySelectorAll(".tab-list li");
-// const tabLink= document.querySelectorAll("tab-control");
-
-
-$(".tab-control").clcik((e)=>{
-    
-})
