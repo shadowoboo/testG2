@@ -377,7 +377,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("/images/rankBoard/titleCloud.png"); }
+    background-image: url("../images/rankBoard/titleCloud.png"); }
     .rankBoard .title h2 {
       width: 100%;
       position: absolute;
@@ -416,7 +416,7 @@ input[type=number]::-webkit-outer-spin-button {
       right: 0;
       margin: auto;
       background-size: cover;
-      background-image: url(/images/rankBoard/glow.png);
+      background-image: url("../images/rankBoard/glow.png");
       animation: rollGlow 5s  infinite linear; }
     .rankBoard .item:hover {
       animation-play-state: paused; }

@@ -25,7 +25,7 @@
         text-align: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url("/images/rankBoard/titleCloud.png");
+        background-image: url("../images/rankBoard/titleCloud.png");
         h2{
             width: 100%;
             position: absolute;
@@ -70,7 +70,7 @@
             right: 0;
             margin: auto;
             background-size: cover;
-            background-image: url(/images/rankBoard/glow.png);
+            background-image: url("../images/rankBoard/glow.png");
             animation: rollGlow 5s  infinite linear;
         }
         min-width: 200px;
