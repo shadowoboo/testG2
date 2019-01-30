@@ -369,10 +369,49 @@ body {
 .index {
   width: 100%;
   height: 100%; }
+  .index .search {
+    position: relative;
+    max-width: 760px;
+    margin: auto;
+    margin-top: 190px;
+    text-align: center;
+    z-index: 9; }
+    .index .search img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: none; }
+      @media only screen and (min-width: 768px) {
+        .index .search img {
+          display: inline-block; } }
+    .index .search select, .index .search input {
+      background-color: rgba(255, 255, 255, 0.97);
+      border: transparent;
+      border-radius: 10px; }
+    .index .search select {
+      width: 25%;
+      margin-right: 5%;
+      font-size: 16px;
+      padding: 2px 4px 6px 4px; }
+      @media only screen and (min-width: 768px) {
+        .index .search select {
+          width: 16%;
+          position: relative;
+          top: -5px; } }
+    .index .search input {
+      position: relative;
+      font-size: 14px;
+      top: -4px;
+      padding: 4px 0px 4px 6px; }
+    .index .search i {
+      font-size: 18px;
+      vertical-align: middle; }
   .index .section {
     width: 100%;
     height: 670px;
-    position: relative; }
+    position: relative;
+    margin: 50px 0; }
     .index .section .worldMap {
       max-width: 1200px;
       position: relative;
@@ -391,15 +430,16 @@ body {
           position: absolute; }
           .index .section .worldMap .countryMap .countryImg img {
             position: relative;
-            z-index: 1; }
+            z-index: 2; }
           .index .section .worldMap .countryMap .countryImg .countryInfo {
             transition: 1s;
             display: none;
             position: relative;
-            z-index: 2;
+            z-index: 6;
             width: 500px;
             background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px; }
+            border-radius: 10px;
+            transform: translateX(-220px); }
             .index .section .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
               display: flex;
               align-items: center;
@@ -478,7 +518,8 @@ body {
         left: 0; }
       .index .section .worldMap .snackMap {
         margin: auto;
-        transition: 2s; }
+        transition: 2s;
+        z-index: 1; }
         .index .section .worldMap .snackMap .snackImg {
           width: 100px;
           position: absolute; }
@@ -522,24 +563,24 @@ body {
       width: 100px;
       position: absolute; }
     .index .section .cloudMap > :nth-child(1) {
-      top: 50px;
+      top: -140px;
       left: 80px;
       width: 50px; }
     .index .section .cloudMap > :nth-child(2) {
-      top: 170px;
+      top: -20px;
       left: 100px; }
     .index .section .cloudMap > :nth-child(3) {
-      top: 70px;
+      top: -120px;
       left: 250px; }
     .index .section .cloudMap > :nth-child(4) {
-      top: 50px;
+      top: -140px;
       right: 80px; }
     .index .section .cloudMap > :nth-child(5) {
-      top: 170px;
+      top: -20px;
       right: 100px;
       width: 50px; }
     .index .section .cloudMap > :nth-child(6) {
-      top: 70px;
+      top: -120px;
       right: 250px;
       width: 50px; }
     .index .section .balloonMap .ballImg {
@@ -602,6 +643,20 @@ body {
         width: 100px;
         margin: auto;
         position: relative; }
+        .index .section_12 .LeaderboardCount .Crown::before {
+          content: '';
+          display: block;
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          z-index: -1;
+          top: -50px;
+          left: -50px;
+          right: 0;
+          margin: auto;
+          background-size: cover;
+          background-image: url(../images/rankBoard/glow.png);
+          animation: rollGlow 5s infinite linear; }
         .index .section_12 .LeaderboardCount .Crown h2 {
           color: #fff;
           position: absolute;
@@ -609,25 +664,34 @@ body {
           top: 20px;
           right: 0;
           left: 0; }
+
+@keyframes rollGlow {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
       .index .section_12 .LeaderboardCount .No2 {
         background-image: url(../images/index/blue-pack.png);
         background-repeat: no-repeat;
         background-size: 280px; }
         .index .section_12 .LeaderboardCount .No2 .commodityImg img {
-          width: 38%; }
+          width: 31%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .No1 {
         background-image: url(../images/index/red-pack.png);
         background-repeat: no-repeat;
         background-size: 280px; }
         .index .section_12 .LeaderboardCount .No1 .commodityImg img {
-          width: 40%; }
+          width: 36%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .No3 {
         background-image: url(../images/index/green-pack.png);
         background-repeat: no-repeat;
         background-size: 280px;
         align-self: end; }
         .index .section_12 .LeaderboardCount .No3 .commodityImg img {
-          width: 50%; }
+          width: 40%;
+          padding-top: 30px; }
       .index .section_12 .LeaderboardCount .Leaderboarditem {
         width: 280px;
         height: 480px;
@@ -644,8 +708,13 @@ body {
             margin: auto;
             width: 280px;
             height: 220px; }
+          .index .section_12 .LeaderboardCount .Leaderboarditem .commodity .cart {
+            margin: 5px 0; }
+          .index .section_12 .LeaderboardCount .Leaderboarditem .commodity .commodityTitle {
+            color: #737374; }
         .index .section_12 .LeaderboardCount .Leaderboarditem .commodityPrice p {
-          font-size: 28px; }
+          font-size: 22px;
+          color: #737374; }
         .index .section_12 .LeaderboardCount .Leaderboarditem .commodityStar {
           width: 150px;
           margin: auto; }
@@ -861,7 +930,9 @@ body {
           height: 0;
           list-style: none;
           animation: 200s rotate infinite linear; }
-          .index .preOrder .poCount .poray ul li, .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+          .index .preOrder .poCount .poray ul li,
+          .index .preOrder .poCount .poray ul li:before,
+          .index .preOrder .poCount .poray ul li:after {
             position: absolute;
             border: 0 solid transparent;
             border-width: 1.2em 20em;
@@ -874,7 +945,8 @@ body {
             top: 50%;
             margin-top: -1.2em;
             transform: rotate(0.1deg); }
-          .index .preOrder .poCount .poray ul li:before, .index .preOrder .poCount .poray ul li:after {
+          .index .preOrder .poCount .poray ul li:before,
+          .index .preOrder .poCount .poray ul li:after {
             left: -20em;
             top: -1.2em;
             display: block;
@@ -926,7 +998,7 @@ body {
         .index .preOrder .poCount .poCard .poInside .insideBtn {
           text-align: right; }
           .index .preOrder .poCount .poCard .poInside .insideBtn .month {
-            box-shadow: 6px 6px 0  0 #00457b;
+            box-shadow: 6px 6px 0 0 #00457b;
             margin: 0 10px; }
   .index .igShare {
     width: 100%;
@@ -1016,7 +1088,7 @@ body {
         top: 45px; }
   .index .vmMap {
     width: 100%;
-    padding: 60px 0;
+    padding: 60px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end; }
@@ -1090,3 +1162,13 @@ body {
         position: absolute;
         top: 0;
         left: 0; }
+  .index .footer #floor {
+    position: relative;
+    text-align: center; }
+    .index .footer #floor #copy {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font-size: 1.2vw; }

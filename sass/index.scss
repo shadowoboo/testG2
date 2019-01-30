@@ -9,10 +9,56 @@ body {
 .index {
     width: 100%;
     height: 100%;
+    .search{
+        position: relative;
+        max-width: 760px; 
+        margin: auto;
+        margin-top: 190px;
+        text-align: center;
+        z-index: 9;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: none;
+            @media only screen and (min-width: $moblie) {
+                display: inline-block;
+            }
+        }
+        select, input{
+            background-color: rgba($color: #fff, $alpha: 0.97);
+            // vertical-align: middle;
+            border: transparent;
+            border-radius: 10px;
+        }
+        select{
+            width: 25%;
+            margin-right: 5%;
+            font-size: 16px;
+            padding: 2px 4px 6px 4px;
+            @media only screen and (min-width: $moblie) {
+                width: 16%;
+                position: relative;
+                top: -5px;
+            }
+        }
+        input{
+            position: relative;
+            font-size: 14px;
+            top: -4px;
+            padding: 4px 0px 4px 6px;
+        }
+        i{
+            font-size: 18px;
+            vertical-align: middle;
+        }
+    }
     .section {
         width: 100%;
         height: 670px;
         position: relative;
+        margin: 50px 0;
         .worldMap {
             max-width: 1200px;
             position: relative;
@@ -31,7 +77,7 @@ body {
                     position: absolute; // animation: ccc 1s linear;
                     img {
                         position: relative;
-                        z-index: 1;
+                        z-index: 2;
                     } // @keyframes ccc {
                     //     0%{transform: translateY(-900px)}
                     //     100%{transform: translateY(0px)}
@@ -40,10 +86,11 @@ body {
                         transition: 1s;
                         display: none;
                         position: relative;
-                        z-index: 2;
+                        z-index: 6;
                         width: 500px;
                         background-color: rgba(255, 255, 255, 0.9);
                         border-radius: 10px;
+                        transform: translateX(-220px);
                         .countryInfoHeader {
                             display: flex;
                             align-items: center;
@@ -147,9 +194,10 @@ body {
             .snackMap {
                 margin: auto;
                 transition: 2s;
+                z-index: 1;
                 .snackImg {
                     width: 100px;
-                    position: absolute; // z-index: 666;
+                    position: absolute;
                 }
                 >:nth-child(1) {
                     top: 120px;
@@ -205,29 +253,29 @@ body {
                 position: absolute;
             }
             >:nth-child(1) {
-                top: 50px;
+                top: -140px;
                 left: 80px;
                 width: 50px;
             }
             >:nth-child(2) {
-                top: 170px;
+                top: -20px;
                 left: 100px;
             }
             >:nth-child(3) {
-                top: 70px;
+                top: -120px;
                 left: 250px;
             }
             >:nth-child(4) {
-                top: 50px;
+                top: -140px;
                 right: 80px;
             }
             >:nth-child(5) {
-                top: 170px;
+                top: -20px;
                 right: 100px;
                 width: 50px;
             }
             >:nth-child(6) {
-                top: 70px;
+                top: -120px;
                 right: 250px;
                 width: 50px;
             }
@@ -308,6 +356,21 @@ body {
                 width: 100px;
                 margin: auto;
                 position: relative;
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 200px;
+                    height: 200px;
+                    position: absolute;
+                    z-index: -1;
+                    top: -50px;
+                    left: -50px;
+                    right: 0;
+                    margin: auto;
+                    background-size: cover;
+                    background-image: url(../images/rankBoard/glow.png);
+                    animation: rollGlow 5s infinite linear;
+                }
                 h2 {
                     color: #fff;
                     position: absolute;
@@ -316,6 +379,16 @@ body {
                     right: 0;
                     left: 0;
                 }
+                @keyframes rollGlow {
+                    0%{
+                        transform: rotate(0deg);
+                        // opacity: 0;
+                    }
+                    100%{
+                        transform: rotate(360deg);
+                        // opacity: .7;
+                    }
+                }
             }
             .No2 {
                 background-image: url(../images/index/blue-pack.png);
@@ -323,7 +396,8 @@ body {
                 background-size: 280px;
                 .commodityImg {
                     img {
-                        width: 38%;
+                        width: 31%;
+                        padding-top: 30px;
                     }
                 }
             }
@@ -333,7 +407,8 @@ body {
                 background-size: 280px;
                 .commodityImg {
                     img {
-                        width: 40%;
+                        width: 36%;
+                        padding-top: 30px;
                     }
                 }
             }
@@ -344,7 +419,8 @@ body {
                 align-self: end;
                 .commodityImg {
                     img {
-                        width: 50%;
+                        width: 40%;
+                        padding-top: 30px;
                     }
                 }
             }
@@ -366,10 +442,17 @@ body {
                         width: 280px;
                         height: 220px;
                     }
+                    .cart {
+                        margin: 5px 0;
+                    }
+                    .commodityTitle {
+                        color: $gray;
+                    }
                 }
                 .commodityPrice {
                     p {
-                        font-size: 28px;
+                        font-size: 22px;
+                        color: $gray;
                     }
                 }
                 .commodityStar {
@@ -459,8 +542,7 @@ body {
         background-attachment: fixed;
         background-size: cover;
         width: 100%;
-        height: 1000px;
-        // margin-bottom: 100px;
+        height: 1000px; // margin-bottom: 100px;
         overflow: hidden;
         position: relative;
         .waveTop {
@@ -559,35 +641,35 @@ body {
                     border-radius: 10px;
                     padding: 20px;
                     text-align: center;
-                    color:#737374;
+                    color: #737374;
                     letter-spacing: 5px;
                     margin: 20px;
-                    p{
+                    p {
                         font-size: 18px;
                         padding-top: 10px;
                     }
                 }
-                .ctBtns{
+                .ctBtns {
                     background-color: #fff;
                     border-radius: 10px;
                     padding: 20px;
                     text-align: center;
-                    color:#737374;
+                    color: #737374;
                     letter-spacing: 5px;
                     margin: 20px;
-                    .ctBtn{
+                    .ctBtn {
                         padding: 20px 0;
                     }
-                    .ctBtnGo{
+                    .ctBtnGo {
                         padding: 10px;
                     }
                 }
             }
         }
     }
-    .preOrder{
+    .preOrder {
         width: 100%;
-        .poTitle{
+        .poTitle {
             background-image: url(../images/index/title-cloud.png);
             background-repeat: no-repeat;
             background-position: center center;
@@ -601,7 +683,7 @@ body {
                 color: $blue;
             }
         }
-        .poCount{
+        .poCount {
             width: 100%;
             height: 900px;
             margin: auto;
@@ -613,7 +695,7 @@ body {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            .poray{
+            .poray {
                 position: absolute;
                 transform: scale(2.5);
                 margin: auto;
@@ -634,7 +716,9 @@ body {
                     height: 0;
                     list-style: none;
                     animation: 200s rotate infinite linear;
-                    li,li:before,li:after {
+                    li,
+                    li:before,
+                    li:after {
                         position: absolute;
                         border: 0 solid transparent;
                         border-width: 1.2em 20em;
@@ -649,7 +733,8 @@ body {
                         margin-top: -1.2em;
                         transform: rotate(.1deg);
                     }
-                    li:before,li:after {
+                    li:before,
+                    li:after {
                         left: -20em;
                         top: -1.2em;
                         display: block;
@@ -661,14 +746,13 @@ body {
                     li:after {
                         transform: rotate(-60deg);
                     }
-                    
-                    li:nth-child(2){
+                    li:nth-child(2) {
                         transform: rotate(15deg);
                     }
-                    li:nth-child(3){
+                    li:nth-child(3) {
                         transform: rotate(30deg);
                     }
-                    li:nth-child(4){
+                    li:nth-child(4) {
                         transform: rotate(45deg);
                     }
                 }
@@ -678,26 +762,26 @@ body {
                     }
                 }
             }
-            .poCard{
+            .poCard {
                 width: 23%;
                 position: relative;
                 color: #737374;
                 min-width: 420px;
-                .poTrait{
+                .poTrait {
                     padding: 10px;
                     text-align: center;
                     background-color: #fff;
                     border-radius: 10px;
-                    h2{
+                    h2 {
                         padding: 10px;
                     }
-                    .traitCount{
+                    .traitCount {
                         width: 90%;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-around;
                         margin: auto;
-                        p{
+                        p {
                             border: 2px solid $blue;
                             padding: 23px 0;
                             margin: 10px;
@@ -706,31 +790,30 @@ body {
                             vertical-align: middle;
                         }
                     }
-                    .traitGo{
+                    .traitGo {
                         padding: 20px;
                     }
                 }
-                .poInside{
-                    p{
+                .poInside {
+                    p {
                         padding: 10px;
                         color: $blue;
                     }
-                    .insideBtn{
+                    .insideBtn {
                         text-align: right;
-                        .month{
-                            box-shadow: 6px 6px 0  0 #00457b;
+                        .month {
+                            box-shadow: 6px 6px 0 0 #00457b;
                             margin: 0 10px;
                         }
                     }
                 }
             }
         }
-        
     }
-    .igShare{
+    .igShare {
         width: 100%;
         padding: 50px 0;
-        .igTitle{
+        .igTitle {
             background-image: url(../images/index/title-cloud.png);
             background-repeat: no-repeat;
             background-position: center center;
@@ -744,53 +827,53 @@ body {
                 color: $blue;
             }
         }
-        .igCount{
+        .igCount {
             width: 100%;
             padding: 60px 0;
             position: relative;
-            .chocoGroup{
+            .chocoGroup {
                 color: #737374;
                 width: 70%;
                 margin: auto;
-                img{
+                img {
                     width: 98.9%;
                 }
-                .igImg{
-                    img{
+                .igImg {
+                    img {
                         width: 11%;
-                        position: absolute; 
+                        position: absolute;
                     }
-                    >:nth-child(1){
+                    >:nth-child(1) {
                         top: 3.2%;
                         left: 15.4%;
                         width: 25.6%;
                     }
-                    >:nth-child(2){
+                    >:nth-child(2) {
                         top: 70.3%;
                         left: 15.7%;
                     }
-                    >:nth-child(3){
+                    >:nth-child(3) {
                         top: 70.3%;
                         left: 29.8%;
                     }
-                    >:nth-child(4){
+                    >:nth-child(4) {
                         top: 70.3%;
                         left: 43.9%;
                     }
-                    >:nth-child(5){
+                    >:nth-child(5) {
                         top: 70.3%;
                         left: 58%;
                     }
-                    >:nth-child(6){
+                    >:nth-child(6) {
                         top: 70.3%;
                         left: 72.2%;
                     }
-                    >:nth-child(7){
+                    >:nth-child(7) {
                         top: 70.3%;
                         left: 86.2%;
                     }
                 }
-                .igName{
+                .igName {
                     width: 11%;
                     height: 26.5%;
                     background-color: #fff;
@@ -800,11 +883,11 @@ body {
                     top: 3.5%;
                     padding: 4% 0;
                     left: 43.9%;
-                    h4{
+                    h4 {
                         font-size: 1.4vw;
                     }
                 }
-                .igText{
+                .igText {
                     width: 39%;
                     height: 26%;
                     background-color: #fff;
@@ -816,17 +899,19 @@ body {
                     left: 44%;
                     text-align: left;
                     overflow: hidden;
-                    p{
+                    p {
                         font-size: 1.2vw;
-                        span{font-size: 1.2vw;}
+                        span {
+                            font-size: 1.2vw;
+                        }
                     }
-                    span{
+                    span {
                         color: $blue;
                         font-size: 1.1vw;
                     }
                 }
             }
-            .chocoPack{
+            .chocoPack {
                 width: 17.5%;
                 position: absolute;
                 left: 0;
@@ -834,16 +919,16 @@ body {
             }
         }
     }
-    .vmMap{
+    .vmMap {
         width: 100%;
-        padding: 60px 0;
+        padding: 60px 0 0;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        .vmCount{
+        .vmCount {
             margin: 0 auto;
-            width: 40%;        
-            .vmTitle{
+            width: 40%;
+            .vmTitle {
                 background-image: url(../images/index/title-cloud.png);
                 background-repeat: no-repeat;
                 background-position: center center;
@@ -856,19 +941,19 @@ body {
                 h2 {
                     line-height: 50px;
                     color: $blue;
-                } 
+                }
             }
-            .vmInfo{
-                .vmLocate{
+            .vmInfo {
+                .vmLocate {
                     width: 100%;
                     text-align: center;
                     display: flex;
                     justify-content: space-around;
-                    .locateImg{
+                    .locateImg {
                         width: 7%;
                         position: relative;
                         animation: float 1s linear infinite alternate;
-                        &::before{
+                        &::before {
                             content: '';
                             display: block;
                             background-color: $yellow;
@@ -881,51 +966,69 @@ body {
                             opacity: 0;
                         }
                     }
-                    .locateImg:hover{
-                        &::before{
+                    .locateImg:hover {
+                        &::before {
                             opacity: 1;
                             transition: .5s;
                         }
                     }
-                    img{
+                    img {
                         width: 100%;
                         margin: 2% 12%;
                         margin: auto;
                     }
                 }
-                .vmImg{
+                .vmImg {
                     width: 100%;
                     text-align: center;
-                    img{
+                    img {
                         width: 18%;
                         margin: 2% 7% 0;
                         position: relative;
                     }
-                    img:hover{
+                    img:hover {
                         animation: shake 0.1s infinite alternate;
                     }
                     @keyframes shake {
-                        0%{transform: translateX(-5px);}
-                        100%{transform: translateX(5px);}
+                        0% {
+                            transform: translateX(-5px);
+                        }
+                        100% {
+                            transform: translateX(5px);
+                        }
                     }
                 }
             }
-
         }
-        #mapSearch{
+        #mapSearch {
             width: 55%;
             padding: 7.1% 3% 0;
             position: relative;
-            #map{
+            #map {
                 width: 100%;
                 padding-bottom: 60%;
             }
-            .mapRoof{
+            .mapRoof {
                 width: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
             }
         }
+    }
+    .footer{
+        #floor {
+            position: relative;
+            text-align: center;
+            #copy {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                font-size: 1.2vw;
+            }
+        }
+
     }
 }

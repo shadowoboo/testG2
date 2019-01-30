@@ -373,6 +373,9 @@ span {
 a {
   color: #076baf; }
 
+body {
+  background-color: #f09c8a; }
+
 .clearfix {
   width: 100%;
   height: 0;
@@ -391,11 +394,11 @@ input {
   display: inline-block; }
 
 #google_serch {
-  background-color: #f09c8a; }
+  margin-top: 140px; }
 
 #serch_title {
   text-align: center;
-  background: url(/images/nnnnn/title.png);
+  background: url(../images/nnnnn/title.png);
   background-repeat: no-repeat;
   width: 260px;
   margin: auto; }
@@ -416,11 +419,15 @@ input {
 .serch_serch {
   display: inline-block;
   margin-left: 20px;
-  padding-top: 15px; }
+  padding-top: 15px;
+  font-size: 26px; }
 
 #map {
   width: 100%;
   height: 400px; }
+
+.mapSearch_resullt {
+  background-color: #fff; }
 
 .map_serch_box {
   width: 98%;
@@ -444,15 +451,13 @@ input {
 @media screen and (min-width: 992px) {
   #map {
     width: 70%;
-    height: 90vh;
+    height: 80vh;
     float: right;
     position: fixed; }
   .mapSearch_resullt {
     width: 30%;
     height: 80vh;
     overflow-y: scroll; }
-  .map_serch_item {
-    height: 140px; }
   #serch_form {
     flex-wrap: nowrap; }
   #serch_input {
