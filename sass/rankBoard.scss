@@ -74,7 +74,7 @@
             animation: rollGlow 5s  infinite linear;
         }
         min-width: 200px;
-        width:23.33%;//252px
+        width:23.3333333%;
         margin: 5vh auto;
         position: relative;
         animation: floating 1s infinite alternate linear;
@@ -84,46 +84,44 @@
         .itemCountry{
             width: 14.29%;
             position: absolute;
-            top: 20.5%;
-            right: 4.25%;
-            border-radius: 100px;
+            top: 15%;
+            right: 6.25%;
         }
         .itemCtx{
-            width: 62.3%;
-            height: 55%;
+            width: 100%;
+            height: 73%;
             position: absolute;
-            top: 30%;
+            top: 20%;
             left: 0;
             right: 0;
             margin: auto;
             text-align: center;
             display: flex;
-            flex-flow: wrap;
-            .itemImg{
-               width: 90%;
-               margin: auto;
-                img{
-                    width: 100%;
-                }
+            flex-flow: column;
+            align-items: center;
+            img{
+                width: 60%;
             }
             .itemName{
-                line-height: 1.3em;
+                width: 80%;
+                line-height: 1.6em;
+                margin-top: 10px;
+
             }
-            .score{
+            .flexMid{                
+                align-self: stretch;
+                flex-grow: 1;
                 margin: auto;
-                font-size: 38px;
-                line-height: .9em;
-                color: #e97d58;
-                
+                display: flex;
+                .score{ 
+                    align-self: center;
+                    font-size: 50px;
+                    color: #e97d58;}
             }
 
         }
         .star{
             width: 74.4%;
-            position: absolute;
-            bottom: 4.6%;
-            left: 0;
-            right: 0;
             margin: auto;
             border-radius: 100px;
             background: linear-gradient(to right, rgb(233,125,88) 85%,rgb(255,255,255)10%);
