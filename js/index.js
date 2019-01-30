@@ -48,10 +48,8 @@ $(document).ready(function () {
                 cover_out_12.style.transform = "translate3d(0, 40px, -100px) rotateX(90deg)";
                 cover_in_12.style.transform = "translate3d(0, 40px, -100px) rotateX(90deg) rotateY(180deg)";
             }, 1500);
-
-
         }
-        if ($(window).scrollTop() > $('.LeaderboardCount').offset().top - 500) {
+        else{
 
             //延遲...箱子抬起來
             setTimeout(e => {
