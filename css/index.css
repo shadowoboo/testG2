@@ -435,7 +435,7 @@ body {
             transition: 1s;
             display: none;
             position: relative;
-            z-index: 2;
+            z-index: 6;
             width: 500px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
