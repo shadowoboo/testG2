@@ -412,210 +412,202 @@ body {
       .index .search {
         margin-top: 120px; } }
   .index .worldMap {
-    width: 100%;
-    position: relative;
-    margin: 100px auto;
-    padding-bottom: 40%; }
-    .index .worldMap .countryMap {
-      height: 100%;
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      margin: auto;
-      left: 0;
-      right: 0; }
-      .index .worldMap .countryMap #testMap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 70%;
-        right: 0;
-        margin: auto; }
-      .index .worldMap .countryMap .countryImg {
-        width: 50px;
-        position: absolute; }
-        .index .worldMap .countryMap .countryImg img {
-          position: relative;
-          z-index: 2; }
-        .index .worldMap .countryMap .countryImg .countryInfo {
-          transition: 1s;
-          display: none;
-          position: relative;
-          z-index: 6;
-          width: 500px;
-          background-color: rgba(255, 255, 255, 0.9);
-          border-radius: 10px;
-          transform: translateX(-220px); }
-          .index .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader {
-            display: flex;
-            align-items: center;
-            justify-content: space-around; }
-            .index .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
-              height: 180px;
-              width: 180px; }
-            .index .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
-              width: 130px; }
-            .index .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
-              width: 130px; }
-              .index .worldMap .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
-                font-size: 22px;
-                font-family: g2Font;
-                color: #737374; }
-          .index .worldMap .countryMap .countryImg .countryInfo .countryInfosection {
-            color: #737374;
-            width: 400px;
-            margin: auto; }
-            .index .worldMap .countryMap .countryImg .countryInfo .countryInfosection h2 {
-              text-align: center; }
-          .index .worldMap .countryMap .countryImg .countryInfo .countryInfofooter {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px 0; }
-            .index .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice {
-              color: #737374; }
-              .index .worldMap .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice span {
-                font-size: 28px; }
-      .index .worldMap .countryMap .countryImg:hover .countryInfo {
-        display: block; }
-      .index .worldMap .countryMap .countryImg:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        top: 10px;
-        left: 5px;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 10px 30px #fff;
-        opacity: .5;
-        z-index: 1;
-        animation: aaa 1.5s linear infinite alternate; }
-      .index .worldMap .countryMap > :nth-child(2) {
-        top: 180px;
-        left: 340px; }
-      .index .worldMap .countryMap > :nth-child(3) {
-        top: 150px;
-        left: 620px; }
-      .index .worldMap .countryMap > :nth-child(4) {
-        top: 340px;
-        left: 400px; }
-      .index .worldMap .countryMap > :nth-child(5) {
-        top: 40px;
-        left: 470px; }
-      .index .worldMap .countryMap > :nth-child(6) {
-        top: 280px;
-        left: 560px; }
-      .index .worldMap .countryMap > :nth-child(7) {
-        top: 60px;
-        left: 950px; }
-      .index .worldMap .countryMap > :nth-child(8) {
-        top: 200px;
-        left: 900px; }
-      .index .worldMap .countryMap > :nth-child(9) {
-        top: 390px;
-        left: 870px; }
-      .index .worldMap .countryMap .snackMap {
-        position: absolute;
-        height: 600px;
-        width: 100%;
-        top: 0;
-        left: 0;
+    width: 100%; }
+    .index .worldMap .mapCount {
+      position: relative;
+      margin: 100px auto; }
+      .index .worldMap .mapCount .countryMap {
+        max-width: 1200px;
         margin: auto;
-        transition: 2s;
-        z-index: 1; }
-        .index .worldMap .countryMap .snackMap .snackImg {
-          width: 100px;
+        position: relative;
+        text-align: center; }
+        .index .worldMap .mapCount .countryMap #testMap {
+          width: 68%; }
+        .index .worldMap .mapCount .countryMap .countryImg {
+          width: 4.2%;
           position: absolute; }
-        .index .worldMap .countryMap .snackMap > :nth-child(1) {
-          top: 80px;
-          width: 150px;
-          left: 150px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(2) {
-          top: 30px;
-          left: 690px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(3) {
-          top: 430px;
-          left: 230px;
-          width: 170px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(4) {
-          top: 0px;
-          left: 520px;
-          width: 90px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(5) {
-          top: 380px;
-          left: 580px;
-          width: 90px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(6) {
-          top: -30px;
-          left: 860px;
-          width: 90px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(7) {
-          top: 180px;
-          left: 960px; }
-        .index .worldMap .countryMap .snackMap > :nth-child(8) {
-          top: 350px;
-          left: 930px;
-          width: 150px; }
+          .index .worldMap .mapCount .countryMap .countryImg img {
+            position: relative;
+            z-index: 2; }
+          .index .worldMap .mapCount .countryMap .countryImg .countryInfo {
+            transition: 1s;
+            display: none;
+            position: relative;
+            z-index: 6;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            transform: translateX(-220px); }
+            .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfoHeader {
+              display: flex;
+              align-items: center;
+              justify-content: space-around; }
+              .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoRadar {
+                height: 180px;
+                width: 180px; }
+              .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoImg {
+                width: 130px; }
+              .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar {
+                width: 130px; }
+                .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfoHeader .countryInfoStar li {
+                  font-size: 22px;
+                  font-family: g2Font;
+                  color: #737374; }
+            .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfosection {
+              color: #737374;
+              width: 400px;
+              margin: auto; }
+              .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfosection h2 {
+                text-align: center; }
+            .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfofooter {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              padding: 20px 0; }
+              .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice {
+                color: #737374; }
+                .index .worldMap .mapCount .countryMap .countryImg .countryInfo .countryInfofooter .countryInfoPrice span {
+                  font-size: 28px; }
+        .index .worldMap .mapCount .countryMap .countryImg:hover .countryInfo {
+          display: block; }
+        .index .worldMap .mapCount .countryMap .countryImg:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 80%;
+          height: 50%;
+          top: 12%;
+          left: 11%;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 0 0 10px 30px #fff;
+          opacity: .5;
+          z-index: 1;
+          animation: aaa 1.5s linear infinite alternate; }
+        .index .worldMap .mapCount .countryMap > :nth-child(2) {
+          top: 25%;
+          left: 28%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(3) {
+          top: 22%;
+          left: 50%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(4) {
+          top: 59%;
+          left: 32%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(5) {
+          top: 0%;
+          left: 38%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(6) {
+          top: 47%;
+          left: 47%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(7) {
+          top: 6%;
+          left: 80%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(8) {
+          top: 33%;
+          left: 76%; }
+        .index .worldMap .mapCount .countryMap > :nth-child(9) {
+          top: 70%;
+          left: 73%; }
+        .index .worldMap .mapCount .countryMap .snackMap {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          margin: auto;
+          transition: 2s;
+          z-index: 1; }
+          .index .worldMap .mapCount .countryMap .snackMap .snackImg {
+            width: 100px;
+            position: absolute; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(1) {
+            top: 10%;
+            width: 12%;
+            left: 13%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(2) {
+            top: 5%;
+            left: 56%;
+            width: 8%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(3) {
+            top: 75%;
+            left: 20%;
+            width: 14%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(4) {
+            top: -5%;
+            left: 42%;
+            width: 8%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(5) {
+            top: 64%;
+            left: 48%;
+            width: 8%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(6) {
+            top: -7%;
+            left: 72%;
+            width: 8%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(7) {
+            top: 29%;
+            left: 81%;
+            width: 8%; }
+          .index .worldMap .mapCount .countryMap .snackMap > :nth-child(8) {
+            top: 64%;
+            left: 77%;
+            width: 13%; }
 
 @keyframes aaa {
   0% {
     transform: scale(0.6); }
   100% {
     transform: scale(0.8); } }
-    .index .worldMap .cloudMap .cloudImg {
-      width: 100px;
-      position: absolute; }
-    .index .worldMap .cloudMap > :nth-child(1) {
-      top: -140px;
-      left: 80px;
-      width: 50px; }
-    .index .worldMap .cloudMap > :nth-child(2) {
-      top: -20px;
-      left: 100px; }
-    .index .worldMap .cloudMap > :nth-child(3) {
-      top: -120px;
-      left: 250px; }
-    .index .worldMap .cloudMap > :nth-child(4) {
-      top: -140px;
-      right: 80px; }
-    .index .worldMap .cloudMap > :nth-child(5) {
-      top: -20px;
-      right: 100px;
-      width: 50px; }
-    .index .worldMap .cloudMap > :nth-child(6) {
-      top: -120px;
-      right: 250px;
-      width: 50px; }
-    .index .worldMap .balloonMap .ballImg {
-      width: 80px;
-      position: absolute; }
-    .index .worldMap .balloonMap > :nth-child(1) {
-      top: 430px;
-      left: 110px;
-      animation: bbb 3s infinite alternate; }
-    .index .worldMap .balloonMap > :nth-child(2) {
-      top: 370px;
-      right: 30px;
-      animation: bbb 2s infinite alternate-reverse; }
+      .index .worldMap .mapCount .cloudMap .cloudImg {
+        width: 100px;
+        position: absolute; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(1) {
+        top: -140px;
+        left: 80px;
+        width: 50px; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(2) {
+        top: -20px;
+        left: 100px; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(3) {
+        top: -120px;
+        left: 250px; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(4) {
+        top: -140px;
+        right: 80px; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(5) {
+        top: -20px;
+        right: 100px;
+        width: 50px; }
+      .index .worldMap .mapCount .cloudMap > :nth-child(6) {
+        top: -120px;
+        right: 250px;
+        width: 50px; }
+      .index .worldMap .mapCount .balloonMap .ballImg {
+        width: 80px;
+        position: absolute; }
+      .index .worldMap .mapCount .balloonMap > :nth-child(1) {
+        top: 430px;
+        left: 110px;
+        animation: bbb 3s infinite alternate; }
+      .index .worldMap .mapCount .balloonMap > :nth-child(2) {
+        top: 370px;
+        right: 30px;
+        animation: bbb 2s infinite alternate-reverse; }
 
 @keyframes bbb {
   0% {
     transform: translateY(0); }
   100% {
     transform: translateY(-100px); } }
-    @media screen and (max-width: 768px) {
-      .index .worldMap {
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-        margin: auto; }
-        .index .worldMap .cloudMap,
-        .index .worldMap .balloonMap {
-          display: none; } }
+      @media screen and (max-width: 768px) {
+        .index .worldMap .mapCount {
+          overflow: hidden;
+          width: 100%;
+          height: 100vh;
+          margin: auto; }
+          .index .worldMap .mapCount .cloudMap,
+          .index .worldMap .mapCount .balloonMap {
+            display: none; } }
   .index .section_12 {
     background-image: url(../images/index/cheese.png);
     background-repeat: no-repeat;
