@@ -394,11 +394,11 @@ input {
   display: inline-block; }
 
 #google_serch {
-  margin-top: 140px; }
+  margin: 140px 0 20px 0; }
 
 #serch_title {
   text-align: center;
-  background: url(/images/nnnnn/title.png);
+  background: url(../images/nnnnn/title.png);
   background-repeat: no-repeat;
   width: 260px;
   margin: auto; }
@@ -419,8 +419,9 @@ input {
 .serch_serch {
   display: inline-block;
   margin-left: 20px;
-  padding-top: 15px;
-  font-size: 26px; }
+  padding-top: 12px;
+  font-size: 26px;
+  color: #076baf; }
 
 #map {
   width: 100%;
