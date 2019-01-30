@@ -30,13 +30,13 @@ gulp.task('jquery', function () {
 gulp.task('default', ['sass'], function () {
 
     browserSync.init({
-        server: {
-            //根目錄
-            baseDir: "./",
-            index: "index.html",
-            // baseDir:"./code testing",
+        // server: {
+        //     //根目錄
+        //     baseDir: "./",
+        //     index: "index.html",
+        //     // baseDir:"./code testing",
 
-        },
+        // },
 
         //php工作方式
         //整個專案放到server工作的目錄下
@@ -45,7 +45,7 @@ gulp.task('default', ['sass'], function () {
         //ex: proxy:"localhost:80/testG2",
         //就會利用代理的方式連進server，吃到php的效果
         //p.s. proxy 跟 server只能擇一
-        // proxy:"localhost:80/testG2", 
+        proxy:"localhost:80/專題/g2_test", 
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['sass']).on('change', reload);
