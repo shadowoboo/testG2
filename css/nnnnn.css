@@ -362,8 +362,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; }
 
 footer {
-  height: 500px;
-  /* background: #4cc7f4; */
+  height: 300px;
+  margin-top: 50px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -409,7 +409,7 @@ footer {
 
 #floor {
   position: absolute;
-  top: 48%;
+  bottom: 0;
   z-index: -1; }
 
 #copy {
@@ -546,3 +546,5 @@ img {
       top: -10px;
       left: 0;
       width: 60px; } } }
+
+/*# sourceMappingURL=nnnnn.css.map */

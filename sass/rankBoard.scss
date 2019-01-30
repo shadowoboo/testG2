@@ -4,10 +4,14 @@
 .rankBoard{
     //body
     background-color: #c1f3d2;
-    section{
+    #sec1,#sec2{
         position: relative;
-        padding-bottom: 10vh;
+
     }
+    #sec2{
+        padding: 10vh 0;
+    }
+
 
 
     .mNone{//手機上不顯示的物件
@@ -21,7 +25,7 @@
         text-align: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url("/images/rankBoard/titleCloud.png");
+        background-image: url("../images/rankBoard/titleCloud.png");
         h2{
             width: 100%;
             position: absolute;
@@ -66,7 +70,7 @@
             right: 0;
             margin: auto;
             background-size: cover;
-            background-image: url(/images/rankBoard/glow.png);
+            background-image: url("../images/rankBoard/glow.png");
             animation: rollGlow 5s  infinite linear;
         }
         min-width: 200px;
@@ -124,7 +128,6 @@
             border-radius: 100px;
             background: linear-gradient(to right, rgb(233,125,88) 85%,rgb(255,255,255)10%);
             img{
-                vertical-align: middle;
                 width:100%;
                 height: 100%;
             }
@@ -141,12 +144,39 @@
         @include btn('btnMsg', 28.5%, 30px, #fff, $blue, transparent, 10px , 0px, #fff, $deepblue, 16px);
         
     }
+    .msgBox {
+        width: 100%;
+        display: flex;
+        margin: 10px 0;
+
+        .msg {
+            width: 80%;
+            height: 30px;
+            border: solid 2px #076baf;
+            border-radius: 10px;
+        }
+
+        .sendMsg {
+            width: 20%;
+            height: 30px;
+            color: #fff;
+            background-color: $blue;
+            border: 2px solid $blue;
+            position: relative;
+            border-radius: 10px;
+            font-family: g2Font;
+            text-align: center;
+        }
+    }
 // screen start
     @media screen and (min-width:$moblie) {
-        section{
+        #sec1,#sec2{
             max-width: 1200px;
             margin: auto;
         }
+            #sec1 {
+                margin-top: 110px;
+            }
             .rollingItem{
                 display: flex;
                 flex-flow: row wrap;
@@ -181,7 +211,7 @@
             }
     
             #rank_2{
-                margin-top: 10%;
+                // margin-top: 10%;
                 left: 26%;
             }
             #rank_3{
@@ -191,7 +221,10 @@
             }
 
             #titleCat{
-                margin-left: 0;
+                position: absolute;
+                left: 0;
+                top: 50px;
+                transition: .4s;
             }
 
             #allPanel{
@@ -209,6 +242,7 @@
                         box-shadow:1px 0px  10px rgba($color: #000, $alpha: .4);
                         font-size: 20px;
                     .switch {
+                        cursor: pointer;
                         width: 100%;
                         padding: 10px 5px;
                         text-align: center;
@@ -219,12 +253,17 @@
                             background-color: #076baf;
                         }
                     }
+                    .catLoc{
+                            color: #fff;
+                            background-color: #076baf;
+                    }
                 }
                 #rankPanel{
                     width: 31%;
                     height: 0;
                     padding-bottom: 31%; 
                     position: relative;
+                    transition: .4s;
                     #panelRing {
                         position: absolute;
                         z-index: 0;
@@ -236,6 +275,7 @@
                         width: 17%;
                         height: 0;
                         padding-bottom: 17%;
+                        
                         border-radius: 100px;
                         text-align: center;
                         line-height: 2.5;
@@ -244,6 +284,12 @@
                     }
                     .sw_rk{
                         cursor: pointer;
+                        
+                        &:hover{
+                            background-color: #076baf;
+                            color: #fff;
+
+                        }
                     }
                     #sw_ring{
                         left: 41.5%;
@@ -251,6 +297,8 @@
                         transform: translateY(-50%) rotate(0deg);
                         box-shadow: 0 0 0 4px #076baf;
                         transform-origin:center 345%;
+                        transition: .5s;
+              
                     }
                     #sw_1{
                         top: 0%;
@@ -307,11 +355,12 @@
 
                 .itemDetail{
                     width: 45%;
-                    height: 90vh;
+                    height: 80vh;
                     overflow-x: hidden;
                     overflow-y:auto; 
                     background-color: #fff;
                     border-radius: 40px;
+                    transition: .4s;
                     .blank{
                         padding: 5%;
                         text-align: center;
@@ -328,7 +377,7 @@
                       }  
                     }
                     .rank{
-                        
+                        font-size: 22px;
                         margin:12.5px 0;
                         padding:5.5px 0 ; 
                         border-radius: 10px; 
@@ -372,8 +421,8 @@
                             border-radius: 100px;
                             background: linear-gradient(to right, rgb(233, 125, 88) 85%, rgb(255, 255, 255)10%);
                             margin: auto;
+                            font-size: 0;
                             img {
-                                vertical-align: middle;
                                 width: 100%;
                                 height: 100%;
 
@@ -402,6 +451,7 @@
                                     width: 39.877%;
                                     transform: translate(-11% ,0);
                                     border-radius: 100px;
+                                    font-size: 0;
                                     background: linear-gradient(to right, rgb(233, 125, 88) 100%, rgb(255, 255, 255)10%);
                                     img{
                                         vertical-align: middle;
@@ -412,27 +462,13 @@
                                     color: #737374;
                             
                                 }
-                                .msgBox{
-                                    width: 100%;
-                                    display: flex;
-                                    margin: 10px 0 ;
-                                    .msg{
-                                        width: 80%;
-                                        height: 30px;
-                                        border: solid 1px #076baf;
-                                        border-radius: 7px;
-                                    }
-                                    .sendMsg{
-                                        width: 20%;
-                                        height: 30px;
-                                        color: #fff;
-                                        background-color: $blue;
-                                        border: 2px solid $blue;
-                                        position: relative;
-                                        border-radius: 10px;
-                                        font-family: g2Font;
-                                        text-align: center;
-                                    }
+                                .msgs{
+                                    height: 0;
+                                    overflow: hidden;
+                                    transition: .3s;
+                                }
+                                .msgsShow{
+                                    height: 100%;
                                 }
                                 .msg_num{
                                     display: flex;
