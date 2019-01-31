@@ -13,7 +13,13 @@ $moblie: 768px;
 @font-face {
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf);
+
 }
+@font-face {
+    font-family: g2FontMe;
+    src: url(../GenJyuuGothicX-Medium.ttf);
+    
+  }
 html{
     font-size: 34px
 }
@@ -53,7 +59,7 @@ input, select{
         border: 2px solid $bordercolor;
         border-radius: $bordius;
         padding: $pad;
-        font-family: g2Font;
+        font-family: g2FontMe;
         text-align: center;
         text-decoration: none;
         font-size: $font;
