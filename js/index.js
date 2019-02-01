@@ -1,26 +1,30 @@
 $(document).ready(function () {
 
     $('.countryImg').each(function () {
-        var originTop = $(this).css('top');//先抓原本你ＣＳＳ寫的高度
-        $(this).css('top', '-300px');//然後把國旗放到0的位置
+        var originTop = parseInt($(this).css('top'));//先抓原本你ＣＳＳ寫的高度
+        var parentHeight = parseInt($(this).parent().css('height'));
+        $(this).css('top', '-300px');//然後把國旗放到0的位置  
+            
         $(this).animate({//做個動畫讓它們掉下來}
-            top: `${(parseInt(originTop)/640)*100}%`,
-        }, 2000, 'easeOutBounce');
+            top: `${Math.ceil((originTop/parentHeight)*100)}%`,
+        }, 2000, 'easeOutBounce');console.log($(this).css('top'));
     })
 
 
     $(window).scroll(function () {
-        if ($(window).scrollTop() > $('#section_12').offset().top - 500) {
-            $('.snackMap').css({
-                'transform': 'translateY(100%) scale(0)',
-                'opacity': '0',
-                'transition': '2.5s',
-            });
-        } else {
-            $('.snackMap').css({
-                'transform': 'translateY(0) scale(1)',
-                'opacity': '1',
-            });
+        if($(window).width()>'768px'){
+            if ($(window).scrollTop() > $('#section_12').offset().top - 500) {
+                $('.snackMap').css({
+                    'transform': 'translateY(100%) scale(0)',
+                    'opacity': '0',
+                    'transition': '2.5s',
+                });
+            } else {
+                $('.snackMap').css({
+                    'transform': 'translateY(0) scale(1)',
+                    'opacity': '1',
+                });
+            }
         }
     });
 
