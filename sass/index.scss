@@ -69,6 +69,10 @@ body {
                 margin: auto;
                 position: relative;
                 text-align: center;
+                @media screen and (max-width:768px) {
+                    margin-top: 70px;
+                    transform: scale(1.3) translateX(-7px);
+                }
                 #testMap{
                     width: 68%;
                 }
@@ -82,7 +86,7 @@ body {
                     //     0%{transform: translateY(-900px)}
                     //     100%{transform: translateY(0px)}
                     // }
-                    .countryInfo {
+                    .countryInfoLg {
                         transition: 1s;
                         display: none;
                         position: relative;
@@ -95,10 +99,6 @@ body {
                             display: flex;
                             align-items: center;
                             justify-content: space-around;
-                            .countryInfoRadar {
-                                height: 180px;
-                                width: 180px;
-                            }
                             .countryInfoImg {
                                 width: 130px;
                             }
@@ -133,9 +133,6 @@ body {
                         }
                     }
                 }
-                .countryImg:hover .countryInfo {
-                    display: block;
-                }
                 .countryImg:before {
                     content: '';
                     display: block;
@@ -150,7 +147,17 @@ body {
                     opacity: .5;
                     z-index: 1;
                     animation: aaa 1.5s linear infinite alternate;
+                    @media screen and (max-width:768px) {
+                        top: 32%;
+                        box-shadow: 0 0 10px 17px #fff;
+                    }
                 }
+                @media screen and (min-width:768px) {
+                    .countryImg:hover .countryInfoLg {
+                        display: block;
+                    }
+                }
+                
                 >:nth-child(2) {
                     top: 25%;
                     left: 28%;                
@@ -307,12 +314,63 @@ body {
             @media screen and (max-width:768px) {
                 overflow: hidden;
                 width: 100%;
-                height: 100vh;
+                // height: 100vh;
                 margin: auto;
                 .cloudMap,
                 .balloonMap {
                     display: none;
                 }
+            }
+            .countryInfo{
+                display: none;
+                @media screen and (max-width:768px) {
+                    width: 100%;
+                    overflow: scroll;
+                    display: flex;
+                    margin: 40px auto;
+                    .countryInfoSm{
+                        margin: 10px 10px;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border-radius: 10px;
+                        padding: 10px;
+                        .countryInfoHeader {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            .countryInfoImg {
+                                width: 150px;
+                                text-align: center;
+                                img{
+                                    width: 90%;
+                                }
+                            }
+                            .countryInfoTitle {
+                                width: 170px;
+                                color: #e97d58;
+                                text-align: center;
+                            }
+                        }
+                        .countryInfosection {
+                            color: #737374;
+                            width: 100%;
+                            margin: auto;
+                            padding: 10px 0;
+                            h2 {
+                                text-align: center;
+                                font-size: 24px;
+                            }
+                        }
+                        .countryInfofooter {
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            .countryInfoPrice {
+                                color: #737374;
+                            }
+                        }
+                    }
+                }
+
             }
         }
         
@@ -326,6 +384,34 @@ body {
         background-position-y: 60px;
         margin: 20px auto;
         position: relative;
+        .boxBase{
+            border: unset;
+            .surface{
+                background-image: url(../images/index/boxStyle1.png), linear-gradient($deepyellow, $deepyellow);
+                background-blend-mode: luminosity;
+                background-size: cover;
+                background-color: unset;
+                border: 1px dashed #ccc;
+            }
+            .surface_left,.surface_right{
+                background-image: url(../images/index/boxStyle1.png), linear-gradient($blue, $blue);
+            }
+            .surface_top{
+                background-image: url(../images/tina/LOGO1.png), url(../images/index/boxStyle1.png), linear-gradient(#ffb600, #ffb600);
+                background-blend-mode: luminosity;
+                background-repeat: no-repeat, repeat, repeat;
+                background-size: 100px,cover,cover;
+                background-position: center;
+            }
+            .surface_font{
+                background-image: url(../images/tina/LOGO1.png), url(../images/index/boxStyle1.png), linear-gradient(#ffb600, #ffb600);
+                background-blend-mode: luminosity;
+                background-repeat: no-repeat, repeat, repeat;
+                background-size: 70px,cover,cover;
+                background-position: center;
+            }
+        }
+
         .LeaderboardTitle {
             background-image: url(../images/index/title-cloud.png);
             background-repeat: no-repeat;
