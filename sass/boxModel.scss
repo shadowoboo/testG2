@@ -286,6 +286,14 @@
 
 
 .section_12{
+
+    // width: 100%;
+    
+    // $X:100%;
+    // $Y:$X / 2;
+    // $Z:$X / 4;
+    // @include box3D_cover_bot($X, $Y, $Z);
+
     @include box3D_cover_bot(400px, 200px, 100px);
 }
 

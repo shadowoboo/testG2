@@ -53,8 +53,16 @@ gulp.task('default', ['sass'], function () {
     gulp.watch("js/*.js").on('change', reload);
     gulp.watch("images/*").on('change', reload);
     gulp.watch("page/*.html").on('change', reload);
-    gulp.watch("code_testing/*.html").on('change', reload);
+    gulp.watch("codeTesting/*.html").on('change', reload);
     // gulp.watch("images/*").on('change', reload);
+
+
+    // gulp.watch(["專題/g2_test/sass/*.scss", "專題/g2_test/sass/**/*.scss"], ['sass']).on('change', reload);
+    // gulp.watch("專題/g2_test/*.html").on('change', reload);
+    // gulp.watch("專題/g2_test/js/*.js").on('change', reload);
+    // gulp.watch("專題/g2_test/images/*").on('change', reload);
+    // gulp.watch("專題/g2_test/page/*.html").on('change', reload);
+    // gulp.watch("專題/g2_test/codeTesting/*.html").on('change', reload);
 });
 
 
