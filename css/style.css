@@ -280,11 +280,19 @@ section {
   height: 100vh;
   margin-top: 15vh;
   overflow: hidden; }
+  .cus #p1 {
+    overflow: hidden; }
+  .cus #p2 {
+    overflow: hidden; }
+  .cus #p3 {
+    overflow: hidden; }
+  .cus #p4 {
+    overflow: hidden; }
 
 .customized {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -297,10 +305,15 @@ section {
     align-items: center;
     width: 800px;
     height: 100px;
-    margin: 50px;
-    margin-bottom: 100px; }
+    margin: 100px 50px 50px 100px; }
     .customized .makingStep .cloudy {
       width: 120px; }
+      .customized .makingStep .cloudy .circle {
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        background: #fff;
+        border-radius: 100%; }
     .customized .makingStep .step1 {
       position: relative; }
       .customized .makingStep .step1:before {
@@ -315,7 +328,7 @@ section {
         position: absolute;
         top: 38px;
         left: 121px;
-        width: 108px;
+        width: 222px;
         height: 4px;
         background-color: #fff; }
     .customized .makingStep .step2 {
@@ -332,7 +345,7 @@ section {
         position: absolute;
         top: 38px;
         left: 121px;
-        width: 108px;
+        width: 222px;
         height: 4px;
         background-color: #fff; }
     .customized .makingStep .step3 {
@@ -344,14 +357,6 @@ section {
         top: 27px;
         left: 54px;
         font-size: 22px; }
-      .customized .makingStep .step3:after {
-        content: "";
-        position: absolute;
-        top: 38px;
-        left: 121px;
-        width: 108px;
-        height: 4px;
-        background-color: #fff; }
     .customized .makingStep .step4 {
       position: relative; }
       .customized .makingStep .step4:before {
@@ -378,12 +383,15 @@ section {
     background-color: #fbc84a;
     transform: translateY(-50px); }
   .customized .snackHouse {
+    width: 1050px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     background-color: #df9bac;
     border-radius: 10px;
-    border: 19px solid #fca8b7; }
+    border: 5px solid #fca8b7; }
     .customized .snackHouse .roof {
-      position: relative;
-      transform: scale(1.1) translateY(-62px); }
+      transform: scale(4) translate(4px, 0px); }
     .customized .snackHouse .container {
       display: flex;
       flex-direction: row;
@@ -604,7 +612,7 @@ section {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: 16vh;
+  height: 40px;
   text-align: center; }
   .stepRegion .mt {
     margin: 15px 10px; }
@@ -685,8 +693,7 @@ a {
   justify-content: center;
   align-items: center;
   width: 300px;
-  margin: 101px 0;
-  background-color: #fff; }
+  margin: 101px 0; }
   .top-row .pickColor .colorBtn {
     width: 60px;
     height: 60px;
@@ -1057,169 +1064,187 @@ a {
     margin-top: 40px; }
 
 @media screen and (max-width: 768px) {
-  .customized .makingStep {
-    justify-content: space-between;
-    align-items: center;
-    width: 350px;
-    margin-bottom: 30px; }
-    .customized .makingStep p {
-      font-size: 15px; }
-    .customized .makingStep .cloudy {
-      margin: 0 5px; }
-    .customized .makingStep .step1:before {
-      font-size: 15px;
-      top: 17px;
-      left: 35px; }
-    .customized .makingStep .step1:after {
-      display: none; }
-    .customized .makingStep .step2:before {
-      font-size: 15px;
-      top: 17px;
-      left: 35px; }
-    .customized .makingStep .step2:after {
-      display: none; }
-    .customized .makingStep .step3:before {
-      font-size: 15px;
-      top: 17px;
-      left: 35px; }
-    .customized .makingStep .step3:after {
-      display: none; }
-    .customized .makingStep .step4:before {
-      font-size: 15px;
-      top: 17px;
-      left: 35px; }
-    .customized .makingStep .step4:after {
-      display: none; }
-  .customized .priceSign {
-    position: relative;
-    top: 58px;
-    z-index: 88;
-    right: -35%;
-    transform: inherit; }
-  .customized .snackHouse {
-    width: 100%;
-    height: 100%; }
-  .customized .section_15 {
-    width: 100%;
-    flex-direction: column;
-    align-items: center; }
-    .customized .section_15 .camera {
-      height: 245px;
-      display: flex;
-      justify-content: center;
-      perspective: 1000px; }
-    .customized .section_15 .boxBase {
-      width: 250px;
-      height: 100px;
-      position: relative;
-      background-color: transparent;
-      transform-origin: center center;
-      transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
-      transform-style: preserve-3d;
-      transition: .3s;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-    .customized .section_15 .surface {
-      background-color: #aaf;
-      border: 1px dashed #0000004b;
-      position: absolute;
-      text-align: center;
-      font-size: 60px;
-      transform-origin: center center;
-      transition: .5s; }
-    .customized .section_15 .surface_top {
-      width: 250px;
-      height: 200px;
-      transform-origin: top center;
-      transform: translate3d(0, 50px, -100px) rotateX(90deg);
-      line-height: 200px;
-      backface-visibility: hidden; }
-    .customized .section_15 .surface_top_inner {
-      width: 250px;
-      height: 200px;
-      transform-origin: top center;
-      transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
-      line-height: 200px;
-      backface-visibility: hidden; }
-    .customized .section_15 .surface_down {
-      width: 250px;
-      height: 200px;
-      transform: rotateX(-90deg) translateZ(50px);
-      line-height: 200px; }
-    .customized .section_15 .surface_front {
-      width: 250px;
-      height: 100px;
-      transform: rotateY(0deg) translateZ(100px);
-      line-height: 100px; }
-    .customized .section_15 .surface_back {
-      width: 250px;
-      height: 100px;
-      transform: rotateY(180deg) translateZ(100px);
-      line-height: 100px; }
-    .customized .section_15 .surface_left {
-      width: 200px;
-      height: 100px;
-      transform: rotateY(-90deg) translateZ(125px);
-      line-height: 100px; }
-    .customized .section_15 .surface_right {
-      width: 200px;
-      height: 100px;
-      transform: rotateY(90deg) translateZ(125px);
-      line-height: 100px; }
-    .customized .section_15 .surface_top {
-      background-color: #076baf; }
-    .customized .section_15 .surface_down {
-      background-color: #076baf; }
-    .customized .section_15 .surface_front {
-      background-color: #fbc84a; }
-    .customized .section_15 .surface_back {
-      background-color: #fbc84a; }
-    .customized .section_15 .surface_left {
-      background-color: #fbc84a; }
-    .customized .section_15 .surface_right {
-      background-color: #fbc84a; }
-    .customized .section_15 .purchaseDetail {
-      width: 100%; }
-    .customized .section_15 .leftBox {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+  #p1 {
+    overflow: auto !important; }
+  #p2 {
+    overflow: auto !important; }
+  #p3 {
+    overflow: auto !important; }
+  #p4s {
+    overflow: auto !important; }
+  .customized {
+    height: auto !important;
+    overflow: auto !important; }
+    .customized .makingStep {
+      justify-content: space-between;
       align-items: center;
-      height: 450px; }
-      .customized .section_15 .leftBox .camera {
-        height: 250px; }
-        .customized .section_15 .leftBox .camera .boxBase {
-          position: relative;
-          top: 60px; }
-      .customized .section_15 .leftBox #ctrl_bar {
-        display: flex; }
-    .customized .section_15 .cardBox {
-      width: 100%; }
-    .customized .section_15 .pickCard {
-      width: 100%; }
-      .customized .section_15 .pickCard .cardText {
-        width: 100%;
-        margin: auto; }
-        .customized .section_15 .pickCard .cardText .showCard {
-          position: absolute;
-          top: -400px;
-          left: 0;
-          z-index: 3;
-          width: 600px;
-          height: 400px; }
-          .customized .section_15 .pickCard .cardText .showCard .cardBaseContent {
-            top: 8px !important;
-            left: -79px !important;
-            height: 200px !important;
-            width: 300px !important; }
-          .customized .section_15 .pickCard .cardText .showCard .cardBaseCover {
-            display: none; }
-      .customized .section_15 .pickCard .cardRecord {
-        width: 100%;
-        margin: auto; }
-    .customized .section_15 .pics {
-      width: 100%; }
+      width: 350px;
+      margin: auto; }
+      .customized .makingStep p {
+        font-size: 15px; }
+      .customized .makingStep .cloudy {
+        margin: 0 5px; }
+        .customized .makingStep .cloudy .circle {
+          width: 50px;
+          height: 50px;
+          height: 50px; }
+      .customized .makingStep .step1:before {
+        font-size: 15px;
+        top: 18px;
+        left: 49px; }
+      .customized .makingStep .step1:after {
+        display: none; }
+      .customized .makingStep .step2:before {
+        font-size: 15px;
+        top: 18px;
+        left: 49px; }
+      .customized .makingStep .step2:after {
+        display: none; }
+      .customized .makingStep .step3:before {
+        font-size: 15px;
+        top: 18px;
+        left: 49px; }
+      .customized .makingStep .step3:after {
+        display: none; }
+      .customized .makingStep .step4:before {
+        font-size: 15px;
+        top: 17px;
+        left: 35px; }
+      .customized .makingStep .step4:after {
+        display: none; }
+    .customized .priceSign {
+      position: relative;
+      top: 58px;
+      z-index: 88;
+      right: -35%;
+      transform: inherit; }
+    .customized .snackHouse {
+      width: 100%;
+      height: 100%; }
+      .customized .snackHouse .roof {
+        display: none; }
+    .customized .section_15 {
+      width: 100%;
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center; }
+      .customized .section_15 .camera {
+        height: 245px;
+        display: flex;
+        justify-content: center;
+        perspective: 1000px; }
+      .customized .section_15 .boxBase {
+        width: 250px;
+        height: 100px;
+        position: relative;
+        background-color: transparent;
+        transform-origin: center center;
+        transform: translateZ(-100px) rotateX(-90deg) rotateY(-180deg);
+        transform-style: preserve-3d;
+        transition: .3s;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .customized .section_15 .surface {
+        background-color: #aaf;
+        border: 1px dashed #0000004b;
+        position: absolute;
+        text-align: center;
+        font-size: 60px;
+        transform-origin: center center;
+        transition: .5s; }
+      .customized .section_15 .surface_top {
+        width: 250px;
+        height: 200px;
+        transform-origin: top center;
+        transform: translate3d(0, 50px, -100px) rotateX(90deg);
+        line-height: 200px;
+        backface-visibility: hidden; }
+      .customized .section_15 .surface_top_inner {
+        width: 250px;
+        height: 200px;
+        transform-origin: top center;
+        transform: translate3d(0, 50px, -100px) rotateX(90deg) rotateY(180deg);
+        line-height: 200px;
+        backface-visibility: hidden; }
+      .customized .section_15 .surface_down {
+        width: 250px;
+        height: 200px;
+        transform: rotateX(-90deg) translateZ(50px);
+        line-height: 200px; }
+      .customized .section_15 .surface_front {
+        width: 250px;
+        height: 100px;
+        transform: rotateY(0deg) translateZ(100px);
+        line-height: 100px; }
+      .customized .section_15 .surface_back {
+        width: 250px;
+        height: 100px;
+        transform: rotateY(180deg) translateZ(100px);
+        line-height: 100px; }
+      .customized .section_15 .surface_left {
+        width: 200px;
+        height: 100px;
+        transform: rotateY(-90deg) translateZ(125px);
+        line-height: 100px; }
+      .customized .section_15 .surface_right {
+        width: 200px;
+        height: 100px;
+        transform: rotateY(90deg) translateZ(125px);
+        line-height: 100px; }
+      .customized .section_15 .surface_top {
+        background-color: #076baf; }
+      .customized .section_15 .surface_down {
+        background-color: #076baf; }
+      .customized .section_15 .surface_front {
+        background-color: #fbc84a; }
+      .customized .section_15 .surface_back {
+        background-color: #fbc84a; }
+      .customized .section_15 .surface_left {
+        background-color: #fbc84a; }
+      .customized .section_15 .surface_right {
+        background-color: #fbc84a; }
+      .customized .section_15 .purchaseDetail {
+        width: 100%; }
+      .customized .section_15 .leftBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 450px; }
+        .customized .section_15 .leftBox .camera {
+          height: 250px; }
+          .customized .section_15 .leftBox .camera .boxBase {
+            position: relative;
+            top: 60px; }
+        .customized .section_15 .leftBox #ctrl_bar {
+          display: flex; }
+      .customized .section_15 .cardBox {
+        width: 100%; }
+      .customized .section_15 .pickCard {
+        width: 100%; }
+        .customized .section_15 .pickCard .cardText {
+          width: 100%;
+          margin: auto; }
+          .customized .section_15 .pickCard .cardText .showCard {
+            position: absolute;
+            top: -400px;
+            left: 0;
+            z-index: 3;
+            width: 600px;
+            height: 400px; }
+            .customized .section_15 .pickCard .cardText .showCard .cardBaseContent {
+              top: 8px !important;
+              left: -79px !important;
+              height: 200px !important;
+              width: 300px !important; }
+            .customized .section_15 .pickCard .cardText .showCard .cardBaseCover {
+              display: none; }
+        .customized .section_15 .pickCard .cardRecord {
+          width: 100%;
+          margin: auto; }
+      .customized .section_15 .pics {
+        width: 100%; }
   .form {
     width: 100%; }
   .shopping {
@@ -1243,7 +1268,9 @@ a {
     height: auto; }
     #card img {
       width: 101%;
-      margin: auto; } }
+      margin: auto; }
+  footer {
+    display: none !important; } }
 
 * {
   box-sizing: border-box; }

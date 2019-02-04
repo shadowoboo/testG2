@@ -1,3 +1,4 @@
+
 body{
     background-color: #fadfd4;
 }
@@ -16,12 +17,24 @@ section {
     height: 100vh;
     margin-top: 15vh;
     overflow: hidden;
+    #p1{
+        overflow: hidden;
+    }
+    #p2{
+        overflow: hidden;
+    }
+    #p3{
+        overflow: hidden;
+    }
+    #p4{
+        overflow: hidden;
+    }
 }
 
 .customized{
     display: flex;
     flex-direction:column;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -34,10 +47,17 @@ section {
         align-items: center;
         width: 800px;
         height:100px;
-        margin:50px;
-        margin-bottom:100px;
+        margin:100px 50px 50px 100px;
         .cloudy{
             width:120px;
+            .circle{
+                width: 80px;
+                height: 80px;
+                margin: auto;
+                background:#fff;
+                border-radius: 100%;
+            }
+            
         }
         .step1{
             position: relative;
@@ -54,7 +74,7 @@ section {
                 position: absolute;
                 top:38px;
                 left: 121px;
-                width: 108px;
+                width:222px;
                 height:4px;
                 background-color: #fff;
             }
@@ -74,7 +94,7 @@ section {
                 position: absolute;
                 top:38px;
                 left: 121px;
-                width: 108px;
+                width:222px;
                 height:4px;
                 background-color: #fff;
             }
@@ -89,15 +109,15 @@ section {
                 left: 54px;
                 font-size: 22px;
             }
-            &:after {
-                content: "";
-                position: absolute;
-                top:38px;
-                left: 121px;
-                width: 108px;
-                height:4px;
-                background-color: #fff;
-            }
+            // &:after {
+            //     content: "";
+            //     position: absolute;
+            //     top:38px;
+            //     left: 121px;
+            //     width: 108px;
+            //     height:4px;
+            //     background-color: #fff;
+            // }
         }
         .step4{
             position: relative;
@@ -131,13 +151,16 @@ section {
         transform: translateY(-50px);
     }
     .snackHouse{
+        width: 1050px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
         background-color: #df9bac;
         border-radius:10px;
-        border:19px solid #fca8b7;
+        border:5px solid #fca8b7;
         // height: 630px;
         .roof{
-            position: relative;
-            transform: scale(1.1) translateY(-62px);
+            transform: scale(4) translate(4px,0px);
         }
         .container{
             display: flex;
@@ -387,7 +410,7 @@ section {
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 16vh;
+    height:40px;
     text-align: center;
     .mt{
         margin:15px 10px;
@@ -509,7 +532,6 @@ a {
     align-items: center;
     width:300px;
     margin:101px 0;
-    background-color: #fff;
     .colorBtn{
         width: 60px;
         height: 60px;
@@ -1067,23 +1089,42 @@ $cardY:600px;
 
 
 @media screen and (max-width:768px){
+    #p1{
+        overflow:auto !important;
+    }
+    #p2{
+        overflow:auto !important;
+    }
+    #p3{
+        overflow:auto !important;
+    }
+    #p4s{
+        overflow:auto !important;
+    }
     .customized{
+        height: auto !important;
+        overflow: auto !important;
         .makingStep{
             justify-content:space-between;
             align-items: center;
             width:350px;
-            margin-bottom:30px;
+            margin:auto;
             p{
                 font-size: 15px;
             }
             .cloudy{
                 margin: 0 5px;
+                .circle{
+                    width: 50px;
+                    height: 50px;
+    height: 50px;
+                }
             }
             .step1{
                 &:before{
                     font-size: 15px;
-                    top:17px;
-                    left:35px;
+                    top: 18px;
+                    left: 49px;
                 }
                 &:after {
                 display: none;}
@@ -1091,8 +1132,8 @@ $cardY:600px;
             .step2{
                 &:before{
                     font-size: 15px;
-                    top:17px;
-                    left:35px;
+                    top: 18px;
+                    left: 49px;
                 }
                 &:after {
                 display: none;}
@@ -1100,8 +1141,8 @@ $cardY:600px;
             .step3{
                 &:before{
                     font-size: 15px;
-                    top:17px;
-                    left:35px;
+                    top: 18px;
+                    left: 49px;
                 }
                 &:after {
                 display: none;}
@@ -1126,10 +1167,14 @@ $cardY:600px;
         .snackHouse{
             width: 100%;
             height: 100%;
+            .roof{
+                display: none;
+            }
         }
         .section_15{
             @include box3D_cover(250px,200px,100px);
             width: 100%;
+            margin-top: 30px;
             flex-direction: column;
             align-items: center;
             .purchaseDetail{
@@ -1222,5 +1267,9 @@ $cardY:600px;
             width: 101%;
             margin: auto;
         }
+    }
+
+    footer{
+        display: none !important;
     }
 }
