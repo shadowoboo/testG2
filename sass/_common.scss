@@ -14,6 +14,10 @@ $moblie: 768px;
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf);
 }
+@font-face {
+  font-family: g2Med;
+  src: url(../GenJyuuGothicX-Medium.ttf);
+}
 html{
     font-size: 34px
 }
@@ -74,7 +78,7 @@ input, select{
     }
 }
 
-@include btn('cart', 150px, 45px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 22px);
+@include btn('cart', 130px, 40px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 20px);
 @include btn('detail', 150px, 45px, $blue, #fff, $blue, 10px, 0px, #fff, $blue, 22px);
 @include btn('step', 130px, 45px, #fff, $blue, transparent, 10px, 0px, #fff, $deepblue, 22px);
 @include btn('dimension', 50px, 50px, $yellow, #fff, $yellow, 10px, 0px, $gray, $yellow, 22px);
@@ -104,11 +108,9 @@ input, select{
         height: 45px;
         color: $blue;
         background-color: #fff;
-        border: 2px solid $blue;
         border-radius: 10px;
         padding: 0px;
         text-align: center;
-        font-size: 22px;
         cursor: pointer;
         @media only screen and (min-width: $moblie) {
            &:hover {
@@ -117,8 +119,16 @@ input, select{
             }
         }
 }
+.heart{
+    font-size: 28px;
+    border: 2px solid transparent;
+}
+.trash{
+    font-size: 22px;
+    border: 2px solid $blue;
+}
 .numInput{
-    width: 150px;
+    width: 130px;
     height: 40px;
     background-color: #fff;
     border: 2px solid $blue;

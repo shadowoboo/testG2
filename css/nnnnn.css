@@ -64,6 +64,10 @@ a {
   font-family: g2Font;
   src: url(../GenJyuuGothicX-Bold.ttf); }
 
+@font-face {
+  font-family: g2Med;
+  src: url(../GenJyuuGothicX-Medium.ttf); }
+
 html {
   font-size: 34px; }
 
@@ -93,8 +97,8 @@ input:focus, select:focus {
   outline: none; }
 
 .cart {
-  width: 150px;
-  height: 45px;
+  width: 130px;
+  height: 40px;
   color: #fff;
   background-color: #076baf;
   border: 2px solid transparent;
@@ -103,7 +107,7 @@ input:focus, select:focus {
   font-family: g2Font;
   text-align: center;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer; }
   .cart:focus {
     outline: none; }
@@ -309,19 +313,25 @@ input:focus, select:focus {
   height: 45px;
   color: #076baf;
   background-color: #fff;
-  border: 2px solid #076baf;
   border-radius: 10px;
   padding: 0px;
   text-align: center;
-  font-size: 22px;
   cursor: pointer; }
   @media only screen and (min-width: 768px) {
     .heart:hover, .trash:hover {
       background-color: #076baf;
       color: #fff; } }
 
+.heart {
+  font-size: 28px;
+  border: 2px solid transparent; }
+
+.trash {
+  font-size: 22px;
+  border: 2px solid #076baf; }
+
 .numInput {
-  width: 150px;
+  width: 130px;
   height: 40px;
   background-color: #fff;
   border: 2px solid #076baf;
