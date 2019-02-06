@@ -166,7 +166,9 @@
     }
     
     $coverOffsetY:(($boxJ) - ($boxK))/2;
-    .surface_top{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) ;line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
+    // $coverOffsetY:100px;
+    // Z軸無厚度，無法使用%去參考自身
+    .surface_top{width: $boxI;height: $boxJ;;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) ;line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
     .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: top center;transform: translate3d(0,$coverOffsetY,-($boxJ/2))  rotateX(90deg) rotateY(180deg);line-height:  $boxJ; backface-visibility:hidden;} //translateY(($boxJ-$boxK)/2) translateZ(-($boxJ/2))
     // .surface_top_inner{width: $boxI;height: $boxJ;transform-origin: center center;transform: translate3d(0,0,0)  rotateX(0deg) rotateY(180deg);line-height:  $boxJ; top:0; left:0; backface-visibility:hidden;}
     .surface_down{width: $boxI;height: $boxJ;transform:rotateX(-90deg) translateZ(($boxK/2));line-height:  $boxJ;}
@@ -289,12 +291,12 @@
 
     // width: 100%;
     
-    // $X:100%;
-    // $Y:$X / 2;
-    // $Z:$X / 4;
-    // @include box3D_cover_bot($X, $Y, $Z);
+    $X:100%;
+    $Y:$X / 2;
+    $Z:$X / 4;
+    @include box3D_cover_bot($X, $Y, $Z);
 
-    @include box3D_cover_bot(400px, 200px, 100px);
+    // @include box3D_cover_bot(400px, 200px, 100px);
 }
 
 .section_15{
