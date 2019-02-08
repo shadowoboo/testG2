@@ -136,7 +136,7 @@ input:focus, select:focus {
     .detail:focus {
       outline: none; } }
 
-.step {
+.pste {
   width: 130px;
   height: 45px;
   color: #fff;
@@ -149,13 +149,13 @@ input:focus, select:focus {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
-  .step:focus {
+  .pste:focus {
     outline: none; }
   @media only screen and (min-width: 768px) {
-    .step:hover {
+    .pste:hover {
       color: #fff;
       background-color: #00457b; }
-    .step:focus {
+    .pste:focus {
       outline: none; } }
 
 .dimension {
@@ -701,3 +701,5 @@ input[type=number]::-webkit-outer-spin-button {
     #showItem #comment {
       margin: 50px auto;
       background-color: #fff; } }
+
+/*# sourceMappingURL=showItem.css.map */

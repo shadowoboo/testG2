@@ -45,11 +45,23 @@
 //     });
 
 // });
-//--------頁籤開始----------------
-// $(document).ready(function(){
-//     var _index = 0;
-//     $('.tab-control').click(function(){
-//          //選擇到的移除原先的class,再增加一個active
-//     });
-// });
+
+function changeTabs(e,tablist){
+    var i,tablinks,tabPanel;
+    tabPanel = document.getElementsByClassName('tabPanel');
+    for (i = 0;  i< tabPanel.length; i++) {
+        tabPanel[i].style.display = "none";   
+    }
+    tablinks = document.getElementsByClassName('tablinks');
+    for(i =0; i<tablinks.length; i++){
+    tablinks[i].className = tablinks[i].className.replace("activ", "");
+    }
+    document.getElementById('tablist').style.display = "block";
+    e.currentTarget.className += "active";
+   
+}
+document.getElementById('defaultOpen').click();
+
+
+
 

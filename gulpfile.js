@@ -30,13 +30,13 @@ gulp.task('default', ['sass'], function () {
 
     browserSync.init({
         // server: {
-        //     //根目錄
+        //     // 根目錄
         //     baseDir: "./",
-        //     index: "page/index.html"
-        // },
+        //     // index: "page/index.html"
+        //  },
         // proxy:指向php server工作資料夾，串連php工作port
         //proxy跟server只能挑一個
-        proxy: "localhost:8888/testG2/page"
+         proxy: "localhost:8888/testG2/page"
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['sass']).on('change', reload);

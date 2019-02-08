@@ -66,17 +66,17 @@ a {
   width: 100%;
   height: 100px;
   position: fixed;
-  z-index: -1;
+  z-index: 999;
   top: 0; }
   .cloud .doc--bg2 {
     transform: rotate(180deg);
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     position: relative;
     overflow: hidden; }
     .cloud .doc--bg2 #canvas {
       width: 100%;
-      height: 15vh;
+      height: 10vh;
       position: absolute;
       top: 0;
       left: 0;
@@ -91,13 +91,6 @@ header {
   z-index: 9999; }
   header h1 {
     display: none; }
-  header .smalSearch {
-    width: 14%;
-    height: auto;
-    padding: 1%;
-    margin-top: 0.3%; }
-    header .smalSearch img {
-      width: 100%; }
   header nav .menu {
     width: 100%; }
     header nav .menu .logo {
@@ -111,15 +104,15 @@ header {
     header nav .menu .list li:first-child:hover a {
       color: #53a9f5; }
     header nav .menu .list li:nth-child(2):hover a {
-      color: #d88aa2; }
+      color: #53a9f5; }
     header nav .menu .list li:last-child:hover a {
-      color: #f09c8a; }
+      color: #53a9f5; }
     header nav .menu .list #store {
       height: auto; }
       header nav .menu .list #store:hover .subMenu {
         display: block; }
       header nav .menu .list #store a:hover {
-        color: #f0dc29; }
+        color: #53a9f5; }
       header nav .menu .list #store .subMenu {
         width: 100%;
         display: none; }
@@ -134,7 +127,7 @@ header {
     margin-top: 50px; }
   .cloud .doc--bg2 #canvas {
     height: 20vh; }
-  header .smalSearch {
+  header .search {
     display: none; }
   header .menu {
     width: 100%;
@@ -207,8 +200,8 @@ header {
     align-items: center;
     z-index: -1; }
     header .login li {
-      width: 30%;
-      font-size: 18px;
+      width: 35%;
+      font-size: 28px;
       line-height: 1.2;
       text-align: center; } }
 
@@ -218,6 +211,18 @@ header {
   header {
     display: flex;
     justify-content: space-between; }
+    header .search {
+      width: 10%;
+      height: 36px;
+      border: 1px solid #737374;
+      border-radius: 20px;
+      font-size: 16px;
+      margin-top: 2%;
+      margin-left: 2%;
+      display: block; }
+      header .search img {
+        height: 100%;
+        padding: 4%; }
     header nav {
       width: 100%; }
       header nav .menu .logo {
@@ -244,6 +249,8 @@ header {
             position: relative;
             top: 0%; }
             header nav .menu #list_appear .list #store .subMenu {
+              background-color: #fff;
+              border-radius: 15px;
               position: absolute;
               top: 80%;
               left: 0px; }
@@ -256,14 +263,11 @@ header {
       margin-top: -2.3%; }
       header .login li {
         text-align: center;
-        width: 30%;
+        width: 35%;
         padding: 1% 3%; }
         header .login li i {
-          font-size: 18px; }
-      header .login li:first-child {
-        width: 20%; }
-      header .login li:last-child {
-        width: 15%; } }
+          width: 79%;
+          font-size: 28px; } }
 
 body {
   background-color: #fadfd4; }
@@ -1324,7 +1328,7 @@ input:focus, select:focus {
     .detail:focus {
       outline: none; } }
 
-.step {
+.pste {
   width: 130px;
   height: 45px;
   color: #fff;
@@ -1337,13 +1341,13 @@ input:focus, select:focus {
   text-decoration: none;
   font-size: 22px;
   cursor: pointer; }
-  .step:focus {
+  .pste:focus {
     outline: none; }
   @media only screen and (min-width: 768px) {
-    .step:hover {
+    .pste:hover {
       color: #fff;
       background-color: #00457b; }
-    .step:focus {
+    .pste:focus {
       outline: none; } }
 
 .dimension {
@@ -1548,3 +1552,5 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
+
+/*# sourceMappingURL=style.css.map */
