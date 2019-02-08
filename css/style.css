@@ -465,7 +465,7 @@ body {
           font-family: g2Font;
           content: "1";
           position: absolute;
-          top: 27px;
+          top: 20px;
           left: 54px;
           font-size: 22px; }
         .step-content .step-content-body .customized .makingStep .step1:after {
@@ -482,7 +482,7 @@ body {
           font-family: g2Font;
           content: "2";
           position: absolute;
-          top: 27px;
+          top: 20px;
           left: 54px;
           font-size: 22px; }
         .step-content .step-content-body .customized .makingStep .step2:after {
@@ -499,7 +499,7 @@ body {
           font-family: g2Font;
           content: "3";
           position: absolute;
-          top: 27px;
+          top: 20px;
           left: 54px;
           font-size: 22px; }
       .step-content .step-content-body .customized .makingStep .step4 {
@@ -508,7 +508,7 @@ body {
           font-family: g2Font;
           content: "4";
           position: absolute;
-          top: 27px;
+          top: 20px;
           left: 54px;
           font-size: 22px; }
       .step-content .step-content-body .customized .makingStep p {
