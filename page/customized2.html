@@ -1,339 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="zh_tw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customized</title>
-  <link rel="stylesheet" href="../css/recordingModel_2.css">
-  <link rel="stylesheet" href="../css/customized.css">
-  <link rel="stylesheet" href="../css/nnnnn.css">
-  <link rel="stylesheet" href="../css/header.css">
-   <!-- 為了各種符號，掛載fontawesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-   crossorigin="anonymous">
-   <script src="../js/shadowLib.js""></script>
-   <!-- 錄音外掛。我想我跳下去玩一定會來不及。謝謝你 9527 -->
-   <script src="../js/recorder.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customized</title>
+    <link rel="stylesheet" href="../css/recordingModel_2.css">
+    <link rel="stylesheet" href="../css/customized.css">
+    <link rel="stylesheet" href="../css/nnnnn.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <!-- 為了各種符號，掛載fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/shadowLib.js""></script>
+    <!-- 錄音外掛。我想我跳下去玩一定會來不及。謝謝你 9527 -->
+    <script src="../js/recorder.js"></script>
 </head>
-
 <body>
-        <header>
+<div class="cus">
+    
+        <section class="cloud" style="overflow:hidden;">
+                <!--------手機用導覽列圖--------  -->
+        
+                <div class="doc doc--bg2">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </section>
+        
+            <header>
                 <h1>大零食家</h1>
-                <div class="cloud">
-                    <div class="doc doc--bg2">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                    <nav>
-                        <label for="smlSearch" class="searchBtn">
-                            <img src="../images/tina/search.png" alt="search">
-                        </label>
-                        <div class="menu">
-                            <!-------- -----手機漢堡----------- -->
-        
-                            <div id="ham">
-                                <span class="btnTop"></span>
-                                <span class="btnMid"></span>
-                                <span class="btnBot"></span>
-                            </div>
-                            <!----    在手機上打開此logo;桌機上關掉此logo------ -->
-                            <div class="logo">
-                                <a href="index.html"><img src="../images/tina/LOGO2.png" alt="大零食家"></a>
-        
-                            </div>
-                            <div id="list_appear">
-                                <!-- ----------手機選單離開-------- -->
-                                <div id="cros">
-                                    <span class="leave">X</span>
-                                </div>
-                                <ul class="list">
-                                    <li><a href="rankBoard.html">零食排行榜</a></li>
-                                    <li><a href="customized.html">客製零食箱</a> </li>
-                                    <!-- 在手機上要關掉這個li的logo -->
-                                    <li><a href="index.html"><img src="../images/tina/LOGO1.png" alt="大零食家"></a></li>
-                                    <li id="store"> <a href="shopping.html">零食商店街</a>
-                                        <ul id="Submenu" class="subMenu">
-                                            <li><a href="showItem.html">零食單品</a></li>
-                                            <li id="snBox"><a href="preOrder.html">預購零食箱</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="gsell.html">尋找販賣機</a> </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <ul class="login">
-                            <li><i class="fas fa-shopping-cart"></i></li>
-                            <li><i class="fas fa-user-circle"></i></li>
-                        </ul>
-                    </nav>
-        
-            </header>
-
-  <div class="card step-progress">
-    <div class="step-slider">
-      <div data-id="step1" class="step-slider-item"></div>
-      <div data-id="step2" class="step-slider-item"></div>
-      <div data-id="step3" class="step-slider-item"></div>
-      <div data-id="step4" class="step-slider-item"></div>
-    </div>
-    <div class="step-content">
-      <div id="step1" class="step-content-body">
-        <div class="customized">
-            <div class="snackHouse">
-                <div class="roof">
-                    <img src="../images/roof.svg" alt="">
+                <!-- ---------navBar上的巧克力搜尋---------------- -->
+                <div class="smalSearch">
+                    <img src="../images/tina/smlSearch.png" alt="搜尋">
                 </div>
-                <div class="makingStep">
-                        <div class="cloudy step1">
-                            <div class="circle" style="background:#aedcd3;"></div>
-                        <p>設計箱子</p>
-                        </div>    
-                         <div class="cloudy step2">
-                            <div class="circle"></div>
-                            <p>設計卡片</p>
-                        </div>    
-                         <div class="cloudy step3">
-                            <div class="circle"></div>
-                            <p>選購零食</p>            
-                        </div>    
-                         <!-- <div class="cloudy step4">
-                            <div class="circle"></div>
-                            <p>客製完成</p>   
-                        </div> -->
-                </div>
-                <div class="section section_15" id="section_15">
-                    
-                    <div class="leftBox">
-                        <div id="ctrl_bar">
-                            <div class="btn btn_front dimension" id="btn_front">前</div>
-                            <div class="btn btn_back dimension" id="btn_back">後</div>
-                            <div class="btn btn_top dimension" id="btn_top">上</div>
-                            <div class="btn btn_left dimension" id="btn_left">左</div>
-                            <div class="btn btn_right dimension" id="btn_right">右</div>
-                            <!-- <div class="btn rotateX" id="rotateX">轉</div> -->
-                              <!-- <div class="btn rotateY" id="rotateY">Y軸轉轉</div>-->
-                            <!-- <div class="btn rotateZ dimension" id="rotateZ">轉</div>  -->
+                <nav>
+        
+        
+                    <div class="menu">
+                        <!-------- -----手機漢堡----------- -->
+        
+                        <div id="ham">
+                            <span class="btnTop"></span>
+                            <span class="btnMid"></span>
+                            <span class="btnBot"></span>
                         </div>
-                        <div class="showBox">
-                                <div class="camera">
-                                    <div class="box boxBase" id="box_15">
-                                        <div class="surface surface_top" id="cover_out_15">
-                                            <img src="ip2.png" id="a1" alt="">
-                                        </div>
-                                        <div class="surface surface_top_inner" id="cover_in_15">
-                                    
-                                        </div>
-                                        <div class="surface surface_down"></div>
-                                        <div class="surface surface_back"></div>
-                                        <div class="surface surface_front"></div>
-                                        <div class="surface surface_left"></div>
-                                        <div class="surface surface_right"></div>
-                                    </div>
-                                </div>
-                        
-                                <div id="btns15">
-                                    <div class="btn" id="btn_big"><img src="../images/customized/zoom_in.svg" alt=""></div>
-                                    <div class="btn" id="btn_small"><img src="../images/customized/zoom_out.svg" alt=""></div>
-                                    <div class="btn" id="btn_clk"><img src="../images/customized/rotate.svg" alt=""></div>
-                                    <div class="btn" id="btn_del"><i class="fa fa-trash"></i></div>
-                                </div>                        
-                                <div class="btn show action" id="show" style="line-height: 35px;margin:3px auto;">3D展示</div>
+                        <!----    在手機上打開此logo;桌機上關掉此logo------ -->
+                        <div class="logo">
+                            <a href="index.html"><img src="../images/tina/LOGO2.png" alt="大零食家"></a>
+        
                         </div>
-                    </div>  
-                    <div class="form">
-                        <ul class="tab-group-1">
-                            <li class="tab-1 active"><a href="#signup">顏色</a></li>
-                            <li class="tab-1"><a href="#login">圖片</a></li>
-                        </ul>
-                        <div class="tab-content-1">
-                            <div id="signup">   
-                            <div class="top-row">
-                                <div class="pickColor">
-                                    <div class="colorBtn color1"></div>
-                                    <div class="colorBtn color2"></div>
-                                    <div class="colorBtn color3"></div>
-                                    <div class="colorBtn color4"></div>
-                                    <div class="colorBtn color5"></div>
-                                    <div class="colorBtn color6"></div>
-                                    <div class="colorBtn color7"></div>
-                                    <div class="colorBtn color8"></div>
-                                </div>
+                        <div id="list_appear">
+                            <!-- ----------手機選單離開-------- -->
+                            <div id="cros">
+        
+                                <span class="leave">X</span>
                             </div>
-                                </div>
-                            <div id="login">   
-                                <div class="pics">
-                                    <div class="pic">
-                                        <img src="../images/customized/chips.svg" alt="">
-                                    </div>
-                                    <div class="pic">
-                                        <img src="../images/customized/cookies.svg" alt="">
-                                    </div>
-                                    <div class="pic">
-                                        <img src="../images/customized/chocolate.svg" alt="">
-                                    </div>
-                                    <div class="pic">
-                                        <img src="../images/customized/lollip.svg" alt="">
-                                    </div>                                    
-                                    <div class="pic">
-                                        <img src="../images/customized/candy.svg" alt="">
-                                    </div>                                    
-                                    <div class="pic">
-                                        <img src="../images/customized/machi.svg" alt="">
-                                    </div>
-                                    <div class="pic">
-                                        <img id="image">
-                                    </div>
-                                </div>  
-                                
-                                <input type="file" id="theFile">
-            <p>
-                <textarea id="fileInfo" rows="5" cols="70" style="display:none;"></textarea>
-            </p>
-                            </div>
-                        </div><!-- tab-content -->
-                    </div>
-            </div>
-        </div>
-    </div>
-    </div>
-   
-      <div id="step2" class="step-content-body out">
-        <div class="customized">
-            <!-- <div class="priceSign">$150</div> -->
-            <div class="snackHouse">
-                <div class="roof">
-                    <img src="../images/roof.svg" alt="">
-                </div>
-                <div class="makingStep">
-                        <div class="cloudy step1">
-                        <div class="circle"></div>
-                            <p>設計箱子</p>
-                        </div>    
-                         <div class="cloudy step2">
-                            <div class="circle" style="background:#aedcd3;"></div>
-                            <p>設計卡片</p>
-                        </div>    
-                         <div class="cloudy step3">
-                            <div class="circle"></div>
-                            <p>選購零食</p>            
-                        </div>    
-                         <!-- <div class="cloudy step4">
-                            <div class="circle"></div>
-                            <p>客製完成</p>   
-                        </div> -->
-                    </div>
-                <div class="section section_15" id="section_15">
-                    <div class="lefCard" style="flex:2;">
-                            <div class="cardBox">
-                                    <img  id="large" src="../images/big/card01.png" alt="">
-                                </div>
-                    </div>
-                    <div class="pickCard">
-                            <ul class="tab-content-2">
-                                <li class="tab yellow">樣式</li>
-                                <li class="tab">文字</li>
-                                <li class="tab">語音</li>
+                            <ul class="list">
+                                <li><a href="rankBoard.html">零食排行榜</a></li>
+                                <li><a href="customized.html">客製零食箱</a> </li>
+                                <!-- 在手機上要關掉這個li的logo -->
+                                <li><a href="index.html"><img src="../images/tina/LOGO1.png" alt="大零食家"></a></li>
+                                <li id="store"> <a href="shopping.html">零食商店街</a>
+                                    <ul id="Submenu" class="subMenu">
+                                        <li><a href="showItem.html">零食單品</a></li>
+                                        <li id="snBox"><a href="preOrder.html">預購零食箱</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="gsell.html">尋找販賣機</a> </li>
                             </ul>
-                            <div class="content">
-                                <div class="cardStyle">
-                                    <img src="../images/small/card01.png" class="small" id="i_0">
-                                    <!-- <img src="../images/small/card02.png" class="small" id="i_1">
-                                    <img src="../images/small/card03.png" class="small" id="i_1">
-                                    <img src="../images/small/card04.png" class="small" id="i_1">                           -->
+                        </div>
+                    </div>
+        
+        
+                </nav>
+        
+        
+                <ul class="login">
+                    <li><i class="fas fa-shopping-cart"></i></li>
+                    <li><i class="fas fa-user-circle"></i></li>
+                </ul>
+            </header>
+        
+<section id="p1">
+<div class="customized">
+    <div class="snackHouse">
+        <div class="roof">
+            <img src="../images/roof.svg" alt="">
+        </div>
+        <div class="makingStep">
+                <div class="cloudy step1">
+                    <div class="circle" style="background:#aedcd3;"></div>
+                <p>設計箱子</p>
+                </div>    
+                 <div class="cloudy step2">
+                    <div class="circle"></div>
+                    <p>設計卡片</p>
+                </div>    
+                 <div class="cloudy step3">
+                    <div class="circle"></div>
+                    <p>選購零食</p>            
+                </div>    
+                 <!-- <div class="cloudy step4">
+                    <div class="circle"></div>
+                    <p>客製完成</p>   
+                </div> -->
+            </div>
+        <div class="section section_15" id="section_15">
+            
+            <div class="leftBox">
+                <div id="ctrl_bar">
+                    <div class="btn btn_front dimension" id="btn_front">前</div>
+                    <div class="btn btn_back dimension" id="btn_back">後</div>
+                    <div class="btn btn_top dimension" id="btn_top">上</div>
+                    <div class="btn btn_left dimension" id="btn_left">左</div>
+                    <div class="btn btn_right dimension" id="btn_right">右</div>
+                    <!-- <div class="btn rotateX" id="rotateX">轉</div> -->
+                      <!-- <div class="btn rotateY" id="rotateY">Y軸轉轉</div>-->
+                    <!-- <div class="btn rotateZ dimension" id="rotateZ">轉</div>  -->
+                </div>
+                <div class="showBox">
+                        <div class="camera">
+                            <div class="box boxBase" id="box_15">
+                                <div class="surface surface_top" id="cover_out_15">
+                                    <img src="ip2.png" id="a1" alt="">
                                 </div>
+                                <div class="surface surface_top_inner" id="cover_in_15">
+                            
+                                </div>
+                                <div class="surface surface_down"></div>
+                                <div class="surface surface_back"></div>
+                                <div class="surface surface_front"></div>
+                                <div class="surface surface_left"></div>
+                                <div class="surface surface_right"></div>
                             </div>
-                            <div class="content">
-                                <div class="cardText"> 
-                                    <div class="btn7 action" id="btn7_add" style="line-height:35px; margin:25px;">新增文字</div>                          
-                                    <div id="btns7">
-                                            <div class="btn7 dimension" id="btn7_big">大</div>
-                                            <div class="btn7 dimension" id="btn7_small">小</div>
-                                            <div class="btn7 dimension" id="btn7_clk">順</div>
-                                            <div class="btn7 dimension" id="btn7_unclk">逆</div>
-                                            <div class="btn7 dimension" id="btn7_del">刪</div>
-                                    </div>     
-                                    <div class="showCard">
-                                        <div class="section_7 sectionCard" id="section_7">
-                                            <div class="cardCamera" id="cardCamera_7">
-                                                <div class="cardBase" id="cardBase_7">
-                                                    <div class="cardBaseContent" id="cardBaseConten">
-                                                        <div class="cardSurfaceInner cardContentInner_7" id="cardContentInner_7">封底</div>
-                                                        <div class="cardSurface cardContent_7" id="cardContent_7">
-                                                            <!-- <div class="textTeam">
-                                                                <div class="ctrlPos">點擊拖曳</div>
-                                                                <div class="textarea" contenteditable="true" placeholder="點擊輸入文字"></div>
-                                                                <div class="textResize"></div>
-                                                            </div> -->
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="cardBaseCover" id="cardBaseCover">
-                                                        <div class="cardSurfaceInner cardCoverInner_7" id="cardCoverInner_7">封面(裡)</div>
-                                                        <div class="cardSurface cardCover_7" id="cardCover_7"></div>
+                        </div>
+                
+                        <div id="btns15">
+                            <div class="btn" id="btn_big"><img src="../images/customized/zoom_in.svg" alt=""></div>
+                            <div class="btn" id="btn_small"><img src="../images/customized/zoom_out.svg" alt=""></div>
+                            <div class="btn" id="btn_clk"><img src="../images/customized/rotate.svg" alt=""></div>
+                            <div class="btn" id="btn_del"><i class="fa fa-trash"></i></div>
+                        </div>                        
+                        <div class="btn show action" id="show" style="line-height: 35px;margin:3px auto;">3D展示</div>
+                </div>
+            </div>  
+            <div class="form">
+                <ul class="tab-group-1">
+                    <li class="tab-1 active"><a href="#signup">顏色</a></li>
+                    <li class="tab-1"><a href="#login">圖片</a></li>
+                </ul>
+                <div class="tab-content-1">
+                    <div id="signup">   
+                    <div class="top-row">
+                        <div class="pickColor">
+                            <div class="colorBtn color1"></div>
+                            <div class="colorBtn color2"></div>
+                            <div class="colorBtn color3"></div>
+                            <div class="colorBtn color4"></div>
+                            <div class="colorBtn color5"></div>
+                            <div class="colorBtn color6"></div>
+                            <div class="colorBtn color7"></div>
+                            <div class="colorBtn color8"></div>
+                        </div>
+                    </div>
+                        </div>
+                    <div id="login">   
+                        <div class="pics">
+                            <div class="pic">
+                                <img src="../images/customized/chips.svg" alt="">
+                            </div>
+                            <div class="pic">
+                                <img src="../images/customized/cookies.svg" alt="">
+                            </div>
+                            <div class="pic">
+                                <img src="../images/customized/chocolate.svg" alt="">
+                            </div>
+                            <div class="pic">
+                                <img src="../images/customized/lollip.svg" alt="">
+                            </div>                                    
+                            <div class="pic">
+                                <img src="../images/customized/candy.svg" alt="">
+                            </div>                                    
+                            <div class="pic">
+                                <img src="../images/customized/machi.svg" alt="">
+                            </div>
+                            <div class="pic">
+                                <img id="image">
+                            </div>
+                        </div>  
+                        
+                        <input type="file" id="theFile">
+	<p>
+		<textarea id="fileInfo" rows="5" cols="70" style="display:none;"></textarea>
+	</p>
+                    </div>
+                </div><!-- tab-content -->
+            </div>
+    </div>
+</div>
+<div class="stepRegion">
+        <a href="#p2"><button class="step mt">下一步</button> </a>
+  </div>    
+</section>
+<section id="p2">
+<div class="customized">
+    <!-- <div class="priceSign">$150</div> -->
+    <div class="snackHouse">
+        <div class="roof">
+            <img src="../images/roof.svg" alt="">
+        </div>
+        <div class="makingStep">
+                <div class="cloudy step1">
+                <div class="circle"></div>
+                    <p>設計箱子</p>
+                </div>    
+                 <div class="cloudy step2">
+                    <div class="circle" style="background:#aedcd3;"></div>
+                    <p>設計卡片</p>
+                </div>    
+                 <div class="cloudy step3">
+                    <div class="circle"></div>
+                    <p>選購零食</p>            
+                </div>    
+                 <!-- <div class="cloudy step4">
+                    <div class="circle"></div>
+                    <p>客製完成</p>   
+                </div> -->
+            </div>
+        <div class="section section_15" id="section_15">
+            <div class="lefCard" style="flex:2;">
+                    <div class="cardBox">
+                            <img  id="large" src="../images/big/card01.png" alt="">
+                        </div>
+            </div>
+            <div class="pickCard">
+                    <ul>
+                        <li class="tab yellow">樣式</li>
+                        <li class="tab">文字</li>
+                        <li class="tab">語音</li>
+                    </ul>
+                    <div class="content">
+                        <div class="cardStyle">
+                            <img src="../images/small/card01.png" class="small" id="i_0">
+                            <img src="../images/small/card02.png" class="small" id="i_1">
+                            <img src="../images/small/card03.png" class="small" id="i_1">
+                            <img src="../images/small/card04.png" class="small" id="i_1">                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="cardText"> 
+                            <div class="btn7 action" id="btn7_add" style="line-height:35px; margin:25px;">新增文字</div>                          
+                            <div id="btns7">
+                                    <div class="btn7 dimension" id="btn7_big">大</div>
+                                    <div class="btn7 dimension" id="btn7_small">小</div>
+                                    <div class="btn7 dimension" id="btn7_clk">順</div>
+                                    <div class="btn7 dimension" id="btn7_unclk">逆</div>
+                                    <div class="btn7 dimension" id="btn7_del">刪</div>
+                            </div>     
+                            <div class="showCard">
+                                <div class="section_7 sectionCard" id="section_7">
+                                    <div class="cardCamera" id="cardCamera_7">
+                                        <div class="cardBase" id="cardBase_7">
+                                            <div class="cardBaseContent" id="cardBaseConten">
+                                                <div class="cardSurfaceInner cardContentInner_7" id="cardContentInner_7">封底</div>
+                                                <div class="cardSurface cardContent_7" id="cardContent_7">
+                                                    <!-- <div class="textTeam">
+                                                        <div class="ctrlPos">點擊拖曳</div>
+                                                        <div class="textarea" contenteditable="true" placeholder="點擊輸入文字"></div>
+                                                        <div class="textResize"></div>
                                                     </div> -->
                                                 </div>
-                                            </div>                                    
+                                            </div>
+                                            <div class="cardBaseCover" id="cardBaseCover">
+                                                <div class="cardSurfaceInner cardCoverInner_7" id="cardCoverInner_7">封面(裡)</div>
+                                                <div class="cardSurface cardCover_7" id="cardCover_7"></div>
+                                            </div>
                                         </div>
-                                    </div>                                                                       
-                                    <!-- <span class="action" style="line-height: 35px; margin: auto;">新增</span> -->
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="content">
-                                <div class="cardRecord">
-                            <!-- 撥放介面實體 -->
-                            <div id="audioItem">
-                                    <!-- 一開始不給src，待錄音有值會自動增加 -->
-                                    <audio id="au_player"></audio>
-                                    <!-- 撥放控制按鈕們 -->
-                                    <div class="au_btns" id="au_btns">
-                                        <!-- 撥放與暫停 -->
-                                        <button class="au_btn" id="au_btn_play"><i class="fas fa-play"></i></button>
-                                        <!-- 停止 -->
-                                        <button class="au_btn" id="au_btn_stop"><i class="fas fa-stop"></i></button>
-                                        <!-- 靜音與否 -->
-                                        <button class="au_btn" id="au_btn_vol"><i class="fas fa-volume-up"></i></button>
-                                        <!-- 音量bar -->
-                                        <div class="volBar" id="volBar">
-                                            <!-- 會伸縮的bar -->
-                                            <div class="vol_proBar" id="vol_proBar"></div>
-                                            <!-- 拉桿 -->
-                                            <div class="vol_barNote" id="vol_barNote"></div>
-                                        </div>
-                                        <!-- 刪除 -->
-                                        <button id="audioDel" class="au_btn trash"><i class="far fa-trash-alt"></i></button>
-                                    </div>
-                            
-                                    <!-- 進度條與時間提示 -->
-                                    <div class="au_ctrl">
-                                        <!-- 這是進度條 -->
-                                        <div class="defBar" id="defBar">
-                                            <!-- 伸縮bar -->
-                                            <div class="proBar" id="proBar"></div>
-                                            <!-- 拉桿 -->
-                                            <div class="barNote" id="barNote"></div>
-                                        </div>
-                                        <!-- 時間提示組 -->
-                                        <div class="au_time" id="au_time">
-                                            <!-- 當前時間 -->
-                                            <span class="au_timeNow" id="au_timeNow">00:00</span>
-                                            <span>/</span>
-                                            <!-- 總長 -->
-                                            <span class="au_timeAll" id="au_timeAll">00:00</span>
-                                        </div>
-                                    </div>
-                            
-                                    <!-- 錄音操作鈕 -->
-                                    <!-- 一下錄，一下不錄 -->
-                                    <div id="recordBtn" class="recordBtn"><i class="fas fa-microphone"></i></div>
-                                </div>
-                            </div>
+                            </div>                                                                       
+                            <!-- <span class="action" style="line-height: 35px; margin: auto;">新增</span> -->
                         </div>
                     </div>
-                  </div> 
-             </div>
-         </div>
-      </div>
-      <div id="step3" class="step-content-body out">
+                    <div class="content">
+                        <div class="cardRecord">
+                            
+    <!-- 撥放介面實體 -->
+    <div id="audioItem">
+            <!-- 一開始不給src，待錄音有值會自動增加 -->
+            <audio id="au_player"></audio>
+            <!-- 撥放控制按鈕們 -->
+            <div class="au_btns" id="au_btns">
+                <!-- 撥放與暫停 -->
+                <button class="au_btn" id="au_btn_play"><i class="fas fa-play"></i></button>
+                <!-- 停止 -->
+                <button class="au_btn" id="au_btn_stop"><i class="fas fa-stop"></i></button>
+                <!-- 靜音與否 -->
+                <button class="au_btn" id="au_btn_vol"><i class="fas fa-volume-up"></i></button>
+                <!-- 音量bar -->
+                <div class="volBar" id="volBar">
+                    <!-- 會伸縮的bar -->
+                    <div class="vol_proBar" id="vol_proBar"></div>
+                    <!-- 拉桿 -->
+                    <div class="vol_barNote" id="vol_barNote"></div>
+                </div>
+                <!-- 刪除 -->
+                <button id="audioDel" class="au_btn trash"><i class="far fa-trash-alt"></i></button>
+            </div>
+    
+            <!-- 進度條與時間提示 -->
+            <div class="au_ctrl">
+                <!-- 這是進度條 -->
+                <div class="defBar" id="defBar">
+                    <!-- 伸縮bar -->
+                    <div class="proBar" id="proBar"></div>
+                    <!-- 拉桿 -->
+                    <div class="barNote" id="barNote"></div>
+                </div>
+                <!-- 時間提示組 -->
+                <div class="au_time" id="au_time">
+                    <!-- 當前時間 -->
+                    <span class="au_timeNow" id="au_timeNow">00:00</span>
+                    <span>/</span>
+                    <!-- 總長 -->
+                    <span class="au_timeAll" id="au_timeAll">00:00</span>
+                </div>
+            </div>
+    
+            <!-- 錄音操作鈕 -->
+            <!-- 一下錄，一下不錄 -->
+            <div id="recordBtn" class="recordBtn"><i class="fas fa-microphone"></i></div>
+        </div>
+    
+    
+                        </div>
+                    </div>
+                </div>
+        </div> 
+        </div>
+        <div class="stepRegion">
+            <a href="#p1"><button class="step mt">上一步</button></a>
+            <a href="#p3"><button class="step mt">下一步</button></a>
+        </div> 
+    </section>
+    <section id="p3">
         <div class="customized">
             <!-- <div class="priceSign">$150</div> -->
             <div class="snackHouse">
@@ -361,7 +372,7 @@
                 <div class="section section_15" id="section_15">
                     <div class="shopping">
                         <div class="goodBox">
-                                <ul class="tab-content-3">
+                                <ul>
                                     <li class="good yellow">購物車</li>
                                     <li class="good">收藏</li>
                                     <li class="good">巧克力</li>
@@ -855,22 +866,194 @@
                     </div>
                 </div> 
                 </div>
+                <div class="stepRegion">
+                    <a href="#p2"><button class="step mt">上一步</button></a>
+                    <a href="#"><button class="step mt">加入購物車</button></a>
+                </div> 
+            </section>
+    <!-- <section id="p4">
+        <div class="customized">
+            <div class="snackHouse">
+                <div class="roof">
+                    <img src="../images/roof.svg" alt="">
                 </div>
-      </div>
-      <div id="step4" class="step-content-body out">
-        <div class="tabContainer">
-
-       </div>
-      </div>
-      <div id="stepLast" class="step-content-body out">Completed</div>
-      <div class="step-content-foot">
-        <button type="button" class="active" name="prev">上一步</button>
-        <button type="button" class="active" name="next">下一步</button>
-        <button type="button" class="active out" name="finish">Finish</button>
-      </div>
-    </div>
-  </div>
-  <footer style="height: 300px;display:flex;">
+                <div class="makingStep">
+                        <div class="cloudy step1">
+                            <div class="circle"></div>
+                            <p>設計箱子</p>
+                        </div>    
+                            <div class="cloudy step2">
+                            <div class="circle"></div>
+                            <p>設計卡片</p>
+                        </div>    
+                            <div class="cloudy step3">
+                            <div class="circle"></div>
+                            <p>選購零食</p>            
+                        </div>    
+                            <div class="cloudy step4">
+                                <div class="circle" style="background:#aedcd3;"></div>
+                            <p>客製完成</p>   
+                        </div>
+                    </div>
+                <div class="section section_15" id="section_15">
+                        <div class="form">
+                                <ul class="tab-group-2">
+                                    <li class="tab-2 active"><a href="#box">客製箱</a></li>
+                                    <li class="tab-2"><a href="#card">卡片</a></li>
+                                </ul>
+                                <div class="tab-content-2">
+                                    <div id="box">   
+                                            <div class="leftBox">
+                                                    <div id="ctrl_bar">
+                                                        <div class="btn btn_front dimension" id="btn_front">前</div>
+                                                        <div class="btn btn_back dimension" id="btn_back">後</div>
+                                                        <div class="btn btn_top dimension" id="btn_top">上</div>
+                                                        <div class="btn btn_left dimension" id="btn_left">左</div>
+                                                        <div class="btn btn_right dimension" id="btn_right">右</div>                                                     
+                                                    </div>
+                                                    <div class="showBox" style="width:60%;">
+                                                            <div class="camera">
+                                                                <div class="box boxBase" id="box_15">
+                                                                    <div class="surface surface_top" id="cover_out_15">
+                                                                        <img src="ip2.png" id="a1" alt="">
+                                                                    </div>
+                                                                    <div class="surface surface_top_inner" id="cover_in_15">
+                                                                
+                                                                    </div>
+                                                                    <div class="surface surface_down"></div>
+                                                                    <div class="surface surface_back"></div>
+                                                                    <div class="surface surface_front"></div>
+                                                                    <div class="surface surface_left"></div>
+                                                                    <div class="surface surface_right"></div>
+                                                                </div>
+                                                            </div>                     
+                                                            <div class="btn show action" id="show" style="line-height: 35px;margin:3px auto;">3D展示</div>
+                                                    </div>
+                                                </div>  
+                                        </div>
+                                    <div id="card">   
+                                        <img src="../images/small/card01.png" alt="">  
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="purchaseDetail">
+                        <div class="title">
+                            <p>品名</p>
+                            <p>圖片</p>
+                            <p>數量</p>
+                        </div>
+                        <div class="list">
+                            <div class="item">  
+                                <div class="pic pic01"></div>                          
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic02"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                    <div class="pic pic03"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic04"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">  
+                                <div class="pic pic01"></div>                          
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic02"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                    <div class="pic pic03"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic04"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">  
+                                <div class="pic pic01"></div>                          
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic02"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                    <div class="pic pic03"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic04"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">  
+                                <div class="pic pic01"></div>                          
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic02"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic03"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic04"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">  
+                                <div class="pic pic01"></div>                          
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic02"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                    <div class="pic pic03"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                            <div class="item">                            
+                                <div class="pic pic04"></div>   
+                                <p>巧克力棒</p>
+                                <span>1個</span>                                                                                        
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="stepRegion">
+            <a href="#p3"><button class="step mt">上一步</button> </a>
+            <a href="#"><button class="step mt">加入購物車</button> </a>
+        </div>    
+    </section>
+</div> -->
+<footer style="height: 300px;">
         <div class='container'>
             <div class='snack ipf'>
                 <div class="pic">
@@ -997,10 +1180,8 @@
             <p id="copy">Copyright©2019 Snack Master</p>
         </div>
     </footer>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="../js/customizedstep.js""></script>
-  <script src="../js/header.js"></script>
-  <script>
+<script src="../js/header.js"></script>
+<script>
     const boxBases = document.querySelectorAll(".boxBase");
     const btns = document.querySelectorAll(".btn");
     //拖曳測試
@@ -1516,10 +1697,26 @@ var section15 = document.querySelector("#section_15");
     
     $('.tab-content-1 > div').not(target).hide();
     
-    $(target).fadeIn(100);
+    $(target).fadeIn(600);
     
     });
 </script>
+<script>
+        $('.tab-2 a').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+        
+        target = $(this).attr('href');
+        
+        $('.tab-content-2 > div').not(target).hide();
+        
+        $(target).fadeIn(600);
+        
+        });
+    </script>
 <script>
 //卡片內分業選擇區
     $(document).ready(function () {
@@ -1529,11 +1726,11 @@ var section15 = document.querySelector("#section_15");
     $(".tab").not(this).removeClass('yellow');	        
   });
 
-    $('.content').hide().first(0).show().addClass('block');
-    $('.tab-content-2 > li').click(function(e){
+    $('.content').hide().first(0).show().addClass('active');
+    $('li').click(function(e){
         var index = $(this).index(); 
-        $('.content.block').removeClass('block').stop().fadeOut(function(){
-            $('.content').eq(index).stop().fadeIn(500).addClass('block');
+        $('.content.active').removeClass('active').stop().fadeOut(function(){
+            $('.content').eq(index).stop().fadeIn(500).addClass('active');
         });
     });
 });
@@ -1549,7 +1746,7 @@ var section15 = document.querySelector("#section_15");
           });
         
             $('.good-content').hide().first(0).show().addClass('active');
-            $('.tab-content-3 > li').click(function(e){
+            $('li').click(function(e){
                 var index = $(this).index(); 
                 $('.good-content.active').removeClass('active').stop().fadeOut(function(){
                     $('.good-content').eq(index).stop().fadeIn(500).addClass('active');
@@ -2262,5 +2459,4 @@ window.addEventListener('load',doFirst);
 
 </script>
 </body>
-
 </html>
