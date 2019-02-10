@@ -55,6 +55,7 @@ var canvas = document.getElementById('canvas');
   requestAnimFrame(loop);
 }
 loop();
+
 //手機的漢堡
 const list_appear = document.getElementById("list_appear");
         const ham = document.getElementById("ham");

@@ -124,8 +124,28 @@ body {
   background-color: #9fd6d4; }
 
 header {
+  position: relative;
   width: 100%;
   height: auto; }
+  header #search_appear {
+    display: none;
+    position: relative;
+    z-index: 1;
+    top: -10vh;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    opacity: .9; }
+    header #search_appear.down {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+    header #search_appear .search img {
+      display: none; }
+    header #search_appear #close span {
+      padding: 0 10px;
+      cursor: pointer; }
   header h1 {
     display: none; }
   header .cloud {
@@ -201,13 +221,19 @@ header {
   body {
     margin-top: 50px; }
   nav .searchBtn {
-    display: none; }
+    position: absolute;
+    right: 70px;
+    top: -6vh;
+    z-index: 2; }
   nav .menu {
     position: relative; }
+    nav .menu .logo a {
+      width: 100px;
+      margin: auto; }
     nav .menu #ham {
       top: -60%;
       position: absolute;
-      width: 100%;
+      width: auto;
       height: 42px;
       padding-left: 2%;
       cursor: pointer;
@@ -275,7 +301,9 @@ header {
       width: 35%;
       font-size: 28px;
       line-height: 1.2;
-      text-align: center; } }
+      text-align: center; }
+  .search {
+    display: flex; } }
 
 @media screen and (min-width: 768px) {
   body {
@@ -300,6 +328,8 @@ header {
       header nav .menu #list_appear #cros {
         display: none; }
       header nav .menu #list_appear .list {
+        position: relative;
+        z-index: 11;
         max-width: 1200px;
         display: flex;
         justify-content: space-between;
@@ -329,7 +359,36 @@ header {
           padding: 1% 3%; }
           header nav .login li i {
             width: 79%;
-            font-size: 28px; } }
+            font-size: 28px; }
+    header #search_appear {
+      position: relative;
+      z-index: 1;
+      top: -3vh;
+      width: 100%;
+      height: 150px;
+      background-color: initial !important; }
+      header #search_appear .search {
+        position: relative; }
+        header #search_appear .search img {
+          display: block !important;
+          transform: scale(1.3); }
+        header #search_appear .search .selectbar {
+          width: 600px;
+          position: absolute;
+          left: -70px;
+          bottom: 10px;
+          flex-direction: row;
+          align-items: center; }
+          header #search_appear .search .selectbar select {
+            width: 150px;
+            margin: 0 20px; }
+        header #search_appear .search .inputbar {
+          position: absolute;
+          right: -20px;
+          bottom: 9px; }
+      header #search_appear #close {
+        position: relative;
+        right: -70px; } }
 
 * {
   box-sizing: border-box; }
