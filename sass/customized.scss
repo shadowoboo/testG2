@@ -313,6 +313,7 @@ body{
         font-size: 60px;
         transform-origin: center center;
         transition: .5s;
+        overflow: hidden;
     }
     
     $coverOffsetY:(($boxJ) - ($boxK))/2;
@@ -1283,7 +1284,7 @@ header nav .searchBtn img{
 
 @media screen and (max-width:768px){
 .step-content {
-    transform: translateY(4%);
+    transform: translateY(5%);
     .step-content-body {
     .customized{
         height: auto !important;
@@ -1472,9 +1473,8 @@ header nav .searchBtn img{
         }
     }
 
-    footer{
-        display: none !important;
-    }
 }
-
+footer{
+    display: none !important;
+}
 }

@@ -19,14 +19,14 @@ $(function() {
   });
 
   // Step Last
-  $('.step-content .step-content-foot button[name="finish"]').on('click', function() {
-    if (step == stepItem.length) {
-      return;
-    }
-    $(stepItem[stepItem.length - 1]).addClass('active');
-    $('.step-content-body').addClass('out');
-    $('#stepLast').removeClass('out');
-  });
+  // $('.step-content .step-content-foot button[name="finish"]').on('click', function() {
+  //   if (step == stepItem.length) {
+  //     return;
+  //   }
+  //   $(stepItem[stepItem.length - 1]).addClass('active');
+  //   $('.step-content-body').addClass('out');
+  //   $('#stepLast').removeClass('out');
+  // });
 
   // Step Previous
   $('.step-content .step-content-foot button[name="prev"]').on('click', function() {

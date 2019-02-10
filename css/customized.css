@@ -252,7 +252,8 @@ body {
     text-align: center;
     font-size: 60px;
     transform-origin: center center;
-    transition: .5s; }
+    transition: .5s;
+    overflow: hidden; }
   .section_15 .surface_top {
     width: 350px;
     height: 250px;
@@ -942,7 +943,7 @@ header nav .searchBtn img {
 
 @media screen and (max-width: 768px) {
   .step-content {
-    transform: translateY(4%); }
+    transform: translateY(5%); }
     .step-content .step-content-body .customized {
       height: auto !important; }
       .step-content .step-content-body .customized .makingStep {
@@ -1022,7 +1023,8 @@ header nav .searchBtn img {
           text-align: center;
           font-size: 60px;
           transform-origin: center center;
-          transition: .5s; }
+          transition: .5s;
+          overflow: hidden; }
         .step-content .step-content-body .customized .section_15 .surface_top {
           width: 250px;
           height: 200px;
@@ -1151,7 +1153,7 @@ header nav .searchBtn img {
       .step-content #card img {
         width: 101%;
         margin: auto; }
-    .step-content footer {
-      display: none !important; } }
+  footer {
+    display: none !important; } }
 
 /*# sourceMappingURL=customized.css.map */

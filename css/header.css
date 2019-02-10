@@ -73,11 +73,10 @@ header {
     display: none;
     position: relative;
     z-index: 1;
-    top: -10vh;
+    top: -9vh;
     width: 100%;
     height: 50px;
-    background-color: #fff;
-    opacity: .9; }
+    background-color: #fff; }
     header #search_appear.down {
       display: flex;
       flex-direction: row;
