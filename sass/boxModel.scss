@@ -12,7 +12,7 @@
     }
     .boxBase{
         // margin: auto;
-        border: red 2px solid;
+        // border: red 2px solid;
         width: $boxI;
         height: $boxK;
         position: relative;
@@ -65,7 +65,7 @@
     }
     .boxBase{
         // margin: auto;
-        border: red 2px solid;
+        // border: red 2px solid;
         width: $boxI;
         height: $boxK;
         position: relative;
@@ -80,7 +80,7 @@
     }
     .surface{
         background-color: #aaf;
-        border: 1px dashed #0000004b;
+        border: 1px dashed #ccc;
         position: absolute;
         text-align: center;
         font-size: 60px;
@@ -100,7 +100,7 @@
     .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
     .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
 
-    .surface_top{background-color: #076baf;}
+    .surface_top{background-color: #ffb600;}
     .surface_down{background-color: #076baf;}
     .surface_font{background-color: #fbc84a;}
     .surface_back{background-color: #fbc84a;}
@@ -142,7 +142,7 @@
     }
     .boxBase{
         // margin: auto;
-        border: red 2px solid;
+        // border: red 2px solid;
         width: $boxI;
         height: $boxK;
         position: relative;
@@ -245,6 +245,23 @@
         animation: cover_inner_rotate 3s ;
         @include cover_inner_rotate(210deg,400px,200px,120px);
     }
+    @media screen and (max-width:768px){
+        @include box3D_cover(250px,150px,80px);
+        //藍：#076baf
+        //黃：#fbc84a
+
+        //正面蓋子打開
+        .surface_top{
+            animation: cover_rotate 3s ;
+            @include cover_rotate(210deg,250px,150px,80px);
+        }
+
+        //內側蓋子打開
+        .surface_top_inner{
+            animation: cover_inner_rotate 3s ;
+            @include cover_inner_rotate(210deg,250px,150px,80px);
+        } 
+    }
     
 
     .surface_top_inner{
@@ -299,23 +316,27 @@
     align-items: center;
     right: 20%;
     .surface{
-            .droped_img{
-                display:block;
-                // transition: 0.1s;
-                cursor: move;
-                &.select{
-                    //border會佔面積，不太方便
-                    outline:#000000 dashed 10px;
-                    transition: 0.3s;
-                }
-            }
-            overflow: hidden;
-            #a1{
-                position: absolute;
-                top:50%;
-                left:50%;
+        .droped_img{
+            display:block;
+            // transition: 0.1s;
+            cursor: move;
+            &.select{
+                //border會佔面積，不太方便
+                outline:#000000 dashed 10px;
+                transition: 0.3s;
             }
         }
+        overflow: hidden;
+        #a1{
+            position: absolute;
+            top:50%;
+            left:50%;
+        }
+    }
+        
+    @media screen and (max-width:768px){
+        @include box3D_cover(250px,150px,80px);
+    }
 }
 
 

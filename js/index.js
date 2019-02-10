@@ -307,16 +307,15 @@ $(document).ready(function () {
         }
     });
 
-    $('.chocoGroup').css({
-        'transform': 'translateX(-1000px)'
-    });
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > $('.igCount').offset().top - 500) {
-            $('.chocoGroup').css({
-                'transform': 'translateX(0)',
-                'transition': '1s'
-            });
-        }
-    });
-
+    // $('.chocoGroup').css({
+    //     'transform': 'translateX(-1000px)'
+    // });
+    // $(window).scroll(function () {
+    //     if ($(window).scrollTop() > $('.igCount').offset().top - 500) {
+    //         $('.chocoGroup').css({
+    //             'transform': 'translateX(0)',
+    //             'transition': '1s'
+    //         });
+    //     }
+    // });
 });
