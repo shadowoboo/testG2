@@ -173,10 +173,12 @@ body{
     
     
     
+    
    //--------------------------頁籤-------------------------- 
+   
     
     .tabContainer{
-        position: relative;
+        
         .tabs{
             display: flex;
             flex-direction: row;
@@ -209,264 +211,260 @@ body{
           
         }
 
-//---------------------------頁籤內容----------------------        
-        .tabPanel{
-            width: 85%;
-            height: auto;
-            background-color: #fff;
-            border-radius: 15px;
-            margin: auto;
-            display: none;
-            position: absolute;
-            left: 6%;
-            top: 0%;
+    }
 
+//---------------------------頁籤內容---------------------- 
+.wrapTabPanel{
+    position: relative;
+    width: 100%;
+    // height: auto;
+    .tabPanel{
+        width: 85%;
+        height: auto;
+        background-color: #fff;
+        border-radius: 15px;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
     
-        }
-        
-        //-------------累積成就----------------
-        #tab-1{
-            .levelInfor{
-                width: 100%;
-                // height: 150px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                span{
-                    font-size: 10px;
-                    line-height: 2;
-                    color:$tabColor;
-                    font-family: g2Font; 
-                }
-                .topLevel{
-                    // position: relative;
-                   width: 100%;
-                   display: flex;
-                   justify-content: space-evenly;
-                   align-items: flex-start;
-                   padding: 2% 0;
-                   
-                   
-                }
-                .procBar{
-                    position: relative;
-                    .baby{
-                        width: 8%;
-                        // height: 100%;
-                        position: absolute;
-                        top: 20%;
-                        left: 2%;
-                        img{
-                            width: 100%;
-                        } 
-                        
+    }
     
-                    }
-                    .colorBar{
-                        border: 1px solid #000;
-                        border-radius: 15px;
-                        width: 90%;
-                        height: 60px;
-                        margin: auto;
-                        .nowPro{
-                            width: 16%;
-                            height: 100%;
-                            background-color: #f8dcd3;
-                            border-radius: 15px 0 0 15px;
-                        }
-    
-                    }
-                    .kid{
-                        position: absolute;
-                        top: 68%;
-                        left: 15%;
-                        width: 8%;
-                        // height: 100%;
-                        img{
-                            width: 100%;
-                        }
-                    }
-                    
-                }
-                .bottumLevel{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: baseline;
-                    padding: 2%;
-                }
+    //-------------累積成就----------------
+    #tab-1{
+        .levelInfor{
+            width: 100%;
+            // height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span{
+                font-size: 10px;
+                line-height: 2;
+                color:$tabColor;
+                font-family: g2Font; 
             }
-            .description{
-                h4{
-                    font-family: g2Font;
-                    color: $tabColor; 
-                    text-align: center;
-                    line-height: 2;
-                }
-                
-                .specify{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    .col4{
-                        width: 50%;
-                        p{
-                            font-size: 18px;
-                            line-height: 2;
-                            padding-left: 2%;
-                            color: $tabColor;
-                            font-family: g2Font; 
-                            
-                        }
-                        
-                        li{
-                            line-height: 1.6;
-                            color: $tabColor;
-                            font-family: g2Font;
-                            padding-left: 2%;
-                        }
+            .topLevel{
+                // position: relative;
+               width: 100%;
+               display: flex;
+               justify-content: space-evenly;
+               align-items: flex-start;
+               padding: 2% 0;
+               
+               
+            }
+            .procBar{
+                position: relative;
+                .baby{
+                    width: 8%;
+                    // height: 100%;
+                    position: absolute;
+                    top: 20%;
+                    left: 2%;
+                    img{
+                        width: 100%;
                     } 
-    
                     
-                }
-                .btnn{
-                    text-align: center;
-                    .goToCustom{
-                        height: 30px;
-                        font-size: 20px;
-                        line-height: 0.6;
-                        margin-bottom: 1%;
     
+                }
+                .colorBar{
+                    border: 1px solid #000;
+                    border-radius: 15px;
+                    width: 90%;
+                    height: 60px;
+                    margin: auto;
+                    .nowPro{
+                        width: 16%;
+                        height: 100%;
+                        background-color: #f8dcd3;
+                        border-radius: 15px 0 0 15px;
+                    }
+    
+                }
+                .kid{
+                    position: absolute;
+                    top: 68%;
+                    left: 15%;
+                    width: 8%;
+                    // height: 100%;
+                    img{
+                        width: 100%;
                     }
                 }
-                
                 
             }
-        }
-        //----------------訂單管理--------------
-        #tab-2{
-            .orderList{
-                
+            .bottumLevel{
                 display: flex;
-                flex-direction: column;
                 justify-content: space-between;
-                text-align: left;
-                
-                table{
-                    line-height: 1.6;
-                    
-                    th{
-                       
-                        color: $tabColor;
-                        font-size: 16px;
-                        font-family: g2Font;
-                    }
-                    td{
-                        color: $tabColor;
-                        font-size: 15px;
-                        font-family: g2Font;
-                    }
-                }
-                table:first-child{
-                    
-                    th{
-                        width: 30%;
-                        padding: 1% 3%;
-                    }   
-                    
-    
-                }
-                table:last-child{
-                    th{
-                        width: 33%;
-                        padding: 1% 3%;
-                    }
-                }
-                            
-                    
-                    
-                }
-                .total{
-                    text-align: right;
-                    padding: 1% 2%; 
+                align-items: baseline;
+                padding: 2%;
+            }
+        }
+        .description{
+            h4{
+                font-family: g2Font;
+                color: $tabColor; 
+                text-align: center;
+                line-height: 2;
+            }
+            
+            .specify{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .col4{
+                    width: 50%;
                     p{
+                        font-size: 18px;
+                        line-height: 2;
+                        padding-left: 2%;
+                        color: $tabColor;
+                        font-family: g2Font; 
+                        
+                    }
+                    
+                    li{
                         line-height: 1.6;
                         color: $tabColor;
                         font-family: g2Font;
+                        padding-left: 2%;
                     }
-                }
-                #listMore{
-                    text-align: center;
-                    a{
-                        color: $tabColor; 
-                        font-family: g2Font;
-                        line-height: 2;
-                    }
-                    
-                    
+                } 
     
-                }
                 
-    
             }
-        //-----------------收藏品---------------------
-        #tab-3{
-            .collect{
+            .btnn{
                 text-align: center;
-                
-                 p{
-                    font-family: g2Font;
-                    color: $tabColor; 
-                    line-height: 10;
-                   
-                    }
+                .goToCustom{
+                    height: 30px;
+                    font-size: 20px;
+                    line-height: 0.6;
+                    margin-bottom: 1%;
+    
                 }
-            
             }
-        //---------------優惠券--------------------------    
-            #tab-4{
-                width: 85%;
-                table{
-                    margin: auto;
-                    width: 100%;
-                    tr:first-child{
-                        border-bottom: 2px solid #076baf;
-                        text-align: center;
-                        th{
-                            // width: 50%;
-                            line-height: 3;
-                            color: $tabColor;
-                            font-family: g2Font;
-                            font-size: 16px;
-                        }
-                    }
-                    tr:last-child{
-                        td{
-                            text-align: center;
-                            vertical-align: middle;
-                            padding: 2%;
-                            font-family: g2Font;
-                            color: $tabColor;
-                            font-size: 12px;
-                            margin-right: 1%;
-                        }
-                    }
+            
+            
+        }
+    }
+    //----------------訂單管理--------------
+    #tab-2{
+    
+        .orderList{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            
+            table{
+                line-height: 1.6;
+                
+                th{
+                   
+                    color: $tabColor;
+                    font-size: 16px;
+                    font-family: g2Font;
+                }
+                td{
+                    color: $tabColor;
+                    font-size: 15px;
+                    font-family: g2Font;
+                }
+            }
+            table:first-child{
+                
+                th{
+                    width: 30%;
+                    padding: 1% 3%;
+                }   
+                
+    
+            }
+            table:last-child{
+                th{
+                    width: 33%;
+                    padding: 1% 3%;
+                }
+            }
+                        
+                
+                
+            }
+            .total{
+                text-align: right;
+                padding: 1% 2%; 
+                p{
+                    line-height: 1.6;
+                    color: $tabColor;
+                    font-family: g2Font;
+                }
+            }
+            #listMore{
+                text-align: center;
+                a{
+                    color: $tabColor; 
+                    font-family: g2Font;
+                    line-height: 2;
+                }
+                
+                
+    
+            }
+            
+    
+        }
+    //-----------------收藏品---------------------
+    #tab-3{
+        .collect{
+            text-align: center;
+            
+             p{
+                font-family: g2Font;
+                color: $tabColor; 
+                line-height: 10;
+               
                 }
             }
         
-
-    }
-    #bgCandy{
-        display: none;
-    }
-    @for $i from 1 through 10 {
-        #bgCandy#{$i} {
-            display: none;
         }
-    }
+    //---------------優惠券--------------------------    
+        #tab-4{
+            width: 85%;
+            table{
+                margin: auto;
+                width: 100%;
+                tr:first-child{
+                    border-bottom: 2px solid #076baf;
+                    text-align: center;
+                    th{
+                        // width: 50%;
+                        line-height: 3;
+                        color: $tabColor;
+                        font-family: g2Font;
+                        font-size: 16px;
+                    }
+                }
+                tr:last-child{
+                    td{
+                        text-align: center;
+                        vertical-align: middle;
+                        padding: 2%;
+                        font-family: g2Font;
+                        color: $tabColor;
+                        font-size: 12px;
+                        margin-right: 1%;
+                    }
+                }
+            }
+        }
+        
+
+    }      
     
     
-    
-    }   
+}   
       
 
 
@@ -481,43 +479,54 @@ body{
         }
         
     }
-    .tabContainer{
-        #tab-1{
-            .description{
-                h4{
-                    font-size: 25px;
+    .itemTab2{
+        
+        .tabContainer{
+            #tab-1{
+                .description{
+                    h4{
+                        font-size: 25px;
+                    }
+                    
+                    .specify{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        .col4{
+                            width: 50%;
+                            p{
+                                font-size: 18px;
+                                line-height: 2;
+                                padding-left: 2%;
+                                color: $tabColor;
+                                font-family: g2Font; 
+                                
+                            }
+                            li{
+                                padding: 2%;
+                                font-size: 15px;
+                                line-height: 1.6;
+                                color: $tabColor;
+                                font-family: g2Font;
+                            }
+                        }  
+                        
+                    }
+            
+                
                 }
                 
-                .specify{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    .col4{
-                        width: 50%;
-                        p{
-                            font-size: 18px;
-                            line-height: 2;
-                            padding-left: 2%;
-                            color: $tabColor;
-                            font-family: g2Font; 
-                            
-                        }
-                        li{
-                            padding: 2%;
-                            font-size: 15px;
-                            line-height: 1.6;
-                            color: $tabColor;
-                            font-family: g2Font;
-                        }
-                    }  
-                    
-                }
-        
-            
             }
-            
         }
     }
+    footer{
+        #floor{
+            display: none;
+            position: unset;
+        }
+        
+    }
+    
     
 }
 //------------------桌機ＲＷＤ--------------------------
@@ -600,9 +609,13 @@ body{
             .tabs{
                 flex-direction: no-wrap;
             }
+
+        }
+        .wrapTabPanel{
             .tabPanel{
                 max-width: 1200px;
             }
+
             #tab-1{
                 .levelInfor{
                     span{
@@ -715,15 +728,15 @@ body{
                     
                 }
 
-
-
-        }
+         }
 
 
         }
         
         footer{
+            
             #floor{
+                display: none;
                 #copy{
                     text-align: center;
                 }
@@ -731,6 +744,29 @@ body{
         }
     
     
+}
+
+@media screen and(min-width:1200px){
+    
+    body{
+        background-image: url(../images/tina/leftCandy.png),url(../images/tina/rightCandy.png);
+        background-repeat: no-repeat;
+        background-position: bottom left ,bottom right ;
+        background-size: 17% 75%;
+    }
+    body::before{
+        content: '';
+        display: block;
+
+    }
+    .wrapTabPanel{
+        height: 80vh;
+        
+    }
+    
+    
+    
+
 }
 
 

@@ -1,0 +1,11 @@
+body {
+  background-color: #b8f1ed; }
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url(../images/tina/leftCady.png), url(../images/tina/rightCandy.png);
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat; } }
+
+/*# sourceMappingURL=member1.css.map */
