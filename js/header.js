@@ -85,3 +85,22 @@ const list_appear = document.getElementById("list_appear");
 
         
         window.addEventListener("load",init);
+
+        const search_appear = document.getElementById("search_appear");
+        const search = document.getElementById("searchBtn");
+        const closex = document.getElementById("close");
+        function init2(e) {
+            search.addEventListener("click", showSearch);
+            closex.addEventListener("click", closeSearch);
+
+        }
+        function showSearch(e) {
+            search_appear.classList.add("down");
+        
+        }
+        function closeSearch(e) {
+            console.log(`remove`);
+            search_appear.classList.remove("down");
+        }
+
+        window.addEventListener("load",init2);
