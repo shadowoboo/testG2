@@ -1,3 +1,6 @@
+@import "reset";
+@import 'common';
+
 body{
     background-color:#fadfd4 !important;
 }
@@ -60,18 +63,23 @@ body{
     transform: translateY(17%);
     .step-content-foot {
         text-align:center;
-        margin-bottom: 15vh;
+        margin-bottom:20vh;
         background-color: #fadfd4;
         button{
             cursor: pointer;
+            a{
+                color: #fff;
+            }
         }
       }
       .step-content-foot button {
+        font-family: g2Font;
         border: 0;
         padding: 8px 16px;
+        margin: 0 10px;
         background-color: #CFD8DC;
         font-size: 14px;
-        border-radius: 3px;
+        border-radius:10px;
         outline: 0;
       }
   }
@@ -89,8 +97,11 @@ body{
   }
   
   .step-content .step-content-foot button.active {
-    background-color: #00ACC1;
+    background-color: #076baf;
     color: white;
+    font-size: 22px;
+    line-height: 4px;
+    height: 40px;
   }
   
   .step-content .step-content-body {
@@ -133,6 +144,8 @@ body{
         background-color: #fadfd4;
         overflow: hidden;
         .makingStep{
+            position: relative;
+            top: 10px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -306,8 +319,11 @@ body{
         align-items: center;
     }
     .surface{
-        background-color: #aaf;
-        border: 1px dashed #0000004b;
+        background-image: url(../images/index/boxStyle1.png), linear-gradient(#ffb600, #ffb600);
+        background-blend-mode: luminosity;
+        background-size: cover;
+        background-color: unset;
+        border: 1px dashed #ccc;
         position: absolute;
         text-align: center;
         font-size: 60px;
@@ -328,12 +344,16 @@ body{
     .surface_left{width: $boxJ;height: $boxK;transform:rotateY(-90deg) translateZ(($boxI/2));line-height: $boxK;}
     .surface_right{width: $boxJ;height: $boxK;transform:rotateY(90deg) translateZ(($boxI/2));line-height: $boxK;}
 
-    .surface_top{background-color: #076baf;}
-    .surface_down{background-color: #076baf;}
-    .surface_front{background-color: #fbc84a;}
-    .surface_back{background-color: #fbc84a;}
-    .surface_left{background-color: #fbc84a;}
-    .surface_right{background-color: #fbc84a;}
+    .surface_top{    
+        background-image: url(../images/index/boxStyle1.png), linear-gradient(#ffb600, #ffb600) !important;
+        background-blend-mode: luminosity;
+        background-repeat: no-repeat, repeat, repeat;
+        background-position: center;}
+    .surface_down{ background-image: url(../images/index/boxStyle1.png) ,linear-gradient(#ffb600, #ffb600) !important;}
+    .surface_front{ background-image: url(../images/index/boxStyle1.png) ,linear-gradient(#ffb600, #ffb600) !important;}
+    .surface_back{ background-image: url(../images/index/boxStyle1.png) ,linear-gradient(#ffb600, #ffb600) !important;}
+    .surface_left{ background-image: url(../images/index/boxStyle1.png) ,linear-gradient(#076baf, #076baf) !important;}
+    .surface_right{background-image: url(../images/index/boxStyle1.png) ,linear-gradient(#076baf, #076baf) !important;}
 
 }
 
@@ -642,28 +662,28 @@ a {
         cursor: pointer;
     }
     .color1{
-        background-color: rgb(246, 132, 132);
+        background-color: #ff5050;
     }
     .color2{
-        background-color: rgb(99, 151, 219);
+        background-color: #ff6600;
     }
     .color3{
-        background-color: rgb(142, 240, 163);
+        background-color: #ffff00;
     }
     .color4{
-        background-color: rgb(245, 132, 255);
+        background-color: #99ff66;
     }
     .color5{
-        background-color: rgb(250, 230, 116);
+        background-color: #66ccff;
     }
     .color6{
-        background-color: rgb(186, 141, 238);
+        background-color: #000066;
     }
     .color7{
-        background-color: rgb(245, 163, 127);
+        background-color: #cc33ff;
     }
     .color8{
-        background-color: rgb(109, 216, 190);
+        background-color: #000;
     }
  }
   &:after {
@@ -756,8 +776,7 @@ a {
             // flex-flow: row wrap;
             // justify-content: center;
             .small{
-                flex-grow:1;
-              
+                width: 350px;
                 margin: 4px;
                 background-size: 100%;
                 cursor: pointer;
@@ -1128,6 +1147,7 @@ $cardY:600px;
             }
         }
         .good-content{
+            font-family: g2Font;
             display: flex;
             flex-flow:wrap row;
             align-items:center;
@@ -1230,8 +1250,8 @@ $cardY:600px;
             background-color: #fff;
             cursor: pointer;
         }
-        .color1{
-            background-color: rgb(246, 132, 132);
+        .color1{            
+            background:url(../images/index/boxStyle1.png), linear-gradient(rgb(246, 132, 132), rgb(246, 132, 132));
         }
         .color2{
             background-color: rgb(99, 151, 219);
@@ -1275,9 +1295,9 @@ $cardY:600px;
 header nav .searchBtn img{
     display: block;
     background: url(../images/tina/search.png);
-    width: 135px !important;
-    margin-top:34px !important;
-    margin-left: 30px;
+    width: 135px;
+    margin-top:34px;
+    margin-left: 30px !important;
     cursor: pointer;
 }
 
@@ -1400,6 +1420,10 @@ header nav .searchBtn img{
                     justify-content: center;
                     width:80%;
                     margin: auto;
+                    .small{
+                        width: 320px;
+                        height: 250px;
+                    }
                 }
                 .cardText{
                     width: 100%;
@@ -1412,9 +1436,9 @@ header nav .searchBtn img{
                         right: 0;
                         z-index: 3;
                         width: 100%;
-                    // .sectionCard{
-                    //     height: 180px;
-                    // }
+                    .sectionCard{
+                        height:66vh;
+                    }
                         .cardBaseContent{
                             top: 8px !important;
                             height: 200px !important;
@@ -1464,6 +1488,7 @@ header nav .searchBtn img{
     }
     .step-content-foot {
     padding: 10px;
+    margin-top: 30px;
     }
     #card{
         height: auto;
@@ -1473,8 +1498,5 @@ header nav .searchBtn img{
         }
     }
 
-}
-footer{
-    display: none !important;
 }
 }
