@@ -1,75 +1,95 @@
 function moveR() {
         $('.itemDetail').css({
             'opacity': '0',
-            'transform': 'translateX(100%)'
+            'transform': 'translateX(-100%)'
         })
         setTimeout(() => {
             $('.itemDetail').css({
                 'opacity': '1',
                 'transform': 'translateX(0%)'
             })
-        }, 400);
+        }, 450);
+}
+
+function isMobile() {
+
+    var xWidth = $('#rankPanel').css('width');
+    if( xWidth == "0px"){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 function allPanel(){
     $('.sw_class').each(function () {
         $('.sw_class').click(function(e){
-            $('.sw_class').removeClass('catLoc');
-            $(this).addClass('catLoc');
-
-            $('#titleCat').css({
-                'opacity': '0',
-                'transform': 'translateX(-100%)'
-            })
             moveR();
-            switch ($(this).attr('id')) {
-                case 'sw_all':
-                    newTitleCtx = "本月<br>綜合排行";
-                    newIp = "/images/rankBoard/ipCookie.png";
-                    break;
+            $('.sw_class').removeClass('catLoc');
+            $('.m_rk').removeClass('catLoc');
+            $('#m_rk1').addClass('catLoc');
+            $(this).addClass('catLoc');
+            $('.itemDetail').scrollTop(0);
 
-                case 'sw_cookie':
-                    newTitleCtx = "本月<br>餅乾排行";
-                    newIp = "/images/rankBoard/ipCookie.png";
-                    break;
+            if (isMobile()==false){
 
-                case 'sw_candy':
-                    newTitleCtx = "本月<br>糖果排行";
-                    newIp = "/images/rankBoard/ipCandy.png";
-                    break;
+            
+                $('#titleCat').css({
+                    'opacity': '0',
+                    'transform': 'translateX(-100%)'
+                })
+                
+                switch ($(this).attr('id')) {
+                    case 'sw_all':
+                        newTitleCtx = "本月<br>綜合排行";
+                        newIp = "../images/rankBoard/ipCookie.png";
+                        break;
 
-                case 'sw_choco':
-                    newTitleCtx = "本月<br>巧克力排行";
-                    newIp = "/images/rankBoard/ipChoco.png";
-                    break;
+                    case 'sw_cookie':
+                        newTitleCtx = "本月<br>餅乾排行";
+                        newIp = "../images/rankBoard/ipCookie.png";
+                        break;
 
-                case 'sw_chip':
-                    newTitleCtx = "本月<br>洋芋片排行";
-                    newIp = "/images/rankBoard/ipChips.png";
-                    break;
+                    case 'sw_candy':
+                        newTitleCtx = "本月<br>糖果排行";
+                        newIp = "../images/rankBoard/ipCandy.png";
+                        break;
+
+                    case 'sw_choco':
+                        newTitleCtx = "本月<br>巧克力排行";
+                        newIp = "../images/rankBoard/ipChoco.png";
+                        break;
+
+                    case 'sw_chip':
+                        newTitleCtx = "本月<br>洋芋片排行";
+                        newIp = "../images/rankBoard/ipChips.png";
+                        break;
+                }
+
+
+                $('#ipImg').attr('src',newIp);
+                $('#sw_ring').css('transform', 'translateY(-50%) rotate(0deg)');
+                $('#rankPanel').css({
+                    'opacity': '0',
+                    'transform': 'scale(0)'
+                }) ;
+                setTimeout(() => {
+                    $('#rankPanel').css({
+                        'opacity': '1',
+                        'transform': 'scale(1)'
+                    });
+                    $('#titleCatCtx').html(newTitleCtx);
+                }, 400);
+                
+                setTimeout(() => {
+                    $('#titleCat').css({
+                        'opacity': '1',
+                        'transform': 'translateX(0%)'
+                    })
+                }, 400);
+
             }
 
-
-            $('#ipImg').attr('src',newIp);
-            $('#sw_ring').css('transform', 'translateY(-50%) rotate(0deg)');
-            $('#rankPanel').css({
-                'opacity': '0',
-                'transform': 'scale(0)'
-            }) ;
-            setTimeout(() => {
-                $('#rankPanel').css({
-                    'opacity': '1',
-                    'transform': 'scale(1)'
-                });
-                $('#titleCatCtx').html(newTitleCtx);
-            }, 400);
-            
-            setTimeout(() => {
-                $('#titleCat').css({
-                    'opacity': '1',
-                    'transform': 'translateX(0%)'
-                })
-            }, 400);
         });
     });
 }
@@ -78,8 +98,11 @@ function ringPanel() {
     $('.sw_rk').each(function () {
         
         $('.sw_rk').click(function (e) {
-
             moveR();
+            $('.m_rk').removeClass('catLoc');
+            $(this).addClass('catLoc');
+            $('.itemDetail').scrollTop(0);
+            
             switch ($(this).attr('id')) {
                 case 'sw_1':
                     $('#sw_ring').css('transform', 'translateY(-50%) rotate(0deg)');
@@ -103,6 +126,9 @@ function ringPanel() {
 
                 case 'sw_6':
                     $('#sw_ring').css('transform', 'translateY(-50%) rotate(300deg)');
+                break;
+
+                default:
                 break;
             }
         })
@@ -167,6 +193,11 @@ function init(){
     createRadar();
     ringPanel();
     allPanel();
+
+    if(isMobile()){
+        var newTitleCtx = "零食<br>排行榜";
+        $('#titleCatCtx').html(newTitleCtx);
+    }
 }
 
 window.addEventListener('load',init,false);
