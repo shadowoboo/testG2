@@ -392,6 +392,10 @@ body {
     content: '';
     display: block; }
   .wrapTabPanel {
-    height: 80vh; } }
+    height: 80vh; }
+  footer #floor {
+    display: block; }
+    footer #floor #copy {
+      text-align: center; } }
 
 /*# sourceMappingURL=member.css.map */
